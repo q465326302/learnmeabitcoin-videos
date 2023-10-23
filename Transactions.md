@@ -585,187 +585,160 @@
 所以在这个交易中显然还剩下5。
 
 00:11:08,330 --> 00:11:09,770
-obviously five left over in this
+在这个交易中，
 
 00:11:09,770 --> 00:11:10,310
-transaction
+显然有五个剩余。
 
 00:11:10,310 --> 00:11:12,200
-so you want to take care of that as your
+所以你需要把这个当作你自己的零钱来处理。
 
 00:11:12,200 --> 00:11:14,840
-own change so like I said with every
+就像我之前说的，
 
 00:11:14,840 --> 00:11:16,820
-transaction you have to take care of
+每一笔交易你都需要处理你自己的零钱。
 
 00:11:16,820 --> 00:11:22,520
-your own change and like before when
+而且，当这笔交易被记录到区块链上时，
 
 00:11:22,520 --> 00:11:24,200
-this transaction gets mind onto the
+同样的，我们都会有这个30的输出，
 
 00:11:24,200 --> 00:11:27,080
-blockchain same again we all have this
+锁定给这个人，
 
 00:11:27,080 --> 00:11:29,210
-thirty output here lock to this person
+然后我们会有这个输出给我们自己，
 
 00:11:29,210 --> 00:11:32,480
-and then we'll have this output for
+锁定给我们。
 
-00:11:32,480 --> 00:11:34,310
-ourselves that love to us and both of
-
-00:11:34,310 --> 00:11:35,540
-these that we selected from the
-
-00:11:35,540 --> 00:11:37,400
-blockchain have been greyed out because
+00:11:32,480 --> 00:11:37,400
+而我们从区块链中选择的这两个都被灰色去掉了，
 
 00:11:37,400 --> 00:11:39,020
-they've been spent in this transaction
+因为它们在这笔交易中已经被花费了。
 
-00:11:39,020 --> 00:11:42,260
-and that's how the blockchain and ISO
-
-00:11:42,260 --> 00:11:47,960
-transactions work in the blockchain so
+00:11:39,020 --> 00:11:47,960
+这就是区块链和ISO交易在区块链中的工作方式。
 
 00:11:47,960 --> 00:11:51,380
-yeah so it's a quick question so in the
+所以，
 
 00:11:51,380 --> 00:11:53,810
-last slide you're saying that one
+你在最后一张幻灯片中说，
 
-00:11:53,810 --> 00:11:58,280
-transaction can have inputs from
+00:11:53,810 --> 00:12:00,560
+一笔交易可以有来自多笔交易的输入，这对吗？
 
-00:11:58,280 --> 00:12:00,560
-multiple transactions exactly previous
-
-00:12:00,560 --> 00:12:02,300
-transactions okay you can have as many
-
-00:12:02,300 --> 00:12:04,250
-inputs as you want and create some in
+00:12:00,560 --> 00:12:04,250
+你可以有任意多的输入，
 
 00:12:04,250 --> 00:12:06,680
-young boots do you like yep right and
+并创建一些输出。
 
 00:12:06,680 --> 00:12:08,870
-both these inputs need to be obviously
+这些输入都必须是你自己的，这对吗？
 
 00:12:08,870 --> 00:12:11,510
-owned by you yes right yes well I mean
+是的，只要你能解锁它们就行。
 
 00:12:11,510 --> 00:12:13,130
-as long as you gonna lock them yes I
+我想说的是，
 
 00:12:13,130 --> 00:12:14,210
-mean if they're owned by you if you have
+如果它们是你的，
 
 00:12:14,210 --> 00:12:16,010
-the keys to unlock these that's fine
+如果你有解锁这些的钥匙，
 
 00:12:16,010 --> 00:12:18,350
-yeah yeah the assumption is that if you
+那就没问题，我们就假设你拥有它们。
 
-00:12:18,350 --> 00:12:23,030
-have the keys they you Audion so okay so
-
-00:12:23,030 --> 00:12:26,050
-you can take multiple inputs from
+00:12:18,350 --> 00:12:26,050
+所以，你可以从人们给你的交易中获取多个输入。
 
 00:12:26,050 --> 00:12:28,250
-transactions that people have sent you
+比如说，
 
 00:12:28,250 --> 00:12:31,340
-let's say that three people sent me
+有三个人分别给我5美元，
 
 00:12:31,340 --> 00:12:35,060
-$5.00 each and I want to send someone 14
+我想给某人14美元。
 
 00:12:35,060 --> 00:12:38,480
-yes I can use the inputs from do you see
+我可以使用这三笔交易的输入，
 
 00:12:38,480 --> 00:12:42,530
-I can create one output for $14 and $1
+创建一个14美元的输出和一个1美元的输出，
 
 00:12:42,530 --> 00:12:51,740
-back to exactly right so that I just
+返回给我自己。
 
-00:12:51,740 --> 00:12:53,270
-been showing you one individual
-
-00:12:53,270 --> 00:12:55,250
-transaction here this just you know is
-
-00:12:55,250 --> 00:12:59,180
-one individual transaction so if you
+00:12:51,740 --> 00:12:59,180
+我只是在这里展示了一笔单独的交易。
 
 00:12:59,180 --> 00:13:01,630
-were to go back in time and visualize
+如果你回到过去，
 
 00:13:01,630 --> 00:13:04,010
-all the transactions as they're being
+把所有的交易都可视化，
 
 00:13:04,010 --> 00:13:07,580
-added to the blockchain so this is the
+就像它们被添加到区块链上一样。
 
 00:13:07,580 --> 00:13:11,420
-first transaction here then we have
+这是第一笔交易，
 
 00:13:11,420 --> 00:13:14,030
-another transaction that spends this
+然后我们有另一笔交易，
 
 00:13:14,030 --> 00:13:16,730
-output like so then we have another
+花费了这个输出，
 
 00:13:16,730 --> 00:13:18,770
-block transactions you have another
+然后我们有另一个区块的交易，
 
-00:13:18,770 --> 00:13:21,290
-transaction that gets spent and so on
-
-00:13:21,290 --> 00:13:25,220
-like this so with every new transaction
+00:13:18,770 --> 00:13:25,220
+每笔交易都会消耗一笔交易，
 
 00:13:25,220 --> 00:13:28,370
-that gets made it builds this sort of
+如此这般，
 
 00:13:28,370 --> 00:13:31,130
-graph structure so like you asked just
+每一笔新的交易都会构建这种图结构。
 
 00:13:31,130 --> 00:13:32,930
-then you know you can take different
+所以，
 
 00:13:32,930 --> 00:13:35,540
-outputs from different transactions and
+就像你刚才问的，
 
 00:13:35,540 --> 00:13:38,150
-collect them together to create one
+你可以从不同的交易中取出不同的输出，
 
 00:13:38,150 --> 00:13:42,580
-single transaction but as you can see
+将它们集合在一起，创建一个单一的交易。
 
 00:13:42,580 --> 00:13:44,510
-with every transaction they're all
+但是，如你所见，
 
 00:13:44,510 --> 00:13:47,030
-connected together and they create this
+每一笔交易都是相互连接的，
 
 00:13:47,030 --> 00:13:50,030
-straight chain of outputs so inputs
+它们创建了一个直接的输出链，
 
 00:13:50,030 --> 00:13:55,640
-outputs and so on and so on so when you
+输入、输出等等。
 
 00:13:55,640 --> 00:13:57,530
-make a Bitcoin transaction for yourself
+所以，当你为自己进行比特币交易时，
 
 00:13:57,530 --> 00:14:02,330
-you just select any available outputs
+你只需从区块链图中选择任何可用的输出，
 
 00:14:02,330 --> 00:14:04,610
 that you can spend from this graph in
