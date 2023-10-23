@@ -312,214 +312,190 @@
 上一个新的锁，并将它们锁定给这个人。
 
 00:06:29,109 --> 00:06:34,299
-this person here so when you think of
+并将它们锁定给这个人。
 
 00:06:34,299 --> 00:06:37,209
-making a transaction it's best not to
+所以当你想要进行交易时，
 
 00:06:37,209 --> 00:06:39,069
-think of it really as having some
+最好不要把它想象成拥有一些比特币，
 
 00:06:39,069 --> 00:06:40,719
-bitcoins and then transferring them
+然后通过互联网转给别人，
 
 00:06:40,719 --> 00:06:41,979
-across the internet to someone else
+这不是真正的交易工作方式。
 
 00:06:41,979 --> 00:06:44,559
-that's not quite how it works what
+真正发生的是，
 
 00:06:44,559 --> 00:06:47,349
-really happens is you have a set of keys
+你有一套密钥，如地址和私钥，
 
 00:06:47,349 --> 00:06:49,719
-like an address and a private key and
+别人也有他们自己的地址和私钥，
 
-00:06:49,719 --> 00:06:51,729
-someone else has their own address and
+00:06:49,719 --> 00:06:53,979
+当你想要发送给他们一些比特币时，
 
 00:06:51,729 --> 00:06:53,979
-private key and when you want to send
+你只需进入区块链，
 
-00:06:53,979 --> 00:06:55,959
-them some bitcoins you just go into the
-
-00:06:55,959 --> 00:06:58,419
-blockchain select batches of bitcoins
+00:06:53,979 --> 00:06:58,419
+选择你可以用你的私钥解锁的比特币批次，
 
 00:06:58,419 --> 00:07:00,159
-that you can unlock with your private
+锁定到对方的地址，
 
-00:07:00,159 --> 00:07:03,969
-key and then you will create a new batch
+00:07:00,159 --> 00:07:06,099
+这样他们就可以用他们的私钥将它们发送出去。
 
-00:07:03,969 --> 00:07:06,099
-of bitcoins locked the other person's
-
-00:07:06,099 --> 00:07:08,409
-address so that they can then send them
-
-00:07:08,409 --> 00:07:12,129
-on using their private key so again for
+00:07:06,0999 --> 00:07:12,129
+这样他们就可以用他们的私钥将它们发送出去。
 
 00:07:12,129 --> 00:07:13,449
-example if they want to send this batch
+例如，
 
 00:07:13,449 --> 00:07:15,069
-of bitcoins on to someone else they'll
+如果他们想要将这批比特币发送给别人，
 
 00:07:15,069 --> 00:07:16,689
-just use their private key to unlock
+他们只需使用他们的私钥解锁我们为他们创建的这个特定的锁，
 
 00:07:16,689 --> 00:07:18,339
-this particular lock that we created for
+然后他们就可以发送出去。
 
-00:07:18,339 --> 00:07:21,429
-them and they'll send them on so as you
-
-00:07:21,429 --> 00:07:23,949
-can see bitcoins sort of form this chain
-
-00:07:23,949 --> 00:07:26,469
-of transactions as they move from one
+00:07:18,339 --> 00:07:26,469
+所以你可以看到比特币形成了这样一个交易链，
 
 00:07:26,469 --> 00:07:31,569
-person to another up until now I've been
+从一个人传递到另一个人。
 
 00:07:31,569 --> 00:07:33,999
-calling these batches of bitcoins but
+到目前为止，
 
 00:07:33,999 --> 00:07:36,459
-their technical term is outputs so from
+我一直把这些比特币的批次称为比特币，
 
 00:07:36,459 --> 00:07:37,929
-now from here on out I'm gonna use the
+但它们的技术术语是输出，
 
 00:07:37,929 --> 00:07:40,569
-word output to describe what to call
+所以从现在开始，
 
 00:07:40,569 --> 00:07:43,329
-these batches of bitcoins so obviously
+我将使用“输出”这个词来描述这些比特币的批次。
 
 00:07:43,329 --> 00:07:45,159
-all of these batches in here they are
+显然，所有这些批次都被称为输出，
 
-00:07:45,159 --> 00:07:47,349
-all called outputs that's what
-
-00:07:47,349 --> 00:07:48,639
-everything here all these orange boxes
+00:07:45,159 --> 00:07:48,639
+这就是所有这些橙色框框里的东西，都是输出。
 
 00:07:48,639 --> 00:07:54,879
-are outputs but to be clear when we
+但是要明确的是，
 
 00:07:54,879 --> 00:07:57,239
-refer to an output when we're spending
+当我们在交易中花费一个输出时
 
 00:07:57,239 --> 00:08:00,609
-an output in the transaction we refer to
+我们称之为输入。
 
 00:08:00,609 --> 00:08:02,849
-it as an input so every transaction
+所以每一笔交易都会消耗一个输入，
 
-00:08:02,849 --> 00:08:07,619
-takes an input and creates a new output
-
-00:08:08,060 --> 00:08:10,110
-what we do then we'll send that
+00:08:02,849 --> 00:08:10,110
+并创建一个新的输出。
 
 00:08:10,110 --> 00:08:12,300
-transaction into the Bitcoin network and
+然后，我们将这笔交易发送到比特币网络中，
 
 00:08:12,300 --> 00:08:15,509
-hopefully it'll get mind onto the
+希望它能被挖掘到区块链上的一个区块中。
 
 00:08:15,509 --> 00:08:17,190
-blockchain in a block so imagine this is
+假设这是一个新的交易区块，
 
-00:08:17,190 --> 00:08:19,169
-a new block of transactions this is our
-
-00:08:19,169 --> 00:08:20,910
-transaction that got mind onto the pop
+00:08:17,190 --> 00:08:20,910
+这是我们的交易被挖掘到区块链上的情况。
 
 00:08:20,910 --> 00:08:23,400
-chain and if we'd sort of visualize what
+如果我们将刚刚发生的事情可视化，
 
 00:08:23,400 --> 00:08:28,139
-just happened this output we spent so
+我们花费了这个输出，
 
 00:08:28,139 --> 00:08:29,699
-I've graded out it can't be spent again
+所以我将其灰色化，
 
 00:08:29,699 --> 00:08:31,470
-and in this new block
+它不能再被花费了。
 
 00:08:31,470 --> 00:08:35,250
-thanks to my transaction I've created
+在这个新的区块中，
 
 00:08:35,250 --> 00:08:37,380
-this new output this new output that
+由于我的交易，
 
 00:08:37,380 --> 00:08:41,070
-belongs to this person here so that's
+我创建了这个新的输出，
 
 00:08:41,070 --> 00:08:42,750
-how transactions work on a very basic
+这个新的输出属于这个人。
 
 00:08:42,750 --> 00:08:49,470
-level in the last example I sent an
+所以这就是交易在非常基本的层面上是如何工作的。
 
 00:08:49,470 --> 00:08:51,420
-entire batch a whole batch of bitcoins
+在最后一个例子中，
 
 00:08:51,420 --> 00:08:54,300
-and cry spent one a whole batch and
+我发送了一个整批的比特币，
 
 00:08:54,300 --> 00:08:57,060
-create it and created ten bitcoins as
+我花费了一个整批的比特币，
 
 00:08:57,060 --> 00:08:59,490
-the amount I'm sending but you don't
+并创建了十个比特币作为我要发送的金额。
 
 00:08:59,490 --> 00:09:02,250
-actually have to use but what it sorry
+但是你实际上并不需要使用整批的比特币，
 
 00:09:02,250 --> 00:09:04,920
-what if you want to send less than ten
+如果你想发送的比特币少于十个，
 
 00:09:04,920 --> 00:09:06,839
-bitcoins so you have this batch ten
+那么你可以这样做，
 
 00:09:06,839 --> 00:09:08,820
-wonder sound less well you can do that
+你可以创建一个输出，
 
 00:09:08,820 --> 00:09:11,459
-you create an output that sends you know
+你创建一个输出，
 
 00:09:11,459 --> 00:09:14,580
-a 10-8 to this person and but there's
+向某人发送10-8，
 
 00:09:14,580 --> 00:09:17,339
-obviously two leftover so what you do is
+但显然还剩下两个，所以你会创建另一批比特币作为找零。
 
 00:09:17,339 --> 00:09:19,650
-you will create another batch of
+所以你会创建另一批比特币作为找零。
 
 00:09:19,650 --> 00:09:24,570
-bitcoins and as the change so we've
+我们已经从这里取出了输入，
 
 00:09:24,570 --> 00:09:27,779
-taken this input here created an eight
+创建了一个8的输出，
 
 00:09:27,779 --> 00:09:30,089
-output from it this gets sent to this
+这个输出被发送给这个人，
 
 00:09:30,089 --> 00:09:32,130
-person and then we'll take care of our
+然后我们会处理我们自己的找零，
 
 00:09:32,130 --> 00:09:34,350
-own change and we all lock that to an
+并将其锁定到我们自己的地址上。
 
 00:09:34,350 --> 00:09:37,860
 address that we own so that's how you
