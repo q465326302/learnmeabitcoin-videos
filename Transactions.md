@@ -498,103 +498,91 @@
 并将其锁定到我们自己的地址上。
 
 00:09:34,350 --> 00:09:37,860
-address that we own so that's how you
+这就是你如何处理找零，
 
 00:09:37,860 --> 00:09:39,959
-take care of change you basically take
+当你进行交易时，
 
-00:09:39,959 --> 00:09:41,070
-care of your own change when you make a
-
-00:09:41,070 --> 00:09:47,850
-transaction up until now I've just been
+00:09:39,959 --> 00:09:47,850
+你基本上是自己处理自己的找零。
 
 00:09:47,850 --> 00:09:49,770
-using whole round numbers of bitcoins
+到目前为止，
 
 00:09:49,770 --> 00:09:51,990
-but you can actually break bitcoins down
+我一直在使用整个比特币的整数，
 
 00:09:51,990 --> 00:09:55,380
-into very small numbers so for example I
+但你实际上可以将比特币分解成非常小的数字。
 
 00:09:55,380 --> 00:09:57,360
-could send them very small amounts and
+例如，
 
 00:09:57,360 --> 00:09:59,190
-send myself the rest in change this is
+我可以发送非常小的金额，
 
 00:09:59,190 --> 00:10:01,290
-perfectly fine there's no you know real
+并将剩余的部分作为找零发送给自己。
 
 00:10:01,290 --> 00:10:05,130
-restrictions on odds no restrictions on
+这是完全可以的，
 
 00:10:05,130 --> 00:10:08,370
-breaking down the bitcoins this is the
+没有任何真正的限制，
 
 00:10:08,370 --> 00:10:11,459
-smallest unit of the currency is called
+没有关于分解比特币的限制。
 
 00:10:11,459 --> 00:10:14,010
-when Satoshi and that is eight decimal
+这种货币的最小单位被称为Satoshi，
 
 00:10:14,010 --> 00:10:17,040
-places so this is how far you can break
+它有八个小数位。
 
 00:10:17,040 --> 00:10:18,110
-down a Bitcoin
+这就是你可以将比特币分解的程度，
 
 00:10:18,110 --> 00:10:20,060
-and can't break it down any further than
+不能再进一步分解了。
 
 00:10:20,060 --> 00:10:22,090
-that
+同样，
 
 00:10:23,500 --> 00:10:27,350
-similarly say you have this batch of 10
+假设你有这批10个比特币，
 
 00:10:27,350 --> 00:10:29,570
-bitcoins here but you want to send 30
+但你想向某人发送30个比特币。
 
 00:10:29,570 --> 00:10:33,250
-bitcoins to someone what you can do
+你可以做的是，
 
 00:10:33,250 --> 00:10:35,810
-instead of just creating two separate
+如果你拥有两个或多个属于你的输出，
 
 00:10:35,810 --> 00:10:42,050
-transactions if you own two well various
+你可以将它们一起收集作为输入，
 
 00:10:42,050 --> 00:10:45,260
-outputs that belong to you you can
+以创建这个更大的输出，
 
 00:10:45,260 --> 00:10:47,120
-collect them together as long as you can
+而不是创建两个单独的交易。
 
-00:10:47,120 --> 00:10:48,200
-unlock them you can collect them
+00:10:47,120 --> 00:10:54,620
+只要你能解锁它们，
 
-00:10:48,200 --> 00:10:51,770
-together as inputs to create this much
-
-00:10:51,770 --> 00:10:54,620
-bigger output so there's no limit to how
-
-00:10:54,620 --> 00:10:57,020
-many inputs you can select from the
-
-00:10:57,020 --> 00:10:59,450
-blockchain in your transaction as long
+00:10:54,620 --> 00:10:59,450
+你就可以从区块链中选择任意数量的输入作为你的交易。
 
 00:10:59,450 --> 00:11:03,320
-as you can unlock them that's fine and
+再次，这是10和25，
 
 00:11:03,320 --> 00:11:05,450
-again this is ten and twenty five
+我向这个人发送了30，
 
 00:11:05,450 --> 00:11:08,330
-I sent thirty to this person so there's
+所以在这个交易中显然还剩下5。
 
 00:11:08,330 --> 00:11:09,770
 obviously five left over in this
