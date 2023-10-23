@@ -249,85 +249,67 @@
 你会选择一批比特币。
 
 00:05:16,260 --> 00:05:17,850
-will put some reference code in here to
+我在这里放一些参考代码。
 
 00:05:17,850 --> 00:05:19,530
-select the batch of bitcoins you want to
+选择你想要发送的比特币批次，
 
-00:05:19,530 --> 00:05:24,570
-send then in the second part or the
-
-00:05:24,570 --> 00:05:26,130
-second half of this first part of the
-
-00:05:26,130 --> 00:05:29,220
-transaction and you need to be able to
+00:05:19,530 --> 00:05:29,220
+这第一部分的第二半部分，
 
 00:05:29,220 --> 00:05:33,300
-unlock this batch of bitcoins so what
+你需要能够解锁这批比特币，
 
-00:05:33,300 --> 00:05:35,640
-you'll do is you'll put some unlocking
+00:05:33,300 --> 00:05:38,760
+你要做的是输入一些解锁代码或者使用你的私钥
 
-00:05:35,640 --> 00:05:38,760
-code or use your private key to be able
-
-00:05:38,760 --> 00:05:40,890
-to prove that you can unlock this
-
-00:05:40,890 --> 00:05:44,940
-particular lock like so so that's the
+00:05:38,760 --> 00:05:44,940
+来证明你可以解锁这个比特币批次，
 
 00:05:44,940 --> 00:05:47,010
-first half done just select a batch of
+前一半完成后，
 
 00:05:47,010 --> 00:05:49,110
-bitcoins and unlock them and then the
+你只需要选择一批比特币并解锁它们，
 
-00:05:49,110 --> 00:05:51,960
-second half of the transaction you just
-
-00:05:51,960 --> 00:05:54,630
-create a new batch of bitcoins and you
+00:05:49,110 --> 00:05:54,630
+然后后一半的交易你只需创建一批新的比特币，
 
 00:05:54,630 --> 00:05:57,240
-will put in the second half you'll put a
+并在第二部分中为其上锁。
 
 00:05:57,240 --> 00:05:59,340
-new lock on it so this was the original
+这是原来的比特币批次，
 
 00:05:59,340 --> 00:06:01,800
-the original batch of bitcoins that was
+它被锁定给我们，
 
 00:06:01,800 --> 00:06:04,800
-locked to us and in this transaction
+在这个交易中，
 
 00:06:04,800 --> 00:06:07,440
-we've taken that batch opened it up
+我们打开了这个批次，
 
 00:06:07,440 --> 00:06:10,530
-created a new batch from it and put a
+从中创建了一个新的批次，
 
-00:06:10,530 --> 00:06:11,529
-new lock on it
-
-00:06:11,529 --> 00:06:14,649
-and this lock is locked to this person's
+00:06:10,530 --> 00:06:14,649
+并在上面放了一个新的锁。
 
 00:06:14,649 --> 00:06:17,349
-say address which is like an account
+这个锁是锁定给这个人的地址，就像一个账号。
 
 00:06:17,349 --> 00:06:21,519
-number and so that is a very simple
+所以这是一个非常简单的交易，
 
 00:06:21,519 --> 00:06:23,979
-transaction just select some bitcoins
+只是选择一些比特币
 
 00:06:23,979 --> 00:06:26,709
-unlock them quit a new batch and put a
+解锁它们，创建一个新的批次，
 
 00:06:26,709 --> 00:06:29,109
-new lock on them and they are locked to
+上一个新的锁，并将它们锁定给这个人。
 
 00:06:29,109 --> 00:06:34,299
 this person here so when you think of
