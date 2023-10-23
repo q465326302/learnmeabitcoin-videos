@@ -741,217 +741,154 @@
 你只需从区块链图中选择任何可用的输出，
 
 00:14:02,330 --> 00:14:04,610
-that you can spend from this graph in
+然后从它们中创建新的输出。
 
 00:14:04,610 --> 00:14:07,850
-the blockchain and then you create new
+一对一的线，
 
 00:14:07,850 --> 00:14:12,290
-outputs from them so a single line a
+一对一的交易，
 
 00:14:12,290 --> 00:14:15,110
-single transaction will have this effect
+将对比特币交易图产生这样的影响。
 
 00:14:15,110 --> 00:14:20,810
-on the Bitcoin transaction graph like so
+像这样的比特币交易图
 
-00:14:20,810 --> 00:14:23,410
-so this is probably the best way to
-
-00:14:23,410 --> 00:14:25,580
-visualize the blockchain
+00:14:20,810 --> 00:14:25,580
+所以，这可能是最好的方式来可视化区块链。
 
 00:14:25,580 --> 00:14:26,990
-I mean you could think of it as having
+我意思是，你可以把它想象成只有单个的输出，
 
-00:14:26,990 --> 00:14:30,470
-just individual outputs but they are
-
-00:14:30,470 --> 00:14:32,300
-actually connected through series of
+00:14:26,990 --> 00:14:32,300
+但实际上它们是通过一系列的交易相互连接的。
 
 00:14:32,300 --> 00:14:35,060
-transactions so the blockchain looks
+区块链看起来就像这样，
 
-00:14:35,060 --> 00:14:36,710
-like this but obviously on a much much
-
-00:14:36,710 --> 00:14:39,220
-bigger scale
+00:14:35,060 --> 00:14:39,220
+但显然规模要大得多。
 
 00:14:40,910 --> 00:14:43,800
-these orange Oprah's here
+这些橙色的输出还没有被花费
 
 00:14:43,800 --> 00:14:46,079
-they haven't been spent yet so they're
+所以它们被称为未花费的交易输出，
 
 00:14:46,079 --> 00:14:49,230
-called unspent transaction outputs or
+或者被称为UTXO。
 
-00:14:49,230 --> 00:14:52,740
-they are referred to as Duty exo's so if
-
-00:14:52,740 --> 00:14:54,839
-you ever see the term UT exo's it's
+00:14:49,230 --> 00:14:54,839
+所以，如果你看到UTXO这个术语，
 
 00:14:54,839 --> 00:14:57,170
-basically referring to these unspent
+它基本上是指这些未花费的比特币。
 
 00:14:57,170 --> 00:15:00,120
-bitcoins and these are important because
+这些是重要的，
 
-00:15:00,120 --> 00:15:04,470
-these tend to get held in memory by your
-
-00:15:04,470 --> 00:15:07,199
-Bitcoin client so that there can be
+00:15:00,120 --> 00:15:07,199
+因为它们通常被你的比特币客户端保存在内存中，
 
 00:15:07,199 --> 00:15:16,019
-accessed more quickly coinbase so where
+以便可以更快地访问。
 
 00:15:16,019 --> 00:15:19,709
-do these original obviously with these
+到目前为止，
 
 00:15:19,709 --> 00:15:21,300
-transactions so far I've been referring
+显然我一直在引用这些原始的交易。
 
 00:15:21,300 --> 00:15:23,850
-to outputs that are already been made
+那么最初的比特币是从哪里来的呢？
 
-00:15:23,850 --> 00:15:26,279
-but where do these first ever bitcoins
+00:15:23,850 --> 00:15:31,829
+每当一个区块被挖出并添加到区块链上，
 
-00:15:26,279 --> 00:15:31,829
-come from well with every block that
-
-00:15:31,829 --> 00:15:34,500
-gets mind onto the blockchain each block
-
-00:15:34,500 --> 00:15:37,680
-makes available a brand-new batch of
-
-00:15:37,680 --> 00:15:39,510
-bitcoins that a minor consent to
+00:15:31,829 --> 00:15:39,510
+每个区块都会产生一批新的比特币，
 
 00:15:39,510 --> 00:15:41,399
-themselves and this is called the block
+这就是所谓的区块奖励。
 
 00:15:41,399 --> 00:15:44,730
-reward so when a minor mines a block
+当矿工挖出一个区块时，
 
 00:15:44,730 --> 00:15:48,110
-they will send the block reward or
+他们会从区块奖励中创建一个输出，
 
 00:15:48,110 --> 00:15:50,399
-create an output from the block reward
+并将其锁定到他们自己的地址上。
 
-00:15:50,399 --> 00:15:52,949
-and lock it to an address that they own
+00:15:50,399 --> 00:15:56,760
+他们是如何做到这一点的呢？
 
-00:15:52,949 --> 00:15:56,760
-and the way that they do this is in
-
-00:15:56,760 --> 00:15:58,500
-every single block of transactions a
-
-00:15:58,500 --> 00:16:00,269
-miner will construct a block of
+00:15:56,760 --> 00:16:00,269
+在每一个区块的交易中，
 
 00:16:00,269 --> 00:16:02,579
-transactions but the very first
+矿工会构建一个交易区块，
 
 00:16:02,579 --> 00:16:04,170
-transaction at the top of a block and
+但是在区块的顶部，
 
 00:16:04,170 --> 00:16:06,480
-that is a special transaction called the
+有一个特殊的交易，
 
 00:16:06,480 --> 00:16:08,339
-coinbase transaction and that is
+这就是所谓的coinbase交易，
 
 00:16:08,339 --> 00:16:11,160
-reserved for a miner and not and it it
+这是矿工的专属交易。
 
 00:16:11,160 --> 00:16:12,480
-is through this coinbase transaction
+通过这个coinbase交易，
 
 00:16:12,480 --> 00:16:14,760
-that a miner can collect the block
+矿工可以收集区块奖励。
 
 00:16:14,760 --> 00:16:18,000
-reward so basically like like I said
+就像我说的，
 
 00:16:18,000 --> 00:16:19,610
-with every new block that gets added a
+每当一个新的区块被添加时，
 
-00:16:19,610 --> 00:16:22,980
-miner will essentially create new
-
-00:16:22,980 --> 00:16:25,170
-bitcoins that did not exist before like
+00:16:19,610 --> 00:16:25,170
+矿工就会创建一些之前不存在的新比特币。
 
 00:16:25,170 --> 00:16:27,350
-so
+所以，
 
-00:16:27,690 --> 00:16:32,850
-does that make sense yes so is it
-
-00:16:32,850 --> 00:16:36,030
-correct to say that you know the Bitcoin
+00:16:27,690 --> 00:16:36,030
+可以说比特币交易树的第一层只包含coinbase交易吗？
 
 00:16:36,030 --> 00:16:40,800
-transaction tree the first level of the
+是的，
 
-00:16:40,800 --> 00:16:44,270
-Bitcoin transaction tree consists of
+00:16:40,800 --> 00:16:47,340
+coinbase交易就是根。
 
-00:16:44,270 --> 00:16:47,340
-only coinbase transaction yes that that
+00:16:47,340 --> 00:17:01,500
+每一个今天被花费的比特币都可以追溯到某个coinbase交易。
 
-00:16:47,340 --> 00:16:51,450
-would be the route yeah yeah the first
+00:17:01,500 --> 00:17:06,540
+所以如果你在这个图表上看到，
 
-00:16:51,450 --> 00:16:55,650
-level ups like like every Bitcoin that's
+00:17:06,540 --> 00:17:14,490
+所有这些交易都有一个源头，
 
-00:16:55,650 --> 00:16:59,430
-being spent today has its source to some
-
-00:16:59,430 --> 00:17:01,500
-coinbase transaction yes yes that's
-
-00:17:01,500 --> 00:17:03,030
-right so if you saw it in this graph on
-
-00:17:03,030 --> 00:17:04,829
-its site so this was at the bottom and
-
-00:17:04,829 --> 00:17:06,540
-all these transactions you're making
-
-00:17:06,540 --> 00:17:08,700
-they have a route going down to these
-
-00:17:08,700 --> 00:17:14,490
-source so you know that not all outputs
-
-00:17:14,490 --> 00:17:16,020
-are necessarily connected to each other
-
-00:17:16,020 --> 00:17:18,569
-but they will always be connected to a
+00:17:14,490 --> 00:17:18,569
+这就是区块奖励。
 
 00:17:18,569 --> 00:17:24,810
-source block reward again yes finally in
+最后，
 
 00:17:24,810 --> 00:17:27,200
-this first sort of basic introduction
+在这个初步的介绍中，
 
-00:17:27,200 --> 00:17:29,580
-you probably might be interested in
-
-00:17:29,580 --> 00:17:32,010
-these transaction fees how they work so
+00:17:27,200 --> 00:17:32,010
+你可能对交易费用如何工作感兴趣。
 
 00:17:32,010 --> 00:17:36,660
 I'll cover that now when you make a
