@@ -1,354 +1,252 @@
 
-00:00:00,230 --> 00:00:03,449
-在这节课中，我将介绍和讲解
+00:00:00,230 --> 00:00:06,210
+所以在这节课中，我将介绍比特币交易，它们是如何基本的工作。
 
-00:00:03,449 --> 00:00:06,210
-比特币交易，涵盖了它们基本的工作原理
-
-00:00:06,210 --> 00:00:09,480
-所以，希望在这个演示结束时，你能理解
-
-00:00:09,480 --> 00:00:11,580
-交易是如何进行的，它们看起来是什么样的，
+00:00:06,210 --> 00:00:11,580
+所以，希望在演讲结束后，你能理解交易是如何进行的，
 
 00:00:11,580 --> 00:00:14,219
-以及如何构建你自己的交易。所以
+它们看起来是什么样的，
 
 00:00:14,219 --> 00:00:18,510
-所以我把这个演示分成了三个部分，就像
+以及如何构建你自己的交易。
 
 00:00:18,510 --> 00:00:20,130
-上次一样，我将从比特币交易的基础开始，
+所以我像上次一样将这个演讲分成了三个部分，
 
 00:00:20,130 --> 00:00:23,519
-我将解释它们看起来是什么样的，数据代表的是什么，
+我将从比特币交易的基础开始，
 
-00:00:23,519 --> 00:00:24,930
-我将介绍你需要知道的关于交易结构和工作原理的所有内容。
-
-00:00:24,930 --> 00:00:26,760
-在那之后，我将转向数据，
-
-00:00:26,760 --> 00:00:27,359
-所以，我将不仅给你一个
+00:00:23,519 --> 00:00:27,359
+我将解释它们看起来是什么样的，数据是如何表示的，等等。
 
 00:00:27,359 --> 00:00:28,920
-basically what they look like what the
+我将叙述你需要知道的关于交易结构和它们如何工作的所有内容。
 
 00:00:28,920 --> 00:00:33,300
-data is representing like so and I'll
+在那之后，我将介绍数据。
 
-00:00:33,300 --> 00:00:34,500
-cover everything you need to know about
-
-00:00:34,500 --> 00:00:37,440
-the structure of transactions and how
+00:00:33,300 --> 00:00:37,440
+不仅仅是给你一个交易实际做什么的视觉表示，
 
 00:00:37,440 --> 00:00:40,379
-they work after that I'll move on to the
+我还将展示它们的数据。
 
 00:00:40,379 --> 00:00:43,680
-data so instead of just giving you a
+所以，而不仅仅是给你一个交易实际做什么的视觉表示，
 
 00:00:43,680 --> 00:00:46,340
-visual representation of what the
+我将展示它们的数据。
 
-00:00:46,340 --> 00:00:48,510
-transactions actually doing I'll show
+00:00:46,340 --> 00:00:50,100
+如果你们要看实际的，我将向你们展示数据是如何描述它的以及它是如何工作的。
 
-00:00:48,510 --> 00:00:50,100
-you what the data looks like
+00:00:50,100--> 00:00:55,289
+等我讲完之后你就会知道它们是怎么工作的，数据是什么样子的。
 
 00:00:50,100 --> 00:00:52,020
-so if you were to look inside an actual
+所以，如果你看一下实际的交易，我会向你展示数据是如何
 
-00:00:52,020 --> 00:00:55,289
-transaction I'll show you how the data
-
-00:00:55,289 --> 00:00:58,590
-describes that and how it works and
+00:00:52,020 --> 00:00:58,590
+我会向你展示数据是如何描述和工作的，
 
 00:00:58,590 --> 00:01:01,680
-after I've covered you know how they
+在我解释了它们的工作原理和数据外观后，
 
 00:01:01,680 --> 00:01:04,229
-work and what the data looks like I'll
+我会开始做一些例子，
 
 00:01:04,229 --> 00:01:07,049
-start doing some examples so I'll
+所以我会从头开始构建一个交易，
 
-00:01:07,049 --> 00:01:09,420
-construct a transaction from scratch
-
-00:01:09,420 --> 00:01:11,159
-just to show you how you can create your
+00:01:07,049 --> 00:01:11,159
+只是为了向你展示如何创建你自己的比特币交易，
 
 00:01:11,159 --> 00:01:16,799
-own Bitcoin transactions like that so
+所以，是的，我现在开始第一部分，
 
-00:01:16,799 --> 00:01:18,600
-yeah so I'll start now the first part
-
-00:01:18,600 --> 00:01:23,490
-with the basics of how Bitcoin
-
-00:01:23,490 --> 00:01:28,020
-transactions work so carrying on from
+00:01:16,799 --> 00:01:28,020
+所以，我现在开始讲解比特币交易的基础知识，接着上面的内容。
 
 00:01:28,020 --> 00:01:30,840
-last time in the last video I covered
+如果你还记得，
 
 00:01:30,840 --> 00:01:34,350
-how mining works so if you remember each
+这些计算机中的每一台都代表了网络上的一个比特币节点，
 
 00:01:34,350 --> 00:01:36,090
-of these computers represents a Bitcoin
+这就是整个网络，它们共享的是这个叫做区块链的文件。
 
 00:01:36,090 --> 00:01:37,920
-node on the network and this is the
+所以，当你想进行交易，
 
 00:01:37,920 --> 00:01:41,210
-entire network and they are sharing this
+给某人发送一些钱时，
 
-00:01:41,210 --> 00:01:45,630
-file here called the blockchain so what
+00:01:41,210 --> 00:01:46,799
+你需要做的就是创建一行数据。
 
-00:01:45,630 --> 00:01:46,799
-happens is when you wanna make a
+00:01:46,799 --> 00:01:57,250
+这个小绿线代表了一个比特币交易，它只是一堆数据。
 
-00:01:46,799 --> 00:01:51,400
-transaction and send someone some money
+00:01:57,250 --> 00:02:00,280
+你可以将这个数据插入到网络上的任何节点，
 
-00:01:51,400 --> 00:01:55,300
-what you do is you just create a single
+00:02:00,280 --> 00:02:04,000
+然后它们会将其存储在它们的内存池中，
 
-00:01:55,300 --> 00:01:57,250
-line of data and so this little green
-
-00:01:57,250 --> 00:01:59,020
-line here represents a Bitcoin
-
-00:01:59,020 --> 00:02:00,280
-transaction which is just a bunch of
-
-00:02:00,280 --> 00:02:03,010
-data and you'll insert that into any
-
-00:02:03,010 --> 00:02:04,000
-node on the network
-
-00:02:04,000 --> 00:02:06,370
-and then they will store it in their
-
-00:02:06,370 --> 00:02:09,399
-memory pool and then they'll pass it on
+00:02:04,000 --> 00:02:09,399
+并将其传递给它们连接的节点，
 
 00:02:09,399 --> 00:02:12,340
-to the nodes they're connected to and so
+如此反复，
 
-00:02:12,340 --> 00:02:14,500
-on and so on until everyone's got a copy
+00:02:12,340 --> 00:02:16,450
+直到每个人都在他们的内存池中拷贝了这个交易。
 
-00:02:14,500 --> 00:02:16,450
-of that transaction in their memory pool
-
-00:02:16,450 --> 00:02:20,670
-and then all of these nodes then will
-
-00:02:20,670 --> 00:02:23,650
-compete to try mine the transactions
-
-00:02:23,650 --> 00:02:25,420
-from their memory pool onto this file
-
-00:02:25,420 --> 00:02:27,370
-called the blockchain so let's say this
+00:02:16,450 --> 00:02:27,370
+然后，所有这些节点将竞争尝试从他们的内存池中挖掘交易到这个叫做区块链的文件。
 
 00:02:27,370 --> 00:02:29,709
-one does it and after they've done that
+假设这个节点成功了，
 
 00:02:29,709 --> 00:02:32,260
-they will pass on that block that they
+挖掘完成后，
 
 00:02:32,260 --> 00:02:33,550
-have mined to the knows they're
+它会将挖掘到的区块传递给它连接的其他节点，
 
 00:02:33,550 --> 00:02:35,500
-connected to they will add it to their
+他们会将其添加到他们的区块链中，
 
 00:02:35,500 --> 00:02:37,800
-blockchain and so on and so on until
+如此反复过程，
 
 00:02:37,800 --> 00:02:41,110
-everyone's got a copy of the latest
+直到所有节点都添加了这个区块。
 
 00:02:41,110 --> 00:02:44,890
-block to be added on to their file when
+当这个区块被添加到他们的文件时，
 
 00:02:44,890 --> 00:02:47,350
-that's done then this person can look at
+可以查看这个区块链并看到其中的交易，
 
 00:02:47,350 --> 00:02:48,820
-this blockchain and see that the
+因为这个交易现在是区块链的一部分，
 
-00:02:48,820 --> 00:02:51,010
-transactions in there and because that
-
-00:02:51,010 --> 00:02:52,650
-transaction is now part the blockchain
-
-00:02:52,650 --> 00:02:55,600
-the ownership of this bot this Bitcoin
+00:02:48,820 --> 00:02:55,600
+这个比特币的所有权已经从这个人转移到了这个人。
 
 00:02:55,600 --> 00:02:58,090
-has change from this person to this
+所以今天我要讲的是，
 
 00:02:58,090 --> 00:03:03,370
-person so today I'm going to cover how
+这个过程是如何工作的，
 
-00:03:03,370 --> 00:03:05,590
-does this work how can you create a
+00:03:03,370 --> 00:03:08,440
+你如何创建这样一行数据，
 
-00:03:05,590 --> 00:03:08,440
-single line of data like this and how
-
-00:03:08,440 --> 00:03:09,430
-does that represent
-
-00:03:09,430 --> 00:03:12,760
-the change of ownership of bitcoins so
-
-00:03:12,760 --> 00:03:16,209
-I'll care for that now so the basics of
+00:03:08,440 --> 00:03:16,209
+以及这如何表示比特币所有权的转移。
 
 00:03:16,209 --> 00:03:19,870
-Bitcoin transactions let's see this
+让我们看看比特币交易的基础。
 
 00:03:19,870 --> 00:03:21,750
-green line here represents the data and
+这条绿线代表了数据，
 
-00:03:21,750 --> 00:03:24,190
-it's gonna send or change the ownership
-
-00:03:24,190 --> 00:03:28,600
-of this Bitcoin from me to you so if I
+00:03:21,750 --> 00:03:28,600
+它将把这个比特币的所有权从我转移到你。
 
 00:03:28,600 --> 00:03:30,940
-blow that up this green line here still
+如果我放大这个绿线，
 
 00:03:30,940 --> 00:03:32,470
-represents the transaction data I'm not
+它依然代表交易数据。
 
 00:03:32,470 --> 00:03:34,000
-going to show you the data yet this is
+我还不打算向你展示数据，
 
-00:03:34,000 --> 00:03:35,110
-just going to be a simple representation
+00:03:34,000 --> 00:03:41,350
+这只是实际数据的简单表示。
 
 00:03:35,110 --> 00:03:41,350
-of the actual data first of all this is
+首先，这是区块链，
 
-00:03:41,350 --> 00:03:42,489
-the blockchain let's say this represents
-
-00:03:42,489 --> 00:03:47,950
-the blockchain carrying on from the last
+00:03:41,350 --> 00:03:47,950
+假设这代表着从上次的延续下来的区块链。
 
 00:03:47,950 --> 00:03:50,290
-presentation we know that it's just a
+从上次的演示中我们知道，
 
-00:03:50,290 --> 00:03:51,700
-bunch of blocks individual blocks
+00:03:50,290 --> 00:03:54,040
+它只是一堆包含交易的区块。
 
-00:03:51,700 --> 00:03:54,040
-containing transactions so the
-
-00:03:54,040 --> 00:03:55,900
-blockchain is just one big file of
-
-00:03:55,900 --> 00:03:58,560
-transaction data but
-
-00:03:58,560 --> 00:04:00,150
-because we're looking at transactions
+00:03:54,040 --> 00:04:00,150
+所以区块链就是一个大型的交易数据文件。
 
 00:04:00,150 --> 00:04:05,069
-today a good way to visualize what that
+我们今天要看的是交易，
 
-00:04:05,069 --> 00:04:07,530
-transaction data represents in the
+00:04:05,069 --> 00:04:10,530
+是一种很好的方式来可视化区块链中的交易数据，
 
 00:04:07,530 --> 00:04:10,530
-blockchain is a bunch of different
+区块链是一堆不同批次的比特币，所以每一批都是这样。
 
 00:04:10,530 --> 00:04:13,230
-batches of bitcoins so each of these
+所以每一批都是这样。
 
-00:04:13,230 --> 00:04:15,440
-little orange boxes here represents a
-
-00:04:15,440 --> 00:04:19,829
-individual batch of bitcoins and each of
-
-00:04:19,829 --> 00:04:21,570
-those batch of bitcoins has a lock on
+00:04:13,230 --> 00:04:21,570
+所以这里的每一个小橙色的盒子代表一个独立的比特币批次，
 
 00:04:21,570 --> 00:04:26,040
-them and so that's how people can own
+每一个比特币批次都有一个锁在上面，
 
-00:04:26,040 --> 00:04:28,889
-bitcoins because a lock is placed on
-
-00:04:28,889 --> 00:04:31,530
-them so that only the people who can
+00:04:26,040 --> 00:04:31,530
+这就是人们可以安全拥有比特币的原因，
 
 00:04:31,530 --> 00:04:33,270
-unlock them will be able to spend them
+因为只有能解锁它们的人才能够花费它们，
 
 00:04:33,270 --> 00:04:35,550
-and send them to someone else so
+把它们发送给别人。
 
 00:04:35,550 --> 00:04:39,030
-basically the blockchain if you saw
+所以基本上，你可以想象一下区块链像什么，
 
 00:04:39,030 --> 00:04:41,520
-visualize what it's representing is a
+就是一堆像银行里的那样的锁箱，
 
-00:04:41,520 --> 00:04:45,780
-bunch of lock boxes like in a bank like
-
-00:04:45,780 --> 00:04:49,440
-this all different sizes of bitcoins so
+00:04:41,520 --> 00:04:49,440
+里面装的都是不同数量的比特币。
 
 00:04:49,440 --> 00:04:52,770
-if I move out to the site now we're
+现在我要构建一个交易，
 
 00:04:52,770 --> 00:04:54,169
-going to construct the transaction and
+把比特币从我这里转移到你那里。
 
 00:04:54,169 --> 00:04:59,400
-move bitcoins from me to you so if I
+如果我要构建一个交易，
 
 00:04:59,400 --> 00:05:00,840
-were to construct a transaction in the
+在数据的第一部分，
 
 00:05:00,840 --> 00:05:02,880
-first part of the data so this is a data
+我们会从区块链中选择一批比特币，
 
-00:05:02,880 --> 00:05:05,400
-what we do is we select a batch of
-
-00:05:05,400 --> 00:05:08,580
-bitcoins from the blockchain each of
+00:05:02,880 --> 00:05:08,580
+每一批比特币都有它们自己的唯一参考编码，
 
 00:05:08,580 --> 00:05:10,380
-these batches of bitcoins have their own
+所以你可以选择它们。
 
 00:05:10,380 --> 00:05:12,720
-unique reference number so you can
+所以在这个第一部分，
 
 00:05:12,720 --> 00:05:16,260
-select them so in this first part you
+你会选择一批比特币。
 
 00:05:16,260 --> 00:05:17,850
 will put some reference code in here to
@@ -2999,1935 +2897,1451 @@ input
 00:45:50,299 --> 00:45:54,270
 so let's say we are spending this input
 
-1001
 00:45:54,270 --> 00:45:58,890
 here and the place holder is the and is
 
-1002
 00:45:58,890 --> 00:46:05,789
 the code inside this lock like so it's a
 
-1003
 00:46:05,789 --> 00:46:08,849
 bit confusing I don't know
 
-1004
 00:46:08,849 --> 00:46:10,950
 I don't sure why yeah I don't know why
 
-1005
 00:46:10,950 --> 00:46:12,569
 it has to be the code inside lock I'm
 
-1006
 00:46:12,569 --> 00:46:14,670
 sure it could be anything else but they
 
-1007
 00:46:14,670 --> 00:46:16,380
 just needs to if anything is a bit
 
-1008
 00:46:16,380 --> 00:46:17,520
 awkward to be honest it doesn't make
 
-1009
 00:46:17,520 --> 00:46:19,230
 creating transactions a little bit more
 
-1010
 00:46:19,230 --> 00:46:21,690
 awkward having to go back and get the
 
-1011
 00:46:21,690 --> 00:46:24,329
 actual locking code for this input and
 
-1012
 00:46:24,329 --> 00:46:27,030
 use that as a placeholder but that's
 
-1013
 00:46:27,030 --> 00:46:32,430
 just the way it works and it's rehash
 
-1014
 00:46:32,430 --> 00:46:34,349
 this basically the whole thing young
 
-1015
 00:46:34,349 --> 00:46:38,579
 black and that's what we yes sign that's
 
-1016
 00:46:38,579 --> 00:46:40,200
 what we sign yes I simplified it by
 
-1017
 00:46:40,200 --> 00:46:41,460
 saying this you know you just put the
 
-1018
 00:46:41,460 --> 00:46:44,369
 transaction data into the elliptic curve
 
-1019
 00:46:44,369 --> 00:46:46,680
 which is kind of true but to be more
 
-1020
 00:46:46,680 --> 00:46:48,690
 technical and correct you actually
 
-1021
 00:46:48,690 --> 00:46:51,180
 append a sick hash type then you hash it
 
-1022
 00:46:51,180 --> 00:46:53,420
 and the last what goes into this
 
-1023
 00:46:53,420 --> 00:46:58,099
 elliptic curve mathematics and you can
 
-1024
 00:46:58,609 --> 00:47:01,170
 usually find you can usually find a
 
-1025
 00:47:01,170 --> 00:47:05,940
 library for for it's called ECDSA like
 
-1026
 00:47:05,940 --> 00:47:08,579
 elliptic curve Dignitas signature
 
-1027
 00:47:08,579 --> 00:47:11,160
 algorithm and this usually alike we can
 
-1028
 00:47:11,160 --> 00:47:16,529
 use to do this signing and one more
 
-1029
 00:47:16,529 --> 00:47:19,470
 question was that we do we keep doing
 
-1030
 00:47:19,470 --> 00:47:22,170
 this for every output that we are trying
 
-1031
 00:47:22,170 --> 00:47:25,579
 to spend right so for every we repeat
 
-1032
 00:47:25,579 --> 00:47:29,430
 for every input why do is you will yes
 
-1033
 00:47:29,430 --> 00:47:32,609
 like on yeah you basically don't forget
 
-1034
 00:47:32,609 --> 00:47:35,339
 to remove all the existing signatures so
 
-1035
 00:47:35,339 --> 00:47:38,490
 your site one and then for each one you
 
-1036
 00:47:38,490 --> 00:47:40,500
 want to get the blank structure and then
 
-1037
 00:47:40,500 --> 00:47:45,930
 sign that for each individual so we will
 
-1038
 00:47:45,930 --> 00:47:47,819
 then at the end plug in all the
 
-1039
 00:47:47,819 --> 00:47:49,890
 signatures one of the do just shove them
 
-1040
 00:47:49,890 --> 00:47:53,190
 into into this oh yeah okay sorry
 
-1041
 00:47:53,190 --> 00:47:55,319
 in this one I only had one so let's say
 
-1042
 00:47:55,319 --> 00:47:57,329
 we had multiple you know Al this is this
 
-1043
 00:47:57,329 --> 00:48:00,119
 is one then why do then if I had another
 
-1044
 00:48:00,119 --> 00:48:01,470
 input I would just take all this
 
-1045
 00:48:01,470 --> 00:48:02,670
 signature out
 
-1046
 00:48:02,670 --> 00:48:04,290
 and I would just sign the next one I put
 
-1047
 00:48:04,290 --> 00:48:05,430
 the placeholder into the next wouldn't
 
-1048
 00:48:05,430 --> 00:48:07,470
 sign it to get the signature and so on
 
-1049
 00:48:07,470 --> 00:48:09,390
 as the one got it and at the very end
 
-1050
 00:48:09,390 --> 00:48:12,390
 you'll just plug in D and at the end at
 
-1051
 00:48:12,390 --> 00:48:14,280
 the end you just will just shove in all
 
-1052
 00:48:14,280 --> 00:48:16,590
 the script SIG's in the show back in
 
-1053
 00:48:16,590 --> 00:48:21,120
 yeah I got it okay
 
-1054
 00:48:21,120 --> 00:48:23,160
 so just to summarize this was our
 
-1055
 00:48:23,160 --> 00:48:25,350
 transaction we created that signature
 
-1056
 00:48:25,350 --> 00:48:30,660
 we'll put it put it in there so like I
 
-1057
 00:48:30,660 --> 00:48:32,730
 said before a transaction has four major
 
-1058
 00:48:32,730 --> 00:48:35,460
 parts you have the vision you have the
 
-1059
 00:48:35,460 --> 00:48:38,070
 inputs and the input has their own sort
 
-1060
 00:48:38,070 --> 00:48:39,810
 of mini structure thrown sub structure
 
-1061
 00:48:39,810 --> 00:48:41,700
 so it has a track it refers to a
 
-1062
 00:48:41,700 --> 00:48:44,000
 transaction ID then it refers to a
 
-1063
 00:48:44,000 --> 00:48:46,920
 specific output then you have a variable
 
-1064
 00:48:46,920 --> 00:48:48,300
 integer to tell you the size of that
 
-1065
 00:48:48,300 --> 00:48:51,330
 come in script sig and then after that
 
-1066
 00:48:51,330 --> 00:48:54,360
 you have a seeing it with a sequence and
 
-1067
 00:48:54,360 --> 00:48:56,730
 that's an input next step we have
 
-1068
 00:48:56,730 --> 00:48:58,140
 outputs and they have their own
 
-1069
 00:48:58,140 --> 00:49:00,510
 structure again but they're quite simple
 
-1070
 00:49:00,510 --> 00:49:02,250
 they just have a value which is 8 bytes
 
-1071
 00:49:02,250 --> 00:49:04,500
 long then you have a very variable
 
-1072
 00:49:04,500 --> 00:49:06,420
 integer to tell you the size of the
 
-1073
 00:49:06,420 --> 00:49:08,250
 upcoming unlocking code which is called
 
-1074
 00:49:08,250 --> 00:49:11,310
 the script pub key and then finally you
 
-1075
 00:49:11,310 --> 00:49:14,300
 have the lock time and that is a
 
-1076
 00:49:14,300 --> 00:49:17,490
 transaction and they're all the same the
 
-1077
 00:49:17,490 --> 00:49:19,260
 only difference is they have varying
 
-1078
 00:49:19,260 --> 00:49:21,150
 number of inputs varying number of
 
-1079
 00:49:21,150 --> 00:49:24,270
 outputs and they obviously have referred
 
-1080
 00:49:24,270 --> 00:49:26,910
 to different transactions and have
 
-1081
 00:49:26,910 --> 00:49:29,820
 different signatures but you understand
 
-1082
 00:49:29,820 --> 00:49:31,620
 the structure then you understand the
 
-1083
 00:49:31,620 --> 00:49:33,420
 structure of every single Bitcoin
 
-1084
 00:49:33,420 --> 00:49:35,060
 transaction that they could possibly be
 
-1085
 00:49:35,060 --> 00:49:39,570
 except for a seg wit this is like an old
 
-1086
 00:49:39,570 --> 00:49:42,840
 cell transaction you do have segregated
 
-1087
 00:49:42,840 --> 00:49:46,830
 witness now which basically on a very
 
-1088
 00:49:46,830 --> 00:49:49,620
 basic level all it does instead of
 
-1089
 00:49:49,620 --> 00:49:52,860
 having this signature code in the middle
 
-1090
 00:49:52,860 --> 00:49:55,440
 of transactions a base link it basically
 
-1091
 00:49:55,440 --> 00:49:57,240
 gets moved to the end at the end of a
 
-1092
 00:49:57,240 --> 00:49:59,340
 transaction and that's called the
 
-1093
 00:49:59,340 --> 00:50:02,100
 witness so that's why it's called it's
 
-1094
 00:50:02,100 --> 00:50:04,740
 basically like separating the signatures
 
-1095
 00:50:04,740 --> 00:50:07,950
 from the transaction or sometimes a
 
-1096
 00:50:07,950 --> 00:50:10,860
 signature is called a witness and that's
 
-1097
 00:50:10,860 --> 00:50:12,120
 why it's called segregated witness
 
-1098
 00:50:12,120 --> 00:50:14,250
 because it's at segregating the witness
 
-1099
 00:50:14,250 --> 00:50:14,430
 day
 
-1100
 00:50:14,430 --> 00:50:17,369
 two signatures from the structure of the
 
-1101
 00:50:17,369 --> 00:50:18,030
 transaction
 
-1102
 00:50:18,030 --> 00:50:23,160
 I think covering and segue witness would
 
-1103
 00:50:23,160 --> 00:50:26,339
 be his own video but I want to do this
 
-1104
 00:50:26,339 --> 00:50:28,160
 or at least this is a basic and
 
-1105
 00:50:28,160 --> 00:50:30,869
 transaction and these are still valid
 
-1106
 00:50:30,869 --> 00:50:31,619
 and you can still make these
 
-1107
 00:50:31,619 --> 00:50:32,970
 transactions perfectly fine on the
 
-1108
 00:50:32,970 --> 00:50:42,920
 network so maybe distant one line or
 
-1109
 00:50:44,300 --> 00:50:48,059
 it's basically a Bitcoin proposal yes
 
-1110
 00:50:48,059 --> 00:50:51,390
 oh yeah it's a segregated witness is a
 
-1111
 00:50:51,390 --> 00:50:53,849
 change the transaction data structure
 
-1112
 00:50:53,849 --> 00:50:57,119
 and it just okay okay it just moves the
 
-1113
 00:50:57,119 --> 00:50:59,339
 so yeah as you have this is like the
 
-1114
 00:50:59,339 --> 00:51:02,520
 typical basic transaction but I was
 
-1115
 00:51:02,520 --> 00:51:03,720
 segregated witness will have another
 
-1116
 00:51:03,720 --> 00:51:06,450
 field or section called the witness area
 
-1117
 00:51:06,450 --> 00:51:09,359
 and the signatures basically get moved
 
-1118
 00:51:09,359 --> 00:51:11,130
 to the end of the transaction and that's
 
-1119
 00:51:11,130 --> 00:51:15,359
 called a witness area somewhat like let
 
-1120
 00:51:15,359 --> 00:51:16,740
 me rephrase the question this is a
 
-1121
 00:51:16,740 --> 00:51:19,980
 change in the Bitcoin core goodness or
 
-1122
 00:51:19,980 --> 00:51:23,970
 is it a change that exchanges need to
 
-1123
 00:51:23,970 --> 00:51:30,390
 make it's well it's because I keep
 
-1124
 00:51:30,390 --> 00:51:32,010
 hearing this that you know this person
 
-1125
 00:51:32,010 --> 00:51:33,690
 has to implement send witty and that
 
-1126
 00:51:33,690 --> 00:51:35,400
 person has to implement said with yet
 
-1127
 00:51:35,400 --> 00:51:38,940
 and they haven't done it and I'm still a
 
-1128
 00:51:38,940 --> 00:51:41,220
 little confused but anyway we can hear
 
-1129
 00:51:41,220 --> 00:51:43,980
 well if you didn't if you created your
 
-1130
 00:51:43,980 --> 00:51:46,049
 own software and you've only have ever
 
-1131
 00:51:46,049 --> 00:51:47,849
 been able to create to these kind of
 
-1132
 00:51:47,849 --> 00:51:50,520
 structures transactions then you would
 
-1133
 00:51:50,520 --> 00:51:52,740
 have to unless you are using the Bitcoin
 
-1134
 00:51:52,740 --> 00:51:53,790
 core software to create your
 
-1135
 00:51:53,790 --> 00:51:56,640
 transactions which you know if you've
 
-1136
 00:51:56,640 --> 00:51:57,720
 made your own software to create these
 
-1137
 00:51:57,720 --> 00:51:59,910
 then you need to write your own software
 
-1138
 00:51:59,910 --> 00:52:02,190
 to create your own security witness
 
-1139
 00:52:02,190 --> 00:52:05,099
 transactions guard yeah make sense in
 
-1140
 00:52:05,099 --> 00:52:06,900
 fairness technically I don't think that
 
-1141
 00:52:06,900 --> 00:52:12,030
 terribly different difficult so I don't
 
-1142
 00:52:12,030 --> 00:52:13,260
 know why some places are taking so long
 
-1143
 00:52:13,260 --> 00:52:15,299
 I think it might be just caution maybe
 
-1144
 00:52:15,299 --> 00:52:19,530
 I'm not sure got it so at this point of
 
-1145
 00:52:19,530 --> 00:52:21,869
 time if I send a transaction with with
 
-1146
 00:52:21,869 --> 00:52:24,059
 segregated witness the Bitcoin core will
 
-1147
 00:52:24,059 --> 00:52:27,450
 understand it yes okay
 
-1148
 00:52:27,450 --> 00:52:32,069
 all right so that's the that's what
 
-1149
 00:52:32,069 --> 00:52:34,140
 we're done so that's the basic stone and
 
-1150
 00:52:34,140 --> 00:52:36,329
 that's the beta done so I'm gonna do an
 
-1151
 00:52:36,329 --> 00:52:37,859
 out I'm going to do some examples just
 
-1152
 00:52:37,859 --> 00:52:40,859
 to create a transaction transaction from
 
-1153
 00:52:40,859 --> 00:52:42,440
 scratch
 
-1154
 00:52:42,440 --> 00:52:47,490
 alright so this is my website before the
 
-1155
 00:52:47,490 --> 00:52:50,119
 transaction transaction from scratch
 
-1156
 00:52:50,119 --> 00:52:54,240
 what I would say is well here's a page
 
-1157
 00:52:54,240 --> 00:52:55,740
 I've got to the glossary go to
 
-1158
 00:52:55,740 --> 00:52:59,880
 transaction data I've broken down the
 
-1159
 00:52:59,880 --> 00:53:02,490
 transactions here so if you wanted to
 
-1160
 00:53:02,490 --> 00:53:04,530
 decode your own transaction which i
 
-1161
 00:53:04,530 --> 00:53:05,460
 think is a good idea
 
-1162
 00:53:05,460 --> 00:53:07,530
 I think decode in this transaction data
 
-1163
 00:53:07,530 --> 00:53:09,390
 is a very good place to start I think
 
-1164
 00:53:09,390 --> 00:53:10,650
 trying to build one because the
 
-1165
 00:53:10,650 --> 00:53:13,349
 signatures is a bit tricky you might get
 
-1166
 00:53:13,349 --> 00:53:15,599
 a bit stuck at some point but decoding
 
-1167
 00:53:15,599 --> 00:53:16,829
 it I think would be a good place to
 
-1168
 00:53:16,829 --> 00:53:18,359
 start for getting to grips with how
 
-1169
 00:53:18,359 --> 00:53:22,290
 transactions work and I saw it was handy
 
-1170
 00:53:22,290 --> 00:53:24,150
 to have your own decoder just for your
 
-1171
 00:53:24,150 --> 00:53:27,390
 own reference purposes but if you wanted
 
-1172
 00:53:27,390 --> 00:53:30,030
 to you know dig into the transaction
 
-1173
 00:53:30,030 --> 00:53:34,940
 data here's the page on my website or
 
-1174
 00:53:34,940 --> 00:53:37,170
 alternatively you could just look at any
 
-1175
 00:53:37,170 --> 00:53:40,650
 block of transactions on the browser so
 
-1176
 00:53:40,650 --> 00:53:43,349
 for example this one this is a bit of a
 
-1177
 00:53:43,349 --> 00:53:44,730
 complex one there's taking loads of
 
-1178
 00:53:44,730 --> 00:53:46,230
 inputs in and spitting rows of it the
 
-1179
 00:53:46,230 --> 00:53:48,480
 outputs out but if you click on see
 
-1180
 00:53:48,480 --> 00:53:52,109
 realized and you can break down the
 
-1181
 00:53:52,109 --> 00:53:55,380
 transaction into its component parts so
 
-1182
 00:53:55,380 --> 00:53:58,049
 that might be helpful when when you want
 
-1183
 00:53:58,049 --> 00:53:59,760
 to understand the structure of a
 
-1184
 00:53:59,760 --> 00:54:03,900
 transaction but what I'm going to now
 
-1185
 00:54:03,900 --> 00:54:05,420
 what I'm gonna do now I'm going to
 
-1186
 00:54:05,420 --> 00:54:10,760
 construct my own transaction
 
-1187
 00:54:11,450 --> 00:54:15,349
 I swear I can't give it up get rid of
 
-1188
 00:54:15,349 --> 00:54:18,109
 this little thing here sorry don't how
 
-1189
 00:54:18,109 --> 00:54:24,380
 to do that brother so I've got some I've
 
-1190
 00:54:24,380 --> 00:54:27,799
 made a little script called transaction
 
-1191
 00:54:27,799 --> 00:54:30,440
 builder and I'm going to build my own
 
-1192
 00:54:30,440 --> 00:54:33,650
 transaction so first thing I need is I
 
-1193
 00:54:33,650 --> 00:54:39,049
 need to be able to know which outputs I
 
-1194
 00:54:39,049 --> 00:54:41,869
 can spend so luckily for me I've created
 
-1195
 00:54:41,869 --> 00:54:46,430
 a transaction beforehand and I've locked
 
-1196
 00:54:46,430 --> 00:54:49,910
 these outputs to address his value so
 
-1197
 00:54:49,910 --> 00:54:54,380
 I'm gonna spend one of these outputs so
 
-1198
 00:54:54,380 --> 00:54:55,849
 I'll spend this one this is the one I
 
-1199
 00:54:55,849 --> 00:54:57,549
 want to spend and send to somewhere else
 
-1200
 00:54:57,549 --> 00:55:00,170
 so first of all in the transaction
 
-1201
 00:55:00,170 --> 00:55:01,549
 builder facing a need it's a version
 
-1202
 00:55:01,549 --> 00:55:03,589
 number so I'll stick the version 1 in
 
-1203
 00:55:03,589 --> 00:55:06,950
 there and so that has turned that number
 
-1204
 00:55:06,950 --> 00:55:11,359
 1 into hexadecimal network byte order
 
-1205
 00:55:11,359 --> 00:55:15,980
 and it's turned into a 4 byte field next
 
-1206
 00:55:15,980 --> 00:55:17,930
 step we need to select the inputs so I
 
-1207
 00:55:17,930 --> 00:55:20,720
 need a transaction ID and a output
 
-1208
 00:55:20,720 --> 00:55:23,020
 number so this is the transaction ID
 
-1209
 00:55:23,020 --> 00:55:26,270
 I'll put that in there and I want this
 
-1210
 00:55:26,270 --> 00:55:30,280
 one here that's output 0 so there we are
 
-1211
 00:55:30,280 --> 00:55:33,740
 that's the only one I want to spend so
 
-1212
 00:55:33,740 --> 00:55:36,380
 that's not done so if you look here
 
-1213
 00:55:36,380 --> 00:55:40,460
 that's the number of inputs this here is
 
-1214
 00:55:40,460 --> 00:55:44,000
 the transaction ID in Reverse byte order
 
-1215
 00:55:44,000 --> 00:55:50,530
 so a 4 a 4 and this here is the 4 byte
 
-1216
 00:55:54,090 --> 00:55:59,460
 it's the 4-byte output number this here
 
-1217
 00:55:59,460 --> 00:56:02,550
 is the variable integer to see to tell
 
-1218
 00:56:02,550 --> 00:56:04,080
 me the upcoming size of the signature
 
-1219
 00:56:04,080 --> 00:56:05,730
 but I haven't put it in there yet so at
 
-1220
 00:56:05,730 --> 00:56:07,500
 zero and this is the sequence number
 
-1221
 00:56:07,500 --> 00:56:11,120
 done using so next up now I need to
 
-1222
 00:56:11,120 --> 00:56:13,650
 choose my way I need to create my
 
-1223
 00:56:13,650 --> 00:56:16,970
 outputs so this were here this is a
 
-1224
 00:56:16,970 --> 00:56:20,910
 naught point naught 5 BTC but I want
 
-1225
 00:56:20,910 --> 00:56:23,520
 this to be in satoshis so let me just
 
-1226
 00:56:23,520 --> 00:56:28,350
 configure that yeah so that's not point
 
-1227
 00:56:28,350 --> 00:56:33,090
 naught naught 5 1 so I put the value
 
-1228
 00:56:33,090 --> 00:56:36,840
 here and the address I want to send it
 
-1229
 00:56:36,840 --> 00:56:40,230
 to I think I'll send it to my donation
 
-1230
 00:56:40,230 --> 00:56:41,760
 address here and the top of the website
 
-1231
 00:56:41,760 --> 00:56:47,310
 so there we go and but because I want
 
-1232
 00:56:47,310 --> 00:56:51,630
 this to get mind I haven't put a fee on
 
-1233
 00:56:51,630 --> 00:56:53,880
 this so what I'll do instead of sending
 
-1234
 00:56:53,880 --> 00:56:54,660
 the whole amount
 
-1235
 00:56:54,660 --> 00:57:00,990
 I'll send c49 this this amount so that
 
-1236
 00:57:00,990 --> 00:57:02,490
 puts a little fee on it I don't know
 
-1237
 00:57:02,490 --> 00:57:03,960
 what that's gonna be in fee per byte
 
-1238
 00:57:03,960 --> 00:57:06,120
 under guessing but that will leave a
 
-1239
 00:57:06,120 --> 00:57:09,570
 remainder in the transaction and again
 
-1240
 00:57:09,570 --> 00:57:12,450
 put the address there so that's a book
 
-1241
 00:57:12,450 --> 00:57:15,150
 created last up then so this is output
 
-1242
 00:57:15,150 --> 00:57:17,910
 been added to the transaction code when
 
-1243
 00:57:17,910 --> 00:57:22,190
 I put and this is the is this right
 
-1244
 00:57:22,190 --> 00:57:25,940
 yeah I'm sure here somewhere
 
-1245
 00:57:26,180 --> 00:57:28,680
 so a quick question here so at this
 
-1246
 00:57:28,680 --> 00:57:31,260
 point is it signed or it it still yes
 
-1247
 00:57:31,260 --> 00:57:32,880
 Tony's resigned and you have to create
 
-1248
 00:57:32,880 --> 00:57:35,070
 yeah okay the whole structure first
 
-1249
 00:57:35,070 --> 00:57:39,090
 before it gets on alright got it so it
 
-1250
 00:57:39,090 --> 00:57:41,570
 has your code just plugged in the place
 
-1251
 00:57:41,570 --> 00:57:46,020
 he'll do that in a moment and so last up
 
-1252
 00:57:46,020 --> 00:57:48,510
 is a long time so there we are so now
 
-1253
 00:57:48,510 --> 00:57:50,850
 we've created the structure we've chosen
 
-1254
 00:57:50,850 --> 00:57:52,410
 the inputs and we've creating the output
 
-1255
 00:57:52,410 --> 00:57:54,060
 from it so now we've got the whole
 
-1256
 00:57:54,060 --> 00:57:56,010
 structure this is you've got the data we
 
-1257
 00:57:56,010 --> 00:57:59,370
 need to be able to sign it so to be able
 
-1258
 00:57:59,370 --> 00:58:00,330
 to sign it
 
-1259
 00:58:00,330 --> 00:58:04,190
 I need the private key for this address
 
-1260
 00:58:04,190 --> 00:58:06,300
 you should never expose your private key
 
-1261
 00:58:06,300 --> 00:58:08,970
 but in this example here it is this is
 
-1262
 00:58:08,970 --> 00:58:12,690
 my private key for this output so there
 
-1263
 00:58:12,690 --> 00:58:13,710
 we are that's the private key that
 
-1264
 00:58:13,710 --> 00:58:16,680
 corresponds to this address but like I
 
-1265
 00:58:16,680 --> 00:58:21,180
 said we need to get the locking code so
 
-1266
 00:58:21,180 --> 00:58:22,710
 that we can use a placeholder when we
 
-1267
 00:58:22,710 --> 00:58:25,080
 sign it it's a bit annoying but if you
 
-1268
 00:58:25,080 --> 00:58:26,250
 click on this little lock here on the
 
-1269
 00:58:26,250 --> 00:58:29,970
 browser this is the locking code as you
 
-1270
 00:58:29,970 --> 00:58:34,160
 can see those you know it corresponds to
 
-1271
 00:58:34,160 --> 00:58:37,950
 up codes and this is the public key
 
-1272
 00:58:37,950 --> 00:58:41,120
 that's the address so I need this
 
-1273
 00:58:41,120 --> 00:58:43,470
 locking code to be used as a placeholder
 
-1274
 00:58:43,470 --> 00:58:47,550
 when I sign the transaction so there we
 
-1275
 00:58:47,550 --> 00:58:47,700
 are
 
-1276
 00:58:47,700 --> 00:58:50,640
 I'll sign this now and this is the D
 
-1277
 00:58:50,640 --> 00:58:54,330
 completed transaction data so because
 
-1278
 00:58:54,330 --> 00:58:55,770
 it's all signed this is ready to go I
 
-1279
 00:58:55,770 --> 00:58:59,370
 can use I can if I want to I can just
 
-1280
 00:58:59,370 --> 00:59:01,760
 quickly decode it so I've written my own
 
-1281
 00:59:01,760 --> 00:59:03,470
 [Music]
 
-1282
 00:59:03,470 --> 00:59:05,700
 transaction decoder is quite handy to
 
-1283
 00:59:05,700 --> 00:59:08,370
 have so I can look at this and it's
 
-1284
 00:59:08,370 --> 00:59:11,370
 showing me the inputs there's one here
 
-1285
 00:59:11,370 --> 00:59:15,000
 the transaction ID and one output and to
 
-1286
 00:59:15,000 --> 00:59:16,440
 be unlocked to this address here the
 
-1287
 00:59:16,440 --> 00:59:17,700
 beer address which is my donation
 
-1288
 00:59:17,700 --> 00:59:21,600
 address and if you do you get kind CLI
 
-1289
 00:59:21,600 --> 00:59:23,580
 if you download a Bitcoin core it has
 
-1290
 00:59:23,580 --> 00:59:25,670
 his own decoder
 
-1291
 00:59:25,670 --> 00:59:27,829
 transaction you can do the same thing
 
-1292
 00:59:27,829 --> 00:59:32,650
 and it will decode it for you as well so
 
-1293
 00:59:33,190 --> 00:59:35,450
 now we've got the transaction it's all
 
-1294
 00:59:35,450 --> 00:59:37,609
 been signed ready to go what I can do I
 
-1295
 00:59:37,609 --> 00:59:41,829
 can go Bitcoin CLI send your transaction
 
-1296
 00:59:41,829 --> 00:59:45,200
 so I'll put that in there and there we
 
-1297
 00:59:45,200 --> 00:59:45,349
 are
 
-1298
 00:59:45,349 --> 00:59:48,589
 it has just given me a transaction ID so
 
-1299
 00:59:48,589 --> 00:59:51,230
 this is the transaction and this is the
 
-1300
 00:59:51,230 --> 00:59:54,079
 transaction ID for it so I can take this
 
-1301
 00:59:54,079 --> 00:59:56,859
 transaction ID and I can go into my
 
-1302
 00:59:56,859 --> 00:59:59,660
 blockchain Explorer and I can enter the
 
-1303
 00:59:59,660 --> 01:00:01,640
 transaction ID try and find it
 
-1304
 01:00:01,640 --> 01:00:03,950
 okay hasn't found it yet it's probably
 
-1305
 01:00:03,950 --> 01:00:05,900
 taking some time for to propagate the
 
-1306
 01:00:05,900 --> 01:00:12,589
 network so I keep refreshing okay give
 
-1307
 01:00:12,589 --> 01:00:16,039
 it good ten seconds gone so yeah we are
 
-1308
 01:00:16,039 --> 01:00:18,559
 looking for this in the men buoy or in
 
-1309
 01:00:18,559 --> 01:00:20,450
 the blacklist would have gone so I've
 
-1310
 01:00:20,450 --> 01:00:22,730
 created this transaction I sent in to a
 
-1311
 01:00:22,730 --> 01:00:25,160
 node and it's now gonna be being sent on
 
-1312
 01:00:25,160 --> 01:00:25,549
 the network
 
-1313
 01:00:25,549 --> 01:00:28,809
 and it's gonna enter this nodes mempool
 
-1314
 01:00:28,809 --> 01:00:31,759
 so it it should be a plain ring if I
 
-1315
 01:00:31,759 --> 01:00:33,710
 click on this memory pool it should be
 
-1316
 01:00:33,710 --> 01:00:36,470
 appearing yeah somebody here I just
 
-1317
 01:00:36,470 --> 01:00:41,539
 deleted the page it's there okay so they
 
-1318
 01:00:41,539 --> 01:00:42,890
 release their art it's just received it
 
-1319
 01:00:42,890 --> 01:00:46,069
 five seconds ago they are so I can click
 
-1320
 01:00:46,069 --> 01:00:48,319
 on this now and there is the transaction
 
-1321
 01:00:48,319 --> 01:00:51,349
 I just made I'm watching Explorer so now
 
-1322
 01:00:51,349 --> 01:00:53,089
 it's on the network now I know it's been
 
-1323
 01:00:53,089 --> 01:00:56,059
 sent on the network it's a very low fee
 
-1324
 01:00:56,059 --> 01:01:00,410
 I don't think it's gonna get mind but
 
-1325
 01:01:00,410 --> 01:01:01,970
 again I can just look at the code and
 
-1326
 01:01:01,970 --> 01:01:04,549
 this should be the exact same code dye
 
-1327
 01:01:04,549 --> 01:01:07,519
 created so basically you send code into
 
-1328
 01:01:07,519 --> 01:01:10,039
 the network and that describes this
 
-1329
 01:01:10,039 --> 01:01:12,589
 transaction with the movement of inputs
 
-1330
 01:01:12,589 --> 01:01:18,769
 to outputs is that yeah it's better
 
-1331
 01:01:18,769 --> 01:01:21,170
 converter two US dollars here I mean I
 
-1332
 01:01:21,170 --> 01:01:22,880
 haven't no I guess I could request my
 
-1333
 01:01:22,880 --> 01:01:25,069
 brother sir asked me the same thing I'm
 
-1334
 01:01:25,069 --> 01:01:26,420
 still working I have to work on it yeah
 
-1335
 01:01:26,420 --> 01:01:30,559
 I think this is about $80 at the moment
 
-1336
 01:01:30,559 --> 01:01:33,319
 so I'm probably gonna want to make sure
 
-1337
 01:01:33,319 --> 01:01:35,569
 this transaction gets mind before I put
 
-1338
 01:01:35,569 --> 01:01:38,890
 the video out because exactly
 
-1339
 01:01:39,000 --> 01:01:42,150
 private key and how yeah and what is the
 
-1340
 01:01:42,150 --> 01:01:49,440
 fee like approximate 0.0002 well if the
 
-1341
 01:01:49,440 --> 01:01:52,950
 works off a fee per bite because a node
 
-1342
 01:01:52,950 --> 01:01:55,230
 can only fit up there block with so many
 
-1343
 01:01:55,230 --> 01:01:59,460
 bytes exchanged small fee per weight but
 
-1344
 01:01:59,460 --> 01:02:00,600
 I haven't updated the Explorer to use
 
-1345
 01:02:00,600 --> 01:02:02,010
 weight and it's more of a complex thing
 
-1346
 01:02:02,010 --> 01:02:03,540
 to use but if we look it over
 
-1347
 01:02:03,540 --> 01:02:05,400
 if you look at all these transactions if
 
-1348
 01:02:05,400 --> 01:02:06,270
 you go towards the bottom there
 
-1349
 01:02:06,270 --> 01:02:10,170
 generally ordered by their fee per fee
 
-1350
 01:02:10,170 --> 01:02:13,290
 per byte it's slow maybe ask them you
 
-1351
 01:02:13,290 --> 01:02:15,480
 know the smallest ones about 100 odd you
 
-1352
 01:02:15,480 --> 01:02:17,490
 know no point no not 100 to Satoshi's
 
-1353
 01:02:17,490 --> 01:02:19,530
 right so well some of you get included
 
-1354
 01:02:19,530 --> 01:02:23,610
 for Less but there's just a rough
 
-1355
 01:02:23,610 --> 01:02:24,780
 estimate but it looks like my
 
-1356
 01:02:24,780 --> 01:02:28,620
 transaction is just slightly too low the
 
-1357
 01:02:28,620 --> 01:02:32,130
 fee to get mine just yet so I could
 
-1358
 01:02:32,130 --> 01:02:34,140
 create another one just show you but I
 
-1359
 01:02:34,140 --> 01:02:35,760
 mean that's good enough you know just to
 
-1360
 01:02:35,760 --> 01:02:36,990
 show you that how when you get a
 
-1361
 01:02:36,990 --> 01:02:39,750
 transaction it just gets goes into the
 
-1362
 01:02:39,750 --> 01:02:47,730
 memory pool like so I've made this code
 
-1363
 01:02:47,730 --> 01:02:49,620
 available on the website so if you go to
 
-1364
 01:02:49,620 --> 01:02:52,610
 code transaction builder dot RB
 
-1365
 01:02:52,610 --> 01:02:55,650
 the code is all here mm-hm I written it
 
-1366
 01:02:55,650 --> 01:02:59,280
 in Ruby I tried to make it as simple as
 
-1367
 01:02:59,280 --> 01:03:00,440
 possible I did want to do it
 
-1368
 01:03:00,440 --> 01:03:03,570
 procedurally procedurally because I
 
-1369
 01:03:03,570 --> 01:03:04,680
 thought that'd be an easier way to do I
 
-1370
 01:03:04,680 --> 01:03:06,630
 couldn't do it that way I thought we it
 
-1371
 01:03:06,630 --> 01:03:08,250
 seemed easier to do it in an
 
-1372
 01:03:08,250 --> 01:03:12,360
 object-oriented way so okay it's not
 
-1373
 01:03:12,360 --> 01:03:14,460
 terribly long it's about 300 lines long
 
-1374
 01:03:14,460 --> 01:03:18,870
 at the code but the basic parts is you
 
-1375
 01:03:18,870 --> 01:03:21,060
 have I start with some utilities just
 
-1376
 01:03:21,060 --> 01:03:22,410
 for getting all the data in the correct
 
-1377
 01:03:22,410 --> 01:03:26,310
 format then the main transaction class
 
-1378
 01:03:26,310 --> 01:03:28,920
 that has version inputs outputs and lock
 
-1379
 01:03:28,920 --> 01:03:31,110
 time so it has an array of inputs and a
 
-1380
 01:03:31,110 --> 01:03:34,350
 real outputs so and then you have an
 
-1381
 01:03:34,350 --> 01:03:35,790
 input class which has you know the
 
-1382
 01:03:35,790 --> 01:03:38,640
 transaction ID the V out scripts ax
 
-1383
 01:03:38,640 --> 01:03:40,040
 equals and then
 
-1384
 01:03:40,040 --> 01:03:43,550
 then you have an output object which
 
-1385
 01:03:43,550 --> 01:03:45,320
 just hasn't value and the script and the
 
-1386
 01:03:45,320 --> 01:03:49,700
 script pub key and so if you want I
 
-1387
 01:03:49,700 --> 01:03:51,860
 think he'd be good to create you you've
 
-1388
 01:03:51,860 --> 01:03:52,940
 wanted to build your own name
 
-1389
 01:03:52,940 --> 01:03:54,560
 transaction builder from scratch I think
 
-1390
 01:03:54,560 --> 01:03:55,790
 it's a good way to do it you know in
 
-1391
 01:03:55,790 --> 01:03:57,650
 your own programming language but if you
 
-1392
 01:03:57,650 --> 01:03:59,030
 wanted to see if you're making some
 
-1393
 01:03:59,030 --> 01:04:00,110
 mistakes you want to see what squares
 
-1394
 01:04:00,110 --> 01:04:01,700
 going wrong and you could always come in
 
-1395
 01:04:01,700 --> 01:04:03,320
 here for example probably the trick is
 
-1396
 01:04:03,320 --> 01:04:07,030
 trickiest part is just this signing part
 
-1397
 01:04:07,030 --> 01:04:10,310
 obviously here's the signing method and
 
-1398
 01:04:10,310 --> 01:04:12,860
 it's a bit long but it's just basically
 
-1399
 01:04:12,860 --> 01:04:14,300
 getting all the data in the right order
 
-1400
 01:04:14,300 --> 01:04:17,300
 I'd have any common commented it so it
 
-1401
 01:04:17,300 --> 01:04:18,530
 might be helpful for trying to figure
 
-1402
 01:04:18,530 --> 01:04:24,880
 out which parts might be missing okay so
 
-1403
 01:04:24,940 --> 01:04:29,990
 there's any questions with that no like
 
-1404
 01:04:29,990 --> 01:04:31,730
 yeah I think that so I think that
 
-1405
 01:04:31,730 --> 01:04:33,230
 basically tempers you know if you wanted
 
-1406
 01:04:33,230 --> 01:04:35,090
 to create your own transaction you know
 
-1407
 01:04:35,090 --> 01:04:37,070
 this should it's quite helped I think
 
-1408
 01:04:37,070 --> 01:04:38,360
 this my websites quite helpful for
 
-1409
 01:04:38,360 --> 01:04:39,920
 finding the correct data to be able to
 
-1410
 01:04:39,920 --> 01:04:41,300
 you know create your own transactions
 
-1411
 01:04:41,300 --> 01:04:42,470
 and just browse it and see what's going
 
-1412
 01:04:42,470 --> 01:04:45,320
 on definitely definitely
 
-1413
 01:04:45,320 --> 01:04:47,750
 are you using some sort of API or are is
 
-1414
 01:04:47,750 --> 01:04:49,850
 this being pulled from like a real old
 
-1415
 01:04:49,850 --> 01:04:52,280
 yeah this is an this is basically well
 
-1416
 01:04:52,280 --> 01:04:54,440
 enough a Bitcoin core node and but what
 
-1417
 01:04:54,440 --> 01:04:58,060
 I do I so I but I put it into my own
 
-1418
 01:04:58,060 --> 01:05:00,740
 database but it's basically running live
 
-1419
 01:05:00,740 --> 01:05:02,990
 off a Bitcoin core node so when you make
 
-1420
 01:05:02,990 --> 01:05:04,940
 a transaction I said new block I've just
 
-1421
 01:05:04,940 --> 01:05:10,490
 been added so yeah it's all life okay so
 
-1422
 01:05:10,490 --> 01:05:13,250
 you're hosting the website on the same
 
-1423
 01:05:13,250 --> 01:05:17,180
 node or it's on a different machine and
 
-1424
 01:05:17,180 --> 01:05:19,100
 you just pull data into a database and
 
-1425
 01:05:19,100 --> 01:05:22,070
 then have the website read data off it's
 
-1426
 01:05:22,070 --> 01:05:23,510
 actually on the same machine it probably
 
-1427
 01:05:23,510 --> 01:05:25,010
 would make sense to have the node on a
 
-1428
 01:05:25,010 --> 01:05:27,980
 different machine and then how can they
 
-1429
 01:05:27,980 --> 01:05:29,150
 - I'll have this website just mean the
 
-1430
 01:05:29,150 --> 01:05:33,170
 database but I don't the machines needs
 
-1431
 01:05:33,170 --> 01:05:35,600
 to be handling handling it okay so at
 
-1432
 01:05:35,600 --> 01:05:38,570
 the moment Wow but this is running off a
 
-1433
 01:05:38,570 --> 01:05:40,640
 machine in Switzerland so that's why
 
-1434
 01:05:40,640 --> 01:05:41,990
 when I made this transaction I'm in the
 
-1435
 01:05:41,990 --> 01:05:44,579
 UK at the moment I sent it from my
 
-1436
 01:05:44,579 --> 01:05:47,910
 I sent this from my local node from the
 
-1437
 01:05:47,910 --> 01:05:50,279
 UK so yeah but then again it only takes
 
-1438
 01:05:50,279 --> 01:05:53,640
 a few seconds I think for a transaction
 
-1439
 01:05:53,640 --> 01:05:55,650
 to propagate the entire network so it
 
-1440
 01:05:55,650 --> 01:05:57,119
 might have been my website was a little
 
-1441
 01:05:57,119 --> 01:05:59,699
 bit slow at decoding the transaction and
 
-1442
 01:05:59,699 --> 01:06:03,259
 then and then storing it in the database
 
-1443
 01:06:04,039 --> 01:06:08,369
 so that's the Bitcoin CLI give you
 
-1444
 01:06:08,369 --> 01:06:11,279
 access to all this data like memory pool
 
-1445
 01:06:11,279 --> 01:06:13,679
 and transactions in the memory pool or
 
-1446
 01:06:13,679 --> 01:06:16,199
 you yeah and it does give you all the
 
-1447
 01:06:16,199 --> 01:06:19,019
 data so I mean you could use the website
 
-1448
 01:06:19,019 --> 01:06:21,989
 but you can actually get all this data
 
-1449
 01:06:21,989 --> 01:06:25,939
 from Bitcoin CLI I'm not sure what is
 
-1450
 01:06:25,939 --> 01:06:28,650
 are they okay that last the mempool so
 
-1451
 01:06:28,650 --> 01:06:31,469
 Bitcoin CLI get more mempool these are
 
-1452
 01:06:31,469 --> 01:06:33,779
 all the transactions ID transaction IDs
 
-1453
 01:06:33,779 --> 01:06:37,439
 coming in there yeah and if you wanted
 
-1454
 01:06:37,439 --> 01:06:47,519
 to get Bitcoin there we are so that's
 
-1455
 01:06:47,519 --> 01:06:48,809
 the transaction data for that one I just
 
-1456
 01:06:48,809 --> 01:06:50,729
 selected so it's all there you know you
 
-1457
 01:06:50,729 --> 01:06:52,229
 can get all that out to the out of the
 
-1458
 01:06:52,229 --> 01:06:53,269
 in politic
 
-1459
 01:06:53,269 --> 01:07:00,119
 Bitcoin see like a nice yep so I think
 
-1460
 01:07:00,119 --> 01:07:03,630
 that's everything I wanted to cover yes
 
-1461
 01:07:03,630 --> 01:07:07,859
 at all before no no that's it great
 
-1462
 01:07:07,859 --> 01:07:13,670
 thanks a lot sir yeah looking forward to
 
-1463
 01:07:13,670 --> 01:07:16,679
 yeah I think the next what I'd like to
 
-1464
 01:07:16,679 --> 01:07:20,420
 do is probably covering the keys and
 
-1465
 01:07:20,420 --> 01:07:24,209
 addresses so these public keys probably
 
-1466
 01:07:24,209 --> 01:07:25,650
 probably keep every key in address how
 
-1467
 01:07:25,650 --> 01:07:27,089
 they all connect together through this
 
-1468
 01:07:27,089 --> 01:07:29,789
 you know this lip decay of how they
 
-1469
 01:07:29,789 --> 01:07:33,059
 created because that explained a lot
 
-1470
 01:07:33,059 --> 01:07:34,529
 about how this signature stuff works
 
-1471
 01:07:34,529 --> 01:07:35,910
 because at the moment I just saw said
 
-1472
 01:07:35,910 --> 01:07:38,489
 this is a signature and it works but I
 
-1473
 01:07:38,489 --> 01:07:40,049
 could explain how it actually does work
 
-1474
 01:07:40,049 --> 01:07:44,730
 using this mathematics nice nicer
 
-1475
 01:07:44,730 --> 01:07:47,040
 yeah looking forward to it yeah just
 
-1476
 01:07:47,040 --> 01:07:48,810
 just let me know whenever yeah whenever
 
-1477
 01:07:48,810 --> 01:07:51,119
 you're ready I'll stop I'll stop
 
-1478
 01:07:51,119 --> 01:07:52,500
 chipping away at some keys and the
 
-1479
 01:07:52,500 --> 01:07:54,390
 dresses stuff but if I give you an email
 
-1480
 01:07:54,390 --> 01:07:56,310
 in a while to let you know when I think
 
-1481
 01:07:56,310 --> 01:07:59,550
 you might be ready yeah so thank you
 
-1482
 01:07:59,550 --> 01:08:02,250
 very much thanks a thanks for those
 
-1483
 01:08:02,250 --> 01:08:04,550
 really good
-
