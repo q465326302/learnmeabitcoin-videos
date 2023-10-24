@@ -1044,157 +1044,139 @@ coinbase交易就是根。
 这更适合编程和技术人员。
 
 00:20:30,440 --> 00:20:34,640
-graph from before and so whereas before
+从之前的图表中，
 
 00:20:34,640 --> 00:20:36,440
-I had that green line to represent the
+我们可以看到，
 
 00:20:36,440 --> 00:20:38,540
-data this black box here is like my
+我之前使用绿线来表示数据，
 
 00:20:38,540 --> 00:20:40,460
-editor we're kinda going to create a
+这个黑框就像是我的编辑器，
 
 00:20:40,460 --> 00:20:44,150
-transaction can scratch so with every
+我们将从头开始创建一个交易。
 
 00:20:44,150 --> 00:20:46,100
-transaction the first thing it starts
+每个交易都以版本号开始，
 
 00:20:46,100 --> 00:20:49,070
-with is a version number not just sort
+这个版本号描述了交易的结构，
 
-00:20:49,070 --> 00:20:50,510
-of describes the structure of the
+00:20:49,070 --> 00:20:52,580
+目前的版本号是1，
 
-00:20:50,510 --> 00:20:52,580
-outcome in transaction and that is
-
-00:20:52,580 --> 00:20:54,590
-currently one I'm pretty sure the
+00:20:52,580 --> 00:20:57,560
+我相信大多数的交易都使用版本号1，
 
 00:20:54,590 --> 00:20:57,560
-majority of transactions use the version
+所以我们在这里输入1，
 
 00:20:57,560 --> 00:20:59,180
-number one so to put the one in there
+这没问题，
 
-00:20:59,180 --> 00:21:04,510
-and that's fine but because this is a
-
-00:21:04,510 --> 00:21:06,650
-transaction data it has a specific
+00:20:59,180 --> 00:21:06,650
+但是因为这是一个交易数据，
 
 00:21:06,650 --> 00:21:10,130
-structure so this version number it's
+它有一个特定的结构，
 
 00:21:10,130 --> 00:21:14,450
-actually four bytes long so this version
+所以这个版本号实际上是四个字节长，
 
 00:21:14,450 --> 00:21:16,520
-field sorry is four bytes long so we put
+所以我们在这里输入1，
 
 00:21:16,520 --> 00:21:17,690
-the one in there but we need a paddle
+但是我们需要用零来填充它，
 
 00:21:17,690 --> 00:21:19,250
-that with zeros so that's four bytes
+使其长度为四个字节，
 
 00:21:19,250 --> 00:21:22,550
-long and two characters is equal to one
+每两个字符等于一个字节，
 
 00:21:22,550 --> 00:21:25,010
-byte so this is eight characters long
+所以这是八个字符长，
 
 00:21:25,010 --> 00:21:28,220
-and that's four bytes the reason we have
+也就是四个字节。
 
-00:21:28,220 --> 00:21:30,530
-these sort of field sizes is well
+00:21:28,220 --> 00:21:32,510
+我们有这些字段大小的原因是，
 
 00:21:30,530 --> 00:21:32,510
-basically everything in the transaction
+交易中的每一项都有自己的字段大小，
 
 00:21:32,510 --> 00:21:36,980
-has his own field site field size so
+交易中的每一项都有自己的字段大小，
 
-00:21:36,980 --> 00:21:38,240
-that makes it easier to run through the
-
-00:21:38,240 --> 00:21:43,580
-transaction and decode yet secondly as
+00:21:36,980 --> 00:21:43,580
+这使得解码交易更加容易。
 
 00:21:43,580 --> 00:21:45,050
-well as being four bytes long it has to
+其次，除了四个字节长之外，
 
 00:21:45,050 --> 00:21:48,110
-be X decimal so this is counting one so
+它还必须是十六进制的，这里的计数是1，
 
 00:21:48,110 --> 00:21:49,340
-that's the same in hexadecimal
+所以在十六进制中也是相同的。
 
 00:21:49,340 --> 00:21:53,570
-and lastly probably most Awkward and
+最后，可能令人最尴尬的是，
 
 00:21:53,570 --> 00:21:56,390
-from a human from a human perspective is
+从我们人类的角度来看，
 
-00:21:56,390 --> 00:21:58,520
-that this data has to be a network byte
-
-00:21:58,520 --> 00:22:00,890
-byte order so you have to reverse the
+00:21:56,390 --> 00:22:00,890
+这些数据必须是网络字节顺序，
 
 00:22:00,890 --> 00:22:03,670
-order of the bytes
+所以你必须反转字节的顺序。
 
 00:22:05,479 --> 00:22:07,519
-so that's the vision don't ask the first
+首先，
 
 00:22:07,519 --> 00:22:09,859
-part second of all you have to put an
+你需要输入计数，
 
 00:22:09,859 --> 00:22:12,889
-input count so you have to say how many
+也就是说你需要在这个交易中使用多少输入。
 
 00:22:12,889 --> 00:22:16,190
-inputs we're going to be using in this
+假设你有三个，我们在这有三个，
 
 00:22:16,190 --> 00:22:18,320
-transaction so if you had you know three
+我们在这有三个，
 
 00:22:18,320 --> 00:22:21,349
-we have got three in here in this one
+但在这个我只会使用一个输出，
 
 00:22:21,349 --> 00:22:22,849
-I'm just gonna use one output so I put
+所以我在这里输入1，
 
 00:22:22,849 --> 00:22:24,769
-the number one in there and this is one
+这是一个字节长。
 
 00:22:24,769 --> 00:22:31,209
-byte long however this is a special
+然而，这是一个特殊的字段，
 
 00:22:31,209 --> 00:22:35,809
-field called a variable integer and what
+称为可变整数，
 
 00:22:35,809 --> 00:22:38,389
-that me or reduced or shortened to
+或者缩写为变量。
 
-00:22:38,389 --> 00:22:40,249
-variant I think that's a technical term
+00:22:38,389 --> 00:22:41,749
+我认为这是一个技术术语，
 
-00:22:40,249 --> 00:22:41,749
-Freud I think it's sometimes called
-
-00:22:41,749 --> 00:22:44,869
-compact size but variable integer and
-
-00:22:44,869 --> 00:22:48,729
-variant is why I've been used to if this
+00:22:41,749 --> 00:22:48,729
+有时也被称为紧凑大小，
 
 00:22:48,729 --> 00:22:51,979
-if the number of outputs you want to
+可变整数和变量是我习惯使用的。
 
 00:22:51,979 --> 00:22:55,909
 select is less than 252 or in other
