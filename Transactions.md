@@ -891,205 +891,157 @@ coinbase交易就是根。
 你可能对交易费用如何工作感兴趣。
 
 00:17:32,010 --> 00:17:36,660
-I'll cover that now when you make a
+当你进行一笔交易，
 
-00:17:36,660 --> 00:17:40,260
-transaction and if you want to put a fee
+00:17:36,660 --> 00:17:44,190
+如果你想加上手续费，
 
-00:17:40,260 --> 00:17:44,190
-on it well let me just start again
-
-00:17:44,190 --> 00:17:45,420
-basically when you make a transaction
-
-00:17:45,420 --> 00:17:48,930
-and if you want to put a fee on it you
+00:17:44,190 --> 00:17:50,970
+你基本上不会使用你花费的全部金额。
 
 00:17:48,930 --> 00:17:50,970
-basically do not a user the whole amount
+比如说，这笔输入是10，
 
 00:17:50,970 --> 00:17:53,760
-that you're spending so this input is 10
+如果你创建了8个输出，
 
 00:17:53,760 --> 00:17:55,770
-and if you created upwards of 8 until
+那么你就用完了全部金额，
 
 00:17:55,770 --> 00:17:57,840
-I'll be using the whole amount up but if
+但是如果你没有全部用完，
 
 00:17:57,840 --> 00:18:00,510
-you do not use it all up and so you
+你就会创建一个余额，
 
 00:18:00,510 --> 00:18:02,850
-create a remainder that remainder is the
+这个余额就是手续费。
 
 00:18:02,850 --> 00:18:05,130
-fee so when you wanna put a fee on a
+所以，
 
 00:18:05,130 --> 00:18:07,380
-transaction you don't create a separate
+当你想在交易中加上手续费时，
 
 00:18:07,380 --> 00:18:09,450
-output for it you just leave a remainder
+你不会为其创建一个单独的输出，
 
 00:18:09,450 --> 00:18:13,710
-of inputs they're not being used up
+你只需要留下一部分未被使用的输入就可以了。
 
 00:18:13,710 --> 00:18:16,830
-so let's say this transaction has a fee
+比如说，
 
 00:18:16,830 --> 00:18:18,720
-of not point one bitcoins we'll send
+这笔交易的手续费是0.1比特币，
 
 00:18:18,720 --> 00:18:21,029
-that into the network and eventually
+我们将其发送到网络中，
 
-00:18:21,029 --> 00:18:22,799
-that'll hit come into the memory pools
-
-00:18:22,799 --> 00:18:27,779
-of all the nodes on the network so when
+00:18:21,029 --> 00:18:27,779
+最终它会进入网络中所有节点的内存池。
 
 00:18:27,779 --> 00:18:30,690
-you the reason you put a fee on a
+你之所以要在交易中加上手续费，
 
 00:18:30,690 --> 00:18:33,210
-transaction is because a miner when they
+是因为矿工在创建候选区块时，
 
 00:18:33,210 --> 00:18:34,799
-create a candidate block they can only
+只能填充一定数量或一定大小的交易。
 
 00:18:34,799 --> 00:18:38,730
-fill it with a certain number of amount
+以前，
 
-00:18:38,730 --> 00:18:41,130
-of transactions or certain size so
-
-00:18:41,130 --> 00:18:42,600
-basically used to be one megabytes worth
+00:18:38,730 --> 00:18:42,600
+这个数量基本上是1MB的交易，
 
 00:18:42,600 --> 00:18:45,059
-of transactions the metric has changed
+现在这个度量已经改变为权重，
 
 00:18:45,059 --> 00:18:48,390
-to weight now but it's roughly about 1.7
+但目前大约是1.7MB的交易。
 
 00:18:48,390 --> 00:18:49,799
-megabytes with the transactions at the
+所以，
 
 00:18:49,799 --> 00:18:52,500
-moment so if there's more than 1.7
+如果内存池中的交易超过1.7MB，
 
-00:18:52,500 --> 00:18:54,240
-megabytes in the memory pool of
-
-00:18:54,240 --> 00:18:58,559
-transactions a miner will select the
+00:18:52,500 --> 00:18:58,559
+矿工会选择手续费最高的交易。
 
 00:18:58,559 --> 00:19:00,140
-transactions were the highest fees and
+他们之所以这么做，
 
 00:19:00,140 --> 00:19:04,200
-the reason they do that is because so
+是因为他们可以收集所有这些手续费，
 
-00:19:04,200 --> 00:19:05,669
-let's say these little yellow disks
+00:19:04,200 --> 00:19:09,720
+假设这些黄色的小圆盘代表费用使用最高费用的交易，
 
-00:19:05,669 --> 00:19:07,710
-represent the fees use the highest fee
-
-00:19:07,710 --> 00:19:09,720
-transactions the reason they do that is
-
-00:19:09,720 --> 00:19:11,820
-because they can collect all these fees
-
-00:19:11,820 --> 00:19:14,520
-or recycle all of the remainder of these
+00:19:09,720 --> 00:19:14,520
+可以回收这些交易剩余的部分，
 
 00:19:14,520 --> 00:19:16,770
-transactions into the coinbase
+放入coinbase交易中。
 
 00:19:16,770 --> 00:19:19,620
-transaction so instead of just sending
+所以现在，
 
-00:19:19,620 --> 00:19:21,600
-themselves the the block reward which is
-
-00:19:21,600 --> 00:19:24,870
-currently 12.5 bitcoins to themselves in
+00:19:19,620 --> 00:19:24,870
+他们不仅会在coinbase交易中给自己发送区块奖励（目前是12.5比特币），
 
 00:19:24,870 --> 00:19:26,690
-the climate transaction they will also
+给自己发送区块奖励（目前是12.5比特币），
 
-00:19:26,690 --> 00:19:29,000
-include all the fees from the
-
-00:19:29,000 --> 00:19:34,919
-transactions they have included so there
+00:19:26,690 --> 00:19:34,919
+还会包括他们所包含的交易的所有手续费。
 
 00:19:34,919 --> 00:19:37,980
-we are this block gets mined and this
+然后，这个区块被挖出，
 
 00:19:37,980 --> 00:19:40,230
-combination of that transaction recycles
+这个coinbase交易回收了所有的手续费，
 
 00:19:40,230 --> 00:19:42,210
-all the fees and creates a new batch of
+并创建了一个新的比特币批次，
 
 00:19:42,210 --> 00:19:45,260
-bitcoins with a block reward in it also
+其中包含了区块奖励。
 
 00:19:45,260 --> 00:19:48,720
-does that make sense so far yes okay
+这样解释清楚了吗？
 
 00:19:48,720 --> 00:19:52,950
-great so that's all the basics covered
+好的，那么我们已经覆盖了所有的基础知识，
 
 00:19:52,950 --> 00:19:54,840
-so that's all the structure of how
+也就是交易的结构，
 
-00:19:54,840 --> 00:19:56,399
-transactions work like a visual
+00:19:54,840 --> 00:19:58,200
+如何从输入创建输出的可视化表示。
 
-00:19:56,399 --> 00:19:58,200
-representation you know taking inputs
+00:19:58,200 --> 00:20:04,710
+然后现在我要讲解的是数据，
 
-00:19:58,200 --> 00:20:00,960
-and creating outputs what I'm going to
+00:20:04,710 --> 00:20:08,190
+如果我们查看内部数据，
 
-00:20:00,960 --> 00:20:04,710
-do now I'm gonna cover the data so if
-
-00:20:04,710 --> 00:20:06,240
-we're to look inside well basically how
-
-00:20:06,240 --> 00:20:08,190
-can you construct your own transactions
-
-00:20:08,190 --> 00:20:10,960
-from the data itself
-
-00:20:10,960 --> 00:20:15,530
-so this is gonna be a bit more technical
+00:20:08,190 --> 00:20:15,530
+你如何可以从数据本身构建你自己的交易。
 
 00:20:15,530 --> 00:20:17,450
-so you know if you're not a technical
+这将会更加技术性一些，
 
-00:20:17,450 --> 00:20:19,910
-person this should cover everything all
+00:20:17,450 --> 00:20:21,680
+所以如果你是一个技术人员，
 
-00:20:19,910 --> 00:20:21,680
-that interesting you know end of the
-
-00:20:21,680 --> 00:20:24,080
-hood mechanics of transactions this is
-
-00:20:24,080 --> 00:20:25,550
-more for you know the programming and
+00:20:21,680 --> 00:20:25,550
+这应该涵盖了所有你感兴趣的交易的内部机制。
 
 00:20:25,550 --> 00:20:30,440
-stuff right so the data this is the
+这更适合编程和技术人员。
 
 00:20:30,440 --> 00:20:34,640
 graph from before and so whereas before
