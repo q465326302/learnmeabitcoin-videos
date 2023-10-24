@@ -1179,97 +1179,70 @@ coinbase交易就是根。
 可变整数和变量是我习惯使用的。
 
 00:22:51,979 --> 00:22:55,909
-select is less than 252 or in other
+如果你想选择的输出量小于252，
 
 00:22:55,909 --> 00:22:59,629
-words in hexadecimal FC then you just
+或者换句话说，
 
 00:22:59,629 --> 00:23:02,149
-leave as one byte so you just put it in
+以十六进制表示为FC，
 
 00:23:02,149 --> 00:23:04,159
-there here but what if you want to send
+那么你就只需要留下一个字节，
 
 00:23:04,159 --> 00:23:07,789
-more than 200 we want to clack together
+所以你可以把它放在这里。
 
 00:23:07,789 --> 00:23:12,169
-more than 250 two inputs like so so
+如果你想发送超过252个输入，
 
 00:23:12,169 --> 00:23:14,599
-greater than this but less than these
+那么，
 
-00:23:14,599 --> 00:23:17,389
-four characters then you just prepend
-
-00:23:17,389 --> 00:23:20,989
-the letter F D to the front and then the
+00:23:14,599 --> 00:23:20,989
+你就在前面加上字母FD，
 
 00:23:20,989 --> 00:23:24,709
-next two bytes tell you how many inputs
+然后接下来的两个字节告诉你你使用了多少输入，
 
 00:23:24,709 --> 00:23:27,859
-you using obviously in hexadecimal same
+当然是以十六进制表示。
 
 00:23:27,859 --> 00:23:29,959
-again if you want do more than two bytes
+同样，如果你想要的数字超过两个字节，
 
 00:23:29,959 --> 00:23:31,669
-worth the cut you know a number that
+你就在前面加上Fe，
 
 00:23:31,669 --> 00:23:33,649
-can't be held in two bites you prepend
+那就意味着接下来的四个字节告诉你输入的数量。
 
 00:23:33,649 --> 00:23:36,649
-it with Fe and that gives you that means
+如果它甚至比这个还要大，
 
 00:23:36,649 --> 00:23:38,329
-the next four bytes tell you the I've
+那么你就在前面加上FF，
 
-00:23:38,329 --> 00:23:41,119
-come in number of inputs and if it's
+00:23:38,329 --> 00:23:45,019
+接下来的八个字节告诉你你想要收集多少输入。
 
-00:23:41,119 --> 00:23:42,379
-even bigger that bigger than that again
+00:23:45,019 --> 00:23:49,429
+但对于绝大多数交易，
 
-00:23:42,379 --> 00:23:45,019
-and then you yeah I think that's I don't
+00:23:49,429 --> 00:23:55,999
+你可能不会收集到这么多，
 
-00:23:45,019 --> 00:23:46,579
-think this is actually possible but it's
-
-00:23:46,579 --> 00:23:49,429
-used another P other places you just
-
-00:23:49,429 --> 00:23:51,679
-prepended with FF and the next eight
-
-00:23:51,679 --> 00:23:53,479
-bytes tell you how many inputs you want
-
-00:23:53,479 --> 00:23:55,999
-to collect together but for the vast
-
-00:23:55,999 --> 00:23:57,589
-majority of transactions you probably
-
-00:23:57,589 --> 00:23:58,489
-you're not going to be correcting
-
-00:23:58,489 --> 00:24:00,289
-together if you constructing them
-
-00:24:00,289 --> 00:24:01,380
-yourself
+00:23:55,999 --> 00:24:01,380
+如果你自己构建的话，
 
 00:24:01,380 --> 00:24:03,299
-you know you probably be using just one
+你可能只会使用一个字节，
 
 00:24:03,299 --> 00:24:05,250
-bite so the majority of the time this
+所以大多数时候，
 
 00:24:05,250 --> 00:24:08,900
-input field is one byte in size
+这个输入字段的大小是一个字节。
 
 00:24:08,960 --> 00:24:12,690
 okay that's probably all the most
