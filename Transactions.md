@@ -1245,61 +1245,58 @@ coinbase交易就是根。
 这个输入字段的大小是一个字节。
 
 00:24:08,960 --> 00:24:12,690
-okay that's probably all the most
+好的，
 
 00:24:12,690 --> 00:24:14,850
-technical part then now we just move on
+这可能是最技术的部分，
 
 00:24:14,850 --> 00:24:16,110
-to the inputs this is should be a bit
+现在我们继续输入，
 
 00:24:16,110 --> 00:24:21,360
-simpler so an input we have to select an
+这应该会简单一些。
 
 00:24:21,360 --> 00:24:24,059
-input from the blockchain so the way we
+我们需要从区块链中选择一个输入，
 
 00:24:24,059 --> 00:24:26,610
-do that is first of all we need to get
+所以我们首先需要获取交易ID。
 
 00:24:26,610 --> 00:24:29,429
-the transaction ID so every transaction
+每个交易都有自己的唯一ID号，
 
 00:24:29,429 --> 00:24:32,460
-has its own unique ID number koala
+称为交易ID，
 
-00:24:32,460 --> 00:24:34,440
-transaction ID and you just shove that
-
-00:24:34,440 --> 00:24:38,390
-that's the first part of this input code
+00:24:32,460 --> 00:24:38,390
+你只需要把它放在输入代码的第一部分就可以选择它，
 
 00:24:38,390 --> 00:24:42,470
-to select it and that is 32 bytes long
+它的长度是32个字节，
 
 00:24:42,470 --> 00:24:44,880
-it's also gonna be hexadecimal X dot
+也是十六进制的，
 
 00:24:44,880 --> 00:24:47,070
-small ready and also again it's got to
+而且还要是网络字节顺序，
 
 00:24:47,070 --> 00:24:49,830
-be network byte order so reverse this so
+所以需要反转一下。
 
 00:24:49,830 --> 00:24:52,260
-if you just select this and input it
+你选择这个并输入到一个区块链浏览器中，
 
 00:24:52,260 --> 00:24:54,419
-into a blockchain Explorer you can be
+你就能找到它，
 
 00:24:54,419 --> 00:24:56,909
-able to find it because it's been
+因为它已经被反转了。
 
 00:24:56,909 --> 00:24:58,740
-reversed if you just reverse it back and
+如果你把它反转回来，
 
 00:24:58,740 --> 00:25:01,289
-you'll be able to find it in a block
+你就能在区块链中找到它。
 
 00:25:01,289 --> 00:25:05,010
 Explorer so that gives you the
