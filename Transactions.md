@@ -1365,100 +1365,88 @@ coinbase交易就是根。
 这个输入计数会变成4，对吧？
 
 00:26:17,280 --> 00:26:20,030
-- how many inputs we using all
+所有的交易我们使用了多少输入？
 
 00:26:20,030 --> 00:26:24,630
-transactions yeah yes yes yes and then
+是的，是的，是的，
 
 00:26:24,630 --> 00:26:27,780
-would we list out all the transaction
+然后我们会列出所有的交易ID，
 
 00:26:27,780 --> 00:26:30,240
-IDs which are the two one after the
+这两个是一个接一个的，
 
 00:26:30,240 --> 00:26:30,630
-other
+好的，
 
 00:26:30,630 --> 00:26:32,610
-okay yeah so what would happen is so you
+如果你想选择两个不同的输出，
 
-00:26:32,610 --> 00:26:34,049
-wanted to select two different outputs
-
-00:26:34,049 --> 00:26:37,700
-and exactly this one here this code here
+00:26:32,610 --> 00:26:37,700
+这个代码就是为了我们这个单一的输出，就是这个，
 
 00:26:37,700 --> 00:26:40,350
-this is for we're not single output so
+就是这个，
 
 00:26:40,350 --> 00:26:42,840
-if you if you had to you would just
+如果你有两个，
 
 00:26:42,840 --> 00:26:49,770
-repeat this after this okay so there we
+你就可以在这个后面重复这个。
 
 00:26:49,770 --> 00:26:51,659
-are so we've selected this particular
+那么我们在这里，
 
 00:26:51,659 --> 00:26:53,460
-output from this transaction so the
+已经成功地选择了这个交易的这个特定输出，
 
 00:26:53,460 --> 00:26:54,480
-transaction ID gives you this
+那么交易ID给了你
 
 00:26:54,480 --> 00:26:56,309
-transaction review out the particular
+通过V out选择了特定的按钮，
 
 00:26:56,309 --> 00:27:00,900
-button so that's referenced this output
+这就引用了这个输出，
 
 00:27:00,900 --> 00:27:02,909
-successfully but obviously it has a lock
+但显然它有一个锁在上面，
 
 00:27:02,909 --> 00:27:05,580
-on it and to be able to spend this and
+为了能够花费这个并把它发送给另一个人，
 
 00:27:05,580 --> 00:27:07,140
-send it on to another person you have to
+你必须能够解锁它，
 
 00:27:07,140 --> 00:27:10,890
-be able to unlock it but in Bitcoin
+但在比特币交易中，
 
-00:27:10,890 --> 00:27:12,780
-transactions you actually have to
-
-00:27:12,780 --> 00:27:15,360
-construct the whole structure of the
+00:27:10,890 --> 00:27:15,360
+你需要先构建整个交易结构才能解锁它，
 
 00:27:15,360 --> 00:27:18,510
-transaction before you unlock it so I'm
+在你解锁它之前，你不能进行交易。
 
 00:27:18,510 --> 00:27:19,950
-gonna skip that for now and leave this
+现在我要跳过这个
 
-00:27:19,950 --> 00:27:22,590
-blank this and this is called a script
+00:27:19,950 --> 00:27:24,360
+解锁码它被称为签名脚本
 
-00:27:22,590 --> 00:27:24,360
-sig because you need to put your
-
-00:27:24,360 --> 00:27:26,820
-signature here and all the code in here
-
-00:27:26,820 --> 00:27:28,770
-will be what's called a script because
+00:27:24,360 --> 00:27:28,770
+这里的签名和这里的所有代码将被称为脚本，
 
 00:27:28,770 --> 00:27:30,270
-it had his own soft scripting language
+因为它有自己的脚本语言。
 
 00:27:30,270 --> 00:27:33,720
-it's just called a script second but if
+它也被称为第二脚本，
 
 00:27:33,720 --> 00:27:35,010
-you want to give it a more friendly name
+你也可以给它想一个更友好的名字
 
 00:27:35,010 --> 00:27:39,600
-you can call it unlocking code lastly
+你也可以称之为最后的解锁代码。
 
 00:27:39,600 --> 00:27:44,100
 each importer has a sequence number this
