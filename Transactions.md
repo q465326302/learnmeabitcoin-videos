@@ -1299,73 +1299,70 @@ coinbase交易就是根。
 你就能在区块链中找到它。
 
 00:25:01,289 --> 00:25:05,010
-Explorer so that gives you the
+但我们想要一个特定的输出，
 
-00:25:05,010 --> 00:25:07,520
-transaction but we want a specific
-
-00:25:07,520 --> 00:25:11,669
-specific output so a transaction like I
+00:25:05,010 --> 00:25:11,669
+所以一个交易就像我之前给你们展示的那样，
 
 00:25:11,669 --> 00:25:12,780
-showed you earlier it can create
+它可以创建多个输出，
 
 00:25:12,780 --> 00:25:15,570
-multiple outputs so what you do you just
+所以你做的就是使用V out，
 
 00:25:15,570 --> 00:25:19,559
-use the V out which is short for vector
+这是向量输出的简称，
 
 00:25:19,559 --> 00:25:21,780
-output and so each of these outputs
+每一个输出都从0开始，
 
 00:25:21,780 --> 00:25:24,360
-start from 0 has their own number so
+有自己的数字，所以这个只有一个输出，
 
 00:25:24,360 --> 00:25:27,450
-this one has just one output so I put 0
+我在这里输入0，
 
 00:25:27,450 --> 00:25:30,110
-here but again that's 4 bytes long
+但是这个也是4字节长的十六进制，
 
 00:25:30,110 --> 00:25:34,100
-hexadecimal and my daughter
+然后得到我的数据。
 
 00:25:34,580 --> 00:25:38,280
-next up the next major part so basically
+接下来讲的主要部分
 
 00:25:38,280 --> 00:25:41,340
-we've gone yep so yeah just a quick
+我们基本上已经完成了，
 
 00:25:41,340 --> 00:25:44,630
-question yes let's say that we had
+所以呢，这只是一个快速的问题，
 
 00:25:44,630 --> 00:25:48,690
-multiple transactions multiple outputs
+假设我们有多个交易，
 
 00:25:48,690 --> 00:25:51,150
-from multiple transactions that's that
+多个输出，
 
 00:25:51,150 --> 00:25:54,030
-is possible right so let's say we have
+那是可能的，对吧？
 
 00:25:54,030 --> 00:25:57,360
-two transactions and two outputs each
+所以假设我们有两个交易，
 
 00:25:57,360 --> 00:25:59,850
-from each of those transactions so in
+每个交易都有两个输出，
 
 00:25:59,850 --> 00:26:04,230
-the Z row one would become 0 for write
+那么在Z行，
 
 00:26:04,230 --> 00:26:11,490
-the inputs field the the this the one
+1会变成0，对吧？
 
 00:26:11,490 --> 00:26:14,130
-before that the one in poker
+输入字段，这个，
 
 00:26:14,130 --> 00:26:17,280
-yes input count will become yeah 4 mm 8
+这个输入计数会变成4，对吧？
 
 00:26:17,280 --> 00:26:20,030
 - how many inputs we using all
