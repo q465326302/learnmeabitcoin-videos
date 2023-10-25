@@ -1578,124 +1578,109 @@ coinbase交易就是根。
 转换成十进制，它就输出给你数量。
 
 00:29:47,000 --> 00:29:50,210
-after that this is yeah you mentioned
+在这之后，
 
 00:29:50,210 --> 00:29:53,150
-missus eight bytes long so this tells me
+你提到了这个长度为8字节的数字，
 
 00:29:53,150 --> 00:29:55,100
-that there is probably some kind of
+这让我觉得可能存在一种限制，
 
 00:29:55,100 --> 00:29:58,880
-limit to how much you can send in one
+即在一次交易中你可以发送的最大数量。
 
 00:29:58,880 --> 00:30:01,700
-transaction is that eight bytes
+交易是8字节的十六进制，
 
 00:30:01,700 --> 00:30:03,470
-hexadecimal I think is a very very large
+我认为是一个非常非常大的数字，
 
 00:30:03,470 --> 00:30:06,440
-number I have a story idea that's that
+我有一个想法。
 
 00:30:06,440 --> 00:30:09,470
-yeah I don't know I think I think you
+我认为它应该能覆盖大多数情况，
 
 00:30:09,470 --> 00:30:13,460
-should cover most cases but it would be
+但如果真的出现问题，
 
 00:30:13,460 --> 00:30:16,060
-a good problem to have
+那可有一个好问题要解决。
 
 00:30:17,500 --> 00:30:22,730
-so after we've set the amount the next
+在设置了金额之后，
 
-00:30:22,730 --> 00:30:24,170
-part then simple enough you just have to
-
-00:30:24,170 --> 00:30:27,280
-put the lock on it so again this has a
+00:30:22,730 --> 00:30:27,280
+下一步就是简单地对其进行加锁。
 
 00:30:27,280 --> 00:30:30,440
-the locks they have their own sort of
+锁也有自己的脚本语言，
 
 00:30:30,440 --> 00:30:32,240
-scripting language too and they can be a
+大小可以变化。
 
-00:30:32,240 --> 00:30:34,450
-very varied size
+00:30:32,240 --> 00:30:36,159
+因为它们的大小可以变化，
 
-00:30:34,450 --> 00:30:36,159
-so because they can vary in size then
-
-00:30:36,159 --> 00:30:37,450
-they don't have a set size you know like
+00:30:34,450 --> 00:30:37,450
+所以它们没有固定的大小，
 
 00:30:37,450 --> 00:30:38,980
-the transaction IDs or the version
+像交易ID或版本号那样，
 
-00:30:38,980 --> 00:30:40,690
-numbers we have to use this very
-
-00:30:40,690 --> 00:30:42,330
-variable integer again
+00:30:38,980 --> 00:30:42,330
+我们必须再次使用这个可变的整数。
 
 00:30:42,330 --> 00:30:45,970
-so most signatures typical signatures
+大多数签名，典型的签名大约是19，
 
 00:30:45,970 --> 00:30:50,679
-are about 19 I think that's 25 in
+我认为这是25字节，
 
 00:30:50,679 --> 00:30:53,619
-decimal 25 bytes so this just tells you
+这只是告诉你即将到来的锁的大小，
 
 00:30:53,619 --> 00:30:58,869
-the upcoming size of the lock so you put
+你把锁放在那里。
 
 00:30:58,869 --> 00:31:00,759
-the lock in there
+这里充满了一些代码，
 
 00:31:00,759 --> 00:31:04,720
-again this is full of some code that
+创建一个脚本，
 
 00:31:04,720 --> 00:31:06,639
-creates a script that locks it to a
+将其锁定到特定的地址。
 
 00:31:06,639 --> 00:31:10,359
-particular address so this is the
+这是我们锁定的地址，
 
 00:31:10,359 --> 00:31:13,269
-address we've locked it to we've used
+我们在这里使用了公钥，
 
 00:31:13,269 --> 00:31:16,869
-the public key in here so I'm not gonna
+但这里我不打算深入研究这个，
 
-00:31:16,869 --> 00:31:20,279
-cover this too deeply but this code here
-
-00:31:20,279 --> 00:31:22,029
-corresponds to this particular address
+00:31:16,869 --> 00:31:22,029
+但这里的代码对应于这个特定的地址。
 
 00:31:22,029 --> 00:31:25,659
-and these great things here they're just
+这些灰色的东西，
 
 00:31:25,659 --> 00:31:28,359
-the locking codes the codes that lock it
+它们只是锁定代码，
 
 00:31:28,359 --> 00:31:31,090
-to this particular public key so if you
+锁定到这个特定公钥的代码。
 
 00:31:31,090 --> 00:31:32,769
-wanted to create your own lock you can
+所以如果你想创建自己的锁，
 
 00:31:32,769 --> 00:31:36,190
-pretty much copy and paste this code
+你可以复制粘贴这段代码，
 
-00:31:36,190 --> 00:31:38,289
-here and just replace this public key
-
-00:31:38,289 --> 00:31:41,830
-with the public key of the person you
+00:31:36,190 --> 00:31:41,830
+然后用你想发送的人的公钥替换这个公钥。
 
 00:31:41,830 --> 00:31:43,809
 want to send it to and this public key
