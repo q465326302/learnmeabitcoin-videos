@@ -1682,314 +1682,269 @@ coinbase交易就是根。
 00:31:36,190 --> 00:31:41,830
 然后用你想发送的人的公钥替换这个公钥。
 
-00:31:41,830 --> 00:31:43,809
-want to send it to and this public key
+00:31:41,830 --> 00:31:48,999
+这个公钥可以从这个地址派生出来。
 
-00:31:43,809 --> 00:31:48,999
-can be derived from this address so this
-
-00:31:48,999 --> 00:31:51,129
-locking code is obviously it will be
-
-00:31:51,129 --> 00:31:54,059
-different for different public right
+00:31:48,999 --> 00:31:54,059
+所以这个锁定代码显然会对不同的公钥有所不同。
 
 00:31:54,059 --> 00:31:57,429
-7609 encoding will change in a typical
+在典型的交易中
 
 00:31:57,429 --> 00:31:59,639
-transaction is just this green part here
+7609编码会改变的只是这里的绿色部分，
 
-00:31:59,639 --> 00:32:03,759
-this 76 a 914 a a C they refer to
-
-00:32:03,759 --> 00:32:05,799
-specific codes in the script and that
+00:31:59,639 --> 00:32:05,799
+这个76 a 914 a a C指的是脚本中的特定代码。
 
 00:32:05,799 --> 00:32:07,600
-basically basically basically just says
+基本上就是说，
 
-00:32:07,600 --> 00:32:10,690
-when this address has been this output
-
-00:32:10,690 --> 00:32:12,100
-has been locked to this product public
+00:32:07,600 --> 00:32:12,100
+当这个地址已经被锁定到这个公钥时，
 
 00:32:12,100 --> 00:32:14,109
-key and if you want to send it on I'll
+如果你想发送它，
 
 00:32:14,109 --> 00:32:20,799
-have to provide a signature this is
+我必须提供一个签名。
 
 00:32:20,799 --> 00:32:25,559
-basically the script that will run like
+这基本上就是将要运行的脚本，
 
 00:32:25,559 --> 00:32:27,909
-you know you put it on the stack you
+你知道吗
 
 00:32:27,909 --> 00:32:32,769
-check if it's equal are these I am
+你把它放在堆栈上，
 
 00:32:32,769 --> 00:32:34,570
-Clawson oh yeah these are the op codes
+检查它是否相等。
 
 00:32:34,570 --> 00:32:37,509
-these refer to ask o P duplicates trust
+这些是操作码，
 
 00:32:37,509 --> 00:32:39,249
-me I'm glossing over these because I
+它们指的是OP重复，
 
 00:32:39,249 --> 00:32:42,279
-think a signet the script the code
+相信我，我在这里忽略了这些，
 
 00:32:42,279 --> 00:32:44,450
-deserved its own video to be explained
+我认为签名脚本和代码值得我后面单独解释一下。
 
 00:32:44,450 --> 00:32:48,379
-yeah yeah so that's the locking code
+这是锁定代码，
 
 00:32:48,379 --> 00:32:50,960
-there I don't expect you to understand
+我并不期望你现在就能理解。
 
 00:32:50,960 --> 00:32:55,669
-it's just yet and like before like you
+就像你之前问的，
 
 00:32:55,669 --> 00:32:58,580
-asked earlier because I said two outputs
+因为我说了两个输出，
 
 00:32:58,580 --> 00:33:03,980
-I just create another output here with
+我在这里创建了另一个输出，
 
 00:33:03,980 --> 00:33:06,320
-the same structure as last time so this
+结构和上次一样。
 
 00:33:06,320 --> 00:33:08,419
-part here that's the amount I'm sending
+这部分是我发送的金额，
 
 00:33:08,419 --> 00:33:11,389
-and then this is the size of this
+然后这是即将出现的锁定代码的大小，
 
 00:33:11,389 --> 00:33:14,659
-upcoming locking code and this is the
+这是实际的锁定代码，
 
 00:33:14,659 --> 00:33:16,190
-actual locking code with a different
+地址不同。
 
 00:33:16,190 --> 00:33:18,230
-address so as you can see this ends in
+你可以看到这个以8/8 AC结尾，
 
 00:33:18,230 --> 00:33:20,359
-8/8 AC just like that one and it starts
+就像那个一样，
 
 00:33:20,359 --> 00:33:24,859
-with seven six eight nine so there we
+它以7 6 8 9开始。
 
 00:33:24,859 --> 00:33:25,009
-are
+所以，我们在这里改变的只是我锁定的地址。
 
-00:33:25,009 --> 00:33:26,720
-so all has been changed here is the
-
-00:33:26,720 --> 00:33:32,239
-address that I'm rocking it to and then
+00:33:25,009 --> 00:33:32,239
+我们在这里改变的只是我锁定的地址。
 
 00:33:32,239 --> 00:33:33,950
-lastly we have what's called the lock
+最后，
 
 00:33:33,950 --> 00:33:35,809
-time this is the final part of the
+我们有所谓的时间锁，
 
 00:33:35,809 --> 00:33:38,929
-transaction and the lock time basically
+这是交易的最后部分。
 
-00:33:38,929 --> 00:33:41,090
-allows you to solve post date the
+00:33:38,929 --> 00:33:44,149
+锁定时间基本上允许你对交易进行后期处理。
 
-00:33:41,090 --> 00:33:44,149
-transaction so if you put a lock time in
-
-00:33:44,149 --> 00:33:47,570
-here of less than 500 million then
-
-00:33:47,570 --> 00:33:49,460
-that's referring to a particular block
+00:33:44,149 --> 00:33:49,460
+你在这里设置的锁定时间小于5亿，
 
 00:33:49,460 --> 00:33:51,649
-height so if you went back in time and
+那么这就是指一个特定的区块高度。
 
 00:33:51,649 --> 00:33:54,320
-we said we have company at the block 14
+如果你回到过去，
 
 00:33:54,320 --> 00:33:56,629
-and we put the lock time of 16 in here
+我们说我们已经完成了14个区块，
 
 00:33:56,629 --> 00:33:58,609
-then that means that this transaction
+我们在这里设置的锁定时间是16，
 
 00:33:58,609 --> 00:34:03,590
-can only be mined after the by the block
+那么这意味着这个交易只能在：区块高度为16或更高的情况下被挖出。
 
 00:34:03,590 --> 00:34:06,700
-height which is 16 or greater
+区块高度为16或更高的情况下被挖出。
 
-00:34:07,389 --> 00:34:10,699
-similarly if you were to put the lock
+00:34:07,389 --> 00:34:12,859
+同样，如果你将锁定时间设定为大于500万，
 
-00:34:10,699 --> 00:34:12,859
-time of greater than 500 million so this
-
-00:34:12,859 --> 00:34:14,960
-500 million here accounts that I've you
-
-00:34:14,960 --> 00:34:16,909
-know up to five hundred millions five
+00:34:12,859 --> 00:34:16,909
+那么这里的500万表示的是最多500万个区块，
 
 00:34:16,909 --> 00:34:18,770
-hundred million worth of blocks it was
+如果超过这个数，
 
-00:34:18,770 --> 00:34:19,550
-greater than that
+00:34:18,770 --> 00:34:23,960
+那么你就在指定一个特定的Unix时间，
 
-00:34:19,550 --> 00:34:21,469
-then that means that you are specifying
-
-00:34:21,469 --> 00:34:23,960
-a particular unix time which is just the
-
-00:34:23,960 --> 00:34:25,280
-number of seconds since the first
-
-00:34:25,280 --> 00:34:29,330
-january 1970 but either way this lock
+00:34:23,960 --> 00:34:29,330
+也就是从1970年1月1日开始的秒数。
 
 00:34:29,330 --> 00:34:32,960
-time locks the transaction up until a
+无论如何，这个锁定时间都会将交易
 
 00:34:32,960 --> 00:34:35,179
-specific block or a specific point in
+锁定到一个特定的区块或一个特定的时间点。
 
 00:34:35,179 --> 00:34:38,449
-time but if you don't use it which you
+但如果你不使用它，
 
 00:34:38,449 --> 00:34:42,050
-probably don't it's really used just set
+你可能就不会使用它，
 
 00:34:42,050 --> 00:34:44,060
-it to zero so that means it can be mined
+只需将其设定为零，
 
 00:34:44,060 --> 00:34:47,889
-immediately and there we have a
+这意味着它可以立即被挖掘。
 
 00:34:47,889 --> 00:34:52,790
-transaction so just to go over it again
+然后我们就有了一个交易。
 
 00:34:52,790 --> 00:34:55,099
-it has four main parts you have a
+再次回顾一下，四个主要部分：
 
 00:34:55,099 --> 00:34:58,700
-version number usually one so just
+你有一个版本号，
 
 00:34:58,700 --> 00:35:01,130
-usually one then you have the inputs you
+通常是1，然后你有输入，
 
 00:35:01,130 --> 00:35:03,920
-just select an input I haven't covered
+你只选择一个输入，
 
 00:35:03,920 --> 00:35:06,080
-the unlocking code yet we will come back
+涉及到解锁代码的我还没有说，
 
 00:35:06,080 --> 00:35:08,420
-to that and after the inputs you have
+我们会回来的。
 
 00:35:08,420 --> 00:35:10,280
-the outputs create the outputs from it
+在输入之后，你有输出，从中创建输出，
 
 00:35:10,280 --> 00:35:12,530
-and then you have a lock time and those
+然后你有一个锁定时间，
 
 00:35:12,530 --> 00:35:14,960
-are the four major parts of any
+这就是任何交易的四个主要部分。
 
 00:35:14,960 --> 00:35:17,589
-transaction
+好的，
 
 00:35:17,660 --> 00:35:22,089
-and some extensive oh yes okay
+现在进入这幻灯片的最后一部分，
 
 00:35:22,089 --> 00:35:24,619
-going into the final part now of these
+接下来，
 
 00:35:24,619 --> 00:35:27,019
-slides I'm gonna cover this actual
+我将介绍这个签名的实际过程，
 
 00:35:27,019 --> 00:35:28,700
-signing to click the signature to be
+以便能够解锁这个输出，
 
 00:35:28,700 --> 00:35:31,640
-able to unlock this output here this
+也就是这个输入。
 
 00:35:31,640 --> 00:35:34,640
-input in this part I'm definitely gonna
+在这部分，我会快速过一些东西，
 
 00:35:34,640 --> 00:35:37,309
-go through some things very fast and I'm
+可能无法在时间内解释清楚，
 
-00:35:37,309 --> 00:35:38,269
-not gonna be able to explain them in
-
-00:35:38,269 --> 00:35:39,740
-time because I think sign in itself
+00:35:37,309 --> 00:35:39,740
+因为我认为签名本身可能还需要一些视频。
 
 00:35:39,740 --> 00:35:42,769
-probably deserves some video but just in
+但是，
 
 00:35:42,769 --> 00:35:44,599
-case your I know re watching this video
+如果你正在重看这个视频，
 
 00:35:44,599 --> 00:35:47,269
-and you want to you're building your own
+并且你想从头开始构建你自己的交易，
 
 00:35:47,269 --> 00:35:50,059
-transactions from scratch and I just
+我只是想涵盖你需要做的所有事情，
 
-00:35:50,059 --> 00:35:51,200
-want to cover everything that you need
+00:35:50,059 --> 00:35:52,750
+以便能够创建签名，
 
 00:35:51,200 --> 00:35:52,750
-to do to be able to create the signature
+来签署这个交易。
 
 00:35:52,750 --> 00:35:57,380
-just sign this transaction so be with me
+所以，如果有些东西不明白，
 
 00:35:57,380 --> 00:35:59,269
-if everything doesn't make sense don't
+不用担心，
 
 00:35:59,269 --> 00:36:02,690
-worry maybe it will when you come back
+也许当你回来的时候就会明白了。
 
 00:36:02,690 --> 00:36:07,670
-to it so so we have this transaction and
+所以，我们有这个交易，
 
 00:36:07,670 --> 00:36:09,500
-we have this input that we need to
+我们有这个需要解锁的输入。
 
 00:36:09,500 --> 00:36:11,990
-unlock so this has been locked to our
+这个输入已经被锁定到我们的地址，
 
 00:36:11,990 --> 00:36:16,400
-address and we have our private key that
+我们有对应这个地址的私钥，
 
-00:36:16,400 --> 00:36:21,170
-corresponds to this address and we need
+00:36:16,400 --> 00:36:23,000
+我们需要使用私钥，
 
-00:36:21,170 --> 00:36:23,000
-to use the private key to basically
-
-00:36:23,000 --> 00:36:25,430
-prove that we are the owner of this
-
-00:36:25,430 --> 00:36:28,940
-address so about what you're doing this
+00:36:23,000 --> 00:36:28,940
+来证明我们是这个地址的所有者。
 
 00:36:28,940 --> 00:36:31,009
 or very simple and bad way of doing this
