@@ -1449,157 +1449,133 @@ coinbase交易就是根。
 你也可以称之为最后的解锁代码。
 
 00:27:39,600 --> 00:27:44,100
-each importer has a sequence number this
+每个输入都有一个序列号，
 
 00:27:44,100 --> 00:27:46,470
-isn't use very often I have never used
+这个序列号并不常用，
 
-00:27:46,470 --> 00:27:51,090
-myself but if you set this to a lower
+00:27:46,470 --> 00:27:52,679
+我将这个序列号设置为一个小于最大可能值的数值，
 
-00:27:51,090 --> 00:27:52,679
-number than the maximum possible number
-
-00:27:52,679 --> 00:27:55,950
-it means that you can replace the
-
-00:27:55,950 --> 00:27:58,169
-transaction later on sir so you put a
+00:27:52,679 --> 00:27:58,169
+那么你就可以在之后替换这个交易。
 
 00:27:58,169 --> 00:28:00,330
-very low fee on this you can create a
+例如，
 
 00:28:00,330 --> 00:28:02,130
-new transaction with a higher sequence
+如果你在这个交易上设置了一个很低的费用，
 
 00:28:02,130 --> 00:28:04,740
-number and it will be able to replace
+你可以创建一个新的交易，
 
 00:28:04,740 --> 00:28:06,200
-the one that's already on the network
+这个新的交易有一个更高的序列号，
 
 00:28:06,200 --> 00:28:10,080
-I've not done this myself so basically I
+它就能够替换已经在网络上的那个交易。
 
-00:28:10,080 --> 00:28:11,460
-always set this to the maximum value of
-
-00:28:11,460 --> 00:28:13,770
-all F's because that's the maximum
+00:28:10,080 --> 00:28:13,770
+我通常会将这个序列号设置为最大的十六进制值，
 
 00:28:13,770 --> 00:28:17,580
-excess hexadecimal value so yeah I'll
+我会这样做。
 
-00:28:17,580 --> 00:28:18,870
-just move on from there I usually just
-
-00:28:18,870 --> 00:28:21,370
-set this to all FS
+00:28:17,580 --> 00:28:21,370
+从这里开始，
 
 00:28:21,370 --> 00:28:24,350
-so that's when input done like you said
+我通常设置的全部FS。
 
 00:28:24,350 --> 00:28:25,850
-earlier if you want to select another
+如果你想选择另一个输入，
 
-00:28:25,850 --> 00:28:27,290
-input I would just repeat this whole
+00:28:25,850 --> 00:28:29,660
+我会在这段代码后面重复整个过程，
 
-00:28:27,290 --> 00:28:29,660
-process just after this piece of code
-
-00:28:29,660 --> 00:28:33,950
-because you said to here you can parse
-
-00:28:33,950 --> 00:28:34,990
-it fast me
+00:28:29,660 --> 00:28:34,990
+因为你说这里可以快速解析。
 
 00:28:34,990 --> 00:28:37,400
-next up so that's the input done we've
+接下来，
 
 00:28:37,400 --> 00:28:38,930
-selected this and I want to create some
+我们已经完成了输入的选择，
 
 00:28:38,930 --> 00:28:42,560
-outputs from it seems can I same again
+我想从中创建一些输出。
 
 00:28:42,560 --> 00:28:44,330
-this is a variable integer so if you
+同样，这是一个可变整数，
 
 00:28:44,330 --> 00:28:46,070
-wanted to you know quick lots of our
+所以如果你想快速创建很多输出，
 
 00:28:46,070 --> 00:28:48,500
-words more than two hundred fifty two or
+超过252个或者更多，
 
 00:28:48,500 --> 00:28:50,540
-whatever you just use the available
+你就需要使用可变整数代码。
 
 00:28:50,540 --> 00:28:52,430
-integer code but because I'm only using
+但是因为我这里只使用了两个，
 
 00:28:52,430 --> 00:28:55,270
-two here I can it fits inside one byte
+所以可以放在一个字节里。
 
 00:28:55,270 --> 00:28:57,680
-and the reason for this I didn't mention
+我之前没有提到的原因是为了在数据中节省空间，
 
-00:28:57,680 --> 00:28:59,240
-earlier it's just a saw safe space in
-
-00:28:59,240 --> 00:29:01,400
-the in the data so that you can use that
+00:28:57,680 --> 00:29:01,400
+这样你就可以更有效地使用那些数据。
 
 00:29:01,400 --> 00:29:05,420
-use that data way possible so an output
+使用这种方式处理数据，
 
 00:29:05,420 --> 00:29:08,840
-this has a doin structure as well first
+以便输出具有良好结构。
 
 00:29:08,840 --> 00:29:11,030
-of all you put the value how many
+首先你要输入你想发送的比特币的数量，
 
 00:29:11,030 --> 00:29:13,490
-bitcoins you want to send but you don't
+但你不是输入比特币的数量，
 
 00:29:13,490 --> 00:29:14,780
-put it the Bitcoin amount you put the
+而是输入聪的数量。
 
 00:29:14,780 --> 00:29:18,740
-Satoshi's amount so say I want to send I
+比如说，我想要发送大约0.02个比特币。
 
 00:29:18,740 --> 00:29:20,300
-think this is about no point naught to
+你必须把它转换成聪，
 
-00:29:20,300 --> 00:29:23,030
-bitcoins you have to put into Satoshi's
-
-00:29:23,030 --> 00:29:26,570
-so the smallest possible unit so that's
+00:29:20,300 --> 00:29:26,570
+因为聪是最小的单位。
 
 00:29:26,570 --> 00:29:28,880
-the first part for this output that has
+这是输出的第一部分，
 
 00:29:28,880 --> 00:29:31,220
-to be an actual decimal it has to be 8
+它必须是一个实际的十进制数，
 
 00:29:31,220 --> 00:29:32,960
-bytes now eight of bytes long this one
+必须是8个字节长。
 
 00:29:32,960 --> 00:29:36,500
-and also in Reverse by daughter so when
+这个也是以字节的反序排列的，
 
 00:29:36,500 --> 00:29:38,740
-you look through code this looks like
+所以当你浏览代码时，
 
 00:29:38,740 --> 00:29:41,630
-gobbledygook but if you just reverse the
+这看起来像是乱码，
 
 00:29:41,630 --> 00:29:43,730
-byte order and convert it to decimal it
+但如果你把字节顺序反过来，
 
 00:29:43,730 --> 00:29:47,000
-will give you the amount after that then
+转换成十进制，它就输出给你数量。
 
 00:29:47,000 --> 00:29:50,210
 after that this is yeah you mentioned
