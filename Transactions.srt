@@ -2252,278 +2252,203 @@ bytes long
 00:42:02,450 --> 00:42:06,799
 这个交易就不再有效。
 
-00:42:06,799 --> 00:42:08,989
+00:42:06,799 --> 00:42:13,369
 因为这个签名只适用于产生它的交易。
 
-00:42:08,989 --> 00:42:13,369
-transaction that it's made from so this
-
-00:42:13,369 --> 00:42:16,339
-signature here protects the structure of
-
-00:42:16,339 --> 00:42:19,069
-the transaction you've created so that
+00:42:13,369 --> 00:42:19,069
+这个签名保护了你创建的交易的结构，
 
 00:42:19,069 --> 00:42:21,079
-it'll only work for this particular
+它只能用于这个特定的交易。
 
 00:42:21,079 --> 00:42:28,509
-transaction so that's basically how you
+这就是你如何创建一个签名来
 
 00:42:28,509 --> 00:42:32,710
-create a signature to unlock an input
+解锁一个输入的基本方法，
 
 00:42:32,710 --> 00:42:35,619
-this is called like I said a script sig
+这被称为脚本签名。
 
 00:42:35,619 --> 00:42:38,359
-but in a scripts take you don't just put
+但在脚本签名中，
 
 00:42:38,359 --> 00:42:41,569
-the signature in there because of the
+你不仅仅放入签名，
 
-00:42:41,569 --> 00:42:43,220
-locking code in here that I showed you
+00:42:41,569 --> 00:42:48,799
+我之前给你展示的锁定代码中
 
-00:42:43,220 --> 00:42:45,920
-earlier it also requires that you put
-
-00:42:45,920 --> 00:42:48,799
-the public key which is like basically
-
-00:42:48,799 --> 00:42:52,400
-the ugly version of the address you also
-
-00:42:52,400 --> 00:42:57,829
-have to put that into the script sig so
+00:42:48,799 --> 00:42:57,829
+也需要你将公钥（也就是地址的原始版本）放入脚本签名中。
 
 00:42:57,829 --> 00:42:59,749
-it's called a script sig it's mostly a
+虽然它被称为脚本签名，
 
-00:42:59,749 --> 00:43:01,069
-signature stuff but it also needs a
+00:42:59,749 --> 00:43:03,650
+但它也需要一个公钥才能使解锁代码工作。
 
-00:43:01,069 --> 00:43:03,650
-public key for the unlocking code to
+00:43:03,650 --> 00:43:09,799
+显然，这个公钥的大小可以改变，
 
-00:43:03,650 --> 00:43:07,430
-work obviously this public key can be
-
-00:43:07,430 --> 00:43:09,799
-what I can vary in size so you need to
-
-00:43:09,799 --> 00:43:11,509
-put a view for your variable integer
-
-00:43:11,509 --> 00:43:13,130
-here to describe how long it's going to
-
-00:43:13,130 --> 00:43:15,920
-be same thing for a signature that can
+00:43:09,799 --> 00:43:15,920
+所以你需要在这里放一个可变整数来描述它的长度。
 
 00:43:15,920 --> 00:43:17,660
-vary in size so that has its own
+签名的大小也可以变化，
 
 00:43:17,660 --> 00:43:21,200
-variable integer and before the entire
+所以它有自己的可变整数。
 
 00:43:21,200 --> 00:43:24,650
-script sig you put a variable integer
+在整个脚本签名之前，
 
 00:43:24,650 --> 00:43:28,400
-here so by doing this because we've put
+你需要放一个可变整数。
 
 00:43:28,400 --> 00:43:31,039
-we have fixed field sizes and also very
+通过这样，
 
 00:43:31,039 --> 00:43:33,890
-variable field sizes that means that you
+我们可以固定的字段大小和可变的字段大小，
 
-00:43:33,890 --> 00:43:36,470
-can decode this transaction and get the
-
-00:43:36,470 --> 00:43:37,819
-right amount of data so you know which
+00:43:33,890 --> 00:43:37,819
+这意味着你可以解码这个交易并获取正确的数据量，
 
 00:43:37,819 --> 00:43:40,420
-part is which
+所以你知道哪部分是哪部分。
 
 00:43:41,050 --> 00:43:43,190
-so again we'll just send that into the
+再次，
 
 00:43:43,190 --> 00:43:44,600
-network because you've given it put the
+我们将其发送到网络中，
 
 00:43:44,600 --> 00:43:46,610
-signature in there to unlock it
+因为你已经放入了解锁它的签名，
 
 00:43:46,610 --> 00:43:47,960
-they'll send onto the network and
+它们将发送到网络中，
 
 00:43:47,960 --> 00:43:50,840
-eventually the transaction will get mind
+最终交易将被挖掘出来，
 
 00:43:50,840 --> 00:43:55,040
-and it will extend the graph like so yes
+从而形成这样的图。
 
 00:43:55,040 --> 00:43:58,130
-so every node in the network actually is
+在这个过程中，
 
-00:43:58,130 --> 00:44:00,980
-responsible for checking the validity of
-
-00:44:00,980 --> 00:44:06,140
-this every node will check yes it does
+00:43:58,130 --> 00:44:06,140
+每个网络节点都负责检查交易的有效性。
 
 00:44:06,140 --> 00:44:07,460
-that's correct a little check the violet
+好的，
 
-00:44:07,460 --> 00:44:09,050
-it'll validate every single transaction
+00:44:07,460 --> 00:44:14,000
+所以如果我篡改了Cynthia的脚本，
 
-00:44:09,050 --> 00:44:14,000
-it receives okay so if if I if I meddle
+00:44:14,000 --> 00:44:21,020
+节点会标记出来并切忽略这个交易。
 
-00:44:14,000 --> 00:44:18,530
-with the script Cynthia it will flag it
+00:44:21,020 --> 00:44:34,940
+如果你试图发送一个错误的脚本，
 
-00:44:18,530 --> 00:44:21,020
-and the node itself will ignore that
-
-00:44:21,020 --> 00:44:21,820
-transaction
-
-00:44:21,820 --> 00:44:25,660
-yes so if you try to yeah if you sent a
-
-00:44:25,660 --> 00:44:34,940
-yeah wrong didn't yeah but scripts it is
-
-00:44:34,940 --> 00:44:39,110
-basically it's it's a digital signature
-
-00:44:39,110 --> 00:44:44,570
-which is nothing but even the hash of
+00:44:34,940 --> 00:44:44,570
+它事实上是一个数字签名，
 
 00:44:44,570 --> 00:44:46,640
-the transaction that's signed by the
-
-00:44:46,640 --> 00:44:49,370
-private key yes basically yes that's
+它只不过是由私钥签署的交易的哈希。
 
 00:44:49,370 --> 00:44:50,560
-correct
+这是对的。
 
-00:44:50,560 --> 00:44:54,950
-okay okay so my the intuition is that
-
-00:44:54,950 --> 00:44:58,070
-what the node might be doing is it will
+00:44:50,560 --> 00:44:58,070
+我的感觉是，
 
 00:44:58,070 --> 00:45:02,360
-probably resign it using the public key
+节点可能会使用公钥重新签署，
 
 00:45:02,360 --> 00:45:07,940
-and check if both are yes yeah yeah yeah
+并检查两者是否一致。
 
 00:45:07,940 --> 00:45:10,010
-then yeah that's correct yeah you
+是的，
 
 00:45:10,010 --> 00:45:15,920
-figured it out yet yeah yeah and coming
+你已经弄清楚了。
 
 00:45:15,920 --> 00:45:18,500
-back to this slide so in the previous
+回到这个幻灯片，
 
 00:45:18,500 --> 00:45:23,150
-one so when you are actually so you were
+你在之前的一个幻灯片中提到了占位符，
 
 00:45:23,150 --> 00:45:25,880
-talking about the placeholder something
+你能再重复一下吗？
 
-00:45:25,880 --> 00:45:28,130
-about a placeholder could you just
-
-00:45:28,130 --> 00:45:30,710
-repeat that I mean is there like is
+00:45:25,880 --> 00:45:30,710
+我是说，会不会是一些占位符文本，
 
 00:45:30,710 --> 00:45:33,020
-there some placeholder text that's good
+或者它只是一个占位符？
 
-00:45:33,020 --> 00:45:34,550
-all is it just and I know the
+00:45:33,020 --> 00:45:43,040
+占位符是当我们之前创建这个锁，
 
-00:45:34,550 --> 00:45:37,930
-placeholder is the so if we go back and
-
-00:45:37,930 --> 00:45:43,040
-quite far back when we created this lock
-
-00:45:43,040 --> 00:45:45,920
-here and we put some locking code so for
-
-00:45:45,920 --> 00:45:49,010
-example let's say you want to spend this
+00:45:43,040 --> 00:45:49,010
+并放入一些锁定代码时的代码。
 
 00:45:49,010 --> 00:45:50,299
-input
+例如，
 
 00:45:50,299 --> 00:45:54,270
-so let's say we are spending this input
+假设你想花费这个输入，
 
-00:45:54,270 --> 00:45:58,890
-here and the place holder is the and is
-
-00:45:58,890 --> 00:46:05,789
-the code inside this lock like so it's a
+00:45:54,270 --> 00:46:05,789
+这里的占位符就是这个锁内的代码。
 
 00:46:05,789 --> 00:46:08,849
-bit confusing I don't know
+这有点混乱，
 
-00:46:08,849 --> 00:46:10,950
-I don't sure why yeah I don't know why
-
-00:46:10,950 --> 00:46:12,569
-it has to be the code inside lock I'm
+00:46:08,849 --> 00:46:12,569
+我不知道为什么它必须是锁内的代码，
 
 00:46:12,569 --> 00:46:14,670
-sure it could be anything else but they
+但我相信它可以是任何其他东西，
 
 00:46:14,670 --> 00:46:16,380
-just needs to if anything is a bit
+但它只需要是这个输入的实际锁定代码，
 
 00:46:16,380 --> 00:46:17,520
-awkward to be honest it doesn't make
+老实说，
 
 00:46:17,520 --> 00:46:19,230
-creating transactions a little bit more
+这使得创建交易变得有些尴尬，
 
-00:46:19,230 --> 00:46:21,690
-awkward having to go back and get the
-
-00:46:21,690 --> 00:46:24,329
-actual locking code for this input and
+00:46:19,230 --> 00:46:24,329
+需要回去获取这个输入的实际锁定代码，
 
 00:46:24,329 --> 00:46:27,030
-use that as a placeholder but that's
+并将其作为占位符使用，
 
 00:46:27,030 --> 00:46:32,430
-just the way it works and it's rehash
+但这就是它的工作方式。
 
 00:46:32,430 --> 00:46:34,349
-this basically the whole thing young
+让我们再次概述一下整个过程，
 
 00:46:34,349 --> 00:46:38,579
-black and that's what we yes sign that's
+我们对整个块进行哈希处理，
 
 00:46:38,579 --> 00:46:40,200
-what we sign yes I simplified it by
+这就是我们要签名的内容。
 
 00:46:40,200 --> 00:46:41,460
-saying this you know you just put the
+我简化了这个过程，
 
 00:46:41,460 --> 00:46:44,369
-transaction data into the elliptic curve
+说你只需要将交易数据放入椭圆曲线，
 
 00:46:44,369 --> 00:46:46,680
 which is kind of true but to be more
