@@ -2487,292 +2487,233 @@ bytes long
 我们都会重复这个过程。
 
 00:47:29,430 --> 00:47:32,609
-你需要记住移除所有已存在的签名，
+
+大致上，
 
 00:47:32,609 --> 00:47:35,339
-然后对每一个单独的输入进行签名。
+你不能忘记移除所有已存在的签名，
 
-00:47:35,339 --> 00:47:38,490
-your site one and then for each one you
-
-00:47:38,490 --> 00:47:40,500
-want to get the blank structure and then
+00:47:35,339 --> 00:47:40,500
+然后对于每一个你想要的空白结构，
 
 00:47:40,500 --> 00:47:45,930
-sign that for each individual so we will
+你需要对其进行签名。
 
 00:47:45,930 --> 00:47:47,819
-then at the end plug in all the
+最后，
 
 00:47:47,819 --> 00:47:49,890
-signatures one of the do just shove them
+我们会插入所有的签名。
 
 00:47:49,890 --> 00:47:53,190
-into into this oh yeah okay sorry
+喔，不好意思，
 
 00:47:53,190 --> 00:47:55,319
-in this one I only had one so let's say
+在这个例子中，
 
 00:47:55,319 --> 00:47:57,329
-we had multiple you know Al this is this
+我们有多个输入，
 
 00:47:57,329 --> 00:48:00,119
-is one then why do then if I had another
+这是其中一个，
 
 00:48:00,119 --> 00:48:01,470
-input I would just take all this
+然后如果我有另一个输入，
 
 00:48:01,470 --> 00:48:02,670
-signature out
+我只需要取出所有这些签名，
 
 00:48:02,670 --> 00:48:04,290
-and I would just sign the next one I put
+然后签名下一个，
 
 00:48:04,290 --> 00:48:05,430
-the placeholder into the next wouldn't
+将占位符放入下一个，
 
 00:48:05,430 --> 00:48:07,470
-sign it to get the signature and so on
+然后签名，
 
 00:48:07,470 --> 00:48:09,390
-as the one got it and at the very end
+以此类推，直到最后，
 
 00:48:09,390 --> 00:48:12,390
-you'll just plug in D and at the end at
+你只需要在最后插入D。
 
 00:48:12,390 --> 00:48:14,280
-the end you just will just shove in all
+最后，
 
-00:48:14,280 --> 00:48:16,590
-the script SIG's in the show back in
-
-00:48:16,590 --> 00:48:21,120
-yeah I got it okay
+00:48:14,280 --> 00:48:21,120
+你只需要将所有的脚本SIG插入回去。
 
 00:48:21,120 --> 00:48:23,160
-so just to summarize this was our
+总结一下，
 
 00:48:23,160 --> 00:48:25,350
-transaction we created that signature
+这是我们的交易，
 
 00:48:25,350 --> 00:48:30,660
-we'll put it put it in there so like I
+我们创建了签名并将其放入。
 
 00:48:30,660 --> 00:48:32,730
-said before a transaction has four major
+如我之前所说，
 
 00:48:32,730 --> 00:48:35,460
-parts you have the vision you have the
+一个交易有四个主要部分，
 
 00:48:35,460 --> 00:48:38,070
-inputs and the input has their own sort
+有版本，有输入，输入有自己的结构或子结构，
 
-00:48:38,070 --> 00:48:39,810
-of mini structure thrown sub structure
-
-00:48:39,810 --> 00:48:41,700
-so it has a track it refers to a
+00:48:38,070 --> 00:48:41,700
+它引用一个交易ID，
 
 00:48:41,700 --> 00:48:44,000
-transaction ID then it refers to a
+然后引用一个特定的输出，
 
-00:48:44,000 --> 00:48:46,920
-specific output then you have a variable
-
-00:48:46,920 --> 00:48:48,300
-integer to tell you the size of that
-
-00:48:48,300 --> 00:48:51,330
-come in script sig and then after that
+00:48:44,000 --> 00:48:51,330
+然后你有一个变量整数来告诉你即将到来的脚本sig的大小，
 
 00:48:51,330 --> 00:48:54,360
-you have a seeing it with a sequence and
+然后在那之后你有一个序列。
 
 00:48:54,360 --> 00:48:56,730
-that's an input next step we have
+这就是输入。
 
 00:48:56,730 --> 00:48:58,140
-outputs and they have their own
+下一步我们有输出，
 
 00:48:58,140 --> 00:49:00,510
-structure again but they're quite simple
+它们也有自己的结构，
 
 00:49:00,510 --> 00:49:02,250
-they just have a value which is 8 bytes
+但它们相当简单，
 
 00:49:02,250 --> 00:49:04,500
-long then you have a very variable
+它们只有一个8字节的值，
 
-00:49:04,500 --> 00:49:06,420
-integer to tell you the size of the
-
-00:49:06,420 --> 00:49:08,250
-upcoming unlocking code which is called
+00:49:04,500 --> 00:49:08,250
+然后你有一个可变整数来告诉你即将到来的解锁代码的大小，
 
 00:49:08,250 --> 00:49:11,310
-the script pub key and then finally you
+这被称为脚本公钥，
 
 00:49:11,310 --> 00:49:14,300
-have the lock time and that is a
+最后你有锁定时间。
 
 00:49:14,300 --> 00:49:17,490
-transaction and they're all the same the
+这就是一个交易，
 
 00:49:17,490 --> 00:49:19,260
-only difference is they have varying
+它们都是一样的，
 
 00:49:19,260 --> 00:49:21,150
-number of inputs varying number of
+唯一的区别是它们有不同数量的输入，
 
 00:49:21,150 --> 00:49:24,270
-outputs and they obviously have referred
+不同数量的输出，
 
 00:49:24,270 --> 00:49:26,910
-to different transactions and have
+它们显然引用了不同的交易，
 
 00:49:26,910 --> 00:49:29,820
-different signatures but you understand
+并有不同的签名，
 
 00:49:29,820 --> 00:49:31,620
-the structure then you understand the
+但如果你理解了结构，
 
 00:49:31,620 --> 00:49:33,420
-structure of every single Bitcoin
+那么你就理解了所有可能的比特币交易的结构，
 
 00:49:33,420 --> 00:49:35,060
-transaction that they could possibly be
+他们可能会进行的任何交易
 
 00:49:35,060 --> 00:49:39,570
-except for a seg wit this is like an old
+除了一个seg，这就像是一个旧的交易
 
 00:49:39,570 --> 00:49:42,840
-cell transaction you do have segregated
+你现在有隔离见证，
 
 00:49:42,840 --> 00:49:46,830
-witness now which basically on a very
+基本上在一个非常基本的层面上，
 
-00:49:46,830 --> 00:49:49,620
-basic level all it does instead of
-
-00:49:49,620 --> 00:49:52,860
-having this signature code in the middle
+00:49:46,830 --> 00:49:52,860
+不再将签名代码放在交易的中间，
 
 00:49:52,860 --> 00:49:55,440
-of transactions a base link it basically
+而是将其移动到交易的末尾，
 
-00:49:55,440 --> 00:49:57,240
-gets moved to the end at the end of a
+00:49:55,440 --> 00:50:04,740
+这就是所谓的见证。
 
-00:49:57,240 --> 00:49:59,340
-transaction and that's called the
+00:50:04,740 --> 00:50:10,860
+因为它是在将签名从交易中分离出来，
 
-00:49:59,340 --> 00:50:02,100
-witness so that's why it's called it's
+00:50:10,860 --> 00:50:14,250
+为什么被称为隔离见证，
 
-00:50:02,100 --> 00:50:04,740
-basically like separating the signatures
-
-00:50:04,740 --> 00:50:07,950
-from the transaction or sometimes a
-
-00:50:07,950 --> 00:50:10,860
-signature is called a witness and that's
-
-00:50:10,860 --> 00:50:12,120
-why it's called segregated witness
-
-00:50:12,120 --> 00:50:14,250
-because it's at segregating the witness
-
-00:50:14,250 --> 00:50:14,430
-day
-
-00:50:14,430 --> 00:50:17,369
-two signatures from the structure of the
+00:50:14,250 --> 00:50:17,369
+因为它将见证签名从交易结构中分离出来。
 
 00:50:17,369 --> 00:50:18,030
-transaction
+我认为这涵盖了隔离见证的内容。
 
 00:50:18,030 --> 00:50:23,160
-I think covering and segue witness would
+我认为覆盖和隔离见证将是他自己的视频，
 
 00:50:23,160 --> 00:50:26,339
-be his own video but I want to do this
+但我想做这个或者至少这是一个基本的交易，
 
-00:50:26,339 --> 00:50:28,160
-or at least this is a basic and
+00:50:26,339 --> 00:50:30,869
+这些仍然是有效的，
 
-00:50:28,160 --> 00:50:30,869
-transaction and these are still valid
-
-00:50:30,869 --> 00:50:31,619
-and you can still make these
-
-00:50:31,619 --> 00:50:32,970
-transactions perfectly fine on the
-
-00:50:32,970 --> 00:50:42,920
-network so maybe distant one line or
+00:50:30,869 --> 00:50:42,920
+你仍然可以在网络上一切正常地进行这些交易。
 
 00:50:44,300 --> 00:50:48,059
-it's basically a Bitcoin proposal yes
+所以可能只是一种，
 
 00:50:48,059 --> 00:50:51,390
-oh yeah it's a segregated witness is a
+或者它根本上只是一个比特币提案，哦，是的没错。
 
-00:50:51,390 --> 00:50:53,849
-change the transaction data structure
-
-00:50:53,849 --> 00:50:57,119
-and it just okay okay it just moves the
+00:50:51,390 --> 00:50:57,119
+隔离见证是一个改变交易数据结构的比特币提案，
 
 00:50:57,119 --> 00:50:59,339
-so yeah as you have this is like the
+好的，所以对的，
 
 00:50:59,339 --> 00:51:02,520
-typical basic transaction but I was
+这是个典型的基本交易，
 
-00:51:02,520 --> 00:51:03,720
-segregated witness will have another
+00:51:02,520 --> 00:51:06,450
+我是隔离见证将有另一个字段或者叫做见证区域的部分，
 
-00:51:03,720 --> 00:51:06,450
-field or section called the witness area
-
-00:51:06,450 --> 00:51:09,359
-and the signatures basically get moved
-
-00:51:09,359 --> 00:51:11,130
-to the end of the transaction and that's
+00:51:06,450 --> 00:51:11,130
+签名基本上被移到了交易的末尾，
 
 00:51:11,130 --> 00:51:15,359
-called a witness area somewhat like let
+那就叫做见证区域。
 
 00:51:15,359 --> 00:51:16,740
-me rephrase the question this is a
+让我重新表述一下这个问题，
 
 00:51:16,740 --> 00:51:19,980
-change in the Bitcoin core goodness or
+这是一个比特币核心的改变吗？
 
 00:51:19,980 --> 00:51:23,970
-is it a change that exchanges need to
+还是说这是为了交易所需要做的改变，？
 
 00:51:23,970 --> 00:51:30,390
-make it's well it's because I keep
+我一直在关注这个，
 
 00:51:30,390 --> 00:51:32,010
-hearing this that you know this person
+你知道这个人必须实施segwit，
 
-00:51:32,010 --> 00:51:33,690
-has to implement send witty and that
-
-00:51:33,690 --> 00:51:35,400
-person has to implement said with yet
+00:51:32,010 --> 00:51:35,400
+那个人必须实施segwit，
 
 00:51:35,400 --> 00:51:38,940
-and they haven't done it and I'm still a
+他们还没有做，
 
 00:51:38,940 --> 00:51:41,220
-little confused but anyway we can hear
+我仍然有点困惑，
 
 00:51:41,220 --> 00:51:43,980
 well if you didn't if you created your
