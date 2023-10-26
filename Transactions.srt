@@ -2716,160 +2716,112 @@ bytes long
 我仍然有点困惑，
 
 00:51:41,220 --> 00:51:43,980
-well if you didn't if you created your
+如果你没有创建自己的软件
 
-00:51:43,980 --> 00:51:46,049
-own software and you've only have ever
+00:51:43,980 --> 00:51:47,849
+那只能创建这种类型的交易，
 
-00:51:46,049 --> 00:51:47,849
-been able to create to these kind of
-
-00:51:47,849 --> 00:51:50,520
-structures transactions then you would
-
-00:51:50,520 --> 00:51:52,740
-have to unless you are using the Bitcoin
-
-00:51:52,740 --> 00:51:53,790
-core software to create your
+00:51:47,849 --> 00:51:53,790
+除非你使用比特币核心软件来创建你的交易，
 
 00:51:53,790 --> 00:51:56,640
-transactions which you know if you've
+否则你需要编写自己的软件，
 
-00:51:56,640 --> 00:51:57,720
-made your own software to create these
-
-00:51:57,720 --> 00:51:59,910
-then you need to write your own software
+00:51:56,640 --> 00:51:59,910
+来创建你自己的隔离见证交易。
 
 00:51:59,910 --> 00:52:02,190
-to create your own security witness
+自己创建得的隔离见证更有意义，
 
 00:52:02,190 --> 00:52:05,099
-transactions guard yeah make sense in
+安全也更有保障。
 
-00:52:05,099 --> 00:52:06,900
-fairness technically I don't think that
-
-00:52:06,900 --> 00:52:12,030
-terribly different difficult so I don't
+00:52:05,099 --> 00:52:12,030
+这在技术上并不难，
 
 00:52:12,030 --> 00:52:13,260
-know why some places are taking so long
+我知道为什么这有些地方花了这么长时间，
 
-00:52:13,260 --> 00:52:15,299
-I think it might be just caution maybe
+00:52:13,260 --> 00:52:19,530
+我想可能是出于谨慎的考虑。
 
-00:52:15,299 --> 00:52:19,530
-I'm not sure got it so at this point of
-
-00:52:19,530 --> 00:52:21,869
-time if I send a transaction with with
-
-00:52:21,869 --> 00:52:24,059
-segregated witness the Bitcoin core will
+00:52:19,530 --> 00:52:24,059
+如果我发送一个带有隔离见证的交易，
 
 00:52:24,059 --> 00:52:27,450
-understand it yes okay
+比特币核心会会理解吗？是的，他会的。
 
-00:52:27,450 --> 00:52:32,069
-all right so that's the that's what
-
-00:52:32,069 --> 00:52:34,140
-we're done so that's the basic stone and
+00:52:27,450 --> 00:52:34,140
+好的，我们已经把基础给完成了。
 
 00:52:34,140 --> 00:52:36,329
-that's the beta done so I'm gonna do an
+beta版本完成了，接下来我会做一些示例，
 
 00:52:36,329 --> 00:52:37,859
-out I'm going to do some examples just
+我从头开始创建一个交易
 
-00:52:37,859 --> 00:52:40,859
-to create a transaction transaction from
-
-00:52:40,859 --> 00:52:42,440
-scratch
-
-00:52:42,440 --> 00:52:47,490
-alright so this is my website before the
+00:52:37,859 --> 00:52:47,490
+好的，这是我在创建交易之前的网站
 
 00:52:47,490 --> 00:52:50,119
-transaction transaction from scratch
+在这里，
 
 00:52:50,119 --> 00:52:54,240
-what I would say is well here's a page
+我演示了交易从零开始。
 
 00:52:54,240 --> 00:52:55,740
-I've got to the glossary go to
+我查看了词汇表，
 
 00:52:55,740 --> 00:52:59,880
-transaction data I've broken down the
+去看交易数据，
 
 00:52:59,880 --> 00:53:02,490
-transactions here so if you wanted to
+我在这里分析了交易，
 
 00:53:02,490 --> 00:53:04,530
-decode your own transaction which i
+如果你想解码你自己的交易，
 
 00:53:04,530 --> 00:53:05,460
-think is a good idea
+我认为这是个很棒的主意。
 
-00:53:05,460 --> 00:53:07,530
-I think decode in this transaction data
-
-00:53:07,530 --> 00:53:09,390
-is a very good place to start I think
+00:53:05,460 --> 00:53:09,390
+我认为解码这个交易数据是一个很好的开始，
 
 00:53:09,390 --> 00:53:10,650
-trying to build one because the
+一开始尝试构建一个签名是会有点棘手，
 
 00:53:10,650 --> 00:53:13,349
-signatures is a bit tricky you might get
+你可能会在某个地方卡住，
 
-00:53:13,349 --> 00:53:15,599
-a bit stuck at some point but decoding
+00:53:13,349 --> 00:53:16,829
+但解码它我认为会是一个理解交易如何工作的好开始，
 
-00:53:15,599 --> 00:53:16,829
-it I think would be a good place to
+00:53:16,829 --> 00:53:22,290
+你会开始理解交易是如何运作的，
 
-00:53:16,829 --> 00:53:18,359
-start for getting to grips with how
-
-00:53:18,359 --> 00:53:22,290
-transactions work and I saw it was handy
-
-00:53:22,290 --> 00:53:24,150
-to have your own decoder just for your
-
-00:53:24,150 --> 00:53:27,390
-own reference purposes but if you wanted
+00:53:22,290 --> 00:53:27,390
+我发现拥有自己的解码器仅仅为了自己的参考目的是非常方便的，
 
 00:53:27,390 --> 00:53:30,030
-to you know dig into the transaction
+但如果你想深入了解交易数据，
 
 00:53:30,030 --> 00:53:34,940
-data here's the page on my website or
+这是我网站上的页面，
 
-00:53:34,940 --> 00:53:37,170
-alternatively you could just look at any
-
-00:53:37,170 --> 00:53:40,650
-block of transactions on the browser so
+00:53:34,940 --> 00:53:40,650
+或者你可以在浏览器上查看任何区块的交易，
 
 00:53:40,650 --> 00:53:43,349
-for example this one this is a bit of a
+例如这个，这个有点复杂，
 
-00:53:43,349 --> 00:53:44,730
-complex one there's taking loads of
-
-00:53:44,730 --> 00:53:46,230
-inputs in and spitting rows of it the
+00:53:43,349 --> 00:53:46,230
+它接收了大量的输入并吐出了大量的输出，
 
 00:53:46,230 --> 00:53:48,480
-outputs out but if you click on see
+但如果你点击查看实际的，
 
 00:53:48,480 --> 00:53:52,109
-realized and you can break down the
+你可以将交易分解成它的组成部分，
 
 00:53:52,109 --> 00:53:55,380
 transaction into its component parts so
