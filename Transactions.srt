@@ -2159,128 +2159,101 @@ bytes long
 00:40:15,769 --> 00:40:18,259
 所以这只是一个哈希类型，
 
-00:40:18,259 --> 00:40:20,329
-stick hash type to the actual signature
+00:40:18,259 --> 00:40:22,009
+我们将其放入数学运算中，
 
-00:40:20,329 --> 00:40:22,009
-itself so this was just a cache type
-
-00:40:22,009 --> 00:40:25,700
-before we put into the mathematics and
-
-00:40:25,700 --> 00:40:29,299
-then we append the same number so this
+00:40:22,009 --> 00:40:29,299
+然后我们在末尾附加相同的数字，
 
 00:40:29,299 --> 00:40:31,730
-is 4 bytes this is one byte I think that
+这是4字节，
 
 00:40:31,730 --> 00:40:32,599
-was a mistake
+这是1字节，
 
 00:40:32,599 --> 00:40:35,420
-when the account was being developed to
+我认为这是一个错误，
 
 00:40:35,420 --> 00:40:37,039
-have these different sizes of bytes but
+当帐户正在开发时，
 
 00:40:37,039 --> 00:40:40,460
-they both the same number one and one so
+有这些不同大小的字节，
 
 00:40:40,460 --> 00:40:43,700
-that goes on the end there so that's if
+但它们都是相同的数字，
 
 00:40:43,700 --> 00:40:44,930
-you're doing technically but I just
+在这个数字的末尾。
 
-00:40:44,930 --> 00:40:46,099
-simplified this just to show you that
-
-00:40:46,099 --> 00:40:48,079
-the transaction data goes into this sort
+00:40:44,930 --> 00:40:48,079
+所以这就是如果你在做技术性的工作，
 
 00:40:48,079 --> 00:40:49,309
-of two curve and that gives you a
+但我只是简化了这个，
 
 00:40:49,309 --> 00:40:53,119
-signature so when you create this
+只是为了向你展示交易数据进入这个曲线。
 
 00:40:53,119 --> 00:40:55,789
-signature because of the because you use
+所以当你创建这个签名时，
 
 00:40:55,789 --> 00:40:58,609
-it because we use this elliptic curve
+你使用了这个椭圆曲线，
 
 00:40:58,609 --> 00:41:01,369
-the address can basically look at this
+地址上就可以看到这个签名，
 
 00:41:01,369 --> 00:41:04,579
-signature and say okay this signature
+然后，好的，
 
-00:41:04,579 --> 00:41:06,890
-could only have been created by the
-
-00:41:06,890 --> 00:41:11,509
-person who owns the public key that I
+00:41:04,579 --> 00:41:11,509
+这个签名只能由我从中创建的公钥的所有者创建。
 
 00:41:11,509 --> 00:41:14,630
-made from so that is good enough
+那么这就足够了，
 
 00:41:14,630 --> 00:41:16,249
-distinction here is good enough to
+足够解锁这个输入，
 
 00:41:16,249 --> 00:41:20,930
-unlock this input and by doing that we
+通过这样做，
 
 00:41:20,930 --> 00:41:22,640
-can put this signature in here and we're
+我们可以把这个签名放在这里，
 
 00:41:22,640 --> 00:41:24,529
-not giving away our public our private
+我们不会泄露我们的公钥或私钥。
 
 00:41:24,529 --> 00:41:30,289
-key another benefit of this signing
+这个签名过程的另一个好处是，
 
-00:41:30,289 --> 00:41:33,890
-process is because this signature is
-
-00:41:33,890 --> 00:41:37,430
-made from this transaction structure
+00:41:30,289 --> 00:41:37,430
+因为这个签名是由我们创建的这个交易结构制作的，
 
 00:41:37,430 --> 00:41:39,890
-that we created when we put this in here
+当我们把这个签名放在这里时，
 
 00:41:39,890 --> 00:41:42,859
-if we were to send this transaction into
+如果我们把这个交易发送到网络中，
 
-00:41:42,859 --> 00:41:44,809
-the network and someone was trying to
+00:41:42,859 --> 00:41:51,380
+有人试图修改交易的结构，
 
-00:41:44,809 --> 00:41:46,609
-modify the structure of the transaction
-
-00:41:46,609 --> 00:41:51,380
-like basically send change where the
-
-00:41:51,380 --> 00:41:52,670
-bitcoins are being sent to you know to
-
-00:41:52,670 --> 00:41:55,309
-try and steal your bitcoins like so
-
-00:41:55,309 --> 00:41:58,549
-they'll change the locking code then
+00:41:51,380 --> 00:41:58,549
+比如改变比特币的地址，
 
 00:41:58,549 --> 00:42:00,170
-this signal this signature will no
+试图偷走你的比特币，
 
 00:42:00,170 --> 00:42:02,450
-longer work and this transaction will no
+那么这个签名就不再有效，
 
 00:42:02,450 --> 00:42:06,799
-longer be valid because the signature
+这个交易就不再有效。
 
 00:42:06,799 --> 00:42:08,989
-signature will only work for the
+因为这个签名只适用于产生它的交易。
 
 00:42:08,989 --> 00:42:13,369
 transaction that it's made from so this
