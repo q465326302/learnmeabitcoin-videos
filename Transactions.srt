@@ -2964,101 +2964,83 @@ beta版本完成了，接下来我会做一些示例，
 00:56:51,630 --> 00:56:53,880
 我没有在这个上面放费用，
 
-00:56:53,880 --> 00:56:54,660
-the whole amount
-
-00:56:54,660 --> 00:57:00,990
-I'll send c49 this this amount so that
+00:56:53,880 --> 00:57:00,990
+我将发送整个金额给c49，
 
 00:57:00,990 --> 00:57:02,490
-puts a little fee on it I don't know
+这会产生一些费用，
 
 00:57:02,490 --> 00:57:03,960
-what that's gonna be in fee per byte
+我不知道每字节的费用是多少，
 
 00:57:03,960 --> 00:57:06,120
-under guessing but that will leave a
+但这将在交易中留下一些余额。
 
 00:57:06,120 --> 00:57:09,570
-remainder in the transaction and again
+再次输入地址，
 
 00:57:09,570 --> 00:57:12,450
-put the address there so that's a book
+这交易已经创建了，
 
-00:57:12,450 --> 00:57:15,150
-created last up then so this is output
-
-00:57:15,150 --> 00:57:17,910
-been added to the transaction code when
+00:57:12,450 --> 00:57:17,910
+这里输出已经被添加到交易代码，
 
 00:57:17,910 --> 00:57:22,190
-I put and this is the is this right
+当我放入这个的时候，
 
-00:57:22,190 --> 00:57:25,940
-yeah I'm sure here somewhere
+00:57:22,190 --> 00:57:26,180
+这是对的，我在这里有个问题，
 
-00:57:26,180 --> 00:57:28,680
-so a quick question here so at this
+00:57:26,180 --> 00:57:39,090
+这个时候它是已经签名的还是还需要签名？
 
-00:57:28,680 --> 00:57:31,260
-point is it signed or it it still yes
-
-00:57:31,260 --> 00:57:32,880
-Tony's resigned and you have to create
-
-00:57:32,880 --> 00:57:35,070
-yeah okay the whole structure first
+00:57:31,260 --> 00:57:35,070
+你需要之前创建整个结构，
 
 00:57:35,070 --> 00:57:39,090
-before it gets on alright got it so it
+然后才能签名。
 
-00:57:39,090 --> 00:57:41,570
-has your code just plugged in the place
-
-00:57:41,570 --> 00:57:46,020
-he'll do that in a moment and so last up
+00:57:39,090 --> 00:57:46,020
+所以它已经把你的代码插入到了这个地方，
 
 00:57:46,020 --> 00:57:48,510
-is a long time so there we are so now
+最后一步是签名，
 
 00:57:48,510 --> 00:57:50,850
-we've created the structure we've chosen
+现在我们已经创建了结构，
 
 00:57:50,850 --> 00:57:52,410
-the inputs and we've creating the output
+我们选择了输入，并创建了输出，
 
 00:57:52,410 --> 00:57:54,060
-from it so now we've got the whole
+现在我们已经有了整个结构，
 
 00:57:54,060 --> 00:57:56,010
-structure this is you've got the data we
+你已经有了需要的数据，
 
 00:57:56,010 --> 00:57:59,370
-need to be able to sign it so to be able
+就能够签名，
 
 00:57:59,370 --> 00:58:00,330
-to sign it
+我需要这个地址的私钥。
 
-00:58:00,330 --> 00:58:04,190
-I need the private key for this address
-
-00:58:04,190 --> 00:58:06,300
-you should never expose your private key
+00:58:00,330 -->00:58:06,300
+你永远不应该暴露你的私钥。
 
 00:58:06,300 --> 00:58:08,970
-but in this example here it is this is
+但在这个例子中，
 
 00:58:08,970 --> 00:58:12,690
-my private key for this output so there
+这就是我输出的私钥，
 
 00:58:12,690 --> 00:58:13,710
-we are that's the private key that
+对应于这个输出。
 
 00:58:13,710 --> 00:58:16,680
-corresponds to this address but like I
+但是，正如我所说，
 
 00:58:16,680 --> 00:58:21,180
-said we need to get the locking code so
+我们需要获取锁定代码，
 
 00:58:21,180 --> 00:58:22,710
 that we can use a placeholder when we
