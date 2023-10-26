@@ -2451,49 +2451,43 @@ bytes long
 说你只需要将交易数据放入椭圆曲线，
 
 00:46:44,369 --> 00:46:46,680
-which is kind of true but to be more
+这在某种程度上你是是正确的，
 
 00:46:46,680 --> 00:46:48,690
-technical and correct you actually
+但更准确的说法是，
 
 00:46:48,690 --> 00:46:51,180
-append a sick hash type then you hash it
+你实际上是附加了一个哈希类型，
 
 00:46:51,180 --> 00:46:53,420
-and the last what goes into this
+然后哈希它，
 
 00:46:53,420 --> 00:46:58,099
-elliptic curve mathematics and you can
+最后将其放入这个椭圆曲线数学公式中。
 
-00:46:58,609 --> 00:47:01,170
-usually find you can usually find a
+00:46:58,609 --> 00:47:05,940
+通常你可以找到一个叫做ECDSA的库，
 
-00:47:01,170 --> 00:47:05,940
-library for for it's called ECDSA like
-
-00:47:05,940 --> 00:47:08,579
-elliptic curve Dignitas signature
-
-00:47:08,579 --> 00:47:11,160
-algorithm and this usually alike we can
+00:47:05,940 --> 00:47:11,160
+也就是椭圆曲线数字签名算法，
 
 00:47:11,160 --> 00:47:16,529
-use to do this signing and one more
+我们通常可以用它来进行签名。
 
 00:47:16,529 --> 00:47:19,470
-question was that we do we keep doing
+还有一个问题是，
 
 00:47:19,470 --> 00:47:22,170
-this for every output that we are trying
+我们是否需要对每一个我们试图花费的输出进行这个操作？
 
 00:47:22,170 --> 00:47:25,579
-to spend right so for every we repeat
+对于每一个输入，
 
 00:47:25,579 --> 00:47:29,430
-for every input why do is you will yes
+我们都会重复这个过程。
 
 00:47:29,430 --> 00:47:32,609
-like on yeah you basically don't forget
+你需要记住移除所有已存在的签名，
 
 00:47:32,609 --> 00:47:35,339
 to remove all the existing signatures so
