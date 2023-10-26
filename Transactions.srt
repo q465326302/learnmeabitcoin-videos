@@ -2490,7 +2490,7 @@ bytes long
 你需要记住移除所有已存在的签名，
 
 00:47:32,609 --> 00:47:35,339
-to remove all the existing signatures so
+然后对每一个单独的输入进行签名。
 
 00:47:35,339 --> 00:47:38,490
 your site one and then for each one you
