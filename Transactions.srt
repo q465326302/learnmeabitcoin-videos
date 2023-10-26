@@ -1946,278 +1946,218 @@ coinbase交易就是根。
 00:36:23,000 --> 00:36:28,940
 来证明我们是这个地址的所有者。
 
-00:36:28,940 --> 00:36:31,009
-or very simple and bad way of doing this
-
-00:36:31,009 --> 00:36:33,740
-would be just to shove your private key
+00:36:28,940 --> 00:36:33,740
+或者一个非常简单但不好的方法，
 
 00:36:33,740 --> 00:36:37,369
-into a transaction I mean that would
+就是将你的私钥直接塞入交易中，
 
 00:36:37,369 --> 00:36:38,720
-prove that you know that you have the
+这样可以证明你拥有私钥，
 
 00:36:38,720 --> 00:36:40,759
-private key but the problem of that is
+但问题在于，
 
-00:36:40,759 --> 00:36:42,289
-when you send this into the network you
+00:36:40,759 --> 00:36:43,819
+当你这样做发送到网络中时，
 
-00:36:42,289 --> 00:36:43,819
-basically given your private key to
-
-00:36:43,819 --> 00:36:45,410
-everyone on the network because your
-
-00:36:45,410 --> 00:36:47,329
-private key has been exposed so if you
+00:36:43,819 --> 00:36:47,329
+你基本上就把你的私钥给了网络中的每一个人，
 
 00:36:47,329 --> 00:36:49,519
-had any other outputs that were locked
+因为你的私钥已经被暴露了。
 
 00:36:49,519 --> 00:36:51,950
-to this address they can use a private
+所以，如果你有其他的输出被锁定到这个地址，
 
 00:36:51,950 --> 00:36:54,589
-key to unlock them and spend them or
+他们可以使用私钥解锁它们并花费它们，
 
 00:36:54,589 --> 00:36:56,359
-they could just not relay this
+或者他们可以不转发这个交易，
 
-00:36:56,359 --> 00:36:57,769
-transaction they could just take your
-
-00:36:57,769 --> 00:36:59,269
-private key and create a new transaction
+00:36:56,359 --> 00:36:59,269
+他们可以直接拿你的私钥并创建一个新的交易，
 
 00:36:59,269 --> 00:37:03,410
-and send it to their own addresses so
+然后发送到他们自己的地址，
 
 00:37:03,410 --> 00:37:05,839
-that's bad so we need like a more
+所以这是很不好的。
 
 00:37:05,839 --> 00:37:08,390
-intelligent way of using our private key
+所以我们需要一个更智能的方式来使用我们的私钥来解锁这个锁，
 
 00:37:08,390 --> 00:37:11,509
-to unlock this lock to prove that we own
+来证明我们拥有这个地址，
 
 00:37:11,509 --> 00:37:13,940
-this address without actually giving
+而不是真的给出私钥本身，
 
-00:37:13,940 --> 00:37:16,279
-away the private key itself and that's
-
-00:37:16,279 --> 00:37:18,079
-where signing comes in using digital
+00:37:13,940 --> 00:37:18,079
+这就是数字签名的作用。
 
 00:37:18,079 --> 00:37:19,880
-signatures
+就像我说的，
 
-00:37:19,880 --> 00:37:22,740
-so like I says this private this private
-
-00:37:22,740 --> 00:37:24,450
-key and address there actually create
+00:37:19,880 --> 00:37:24,450
+这个私钥和地址实际上是相互关联的，
 
 00:37:24,450 --> 00:37:27,000
-connected the address is actually
+地址实际上是由你的私钥创建的，
 
 00:37:27,000 --> 00:37:30,810
-created from your private key I'm not
+我现在不打算讲解这是如何工作的，
 
 00:37:30,810 --> 00:37:32,070
-going to cover how that works now but
+但是私钥和数字签名，
 
-00:37:32,070 --> 00:37:34,410
-they are connected through some
-
-00:37:34,410 --> 00:37:40,710
-mathematics using an elliptic curve so
+00:37:32,070 --> 00:37:40,710
+是通过一些数学运算使用椭圆曲线相互连接的。
 
 00:37:40,710 --> 00:37:41,820
-what you can do because these are
+所以你可以做的是，
 
 00:37:41,820 --> 00:37:44,150
-connected with an elliptic curve you can
+因为这些是通过椭圆曲线连接的，
 
 00:37:44,150 --> 00:37:48,810
-use some more mathematics to create a
+你可以使用更多的数学运算从你的私钥创建一个签名，
 
-00:37:48,810 --> 00:37:51,560
-signature from your private key that'll
-
-00:37:51,560 --> 00:37:53,970
-prove that we'll be able to unlock this
+00:37:48,810 --> 00:37:53,970
+这将能够解锁这个地址。
 
 00:37:53,970 --> 00:37:55,800
-address so I'll just run through it
+我会简单地介绍一下，
 
-00:37:55,800 --> 00:37:57,480
-quickly what you do to create a digital
+00:37:55,800 -->00:38:00,180
+你如何为这个交易创建一个数字签名，
 
-00:37:57,480 --> 00:38:00,180
-signature for this transaction is you
-
-00:38:00,180 --> 00:38:02,370
-take the private key along with the
-
-00:38:02,370 --> 00:38:04,430
-transaction that you want to sign and
+00:38:00,180 --> 00:38:04,430
+你需要拿到私钥和你想要签名的交易，
 
 00:38:04,430 --> 00:38:08,490
-you'll put it into this addictive well
+然后将它们放入这个椭圆曲线中。
 
 00:38:08,490 --> 00:38:10,470
-you use some elliptic curve mathematics
+你使用了一些椭圆曲线数学，
 
 00:38:10,470 --> 00:38:13,790
-and that will give you a signature and
+这将给你一个签名。
 
 00:38:13,790 --> 00:38:16,320
-so currently yeah currently the
+目前，
 
 00:38:16,320 --> 00:38:21,360
-right-hand side input has just the
+右侧的输入只有屏幕上显示的信息
 
-00:38:21,360 --> 00:38:23,310
-information that is there on the screen
+00:38:21,360 --> 00:38:27,030
+对，就像它仍然在那里，
 
-00:38:23,310 --> 00:38:27,030
-right yeah like it's still the gap is
+00:38:27,030 --> 00:38:32,700
+对，是的，
 
-00:38:27,030 --> 00:38:30,840
-still there right yes so what happened
-
-00:38:30,840 --> 00:38:32,700
-then you've used this of you know
-
-00:38:32,700 --> 00:38:34,950
-unsigned transaction and you put it into
-
-00:38:34,950 --> 00:38:37,110
-this function along with this your
+00:38:32,700 --> 00:38:38,460
+然后你使用这个未签名的交易和你的私钥放入这个函数，
 
 00:38:37,110 --> 00:38:38,460
-private key and that will give you a
+和你的私钥放入这个函数，
 
 00:38:38,460 --> 00:38:40,410
-signature so this is a signature that
+这将给你一个签名。
 
 00:38:40,410 --> 00:38:44,040
-will get put into the transaction there
+这个签名将被放入交易中。
 
 00:38:44,040 --> 00:38:45,660
-we are
+我简化了这一点，
 
-00:38:45,660 --> 00:38:47,790
-I've simplified this a little bit so
-
-00:38:47,790 --> 00:38:48,840
-this is probably the part that you want
+00:38:45,660 --> 00:38:48,840
+这可能是你想忽略的部分，
 
 00:38:48,840 --> 00:38:51,720
-to gloss over because it's hard to keep
+因为它很难保留。
 
 00:38:51,720 --> 00:38:53,040
-up but I'm just just in case you're
+但是，如果你以技术思维观看这个，
 
 00:38:53,040 --> 00:38:55,590
-watching this with a technical mind or
+或者实际在做这个，
 
 00:38:55,590 --> 00:38:58,140
-actual actually doing it what you need
+你需要做的是，
 
 00:38:58,140 --> 00:39:01,740
-to do is first of all when you want to
+首先，当你想要签名一个交易时，
 
 00:39:01,740 --> 00:39:03,180
-sign a transaction you have to kick out
+你必须先剔除任何已存在的签名。
 
 00:39:03,180 --> 00:39:04,890
-any existing signatures in there so if
+如果你已经签名了一个输入，
 
 00:39:04,890 --> 00:39:07,470
-you've already signed and an input take
+就把签名去掉。
 
-00:39:07,470 --> 00:39:10,470
-out the signatures what you do then you
+00:39:07,470 --> 00:39:19,020
+然后你需要在脚本签名将要放置的地方放置一个占位符代码，
 
-00:39:10,470 --> 00:39:13,080
-need to put a placeholder some
-
-00:39:13,080 --> 00:39:16,410
-placeholder code in to where the script
-
-00:39:16,410 --> 00:39:19,020
-sig is going to be and that placeholder
-
-00:39:19,020 --> 00:39:23,820
-cone is the locking code or the script
+00:39:19,020 --> 00:39:29,559
+这个占位符代码是我们试图解锁的输入的锁定代码或脚本公钥。
 
 00:39:23,820 --> 00:39:25,950
-pub key of the input that we're trying
+这只是一个占位符，
 
 00:39:25,950 --> 00:39:27,720
-to unlock this is just a placeholder so
+所以我们知道要签名哪个输入。
 
 00:39:27,720 --> 00:39:29,559
-we know which input to sign
+然后，
 
-00:39:29,559 --> 00:39:32,480
-wait till then you append what's called
-
-00:39:32,480 --> 00:39:34,970
-a sig hash type to the end of the
+00:39:29,559 --> 00:39:34,970
+你将所谓的sig hash类型附加到交易数据的末尾，
 
 00:39:34,970 --> 00:39:38,239
-transaction data not entirely sure what
+我不完全确定这是用来做什么的，
 
 00:39:38,239 --> 00:39:41,989
-this used for but for typical signatures
+但对于典型的签名，
 
 00:39:41,989 --> 00:39:43,640
-you just put number one this obviously a
+你只需要在这里输入数字1，
 
 00:39:43,640 --> 00:39:45,380
-network byte or byte order and it's four
+这显然是一个网络字节或字节顺序，
 
 00:39:45,380 --> 00:39:45,980
 bytes long
 
 00:39:45,980 --> 00:39:48,619
-then you hash all that together twice
+长度为4字节。
 
-00:39:48,619 --> 00:39:51,230
-through hash two five six and that'll
-
-00:39:51,230 --> 00:39:52,099
-give you this
+00:39:48,619 --> 00:39:52,099
+然后你把所有这些都通过hash256进行两次哈希，
 
 00:39:52,099 --> 00:39:54,980
-digest which is the message and that's
+你会得到这个摘要，
 
 00:39:54,980 --> 00:40:01,489
-what goes into this elliptic curve then
+然后这个消息会进入这个椭圆曲线，
 
 00:40:01,489 --> 00:40:03,289
-that'll spit out a signature that you
+然后它会输出一个签名，
 
-00:40:03,289 --> 00:40:05,690
-have to have this in a de are encoded
-
-00:40:05,690 --> 00:40:10,670
-format and your I think most libraries
+00:40:03,289 --> 00:40:10,670
+你需要将这个签名编码成DER格式，
 
 00:40:10,670 --> 00:40:12,890
-will have you give this option of
+我认为大多数库都会给你这种编码签名的选项，
 
 00:40:12,890 --> 00:40:15,769
-encoding the signature in this way and
+然后最后你需要将相同的哈希类型附加到实际的签名本身，
 
 00:40:15,769 --> 00:40:18,259
-then finally you need to append the same
+所以这只是一个哈希类型，
 
 00:40:18,259 --> 00:40:20,329
 stick hash type to the actual signature
