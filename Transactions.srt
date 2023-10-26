@@ -2824,163 +2824,145 @@ beta版本完成了，接下来我会做一些示例，
 你可以将交易分解成它的组成部分，
 
 00:53:52,109 --> 00:53:55,380
-transaction into its component parts so
+所以当你想了解交易的结构时，
 
-00:53:55,380 --> 00:53:58,049
-that might be helpful when when you want
-
-00:53:58,049 --> 00:53:59,760
-to understand the structure of a
-
-00:53:59,760 --> 00:54:03,900
-transaction but what I'm going to now
+00:53:55,380 --> 00:54:03,900
+这可能会对你有帮助，
 
 00:54:03,900 --> 00:54:05,420
-what I'm gonna do now I'm going to
+但我现在要做的是，
 
-00:54:05,420 --> 00:54:10,760
-construct my own transaction
+00:54:05,420 --> 00:54:11,450
+我要构建我自己的交易。
 
 00:54:11,450 --> 00:54:15,349
-I swear I can't give it up get rid of
+我发誓我不能放弃，我要摆脱这个小东西。
 
 00:54:15,349 --> 00:54:18,109
-this little thing here sorry don't how
+噢对不起，我不知道怎么做，兄弟。
 
-00:54:18,109 --> 00:54:24,380
-to do that brother so I've got some I've
-
-00:54:24,380 --> 00:54:27,799
-made a little script called transaction
+00:54:18,109 --> 00:54:27,799
+所以我有一些我做了一个小脚本叫做交易构建器，
 
 00:54:27,799 --> 00:54:30,440
-builder and I'm going to build my own
+我将构建我自己的交易，
 
-00:54:30,440 --> 00:54:33,650
-transaction so first thing I need is I
-
-00:54:33,650 --> 00:54:39,049
-need to be able to know which outputs I
+00:54:30,440 --> 00:54:39,049
+首先我需要能够知道我可以花费哪些输出，
 
 00:54:39,049 --> 00:54:41,869
-can spend so luckily for me I've created
+我很幸运，我之前创建了一个交易，
 
 00:54:41,869 --> 00:54:46,430
-a transaction beforehand and I've locked
+并且我提前锁定了这些输出到地址的价值，
 
 00:54:46,430 --> 00:54:49,910
-these outputs to address his value so
+所以我要花费其中一个输出，
 
 00:54:49,910 --> 00:54:54,380
-I'm gonna spend one of these outputs so
+所以我会花费这个，
 
 00:54:54,380 --> 00:54:55,849
-I'll spend this one this is the one I
+这是我想要花费的，
 
 00:54:55,849 --> 00:54:57,549
-want to spend and send to somewhere else
+并发送到其他地方，
 
 00:54:57,549 --> 00:55:00,170
-so first of all in the transaction
+所以首先在交易构建器中，
 
 00:55:00,170 --> 00:55:01,549
-builder facing a need it's a version
+我还需要一个版本号，
 
 00:55:01,549 --> 00:55:03,589
-number so I'll stick the version 1 in
+我会把版本1放在那里，
 
-00:55:03,589 --> 00:55:06,950
-there and so that has turned that number
-
-00:55:06,950 --> 00:55:11,359
-1 into hexadecimal network byte order
+00:55:03,589 --> 00:55:11,359
+把那个数字1转换成了十六进制网络字节顺序，
 
 00:55:11,359 --> 00:55:15,980
-and it's turned into a 4 byte field next
+并把它转换成了一个4字节的字段，
 
 00:55:15,980 --> 00:55:17,930
-step we need to select the inputs so I
+接下来我们需要选择输入，
 
 00:55:17,930 --> 00:55:20,720
-need a transaction ID and a output
+我需要一个交易ID和一个输出编号。
 
 00:55:20,720 --> 00:55:23,020
-number so this is the transaction ID
+这是交易ID，
 
 00:55:23,020 --> 00:55:26,270
-I'll put that in there and I want this
+我将它放在这里，
 
 00:55:26,270 --> 00:55:30,280
-one here that's output 0 so there we are
+我想让这个输出为0，
 
-00:55:30,280 --> 00:55:33,740
-that's the only one I want to spend so
-
-00:55:33,740 --> 00:55:36,380
-that's not done so if you look here
+00:55:30,280 --> 00:55:36,380
+这就是唯一一个我想要花费的。
 
 00:55:36,380 --> 00:55:40,460
-that's the number of inputs this here is
+如果你看这里，
 
 00:55:40,460 --> 00:55:44,000
-the transaction ID in Reverse byte order
+这是输入的数量，
 
 00:55:44,000 --> 00:55:50,530
-so a 4 a 4 and this here is the 4 byte
+这是以反向字节顺序的交易ID，
 
 00:55:54,090 --> 00:55:59,460
-it's the 4-byte output number this here
+所以4a4，是4字节的输出，
 
 00:55:59,460 --> 00:56:02,550
-is the variable integer to see to tell
+这是变量整数，
 
 00:56:02,550 --> 00:56:04,080
-me the upcoming size of the signature
+用来告诉我即将出现的签名大小，
 
 00:56:04,080 --> 00:56:05,730
-but I haven't put it in there yet so at
+但我还没有把它放进去，
 
 00:56:05,730 --> 00:56:07,500
-zero and this is the sequence number
+所以是0，
 
 00:56:07,500 --> 00:56:11,120
-done using so next up now I need to
+这是我没有使用的序列号。
 
 00:56:11,120 --> 00:56:13,650
-choose my way I need to create my
+接下来我需要创建我的输出，
 
 00:56:13,650 --> 00:56:16,970
-outputs so this were here this is a
+在这里
 
 00:56:16,970 --> 00:56:20,910
-naught point naught 5 BTC but I want
+这是0.005比特币，
 
 00:56:20,910 --> 00:56:23,520
-this to be in satoshis so let me just
+但我希望这是以聪为单位，
 
 00:56:23,520 --> 00:56:28,350
-configure that yeah so that's not point
+所以我在这里配置一下，
 
 00:56:28,350 --> 00:56:33,090
-naught naught 5 1 so I put the value
+这是0.0051，我在这里输入值，
 
 00:56:33,090 --> 00:56:36,840
-here and the address I want to send it
+我想发送到的地址，
 
 00:56:36,840 --> 00:56:40,230
-to I think I'll send it to my donation
+我想我会把它发送到我的捐赠地址，
 
 00:56:40,230 --> 00:56:41,760
-address here and the top of the website
+地址这在网站的顶部。
 
 00:56:41,760 --> 00:56:47,310
-so there we go and but because I want
+好了，
 
 00:56:47,310 --> 00:56:51,630
-this to get mind I haven't put a fee on
+但是因为我希望这个被挖掘，
 
 00:56:51,630 --> 00:56:53,880
-this so what I'll do instead of sending
+我没有在这个上面放费用，
 
 00:56:53,880 --> 00:56:54,660
 the whole amount
