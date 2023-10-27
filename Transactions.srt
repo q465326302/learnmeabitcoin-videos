@@ -3413,199 +3413,166 @@ beta版本完成了，接下来我会做一些示例，
 我把数据存储在我自己的数据库中，
 
 01:04:58,060 --> 01:05:00,740
-database but it's basically running live
+但它基本上是在运行的比特币核心节点里
 
 01:05:00,740 --> 01:05:02,990
-off a Bitcoin core node so when you make
+所以当你做一个交易，
 
 01:05:02,990 --> 01:05:04,940
-a transaction I said new block I've just
+一个新的区块刚刚被添加，
 
 01:05:04,940 --> 01:05:10,490
-been added so yeah it's all life okay so
+是的，这一切都是实时的。
 
-01:05:10,490 --> 01:05:13,250
-you're hosting the website on the same
-
-01:05:13,250 --> 01:05:17,180
-node or it's on a different machine and
+01:05:10,490 --> 01:05:17,180
+你是在同一节点上托管网站，
 
 01:05:17,180 --> 01:05:19,100
-you just pull data into a database and
+或是在另一台机器上将数据拉入数据库，
 
 01:05:19,100 --> 01:05:22,070
-then have the website read data off it's
+然后让网站从中读取数据，
 
 01:05:22,070 --> 01:05:23,510
-actually on the same machine it probably
+实际上它在同一台机器上，
 
 01:05:23,510 --> 01:05:25,010
-would make sense to have the node on a
+更有意义的是将节点放在另一台机器上，
 
 01:05:25,010 --> 01:05:27,980
-different machine and then how can they
+然后他们如何
 
 01:05:27,980 --> 01:05:29,150
-- I'll have this website just mean the
+-我会让这个网站只是数据库，
 
-01:05:29,150 --> 01:05:33,170
-database but I don't the machines needs
+01:05:29,150 --> 01:05:35,600
+但我不希望机器需要处理处理它。
 
-01:05:33,170 --> 01:05:35,600
-to be handling handling it okay so at
-
-01:05:35,600 --> 01:05:38,570
-the moment Wow but this is running off a
-
-01:05:38,570 --> 01:05:40,640
-machine in Switzerland so that's why
+01:05:35,600 --> 01:05:40,640
+但这个网站实际上是在瑞士的一台机器上运行的。
 
 01:05:40,640 --> 01:05:41,990
-when I made this transaction I'm in the
+我在英国，
 
-01:05:41,990 --> 01:05:44,579
-UK at the moment I sent it from my
+01:05:41,990 --> 01:05:47,910
+所以我从我的本地节点发送交易，
 
-01:05:44,579 --> 01:05:47,910
-I sent this from my local node from the
+01:05:47,910 --> 01:05:55,650
+可能需要几秒钟的时间能传播到整个网络，
 
-01:05:47,910 --> 01:05:50,279
-UK so yeah but then again it only takes
-
-01:05:50,279 --> 01:05:53,640
-a few seconds I think for a transaction
-
-01:05:53,640 --> 01:05:55,650
-to propagate the entire network so it
-
-01:05:55,650 --> 01:05:57,119
-might have been my website was a little
-
-01:05:57,119 --> 01:05:59,699
-bit slow at decoding the transaction and
+01:05:55,650 --> 01:05:59,699
+所以我的网站在解码交易时有点慢。
 
 01:05:59,699 --> 01:06:03,259
-then and then storing it in the database
+然后将其存储在数据库中
 
 01:06:04,039 --> 01:06:08,369
-so that's the Bitcoin CLI give you
+比特币CLI给你提供了所有这些数据，
 
 01:06:08,369 --> 01:06:11,279
-access to all this data like memory pool
+可以访问这些所有数据，
 
 01:06:11,279 --> 01:06:13,679
-and transactions in the memory pool or
+比如内存池和内存池中的交易
 
 01:06:13,679 --> 01:06:16,199
-you yeah and it does give you all the
+是的，它确实提供了所有的数据。
 
 01:06:16,199 --> 01:06:19,019
-data so I mean you could use the website
+所以你可以使用这个网站
 
 01:06:19,019 --> 01:06:21,989
-but you can actually get all this data
+但你实际上可以从比特币CLI获取所有这些数据。
 
 01:06:21,989 --> 01:06:25,939
-from Bitcoin CLI I'm not sure what is
+我不确定是什么。
 
 01:06:25,939 --> 01:06:28,650
-are they okay that last the mempool so
+最后是内存池，
 
 01:06:28,650 --> 01:06:31,469
-Bitcoin CLI get more mempool these are
+比特币CLI获取更多的内存池，
 
 01:06:31,469 --> 01:06:33,779
-all the transactions ID transaction IDs
+这些都是交易ID，
 
 01:06:33,779 --> 01:06:37,439
-coming in there yeah and if you wanted
+如果你想要获取比特币交易信息，
 
 01:06:37,439 --> 01:06:47,519
-to get Bitcoin there we are so that's
+就在这里。
 
 01:06:47,519 --> 01:06:48,809
-the transaction data for that one I just
+我刚刚选择的那个的交易数据，
 
 01:06:48,809 --> 01:06:50,729
-selected so it's all there you know you
+所有的东西都在那里，
 
-01:06:50,729 --> 01:06:52,229
-can get all that out to the out of the
-
-01:06:52,229 --> 01:06:53,269
-in politic
+01:06:50,729 --> 01:06:53,269
+你知道，你可以从内存池中获取所有的数据。
 
 01:06:53,269 --> 01:07:00,119
-Bitcoin see like a nice yep so I think
+我认为比特币看起来很不错，
 
 01:07:00,119 --> 01:07:03,630
-that's everything I wanted to cover yes
+所以我想我已经涵盖了我想要讲的所有内容。
 
 01:07:03,630 --> 01:07:07,859
-at all before no no that's it great
+是的，这就是全部。
 
 01:07:07,859 --> 01:07:13,670
-thanks a lot sir yeah looking forward to
+非常感谢。
 
 01:07:13,670 --> 01:07:16,679
-yeah I think the next what I'd like to
+我期待着下一次的讲解。
 
-01:07:16,679 --> 01:07:20,420
-do is probably covering the keys and
+01:07:16,679 --> 01:07:25,650
+接下来我们可能会讨论公钥和地址。
 
-01:07:20,420 --> 01:07:24,209
-addresses so these public keys probably
-
-01:07:24,209 --> 01:07:25,650
-probably keep every key in address how
-
-01:07:25,650 --> 01:07:27,089
-they all connect together through this
-
-01:07:27,089 --> 01:07:29,789
-you know this lip decay of how they
+01:07:25,650 --> 01:07:29,789
+这些公钥可能会涵盖每个密钥和地址，
 
 01:07:29,789 --> 01:07:33,059
-created because that explained a lot
+和它们如何通过这个lip decay创建的方式相互连接。
 
 01:07:33,059 --> 01:07:34,529
-about how this signature stuff works
+我将解释很多关于这个签名如何工作的问题。
 
 01:07:34,529 --> 01:07:35,910
-because at the moment I just saw said
+目前我只是说这是一个签名，
 
 01:07:35,910 --> 01:07:38,489
-this is a signature and it works but I
+它是有效的，
 
 01:07:38,489 --> 01:07:40,049
-could explain how it actually does work
+但我可以使用数学方法，
 
 01:07:40,049 --> 01:07:44,730
-using this mathematics nice nicer
+来解释它是如何真正工作的，
 
 01:07:44,730 --> 01:07:47,040
-yeah looking forward to it yeah just
+是的，我很期待
 
 01:07:47,040 --> 01:07:48,810
-just let me know whenever yeah whenever
+只要你准备好了，
 
 01:07:48,810 --> 01:07:51,119
-you're ready I'll stop I'll stop
+就告诉我。
 
 01:07:51,119 --> 01:07:52,500
-chipping away at some keys and the
+我就停下来，
 
 01:07:52,500 --> 01:07:54,390
-dresses stuff but if I give you an email
+我开始研究一些密钥和地址的东西。
 
 01:07:54,390 --> 01:07:56,310
-in a while to let you know when I think
+我过一段时间给你发邮件，
 
 01:07:56,310 --> 01:07:59,550
-you might be ready yeah so thank you
+让你知道我什么时候可能准备好了。
 
 01:07:59,550 --> 01:08:02,250
-very much thanks a thanks for those
+非常感谢你。
 
 01:08:02,250 --> 01:08:04,550
-really good
+谢谢你，这真的很好。
