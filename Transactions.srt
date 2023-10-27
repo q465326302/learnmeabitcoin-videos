@@ -3221,265 +3221,196 @@ beta版本完成了，接下来我会做一些示例，
 是的，这是更好的转换器，
 
 01:01:18,769 --> 01:01:21,170
-converter two US dollars here I mean I
+在这里要两美元，
 
 01:01:21,170 --> 01:01:22,880
-haven't no I guess I could request my
+我没有，
 
 01:01:22,880 --> 01:01:25,069
-brother sir asked me the same thing I'm
+我想我可以请求我的兄弟，
 
 01:01:25,069 --> 01:01:26,420
-still working I have to work on it yeah
+我还得继续努力，
 
 01:01:26,420 --> 01:01:30,559
-I think this is about $80 at the moment
+是的，我认为这大约是80美元，
 
-01:01:30,559 --> 01:01:33,319
-so I'm probably gonna want to make sure
-
-01:01:33,319 --> 01:01:35,569
-this transaction gets mind before I put
-
-01:01:35,569 --> 01:01:38,890
-the video out because exactly
-
-01:01:39,000 --> 01:01:42,150
-private key and how yeah and what is the
+01:01:30,559 --> 01:01:42,150
+所以我可能想要确保这笔交易在我发布视频之前得到确认，
 
 01:01:42,150 --> 01:01:49,440
-fee like approximate 0.0002 well if the
+因为确切的私钥和费用大约是0.0002，
 
 01:01:49,440 --> 01:01:52,950
-works off a fee per bite because a node
+节点只能用这么多字节来填充他们的块，
 
 01:01:52,950 --> 01:01:55,230
-can only fit up there block with so many
+那么它就会按字节收费，
 
-01:01:55,230 --> 01:01:59,460
-bytes exchanged small fee per weight but
-
-01:01:59,460 --> 01:02:00,600
-I haven't updated the Explorer to use
+01:01:55,230 --> 01:02:00,600
+但我还没有更新Explorer来使用权重，
 
 01:02:00,600 --> 01:02:02,010
-weight and it's more of a complex thing
+这是一个更复杂的事情，
 
-01:02:02,010 --> 01:02:03,540
-to use but if we look it over
+01:02:02,010 --> 01:02:05,400
+但如果我们看一下所有的交易，
 
-01:02:03,540 --> 01:02:05,400
-if you look at all these transactions if
-
-01:02:05,400 --> 01:02:06,270
-you go towards the bottom there
-
-01:02:06,270 --> 01:02:10,170
-generally ordered by their fee per fee
+01:02:05,400 --> 01:02:10,170
+你看到底部的那些，
 
 01:02:10,170 --> 01:02:13,290
-per byte it's slow maybe ask them you
+它们通常是按照他们的费用来排序的，
 
 01:02:13,290 --> 01:02:15,480
-know the smallest ones about 100 odd you
+最小的大约是100个，
 
 01:02:15,480 --> 01:02:17,490
-know no point no not 100 to Satoshi's
+对，要100个聪，
 
 01:02:17,490 --> 01:02:19,530
-right so well some of you get included
+所以有些人可能会被收取更少的费用，
 
-01:02:19,530 --> 01:02:23,610
-for Less but there's just a rough
-
-01:02:23,610 --> 01:02:24,780
-estimate but it looks like my
+01:02:19,530 --> 01:02:24,780
+但这只是一个粗略的估计，
 
 01:02:24,780 --> 01:02:28,620
-transaction is just slightly too low the
+看起来我的交易费用稍微低了一点，
 
 01:02:28,620 --> 01:02:32,130
-fee to get mine just yet so I could
+还不能显示我的，
 
-01:02:32,130 --> 01:02:34,140
-create another one just show you but I
-
-01:02:34,140 --> 01:02:35,760
-mean that's good enough you know just to
+01:02:32,130 --> 01:02:35,760
+所以我可能会创建另一个，
 
 01:02:35,760 --> 01:02:36,990
-show you that how when you get a
+为了向你展示，
 
 01:02:36,990 --> 01:02:39,750
-transaction it just gets goes into the
+我认为这已经足够了，
 
 01:02:39,750 --> 01:02:47,730
-memory pool like so I've made this code
+当你得到一个交易时，
 
 01:02:47,730 --> 01:02:49,620
-available on the website so if you go to
+它就会进入内存池，
 
 01:02:49,620 --> 01:02:52,610
-code transaction builder dot RB
+所以我已经把这段代码放在网站上了，
 
 01:02:52,610 --> 01:02:55,650
-the code is all here mm-hm I written it
+如果你去看交易构建器.rb，
 
 01:02:55,650 --> 01:02:59,280
-in Ruby I tried to make it as simple as
+代码都在这里，我用Ruby写的，
 
 01:02:59,280 --> 01:03:00,440
-possible I did want to do it
+尽可能地简单化，
 
 01:03:00,440 --> 01:03:03,570
-procedurally procedurally because I
+我本来想用过程式的方式来做，
 
 01:03:03,570 --> 01:03:04,680
-thought that'd be an easier way to do I
+因为我觉得那样会更容易，
 
 01:03:04,680 --> 01:03:06,630
-couldn't do it that way I thought we it
+但我不能那样做，
 
 01:03:06,630 --> 01:03:08,250
-seemed easier to do it in an
+用面向对象的方式会更容易，
 
 01:03:08,250 --> 01:03:12,360
-object-oriented way so okay it's not
+且代码并不是很长，
 
 01:03:12,360 --> 01:03:14,460
-terribly long it's about 300 lines long
+大约有300行，
 
 01:03:14,460 --> 01:03:18,870
-at the code but the basic parts is you
+但主要的部分是你要有一些工具，
 
-01:03:18,870 --> 01:03:21,060
-have I start with some utilities just
-
-01:03:21,060 --> 01:03:22,410
-for getting all the data in the correct
-
-01:03:22,410 --> 01:03:26,310
-format then the main transaction class
+01:03:18,870 --> 01:03:26,310
+用于获取正确格式的所有数据，
 
 01:03:26,310 --> 01:03:28,920
-that has version inputs outputs and lock
+主要的交易，
 
 01:03:28,920 --> 01:03:31,110
-time so it has an array of inputs and a
+它有版本、输入、输出和锁定时间，
 
 01:03:31,110 --> 01:03:34,350
-real outputs so and then you have an
+有一个输入数组和一个输出数组，
 
 01:03:34,350 --> 01:03:35,790
-input class which has you know the
+还有一个输入类，
 
-01:03:35,790 --> 01:03:38,640
-transaction ID the V out scripts ax
-
-01:03:38,640 --> 01:03:40,040
-equals and then
+01:03:35,790 --> 01:03:40,040
+包含了交易ID，V out脚本等等，
 
 01:03:40,040 --> 01:03:43,550
-then you have an output object which
+然后你有一个输出对象，
 
 01:03:43,550 --> 01:03:45,320
-just hasn't value and the script and the
+它只有价值和脚本公钥。
 
-01:03:45,320 --> 01:03:49,700
-script pub key and so if you want I
-
-01:03:49,700 --> 01:03:51,860
-think he'd be good to create you you've
-
-01:03:51,860 --> 01:03:52,940
-wanted to build your own name
+01:03:45,320 --> 01:03:52,940
+所以如果你想从头开始创建你自己的交易构建器，
 
 01:03:52,940 --> 01:03:54,560
-transaction builder from scratch I think
+我认为这是一个好方法
 
-01:03:54,560 --> 01:03:55,790
-it's a good way to do it you know in
-
-01:03:55,790 --> 01:03:57,650
-your own programming language but if you
+01:03:54,560 --> 01:03:57,650
+你可以用你自己的编程语言来做
 
 01:03:57,650 --> 01:03:59,030
-wanted to see if you're making some
+如果你想看看你是否犯了一些错误，
 
 01:03:59,030 --> 01:04:00,110
-mistakes you want to see what squares
+你想看看哪里出了问题，
 
-01:04:00,110 --> 01:04:01,700
-going wrong and you could always come in
-
-01:04:01,700 --> 01:04:03,320
-here for example probably the trick is
+01:04:00,110 --> 01:04:03,320
+你可以随时来这里查看。
 
 01:04:03,320 --> 01:04:07,030
-trickiest part is just this signing part
+例如，可能最棘手的部分就是签名部分，
 
 01:04:07,030 --> 01:04:10,310
-obviously here's the signing method and
+这里有签名方法，
 
 01:04:10,310 --> 01:04:12,860
-it's a bit long but it's just basically
+有点长，
 
 01:04:12,860 --> 01:04:14,300
-getting all the data in the right order
+但基本上就是按正确的顺序获取所有数据，
 
 01:04:14,300 --> 01:04:17,300
-I'd have any common commented it so it
+我已经对它进行了注释，
 
 01:04:17,300 --> 01:04:18,530
-might be helpful for trying to figure
+所以你试图找出可能遗漏缺失的部分时，
 
 01:04:18,530 --> 01:04:24,880
-out which parts might be missing okay so
+它可能会有所帮助。
 
 01:04:24,940 --> 01:04:29,990
-there's any questions with that no like
+如果你有任何问题，可以随时提问。
 
-01:04:29,990 --> 01:04:31,730
-yeah I think that so I think that
+01:04:29,990 --> 01:04:39,920
+我认为这个网站对于想要创建自己的交易的人来说非常有帮助，
 
-01:04:31,730 --> 01:04:33,230
-basically tempers you know if you wanted
-
-01:04:33,230 --> 01:04:35,090
-to create your own transaction you know
-
-01:04:35,090 --> 01:04:37,070
-this should it's quite helped I think
-
-01:04:37,070 --> 01:04:38,360
-this my websites quite helpful for
-
-01:04:38,360 --> 01:04:39,920
-finding the correct data to be able to
-
-01:04:39,920 --> 01:04:41,300
-you know create your own transactions
-
-01:04:41,300 --> 01:04:42,470
-and just browse it and see what's going
-
-01:04:42,470 --> 01:04:45,320
-on definitely definitely
-
-01:04:45,320 --> 01:04:47,750
-are you using some sort of API or are is
+01:04:39,920 --> 01:04:47,750
+或者浏览并了解正在发生的情况非常有帮助。
 
 01:04:47,750 --> 01:04:49,850
-this being pulled from like a real old
+这个网站是通过一个实时的比特币核心节点运行的，
 
 01:04:49,850 --> 01:04:52,280
-yeah this is an this is basically well
+所以当你进行交易时，
 
 01:04:52,280 --> 01:04:54,440
-enough a Bitcoin core node and but what
+它会实时更新。
 
 01:04:54,440 --> 01:04:58,060
-I do I so I but I put it into my own
+我把数据存储在我自己的数据库中，
 
 01:04:58,060 --> 01:05:00,740
 database but it's basically running live
