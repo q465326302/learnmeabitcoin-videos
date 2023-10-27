@@ -3043,199 +3043,182 @@ beta版本完成了，接下来我会做一些示例，
 我们需要获取锁定代码，
 
 00:58:21,180 --> 00:58:22,710
-that we can use a placeholder when we
+以便在签名时使用占位符。
 
 00:58:22,710 --> 00:58:25,080
-sign it it's a bit annoying but if you
+这有点烦人，
 
 00:58:25,080 --> 00:58:26,250
-click on this little lock here on the
+但是你可以在浏览器上点击这个小锁，
 
 00:58:26,250 --> 00:58:29,970
-browser this is the locking code as you
+这就是锁定代码，
 
 00:58:29,970 --> 00:58:34,160
-can see those you know it corresponds to
+你可以看到这些对应于操作码，
 
 00:58:34,160 --> 00:58:37,950
-up codes and this is the public key
+这是公钥，
 
 00:58:37,950 --> 00:58:41,120
-that's the address so I need this
+这是地址。
 
-00:58:41,120 --> 00:58:43,470
-locking code to be used as a placeholder
-
-00:58:43,470 --> 00:58:47,550
-when I sign the transaction so there we
+00:58:41,120 --> 00:58:47,550
+我需要这个锁定代码作为签名交易时的占位符。
 
 00:58:47,550 --> 00:58:47,700
-are
+现在我将签名，
 
 00:58:47,700 --> 00:58:50,640
-I'll sign this now and this is the D
+这是已完成的交易数据，
 
 00:58:50,640 --> 00:58:54,330
-completed transaction data so because
+它已经全部签名，
 
 00:58:54,330 --> 00:58:55,770
-it's all signed this is ready to go I
+好了，已经准备好了，
 
 00:58:55,770 --> 00:58:59,370
-can use I can if I want to I can just
+可以使用，如果我想的话，
 
 00:58:59,370 --> 00:59:01,760
-quickly decode it so I've written my own
+我可以快速解码它，
 
 00:59:01,760 --> 00:59:03,470
-[Music]
+我已经写了我自己的交易解码器，
 
 00:59:03,470 --> 00:59:05,700
-transaction decoder is quite handy to
+是非常方便的，
 
 00:59:05,700 --> 00:59:08,370
-have so I can look at this and it's
+我可以看到这个，
 
 00:59:08,370 --> 00:59:11,370
-showing me the inputs there's one here
+它显示了输入，
 
 00:59:11,370 --> 00:59:15,000
-the transaction ID and one output and to
+这里有一个交易ID和一个输出，
 
 00:59:15,000 --> 00:59:16,440
-be unlocked to this address here the
+可以解锁到这个地址，
 
-00:59:16,440 --> 00:59:17,700
-beer address which is my donation
-
-00:59:17,700 --> 00:59:21,600
-address and if you do you get kind CLI
+00:59:16,440 --> 00:59:21,600
+这是我的捐赠地址。
 
 00:59:21,600 --> 00:59:23,580
-if you download a Bitcoin core it has
+如果你下载了比特币核心，
+它有自己的解码器，
 
 00:59:23,580 --> 00:59:25,670
-his own decoder
+它有自己的解码器，
 
 00:59:25,670 --> 00:59:27,829
-transaction you can do the same thing
+你可以做同样的事情，
 
 00:59:27,829 --> 00:59:32,650
-and it will decode it for you as well so
+它也会为你解码。
 
 00:59:33,190 --> 00:59:35,450
-now we've got the transaction it's all
+现在我们有了交易，
 
 00:59:35,450 --> 00:59:37,609
-been signed ready to go what I can do I
+它已经签名，准备好了，
 
 00:59:37,609 --> 00:59:41,829
-can go Bitcoin CLI send your transaction
+我可以做的是去比特币CLI发送你的交易，
 
 00:59:41,829 --> 00:59:45,200
-so I'll put that in there and there we
+所以我把那个放在那里，
 
-00:59:45,200 --> 00:59:45,349
-are
-
-00:59:45,349 --> 00:59:48,589
-it has just given me a transaction ID so
+00:59:45,200 --> 0:59:48,589
+它会给我一个交易ID，
 
 00:59:48,589 --> 00:59:51,230
-this is the transaction and this is the
+这就是交易，这是交易ID。
 
 00:59:51,230 --> 00:59:54,079
-transaction ID for it so I can take this
+我可以拿这个交易ID，
 
 00:59:54,079 --> 00:59:56,859
-transaction ID and I can go into my
+进入我的区块链浏览器，
 
 00:59:56,859 --> 00:59:59,660
-blockchain Explorer and I can enter the
+输入交易ID试图找到它，
 
 00:59:59,660 --> 01:00:01,640
-transaction ID try and find it
+好吧，它还没有找到，
 
-01:00:01,640 --> 01:00:03,950
-okay hasn't found it yet it's probably
-
-01:00:03,950 --> 01:00:05,900
-taking some time for to propagate the
+01:00:01,640 --> 01:00:05,900
+可能还需要一些时间来传播网络，
 
 01:00:05,900 --> 01:00:12,589
-network so I keep refreshing okay give
+那我继续刷新，
 
 01:00:12,589 --> 01:00:16,039
-it good ten seconds gone so yeah we are
+好吧，我给它十秒钟，
 
-01:00:16,039 --> 01:00:18,559
-looking for this in the men buoy or in
-
-01:00:18,559 --> 01:00:20,450
-the blacklist would have gone so I've
+01:00:16,039 --> 01:00:20,450
+是的，我们正在寻找这个在men buoy或者在黑名单中已经走了。
 
 01:00:20,450 --> 01:00:22,730
-created this transaction I sent in to a
+所以我创建了这个交易，
 
 01:00:22,730 --> 01:00:25,160
-node and it's now gonna be being sent on
+我发送到一个节点，
 
 01:00:25,160 --> 01:00:25,549
-the network
+现在它将被发送到网络上，
 
 01:00:25,549 --> 01:00:28,809
-and it's gonna enter this nodes mempool
+它将进入这个节点的mempool，
 
 01:00:28,809 --> 01:00:31,759
-so it it should be a plain ring if I
+以它应该是一个普通的循环，
 
 01:00:31,759 --> 01:00:33,710
-click on this memory pool it should be
+如果我点击这个内存池，
 
 01:00:33,710 --> 01:00:36,470
-appearing yeah somebody here I just
+它应该会出现在这里，
 
 01:00:36,470 --> 01:00:41,539
-deleted the page it's there okay so they
+我刚刚删除了页面，它在那里，
 
 01:00:41,539 --> 01:00:42,890
-release their art it's just received it
+好吧，他们五秒钟前收到了，
 
 01:00:42,890 --> 01:00:46,069
-five seconds ago they are so I can click
+那么我可以点击这个，
 
 01:00:46,069 --> 01:00:48,319
-on this now and there is the transaction
+这就是我刚刚做的交易，
 
 01:00:48,319 --> 01:00:51,349
-I just made I'm watching Explorer so now
+我正在查看浏览器，现在它在网络上，
 
 01:00:51,349 --> 01:00:53,089
-it's on the network now I know it's been
+我知道它已经被发送到网络上，
 
 01:00:53,089 --> 01:00:56,059
-sent on the network it's a very low fee
+这是一个非常低的费用，
 
 01:00:56,059 --> 01:01:00,410
-I don't think it's gonna get mind but
+我不认为它会被挖掘，
 
 01:01:00,410 --> 01:01:01,970
-again I can just look at the code and
+但是我可以查看代码，
 
 01:01:01,970 --> 01:01:04,549
-this should be the exact same code dye
+这应该是我创建的完全相同的代码，
 
 01:01:04,549 --> 01:01:07,519
-created so basically you send code into
+基本上你将代码发送到网络，
 
-01:01:07,519 --> 01:01:10,039
-the network and that describes this
-
-01:01:10,039 --> 01:01:12,589
-transaction with the movement of inputs
+01:01:07,519 --> 01:01:12,589
+这描述了输入到输出的交易。
 
 01:01:12,589 --> 01:01:18,769
-to outputs is that yeah it's better
+是的，这是更好的转换器，
 
 01:01:18,769 --> 01:01:21,170
 converter two US dollars here I mean I
