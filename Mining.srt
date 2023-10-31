@@ -1,266 +1,170 @@
 00:00:00,640 --> 00:00:01,520
-so
+那么，
 
 00:00:01,520 --> 00:00:02,720
-uh in this presentation i'm going to
+在这个演示中，
 
-00:00:02,720 --> 00:00:04,880
-cover how bitcoin mining works
-
-00:00:04,880 --> 00:00:06,720
-um
+00:00:02,720 -->  00:00:06,720
+我将介绍比特币挖矿是如何工作的。
 
 00:00:06,720 --> 00:00:08,480
-i'll start out with what is mining and
+我将从什么是挖矿开始，
 
 00:00:08,480 --> 00:00:11,200
-i'll cover what it is and why it exists
+然后解释它是什么以及为什么存在。
 
 00:00:11,200 --> 00:00:12,240
-um
+然后，
 
-00:00:12,240 --> 00:00:13,599
-and then after that i'll cover how it
-
-00:00:13,599 --> 00:00:14,559
-works
+00:00:12,240 --> 00:00:14,559
+我将介绍它是如何工作的。
 
 00:00:14,559 --> 00:00:16,640
-um but before i can cover how it works i
+但在我解释它是如何工作的之前，
 
 00:00:16,640 --> 00:00:19,119
-need to explain what a hash function is
+我需要解释什么是哈希函数，
 
-00:00:19,119 --> 00:00:20,880
-um because that's like an integral part
-
-00:00:20,880 --> 00:00:23,279
-of how bitcoin works
+00:00:19,119 --> 00:00:23,279
+因为这是比特币工作的一个重要部分。
 
 00:00:23,279 --> 00:00:25,119
-uh then i'll cover
+我会先介绍它的基本工作原理，
 
-00:00:25,119 --> 00:00:27,199
-the basics of how it works and then i'll
+00:00:25,119 --> 00:00:28,480
+然后我将再次介绍它，
 
-00:00:27,199 --> 00:00:28,480
-go through it again
-
-00:00:28,480 --> 00:00:30,240
-but i'll explain in a more technical way
+00:00:27,199 --> 00:00:30,240
+我将以更专业的方式来解释。
 
 00:00:30,240 --> 00:00:31,599
-so if you're a programmer you'll find
+所以，
 
 00:00:31,599 --> 00:00:33,360
-that more interesting
+如果你是一个程序员，
 
 00:00:33,360 --> 00:00:35,120
-um then after that i'll start doing some
+你会发现这更有趣。
 
 00:00:35,120 --> 00:00:37,280
-examples and i'll try and show you how
+我将开始做一些例子，
 
-00:00:37,280 --> 00:00:39,760
-um you could actually mine a live block
+00:00:37,280 --> 00:00:43,200
+并尝试向你展示如何在非常少的代码中实际挖掘一个实时块。
 
-00:00:39,760 --> 00:00:43,200
-um in a very small amount of code
+00:00:43,200 --> 00:00:47,440
+那么，什么是挖矿?
 
-00:00:43,200 --> 00:00:44,879
-so that's what the presentation is going
-
-00:00:44,879 --> 00:00:47,440
-to be so i'll get started with then
-
-00:00:47,440 --> 00:00:49,600
-what mining is
-
-00:00:49,600 --> 00:00:51,680
-so what is mining
+00:00:47,440 --> 00:00:53,120
+假设这是比特币网络，
 
 00:00:51,680 --> 00:00:53,120
-um well imagine this is the bitcoin
+这些都是连接在一起运行比特币程序的计算机，
 
-00:00:53,120 --> 00:00:54,160
-network
-
-00:00:54,160 --> 00:00:56,079
-and these were all the computers uh
-
-00:00:56,079 --> 00:00:57,840
-connected together running the bitcoin
-
-00:00:57,840 --> 00:00:59,039
-program
+00:00:53,120 --> 00:00:59,039
+这些都是连接在一起运行比特币程序的计算机，
 
 00:00:59,039 --> 00:01:01,840
-and sharing the same file which is this
+共享同一个文件，
 
 00:01:01,840 --> 00:01:04,000
-blockchain
+即区块链。
 
 00:01:04,000 --> 00:01:06,400
-um the way bitcoin works um if you want
+比特币的工作方式是，
 
 00:01:06,400 --> 00:01:09,040
-to send a bitcoin to someone
+如果你想向某人发送比特币，
 
-00:01:09,040 --> 00:01:09,760
-or
-
-00:01:09,760 --> 00:01:11,760
-transfer ownership of a bitcoin
-
-00:01:11,760 --> 00:01:13,040
-to someone else
+00:01:09,040 --> 00:01:13,040
+或者将比特币的所有权转让给别人，
 
 00:01:13,040 --> 00:01:14,320
-the way you do that is you create a
+你需要创建一个交易，
 
-00:01:14,320 --> 00:01:16,320
-transaction with just a little line of
+00:01:14,320 --> 00:01:17,280
+这只是一行数据，
 
-00:01:16,320 --> 00:01:17,280
-data
-
-00:01:17,280 --> 00:01:19,200
-and then you'll insert that into a node
-
-00:01:19,200 --> 00:01:21,040
-on the network
-
-00:01:21,040 --> 00:01:23,840
-um and then
+00:01:17,280 --> 00:01:23,840
+然后你将其插入到网络上的一个节点中。
 
 00:01:23,840 --> 00:01:25,759
-if we didn't have mining the way this
+然后，
 
 00:01:25,759 --> 00:01:27,840
-would work was that computer would write
+如果我们没有挖矿，
 
-00:01:27,840 --> 00:01:30,400
-it straight to the blockchain
+00:01:27,840 --> 00:01:31,840
+这个计算机将直接将其写入区块链，
 
-00:01:30,400 --> 00:01:31,840
-to the shared file
+00:01:31,840 --> 00:01:34,960
+然后它们会将这个交易传递给它们连接的节点，
 
-00:01:31,840 --> 00:01:33,439
-and then what they would do they would
-
-00:01:33,439 --> 00:01:34,960
-pass on that
-
-00:01:34,960 --> 00:01:37,119
-transaction that piece of data onto the
-
-00:01:37,119 --> 00:01:38,960
-nodes they're connected to and they will
+00:01:34,960 --> 00:01:38,960
+将其写入自己的文件，
 
 00:01:38,960 --> 00:01:40,640
-write it to their file
+如此反复，
 
-00:01:40,640 --> 00:01:42,880
-and so on and so on until that
-
-00:01:42,880 --> 00:01:45,680
-transaction has propagated
-
-00:01:45,680 --> 00:01:48,320
-uh the entire network
+00:01:40,640 --> 00:01:48,320
+直到这个交易在整个网络中传播，
 
 00:01:48,320 --> 00:01:50,159
-and written it to their shared file so
+并写入他们的共享文件。
 
-00:01:50,159 --> 00:01:52,159
-that would be a simple way of you know
-
-00:01:52,159 --> 00:01:54,079
-having a shared file or shared ledger
-
-00:01:54,079 --> 00:01:56,079
-transactions
+00:01:50,159 --> 00:01:56,079
+是拥有共享文件或共享交易的一种简单方法
 
 00:01:56,079 --> 00:01:57,439
-and then
+你知道的，
 
-00:01:57,439 --> 00:01:58,799
-when everyone's updated their copy of
+00:01:57,439 --> 00:02:01,200
+当每个人都更新了他们的文件副本，
 
-00:01:58,799 --> 00:02:01,200
-the file you know um
-
-00:02:01,200 --> 00:02:02,960
-the ownership then as that of that
-
-00:02:02,960 --> 00:02:05,280
-bitcoin has changed from one person to
-
-00:02:05,280 --> 00:02:06,719
-the next person
+00:02:01,200 --> 00:02:06,719
+比特币的所有权就从一个人转移到了另一个人，
 
 00:02:06,719 --> 00:02:09,038
-and that'll be a simple transaction
+这是一个简单的交易。
 
 00:02:09,038 --> 00:02:11,120
-um but there's a problem um that needs
+但是，如果你这样做，
 
 00:02:11,120 --> 00:02:14,000
-to be solved if you do it this way
+会有一个问题需要解决。
 
-00:02:14,000 --> 00:02:15,200
-um
+00:02:14,000 --> 00:02:17,440
+让我们把这个人涂成绿色……
 
-00:02:15,200 --> 00:02:17,440
-let's color this man in green um what
-
-00:02:17,440 --> 00:02:18,560
-you can do
-
-00:02:18,560 --> 00:02:20,959
-is you can create a transaction to send
+00:02:17,440 --> 00:02:20,959
+你要做的就是创建一个交易，
 
 00:02:20,959 --> 00:02:22,560
-the bitcoin to this person
+将比特币发送给这个人
 
-00:02:22,560 --> 00:02:24,239
-and insert it into a node on this side
+00:02:22,560 --> 00:02:25,440
+并将其插入网络的这一侧的一个节点。
 
-00:02:24,239 --> 00:02:25,440
-of the network
-
-00:02:25,440 --> 00:02:27,599
-um but what you can do because it's a
-
-00:02:27,599 --> 00:02:29,599
-network of connected computers
+00:02:25,440 --> 00:02:29,599
+但是，由于这是一个连接的计算机网络，
 
 00:02:29,599 --> 00:02:32,720
-um you could create a second transaction
+你要创建第二个交易，
 
-00:02:32,720 --> 00:02:36,400
-um that sends the very same bitcoin
-
-00:02:36,400 --> 00:02:38,160
-to a different person
+00:02:32,720 --> 00:02:38,160
+将同样的比特币发送给另一个人。
 
 00:02:38,160 --> 00:02:39,200
-so
+所以，
 
-00:02:39,200 --> 00:02:40,720
-you've just inserted
-
-00:02:40,720 --> 00:02:42,319
-two separate transactions into the
-
-00:02:42,319 --> 00:02:46,080
-network trying to spend the same bitcoin
+00:02:39,200 --> 00:02:46,080
+你刚刚在网络中插入了两个试图花费同一比特币的交易，
 
 00:02:46,080 --> 00:02:47,360
-and you can do this because it's a
+你可以这样做，
 
 00:02:47,360 --> 00:02:49,200
-network
+因为这是一个网络。
 
 00:02:49,200 --> 00:02:50,959
 so what will happen from there
