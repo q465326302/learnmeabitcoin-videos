@@ -1499,14 +1499,8 @@ okay
 00:28:31,600 --> 00:28:34,080
 从内存池中获取交易。
 
-00:28:34,080 --> 00:28:34,880
-um
-
-00:28:34,880 --> 00:28:37,200
-this mining simulator simulator is mined
-
-00:28:37,200 --> 00:28:40,000
-in a block that's already been mined um
+00:28:34,080 --> 00:28:40,000
+这个挖矿模拟器正在挖掘一个已经被挖掘过的区块，
 
 00:28:40,000 --> 00:28:41,679
 so this is a long time ago there's only
