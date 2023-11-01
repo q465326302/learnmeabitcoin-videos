@@ -1368,226 +1368,136 @@ deci 10，6 10 16。
 你可以把这个共享文件想象成就是一堆堆叠在一起的区块。
 
 00:26:06,000 --> 00:26:07,520
-why would anyone mine what's the
+最后，
 
 00:26:07,520 --> 00:26:09,679
-incentive for a miner to
+为什么有人会挖矿呢？
 
 00:26:09,679 --> 00:26:11,279
-use all this hashing power on their
+对于矿工来说，
 
-00:26:11,279 --> 00:26:13,200
-computer to try and
+00:26:11,279 --> 00:26:15,679
+他们为什么要在他们的电脑上使用所有这些哈希算力
 
-00:26:13,200 --> 00:26:14,240
-um
+00:26:15,679 --> 00:26:20,799
+来尝试从内存池中挖掘交易到区块链呢？
 
-00:26:14,240 --> 00:26:15,679
-mine the transactions from the memory
-
-00:26:15,679 --> 00:26:17,600
-pool onto the blockchain
-
-00:26:17,600 --> 00:26:20,799
-well every time a miner
-
-00:26:20,799 --> 00:26:22,960
-mines a block it was successful
-
-00:26:22,960 --> 00:26:25,520
-to my in mind in a block and they will
+00:26:20,799 --> 00:26:25,520
+每次矿工成功挖掘一个区块，
 
 00:26:25,520 --> 00:26:27,919
-receive what's called a block reward
+们都会得到一个叫做区块奖励的东西。
 
 00:26:27,919 --> 00:26:30,159
-um it started out at 50
+它开始时是50，
 
 00:26:30,159 --> 00:26:34,559
-but it halves roughly every four years
+但大约每四年就会减半。
 
 00:26:34,799 --> 00:26:37,600
-so that's the incentive to minor block
+所以这就是挖掘一个区块的激励。
 
-00:26:37,600 --> 00:26:39,520
-and the way a miner receives this block
+00:26:37,600 --> 00:26:40,640
+当矿工构建候选区块时，
 
-00:26:39,520 --> 00:26:40,640
-reward
+00:26:40,640 --> 00:26:45,120
+他们会得到这个区块奖励。
 
-00:26:40,640 --> 00:26:42,880
-um
+00:26:45,120 --> 00:26:49,440
+第一笔交易是他们自己的。
 
-00:26:42,880 --> 00:26:45,120
-when they construct the candidate block
-
-00:26:45,120 --> 00:26:47,279
-um the very first transaction
-
-00:26:47,279 --> 00:26:49,440
-is reserved um
-
-00:26:49,440 --> 00:26:53,600
-for them to put there so a known a miner
-
-00:26:53,600 --> 00:26:55,600
-will put their own
+00:26:49,440 --> 00:26:55,600
+矿工会把他们自己的交易放在最顶部，
 
 00:26:55,600 --> 00:26:57,039
-transaction at the top
+这叫做coinbase交易。
 
-00:26:57,039 --> 00:26:59,360
-called a coinbase transaction
+00:26:57,039 --> 00:27:01,440
+这是一种特殊的交易，
 
-00:26:59,360 --> 00:27:01,440
-and this is a special transaction
+00:27:01,440 --> 00:27:07,440
+因为它允许他们向自己发送一定数量的比特币，
 
-00:27:01,440 --> 00:27:03,679
-because it allows them to
-
-00:27:03,679 --> 00:27:05,440
-send themselves or
-
-00:27:05,440 --> 00:27:07,440
-send themselves a set amount of bitcoins
-
-00:27:07,440 --> 00:27:11,200
-that had not previously existed
-
-00:27:11,200 --> 00:27:12,240
-um
+00:27:07,440 --> 00:27:12,240
+这些比特币之前并不存在。
 
 00:27:12,240 --> 00:27:13,039
-so
+所以，
 
-00:27:13,039 --> 00:27:14,480
-if this block does get mined onto the
+00:27:13,039 --> 00:27:16,320
+如果这个区块被挖掘到区块链上，
 
-00:27:14,480 --> 00:27:16,320
-blockchain
-
-00:27:16,320 --> 00:27:18,400
-they will be able to receive new
-
-00:27:18,400 --> 00:27:19,600
-bitcoins
+00:27:16,320 --> 00:27:19,600
+他们将能够通过这个coinbase交易接收新的比特币。
 
 00:27:19,600 --> 00:27:21,440
-thanks to this coinbase transaction that
+多亏了这个coinbase交易，
 
-00:27:21,440 --> 00:27:23,200
-they put there they put their sort of
+00:27:21,440 --> 00:27:25,360
+他们在这里放置他们的比特币地址，
 
-00:27:23,200 --> 00:27:25,360
-bitcoin address in here so that they can
-
-00:27:25,360 --> 00:27:26,559
-receive the
-
-00:27:26,559 --> 00:27:28,960
-the block reward
+00:27:25,360 --> 00:27:28,960
+以便他们可以接收区块奖励。
 
 00:27:28,960 --> 00:27:30,640
-so just to summarize the basics of
+总结一下挖矿的基本步骤，
 
-00:27:30,640 --> 00:27:32,720
-mining um a miner will get the
+00:27:30,640 --> 00:27:34,480
+矿工会从内存池中获取交易，
 
-00:27:32,720 --> 00:27:34,480
-transactions from the memory pool
+00:27:34,480 --> 00:27:37,200
+然后他们会在顶部放置他们的coinbase交易，
 
-00:27:34,480 --> 00:27:36,000
-then they'll put their coinbase
-
-00:27:36,000 --> 00:27:37,200
-transaction at the top so they can
-
-00:27:37,200 --> 00:27:38,400
-receive a block award if they're
-
-00:27:38,400 --> 00:27:40,080
-successful in mining this this block
+00:27:37,200 --> 00:27:40,080
+以便如果他们成功挖掘这个区块到区块链上，
 
 00:27:40,080 --> 00:27:41,600
-onto the blockchain
+可以接收区块奖励。
 
 00:27:41,600 --> 00:27:43,760
-then they'll create a block header
+然后他们会创建一个区块头，
 
 00:27:43,760 --> 00:27:45,679
-then they'll hash it
+对其进行哈希。
 
 00:27:45,679 --> 00:27:48,000
-hope that it's below the target value if
+希望哈希值低于目标值，
 
 00:27:48,000 --> 00:27:49,679
-it's not they'll keep adjusting the
+如果不是，
 
 00:27:49,679 --> 00:27:52,000
-nonce over and over again
+他们会不断调整nonce，
 
-00:27:52,000 --> 00:27:54,480
-until and if they're lucky um they'll
-
-00:27:54,480 --> 00:27:56,480
-find a nonce before anyone else that
+00:27:52,000 --> 00:27:56,480
+直到他们领先于别人找到一个nonce，
 
 00:27:56,480 --> 00:27:58,159
-produces a block hash that's below the
+这个nonce产生的区块哈希值低于目标值。
 
-00:27:58,159 --> 00:27:59,200
-target
-
-00:27:59,200 --> 00:28:01,440
-and then they outline the block
+00:27:58,159 --> 00:28:01,440
+然后他们会将区块添加到区块链上。
 
 00:28:01,440 --> 00:28:03,840
-like so
+像这样。你理解了吗?
 
 00:28:04,080 --> 00:28:06,320
-uh does that make sense
+你理解了吗?
 
 00:28:06,320 --> 00:28:08,159
-okay um
+okay
 
-00:28:08,159 --> 00:28:09,919
-i think what i'll do now i'll just show
+00:28:08,159 --> 00:28:16,240
+我现在将向你展示一个小型的挖矿模拟器。
 
-00:28:09,919 --> 00:28:11,600
-you um
+00:28:16,240 --> 00:28:27,279
+这就是比特币矿机在内部可能看起来的样子。
 
-00:28:11,600 --> 00:28:16,240
-a little mining simulator um
+00:28:27,279 --> 00:28:31,600
+他们会进入他们的内存池，
 
-00:28:16,240 --> 00:28:19,120
-yeah a little mining simulator
-
-00:28:19,120 --> 00:28:20,799
-um
-
-00:28:20,799 --> 00:28:22,960
-so this is what um
-
-00:28:22,960 --> 00:28:25,760
-a bitcoin might bitcoin miner might look
-
-00:28:25,760 --> 00:28:27,279
-like if you like under the hood
-
-00:28:27,279 --> 00:28:28,559
-basically
-
-00:28:28,559 --> 00:28:30,399
-so what they'll do um they'll go into
-
-00:28:30,399 --> 00:28:31,600
-their memory pool
-
-00:28:31,600 --> 00:28:32,960
-they'll get the transactions from their
-
-00:28:32,960 --> 00:28:34,080
-memory pool
+00:28:31,600 --> 00:28:34,080
+从内存池中获取交易。
 
 00:28:34,080 --> 00:28:34,880
 um
