@@ -680,551 +680,299 @@ deci 10，6 10 16。
 00:12:08,720 --> 00:12:11,360
 例如，在PHP中，
 
-00:12:11,360 --> 00:12:12,800
-called hash
+00:12:11,360 --> 00:12:16,720
+有一个叫做hash()的函数，
 
-00:12:12,800 --> 00:12:15,200
-and then you can tell it um that's gonna
-
-00:12:15,200 --> 00:12:16,720
-be wrong there
-
-00:12:16,720 --> 00:12:18,800
-and then you can tell it um
-
-00:12:18,800 --> 00:12:20,560
-which hash function you wanna use so
+00:12:16,720 --> 00:12:20,560
+然后你可以告诉它你想使用哪种哈希函数，
 
 00:12:20,560 --> 00:12:22,079
-sha256
+比如sha256，
 
 00:12:22,079 --> 00:12:23,920
-that is the one that's used in bitcoin
+这是比特币中使用的一种，
 
-00:12:23,920 --> 00:12:26,000
-um which stands for simple hashing
+00:12:23,920 --> 00:12:29,959
+它代表的是简单哈希算法256位，
 
-00:12:26,000 --> 00:12:27,920
-algorithm 256
-
-00:12:27,920 --> 00:12:29,959
-or 265
-
-00:12:29,959 --> 00:12:32,800
-256 bits which is like the size of the
-
-00:12:32,800 --> 00:12:34,480
-result it spits out and then you can
+00:12:29,959 --> 00:12:34,480
+这是它输出结果的大小，
 
 00:12:34,480 --> 00:12:36,560
-just put the
+然后你可以把你想要哈希的内容放进去。
 
 00:12:36,560 --> 00:12:38,800
-uh what you want to hash into it
+好了。
 
 00:12:38,800 --> 00:12:41,440
-what's going on
+这就是结果，
 
-00:12:51,200 --> 00:12:53,680
-there we are so that's the result there
-
-00:12:53,680 --> 00:12:55,279
-so you can use a hash function in any
-
-00:12:55,279 --> 00:12:57,440
-programming language um i've just showed
+00:12:51,200 --> 00:12:57,440
+你可以在任何编程语言中使用哈希函数
 
 00:12:57,440 --> 00:12:59,920
-how to use it here in php
+我刚刚展示了如何在PHP中使用它
 
-00:12:59,920 --> 00:13:00,959
-um
+00:12:59,920 --> 00:13:04,000
+这是在Ruby中，
 
-00:13:00,959 --> 00:13:04,000
-in ruby just for
-
-00:13:04,000 --> 00:13:05,680
-uh
-
-00:13:05,680 --> 00:13:08,240
-be complete um
+00:13:04,000 --> 00:13:08,240
+只是为了完整
 
 00:13:08,240 --> 00:13:10,160
-it's included in the digest
+它包含在'digest'库中，
 
-00:13:10,160 --> 00:13:13,040
-library so you can go and put
-
-00:13:13,040 --> 00:13:15,519
-digest
-
-00:13:15,519 --> 00:13:18,480
-256 then we want the hexadecimal
+00:13:10,160 --> 00:13:18,480
+所以你可以输入:' puts digest::SHA56
 
 00:13:18,480 --> 00:13:21,839
-digest digest is just another um term
+然后我们需要一个十六进制摘要…
 
-00:13:21,839 --> 00:13:24,240
-for the result that gets spat out from a
-
-00:13:24,240 --> 00:13:26,000
-hash function
+00:13:21,839 --> 00:13:26,000
+“摘要”只是从哈希函数中得到的结果的另一个术语
 
 00:13:26,000 --> 00:13:28,560
-so we're gonna put a1 into there
+所以我把“a1”代入这里，
 
 00:13:28,560 --> 00:13:30,639
-and there we have the same thing
+这里我们得到了同样的东西，
 
 00:13:30,639 --> 00:13:31,839
-so
+所以
 
-00:13:31,839 --> 00:13:33,760
-hash function just available in lots of
+00:13:31,839 --> 00:13:39,279
+哈希函数在很多编程语言中都是可用的
 
-00:13:33,760 --> 00:13:36,560
-programming languages
+00:13:39,279 --> 00:13:44,079
+现在我将介绍挖矿的基本原理，
 
-00:13:37,279 --> 00:13:39,279
-um okay
+00:13:44,079 --> 00:13:49,360
+我将给出一个简单的例子
 
-00:13:39,279 --> 00:13:40,720
-now i'll move on to
-
-00:13:40,720 --> 00:13:41,839
-um
-
-00:13:41,839 --> 00:13:44,079
-the basics of how mining works so i'll
-
-00:13:44,079 --> 00:13:45,760
-just run through giving a quick example
-
-00:13:45,760 --> 00:13:47,279
-of how
-
-00:13:47,279 --> 00:13:49,360
-this
-
-00:13:49,360 --> 00:13:51,279
-process here of getting the transactions
-
-00:13:51,279 --> 00:13:53,040
-from the memory pool onto the blockchain
-
-00:13:53,040 --> 00:13:54,880
-works
-
-00:13:54,880 --> 00:13:56,320
-right
+00:13:49,360 --> 00:13:56,320
+说明如何从内存池获取交易并将其添加到区块链中。
 
 00:13:56,320 --> 00:13:58,639
-so basics are mining
+所以，
 
 00:13:58,639 --> 00:14:00,320
-here we have the net here we have the
+挖矿的基本原理是，
 
 00:14:00,320 --> 00:14:02,079
-network again all the transactions the
+所有的交易都在内存池中。
 
-00:14:02,079 --> 00:14:05,279
-memory pool yep sorry
+00:14:02,079 --> 00:14:16,399
+*调整麦克风*
 
-00:14:07,440 --> 00:14:09,440
-okay um okay
-
-00:14:09,440 --> 00:14:11,199
-thanks just if it happens again just let
-
-00:14:11,199 --> 00:14:13,680
-me know and i'll
-
-00:14:13,680 --> 00:14:15,600
-um so again
-
-00:14:15,600 --> 00:14:16,399
-um
-
-00:14:16,399 --> 00:14:17,600
-we're going to look inside now this
-
-00:14:17,600 --> 00:14:19,199
-computer this um
+00:14:16,399 --> 00:14:19,199
+我们继续来看到这个计算机，
 
 00:14:19,199 --> 00:14:20,880
-node here is a minor so we're going to
+这个节点是一个矿工，
 
 00:14:20,880 --> 00:14:22,800
-look inside it and see how it mines the
+我们来看看它的内部，
 
-00:14:22,800 --> 00:14:25,120
-transactions from its memory pool onto
+00:14:22,800 --> 00:14:27,600
+看看它是如何从内存池中挖取交易到其文件的。
 
-00:14:25,120 --> 00:14:27,600
-its file
+00:14:28,480 --> 00:14:41,680
+*他调整麦克风*
 
-00:14:28,480 --> 00:14:31,839
-right so
-
-00:14:32,240 --> 00:14:34,880
-you still there
-
-00:14:38,160 --> 00:14:39,600
-hello
-
-00:14:39,600 --> 00:14:41,680
-are you still okay right yeah okay right
-
-00:14:41,680 --> 00:14:44,639
-um so this is looking inside a bitcoin
-
-00:14:44,639 --> 00:14:46,079
-miner
+00:14:41,680 --> 00:14:46,079
+我们继续，查看比特币矿工的内部情况。
 
 00:14:46,079 --> 00:14:47,680
-so this is the memory pool it's got the
+这是内存池，
 
 00:14:47,680 --> 00:14:49,680
-red transaction in there
+里面有红色的是交易。
 
 00:14:49,680 --> 00:14:52,240
-transaction in there um but with a
+交易在内存池中，
 
-00:14:52,240 --> 00:14:54,240
-memory pool you can have much more than
+00:14:52,240 --> 00:14:56,639
+但内存池中可以有多个交易。
 
-00:14:54,240 --> 00:14:56,639
-one transaction in there so let's say
+00:14:56,639 --> 00:15:00,959
+假设这个内存池已经有了很多交易。
 
-00:14:56,639 --> 00:14:58,399
-this memory pool has got like you know
+00:15:00,959 --> 00:15:08,079
+挖矿者会创建一个叫做候选块的容器，
 
-00:14:58,399 --> 00:14:59,920
-quite a few transactions already in
+00:15:08,079 --> 00:15:12,240
+这只是一个交易的容器。
 
-00:14:59,920 --> 00:15:00,959
-there
-
-00:15:00,959 --> 00:15:03,839
-and so what a miner will do um they will
-
-00:15:03,839 --> 00:15:05,279
-create a
-
-00:15:05,279 --> 00:15:08,079
-container called a candidate candidate
-
-00:15:08,079 --> 00:15:09,040
-block
-
-00:15:09,040 --> 00:15:10,560
-um which is just a container for
-
-00:15:10,560 --> 00:15:12,240
-transactions
-
-00:15:12,240 --> 00:15:13,680
-so what they'll do
-
-00:15:13,680 --> 00:15:16,000
-they will fill this candidate block
-
-00:15:16,000 --> 00:15:17,920
-up with transactions from their memory
-
-00:15:17,920 --> 00:15:18,800
-pool
+00:15:12,240 --> 00:15:18,800
+他们会用内存池中的交易填充这个候选块，
 
 00:15:18,800 --> 00:15:21,519
-and like so
+就像这样，
 
-00:15:21,519 --> 00:15:23,680
-and then they will try and add this
+00:15:21,519 --> 00:15:26,480
+然后他们会试图将这个交易块添加到区块链上。
 
-00:15:23,680 --> 00:15:26,480
-block of transactions onto the file onto
-
-00:15:26,480 --> 00:15:29,040
-the blockchain
-
-00:15:29,040 --> 00:15:30,480
-so
-
-00:15:30,480 --> 00:15:32,240
-how do they get this block of this
-
-00:15:32,240 --> 00:15:34,560
-candidate block that they've built onto
-
-00:15:34,560 --> 00:15:36,880
-the blockchain
+00:15:26,480 --> 00:15:36,880
+那么他们如何将这个他们构建的候选块添加到区块链上呢？
 
 00:15:36,880 --> 00:15:38,880
-well the first thing they do
+首先，
 
-00:15:38,880 --> 00:15:40,560
-they construct what's called a block
-
-00:15:40,560 --> 00:15:41,839
-header
+00:15:38,880 --> 00:15:41,839
+他们会构建一个被称为区块头的东西，
 
 00:15:41,839 --> 00:15:44,000
-um which is just like a summary of all
+这只是块内所有数据的摘要，
 
-00:15:44,000 --> 00:15:45,600
-the data inside the block all the
-
-00:15:45,600 --> 00:15:47,839
-transactions in the block
+00:15:44,000 --> 00:15:47,839
+所有区块内的交易，
 
 00:15:47,839 --> 00:15:49,680
-um so in that block header you have
+在那个区块头中，
 
 00:15:49,680 --> 00:15:51,199
-something called a version which is like
+你有一个被称为版本的东西，
 
-00:15:51,199 --> 00:15:52,959
-a version number for the block for the
-
-00:15:52,959 --> 00:15:54,800
-structure of the data so let's say
+00:15:51,199 --> 00:15:54,800
+这就像是数据结构的版本号，
 
 00:15:54,800 --> 00:15:56,639
-that's one
+假设那是1。
 
 00:15:56,639 --> 00:15:59,199
-and they will also have
+还会有一些被称为
 
-00:15:59,199 --> 00:16:00,560
-some information
-
-00:16:00,560 --> 00:16:01,920
-called the previous block or the
-
-00:16:01,920 --> 00:16:03,680
-previous block hash
+00:15:59,199 --> 00:16:03,680
+前一个区块或前一个区块哈希的信息。
 
 00:16:03,680 --> 00:16:05,600
-and the way that works is
+这个工作方式是，
 
 00:16:05,600 --> 00:16:08,800
-let's say this is the blockchain um
+假设这是区块链，
 
-00:16:08,800 --> 00:16:10,639
-this block this candidate block they're
+00:16:08,800 --> 00:16:14,320
+他们正在构建的这个候选块必须建立在这些区块之一的顶部。
 
-00:16:10,639 --> 00:16:12,959
-building it has to build on top of one
+00:16:14,320 --> 00:16:20,160
+所以挖矿者会做的是，
 
-00:16:12,959 --> 00:16:14,320
-of these blocks
-
-00:16:14,320 --> 00:16:18,639
-so what a miner will do is they will um
-
-00:16:18,639 --> 00:16:20,160
-include the
-
-00:16:20,160 --> 00:16:22,399
-hash or the block hash which is like an
-
-00:16:22,399 --> 00:16:23,680
-id number
-
-00:16:23,680 --> 00:16:25,040
-for a block
+00:16:20,160 --> 00:16:25,040
+他们会包含他们想要建立在其顶部的区块的哈希或区块哈希，
 
 00:16:25,040 --> 00:16:28,079
-of the one they want to build on top of
+这就像是一个区块的id号。
 
 00:16:28,079 --> 00:16:29,360
-so like so
+所以在这里，
 
-00:16:29,360 --> 00:16:30,240
-so
+00:16:29,360 --> 00:16:32,800
+这是这个区块的区块哈希。
 
-00:16:30,240 --> 00:16:32,800
-in here they will this is the block hash
+00:16:32,800 --> 00:16:37,360
+所以这只是说他们想要建立在哪个区块的顶部，
 
-00:16:32,800 --> 00:16:34,000
-for this block
+00:16:37,360 --> 00:16:43,279
+因为每个挖矿者基本上都想要建立在区块链的顶部。
 
-00:16:34,000 --> 00:16:35,519
-so this just says which block they want
-
-00:16:35,519 --> 00:16:37,360
-to build on top of because every miner
-
-00:16:37,360 --> 00:16:39,120
-basically wants to build onto the top of
-
-00:16:39,120 --> 00:16:41,759
-the blockchain
-
-00:16:42,320 --> 00:16:43,279
-um
-
-00:16:43,279 --> 00:16:45,839
-merkel route now a miracle route is just
-
-00:16:45,839 --> 00:16:47,040
-the
+00:16:43,279 --> 00:16:47,040
+我来讲解“默克尔根”是什么
 
 00:16:47,040 --> 00:16:48,720
-basically if your hash
+基本上如果你把所有的交易ID一起哈希，
 
 00:16:48,720 --> 00:16:52,639
-um all the transaction ids together
+反复的哈希，
 
 00:16:52,639 --> 00:16:55,199
-um over and over again you'll end up
+你最后会得到一个单独的哈希，
 
-00:16:55,199 --> 00:16:57,440
-with a single hash at the end and this
-
-00:16:57,440 --> 00:16:59,120
-is called the merkle root
+00:16:55,199 --> 00:16:59,120
+这就叫做梅克尔根。
 
 00:16:59,120 --> 00:17:00,240
-like so
+就像这样，
 
 00:17:00,240 --> 00:17:02,639
-and basically this is like a
+这基本上就像一个指纹，
 
 00:17:02,639 --> 00:17:04,959
-fingerprint like a
+一个数字指纹，
 
-00:17:04,959 --> 00:17:07,599
-digital fingerprint that summarizes all
-
-00:17:07,599 --> 00:17:11,199
-the transactions in the block
-
-00:17:11,199 --> 00:17:12,160
-um
+00:17:04,959 --> 00:17:12,160
+总结了区块中的所有交易。
 
 00:17:12,160 --> 00:17:14,319
-so again you know this block header it's
+所以，
 
 00:17:14,319 --> 00:17:17,119
-like a creates a unique
+你知道这个区块头，
 
 00:17:17,119 --> 00:17:18,720
-fingerprint for all the data in the
+它创建了一个独特的指纹，
 
 00:17:18,720 --> 00:17:21,839
-block but using a lot less data than all
+用于所有的区块数据，
 
 00:17:21,839 --> 00:17:24,160
-of the transaction data combined so
+但使用的数据比所有的交易数据组合起来要少得多。
 
-00:17:24,160 --> 00:17:26,959
-maybe uh if you can
+00:17:24,160 --> 00:17:28,720
+或许你能谈一谈默克尔根
 
-00:17:26,959 --> 00:17:28,720
-you know speak a little about the
-
-00:17:28,720 --> 00:17:30,720
-miracle road because i've
-
-00:17:30,720 --> 00:17:32,799
-not really heard too much about it yeah
-
-00:17:32,799 --> 00:17:34,160
-yeah um
+00:17:28,720 --> 00:17:34,160
+因为我没有听说过太多关于它的事情。
 
 00:17:34,160 --> 00:17:36,400
-are you like hashing like
+你是在哈希每一笔交易，
 
-00:17:36,400 --> 00:17:38,240
-every other transaction together and
-
-00:17:38,240 --> 00:17:39,360
-then
-
-00:17:39,360 --> 00:17:40,640
-hashing
+00:17:36,400 --> 00:17:40,640
+然后哈希那些结果吗？
 
 00:17:40,640 --> 00:17:42,960
-that those results it looks like um i'm
+是的，我会在接下来的技术部分中介绍这个，
 
 00:17:42,960 --> 00:17:44,720
-gonna actually cover that in the next
-
-00:17:44,720 --> 00:17:47,440
-technical part here but just for now as
-
-00:17:47,440 --> 00:17:48,880
-long as it makes sense that this merkel
-
-00:17:48,880 --> 00:17:50,799
-route provides you with like a
+但只要现在你需要知道：
 
 00:17:50,799 --> 00:17:52,720
-unique short summary of all the
+涵盖所有区块交易的总结就可以了。
 
 00:17:52,720 --> 00:17:54,720
-transactions in the block
+默克尔根是非常有意义的。
 
-00:17:54,720 --> 00:17:56,160
-okay and i'll cover how that works and
-
-00:17:56,160 --> 00:17:57,520
-why
+00:17:54,720 --> 00:17:57,520
+我会在一会儿介绍梅克尔是如何工作的，
 
 00:17:57,520 --> 00:18:00,000
-america is used in a moment but a good
+以及为什么使用梅克尔，
 
-00:18:00,000 --> 00:18:00,880
-question
-
-00:18:00,880 --> 00:18:02,240
-anyway so
+00:18:00,000 --> 00:18:02,240
+这是一个好问题。
 
 00:18:02,240 --> 00:18:04,000
-there we have
+这是区块头，
 
-00:18:04,000 --> 00:18:05,440
-the block header i haven't covered all
-
-00:18:05,440 --> 00:18:07,600
-the block header data but this is the
+00:18:04,000 --> 00:18:07,600
+我没有涵盖所有的区块头数据，
 
 00:18:07,600 --> 00:18:09,520
-most important stuff
+那么这就是是最重要的东西。
 
-00:18:09,520 --> 00:18:12,400
-um so there we have a block header
+00:18:09,520 --> 00:18:14,880
+现在我们有了一个区块头，
 
-00:18:12,400 --> 00:18:14,880
-the next step then is to put this block
+00:18:14,880 --> 00:18:19,919
+下一步就是将这个区块头数据放入哈希函数，
 
-00:18:14,880 --> 00:18:17,039
-header data into a hash function into
+00:18:19,919 --> 00:18:23,200
+也就是SHA-256哈希函数中，
 
-00:18:17,039 --> 00:18:19,919
-the sha 250 56 hash function
+00:18:23,200 --> 00:18:27,600
+然后这将产生一个随机数作为结果，
 
-00:18:19,919 --> 00:18:21,919
-and then that will presume
-
-00:18:21,919 --> 00:18:23,200
-produce
-
-00:18:23,200 --> 00:18:24,240
-um
-
-00:18:24,240 --> 00:18:24,960
-a
-
-00:18:24,960 --> 00:18:27,600
-random number as a result
-
-00:18:27,600 --> 00:18:29,440
-and this is called the block hash a
-
-00:18:29,440 --> 00:18:31,919
-block hash
+00:18:27,600 --> 00:18:31,919
+这就是所谓的区块哈希。
 
 00:18:32,000 --> 00:18:34,480
 um any questions so far
