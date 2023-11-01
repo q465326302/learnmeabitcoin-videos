@@ -563,161 +563,122 @@
 00:10:15,760 --> 00:10:19,440
 就无法预测结果到是什么，
 
-00:10:19,440 --> 00:10:20,640
-useful
-
-00:10:20,640 --> 00:10:22,959
-as we'll come to see in a moment
+00:10:19,440 --> 00:10:22,959
+这是很有用的，
 
 00:10:22,959 --> 00:10:24,160
-um
+我们稍后会看到。
 
 00:10:24,160 --> 00:10:25,760
-also lastly
+最后，
 
-00:10:25,760 --> 00:10:26,800
-even though
-
-00:10:26,800 --> 00:10:28,160
-this looks like a random well it's a
-
-00:10:28,160 --> 00:10:30,079
-random string of data it's got like the
+00:10:25,760 --> 00:10:30,079
+尽管这看起来像一个随机的数据字符串，
 
 00:10:30,079 --> 00:10:31,440
-letters f
+它包含了字母f、e、a，
 
 00:10:31,440 --> 00:10:34,959
-e a basically a b c d e and f in there
+基本上是a、b、c、d、e和f，
 
-00:10:34,959 --> 00:10:36,720
-and these can actually be converted into
+00:10:34,959 --> 00:10:37,760
+但它们实际上可以转换成数字。
 
-00:10:36,720 --> 00:10:37,760
-numbers
-
-00:10:37,760 --> 00:10:39,519
-um and that's because
-
-00:10:39,519 --> 00:10:41,920
-um we are used to using the
-
-00:10:41,920 --> 00:10:44,839
-decimal uh format for numbers which uses
+00:10:37,760 --> 00:10:44,839
+这是因为我们习惯于使用十进制格式的数字，
 
 00:10:44,839 --> 00:10:48,320
-the numbers zero to nine
+它使用0到9的数字，
 
-00:10:48,320 --> 00:10:51,279
-but you also have a number number format
-
-00:10:51,279 --> 00:10:52,880
-called hexadecimal which is just the
+00:10:48,320 --> 00:10:52,880
+但你也有一种叫做十六进制的数字格式，
 
 00:10:52,880 --> 00:10:55,760
-same numbers but also with a b c d e and
+它使用相同的数字，
 
-00:10:55,760 --> 00:10:57,920
-f and they are
-
-00:10:57,920 --> 00:10:59,360
-when you translate them over when you
+00:10:55,760 --> 00:10:59,360
+但也包括a、b、c、d、e和f，
 
 00:10:59,360 --> 00:11:01,680
-convert them over they just
+当你转换它们时，
 
 00:11:01,680 --> 00:11:04,240
-looks like this
+它们就像这样。
 
 00:11:04,480 --> 00:11:05,519
-so
+所以，
 
 00:11:05,519 --> 00:11:07,279
-this is called decimal because it uses
+这被称为十进制，
 
 00:11:07,279 --> 00:11:08,160
-um
+因为它使用10，
 
 00:11:08,160 --> 00:11:12,720
-10 and deci in means 10 i think in latin
+deci在拉丁语中意思是10。
 
 00:11:12,720 --> 00:11:15,040
-then hexadecimal hexa like a hexagon six
+然后十六进制，
 
 00:11:15,040 --> 00:11:18,800
-sides deci 10 6 10 16.
+hexa就像六边形一样有六个边，
 
 00:11:18,800 --> 00:11:19,519
-so
+deci 10，6 10 16。
 
 00:11:19,519 --> 00:11:21,920
-basically this is what we use as humans
+所以，
 
 00:11:21,920 --> 00:11:23,920
-but computers are very happy to read
+基本上这是我们人类使用的，
 
 00:11:23,920 --> 00:11:26,560
-numbers in hexadecimal format
+但计算机非常乐意以十六进制格式读取数字。
 
 00:11:26,560 --> 00:11:28,560
-so basically um
+基本上来说，
 
 00:11:28,560 --> 00:11:30,800
-with a hash function you put data in and
+你把数据放入哈希函数，
 
-00:11:30,800 --> 00:11:34,640
-it spits out a random number as a result
+00:11:30,800 --> 00:11:36,000
+它会输出一个随机数作为结果。
 
-00:11:34,640 --> 00:11:36,000
-but
-
-00:11:36,000 --> 00:11:37,920
-so if you see um
-
-00:11:37,920 --> 00:11:41,920
-an like a string like this nope in um
-
-00:11:41,920 --> 00:11:43,760
-hex decimal format just remember that
+00:11:36,000 --> 00:11:43,760
+如果你看到一个像这样的十六进制格式字符串，
 
 00:11:43,760 --> 00:11:46,480
-it's a random number
+记住这只是一个随机数。
 
-00:11:46,480 --> 00:11:47,760
-does that make sense everything makes
-
-00:11:47,760 --> 00:11:49,680
-sense there
+00:11:46,480 --> 00:11:49,680
+这个概念很容易理解了吧？
 
 00:11:49,680 --> 00:11:51,360
-all right brilliant so that was a hash
+好的，
 
 00:11:51,360 --> 00:11:52,240
-function
+那就是哈希函数，
 
 00:11:52,240 --> 00:11:54,399
-um just a little tool that spits out
+它只是一个输出随机数据的小工具。
 
 00:11:54,399 --> 00:11:58,240
-random data um if i quickly show you
+如果我快速给你展示一下，
 
 00:11:58,240 --> 00:11:59,760
-i don't think you see this
+我不知道你们是否能看到，
 
-00:11:59,760 --> 00:12:02,800
-if you can read the text but um
-
-00:12:02,800 --> 00:12:03,760
-if you can
+00:11:59,760 --> 00:12:03,760
+是否能读懂
 
 00:12:03,760 --> 00:12:06,959
-like a hash function is available in um
+但如果你能看到，
 
 00:12:06,959 --> 00:12:08,720
-lots of programming languages so for
+哈希函数在很多编程语言中都有。
 
 00:12:08,720 --> 00:12:11,360
-example in php um there's a function
+例如，在PHP中，
 
 00:12:11,360 --> 00:12:12,800
 called hash
