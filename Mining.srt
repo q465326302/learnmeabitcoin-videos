@@ -975,661 +975,397 @@ deci 10，6 10 16。
 这就是所谓的区块哈希。
 
 00:18:32,000 --> 00:18:34,480
-um any questions so far
+到目前为止你有任何问题吗？
 
 00:18:34,480 --> 00:18:35,919
-okay um
+好的，
 
 00:18:35,919 --> 00:18:38,559
-and so okay that's all well and good but
+这很好，我们继续，
 
-00:18:38,559 --> 00:18:40,320
-why would a minor do this
-
-00:18:40,320 --> 00:18:42,400
-um well um
-
-00:18:42,400 --> 00:18:43,760
-or how
+00:18:38,559 --> 00:18:43,760
+但是为什么矿工要这么做呢？
 
 00:18:43,760 --> 00:18:46,240
-does this help to get the block mined
+或者说，这如何帮助将区块挖掘到区块链上呢？
 
 00:18:46,240 --> 00:18:47,600
-onto the blockchain
+如果这个区块哈希，
 
-00:18:47,600 --> 00:18:50,320
-well if this block hash the result of
+00:18:47,600 --> 00:18:54,960
+也就是将区块头放入哈希函数产生的结果，
 
-00:18:50,320 --> 00:18:52,320
-this putting the block header into the
-
-00:18:52,320 --> 00:18:54,960
-hash function produces a block hash that
-
-00:18:54,960 --> 00:18:58,080
-is below a target value
-
-00:18:58,080 --> 00:19:00,160
-um
+00:18:54,960 --> 00:19:00,160
+生成一个低于“Target”值的块哈希值
 
 00:19:00,160 --> 00:19:02,320
-like so so let's say this is the current
+就像这样，
 
-00:19:02,320 --> 00:19:03,280
-target
+00:19:02,320 --> 00:19:06,640
+假设这是当前的目标值，
 
-00:19:03,280 --> 00:19:06,640
-value which is a
+00:19:07,200 --> 00:19:15,120
+这是每个比特币节点内部的一个数字，
 
-00:19:07,200 --> 00:19:09,280
-number which is like a number internal
+00:19:15,120 --> 00:19:19,600
+他们都有一个共享的目标值，
 
-00:19:09,280 --> 00:19:12,480
-to every uh bitcoin
+00:19:19,600 --> 00:19:23,840
+这个目标值与其他节点同步计算。
 
-00:19:12,480 --> 00:19:15,120
-node and they all have a they all
-
-00:19:15,120 --> 00:19:16,480
-calculate their own
-
-00:19:16,480 --> 00:19:19,600
-it's like a shared target value that is
-
-00:19:19,600 --> 00:19:22,880
-calculated in sync with every other node
-
-00:19:22,880 --> 00:19:23,840
-um
-
-00:19:23,840 --> 00:19:25,679
-if they can get
-
-00:19:25,679 --> 00:19:28,720
-their block hash to be below this then
+00:19:23,840 --> 00:19:28,720
+他们能让他们的区块哈希值低于这个目标值，
 
 00:19:28,720 --> 00:19:30,320
-the block will get added onto the
+那么这个区块就会被添加到区块链上，
 
 00:19:30,320 --> 00:19:32,480
-blockchain and the block is solved
+这个问题基本上解决了。
 
 00:19:32,480 --> 00:19:34,320
-basically
+所以，
 
 00:19:34,320 --> 00:19:35,919
-so
+到目前为止，
 
 00:19:35,919 --> 00:19:38,480
-so far with this a first attempt
+这是第一次尝试，
 
 00:19:38,480 --> 00:19:40,160
-um this number here
+你们可以看到，
 
-00:19:40,160 --> 00:19:41,919
-as you can see this target value starts
-
-00:19:41,919 --> 00:19:43,840
-with a certain number of zeros but this
+00:19:40,160 --> 00:19:43,840
+这个数字显然比目标值大，
 
 00:19:43,840 --> 00:19:45,600
-one is obviously a bigger number than
+所以它不低于目标，
 
 00:19:45,600 --> 00:19:48,160
-that so it's not below the target so
+所以，
 
-00:19:48,160 --> 00:19:50,080
-this first attempt at trying to add this
+00:19:48,160 --> 00:19:55,039
+这第一次尝试添加这个区块到区块链上失败了。
 
-00:19:50,080 --> 00:19:51,039
-block
-
-00:19:51,039 --> 00:19:54,160
-onto the blockchain has failed like so
-
-00:19:54,160 --> 00:19:55,039
-so
-
-00:19:55,039 --> 00:19:57,280
-um what happens then is a miner doesn't
-
-00:19:57,280 --> 00:19:58,240
-give up
-
-00:19:58,240 --> 00:19:59,200
-um
+00:19:55,039 --> 00:19:59,200
+然后，矿工并不放弃。
 
 00:19:59,200 --> 00:20:00,880
-in the block header
+在区块头中，
 
-00:20:00,880 --> 00:20:02,880
-there's space
+00:20:00,880 --> 00:20:06,480
+有一个额外的字段叫做nonce，
 
-00:20:02,880 --> 00:20:04,080
-um
+00:20:06,480 --> 00:20:12,400
+它代表一次性使用的数字。
 
-00:20:04,080 --> 00:20:06,480
-there's an extra field called the nonce
-
-00:20:06,480 --> 00:20:08,320
-which stands for um
-
-00:20:08,320 --> 00:20:11,039
-a number used once
-
-00:20:11,039 --> 00:20:12,400
-um
-
-00:20:12,400 --> 00:20:13,840
-and this is like sort of like an open
-
-00:20:13,840 --> 00:20:16,240
-field that a miner is free to put their
+00:20:12,400 --> 00:20:16,240
+这是一个开放的字段，
 
 00:20:16,240 --> 00:20:20,240
-own um number in or data in so what that
+矿工可以自由地放入他们自己的数字或数据。
 
 00:20:20,240 --> 00:20:22,960
-means is if this first attempt of the
+所以，
 
 00:20:22,960 --> 00:20:24,480
-block header fails
+如果区块头的第一次尝试失败，
 
-00:20:24,480 --> 00:20:26,799
-they can change the nonce value or
-
-00:20:26,799 --> 00:20:28,559
-change the data in the nonce so for
+00:20:24,480 --> 00:20:28,559
+他们可以改变nonce值或改变nonce中的数据。
 
 00:20:28,559 --> 00:20:31,120
-example um the first attempt might they
+例如，
 
 00:20:31,120 --> 00:20:33,520
-might have had the number zero in there
+第一次尝试可能他们在那里放了数字零，
 
 00:20:33,520 --> 00:20:35,600
-then if that fails they'll change the
+如果那失败了，
 
 00:20:35,600 --> 00:20:37,840
-nonce and then push the block header
+他们会改变nonce，
 
 00:20:37,840 --> 00:20:39,600
-through the hash function again
+然后再次将区块头通过哈希函数。
 
 00:20:39,600 --> 00:20:41,919
-and because we've only made even though
+因为我们只做了一点小的调整
 
-00:20:41,919 --> 00:20:43,919
-we've only made a small adjustment like
+00:20:41,919 --> 00:20:44,880
+就像我之前给你们展示的哈希函数，
 
-00:20:43,919 --> 00:20:44,880
-i showed you earlier with a hash
+00:20:44,880 --> 00:20:50,080
+小的调整可以产生完全不同的结果。
 
-00:20:44,880 --> 00:20:47,039
-function um small adjustments can
+00:20:50,080 --> 00:20:54,720
+所以，矿工基本上会构造一个区块头，
 
-00:20:47,039 --> 00:20:50,080
-produce completely different results
+00:20:54,720 --> 00:20:58,720
+并不断改变这个nonce值，
 
-00:20:50,080 --> 00:20:52,559
-so a minor basically will construct a
+00:20:58,720 --> 00:21:04,159
+希望结果会产生一个低于目标值的区块哈希。
 
-00:20:52,559 --> 00:20:54,720
-bloodhead block header and keep changing
-
-00:20:54,720 --> 00:20:57,200
-this nonce value and hoping that the
-
-00:20:57,200 --> 00:20:58,720
-result
-
-00:20:58,720 --> 00:21:01,280
-will find will produce
-
-00:21:01,280 --> 00:21:04,159
-a block hash below the target value
-
-00:21:04,159 --> 00:21:06,880
-so literally a minor creates a block
-
-00:21:06,880 --> 00:21:08,080
-header
+00:21:04,159 --> 00:21:08,080
+所以，矿工实际上是创建一个区块头，
 
 00:21:08,080 --> 00:21:09,919
-adds an answer to the end and it doesn't
+然后在末尾添加一个nonce，
 
 00:21:09,919 --> 00:21:12,400
-work they'll keep incrementing it hoping
+如果不成功，
 
 00:21:12,400 --> 00:21:14,840
-to get a low enough block
+他们会不断增加尝试，
 
 00:21:14,840 --> 00:21:17,679
-hash eventually um
+这完全是随机的，
 
 00:21:17,679 --> 00:21:19,200
-if they're lucky just it's just this is
+…这只是纯粹的随机性和纯粹的运气…
 
-00:21:19,200 --> 00:21:21,600
-just pure randomness and pure luck
+00:21:19,200 --> 00:21:25,440
+他们可能能够猜到一个有效的随机数，
 
-00:21:21,600 --> 00:21:22,480
-um
-
-00:21:22,480 --> 00:21:23,520
-they might
-
-00:21:23,520 --> 00:21:25,440
-um be able to
-
-00:21:25,440 --> 00:21:27,520
-guess and a nonce
-
-00:21:27,520 --> 00:21:29,360
-that works that'll produce a block hash
-
-00:21:29,360 --> 00:21:30,400
-below the target
+00:21:25,440 --> 00:21:30,400
+产生一个低于目标的区块哈希。
 
 00:21:30,400 --> 00:21:32,640
-so here this particular
+所以，
 
-00:21:32,640 --> 00:21:34,640
-very high nonce has produced a
-
-00:21:34,640 --> 00:21:38,000
-successful block hash result
+00:21:32,640 --> 00:21:38,000
+这个特定的非常高的随机数产生了一个成功的区块哈希结果。
 
 00:21:38,000 --> 00:21:39,280
-so there we are
+然后，
 
-00:21:39,280 --> 00:21:41,440
-so what will happen and then is this
+00:21:39,280 --> 00:21:43,120
+这个节点会将该区块添加到他们的区块链中，
 
-00:21:41,440 --> 00:21:43,120
-node will add that block onto their
+00:21:43,120 --> 00:21:50,640
+并将这个已解决的候选区块传递给他们连接的所有节点。
 
-00:21:43,120 --> 00:21:46,000
-blockchain and they will pass on this
+00:21:50,640 --> 00:21:58,000
+他们会检查并验证区块头确实产生了一个低于目标的区块哈希，
 
-00:21:46,000 --> 00:21:48,159
-candidate block or this solved candidate
+00:21:58,000 --> 00:22:00,880
+然后将其添加到文件中，
 
-00:21:48,159 --> 00:21:49,360
-block onto all the nodes they're
+00:22:00,880 --> 00:22:05,360
+剔除包含在该区块中的任何冲突交易，
 
-00:21:49,360 --> 00:21:50,640
-connected to
-
-00:21:50,640 --> 00:21:52,640
-they'll check it and verify it to make
-
-00:21:52,640 --> 00:21:54,559
-sure that the block header you know
-
-00:21:54,559 --> 00:21:55,840
-produces a
-
-00:21:55,840 --> 00:21:58,000
-target below a block cash blow the
-
-00:21:58,000 --> 00:21:59,039
-target
-
-00:21:59,039 --> 00:22:00,880
-they'll add it to the file
-
-00:22:00,880 --> 00:22:03,280
-kick out any conflicting transactions um
-
-00:22:03,280 --> 00:22:05,360
-that are included in that block
-
-00:22:05,360 --> 00:22:06,240
-and then
-
-00:22:06,240 --> 00:22:08,240
-pass on the block like so and they'll do
+00:22:05,360 --> 00:22:08,240
+然后像这样传递区块。
 
 00:22:08,240 --> 00:22:09,360
-the same thing
+他们也会做同样的事情。
 
-00:22:09,360 --> 00:22:10,320
-so
+00:22:09,360 --> 00:22:13,679
+这就是挖矿在基本层面上的工作方式。
 
-00:22:10,320 --> 00:22:13,679
-that's how um mining works on a basic
+00:22:13,679 --> 00:22:19,440
+我有个问题，
 
-00:22:13,679 --> 00:22:16,240
-level so i had a quick question here
-
-00:22:16,240 --> 00:22:18,720
-um
-
-00:22:18,720 --> 00:22:19,440
-so
-
-00:22:19,440 --> 00:22:22,240
-you're saying that the target value
-
-00:22:22,240 --> 00:22:24,559
-is
+00:22:19,440 --> 00:22:24,559
+你说的目标值，
 
 00:22:24,840 --> 00:22:28,559
-a each node has its own value for the
+每个节点都有自己的目标值，
 
 00:22:28,559 --> 00:22:30,480
-target value right so
+对吗？我想过这个问题，
 
-00:22:30,480 --> 00:22:32,400
-i've thought of this but there is a
+00:22:30,480 --> 00:22:37,919
+但是有可能我挖到的区块低于我的目标值，
 
-00:22:32,400 --> 00:22:35,039
-possibility that i mine a block which is
-
-00:22:35,039 --> 00:22:37,200
-below my target value
-
-00:22:37,200 --> 00:22:37,919
-but
-
-00:22:37,919 --> 00:22:40,080
-and i give it to my neighboring nodes
-
-00:22:40,080 --> 00:22:40,960
-and
+00:22:37,919 --> 00:22:40,960
+然后我把它给我的邻居节点，
 
 00:22:40,960 --> 00:22:44,400
-maybe the target value has changed or
+可能目标值已经改变了，
 
 00:22:44,400 --> 00:22:46,799
-for some reason the other nodes don't
+或者出于某种原因，
 
 00:22:46,799 --> 00:22:49,039
-have the same target value
+其他节点的目标值不同。
 
 00:22:49,039 --> 00:22:51,600
-uh is that is that a possibility and how
+是的，
 
-00:22:51,600 --> 00:22:52,559
-does that
+00:22:51,600 --> 00:22:53,760
+我明白你的问题。
 
-00:22:52,559 --> 00:22:53,760
-yeah well i understand the question i
-
-00:22:53,760 --> 00:22:55,600
-think i am i think i explained the
-
-00:22:55,600 --> 00:22:57,600
-target um not
-
-00:22:57,600 --> 00:22:59,360
-great um
+00:22:53,760 --> 00:22:59,360
+我想我已经解释过目标了，
 
 00:22:59,360 --> 00:23:02,159
-let me find out if i
+可能我没有解释得很好，
 
-00:23:02,159 --> 00:23:03,520
-uh
+00:23:02,159 --> 00:23:11,919
+我再解释一下。
 
-00:23:03,520 --> 00:23:06,880
-the target um
-
-00:23:06,880 --> 00:23:09,760
-right um
-
-00:23:09,760 --> 00:23:11,919
-the target um i'll explain it now
-
-00:23:11,919 --> 00:23:13,840
-basically the target is there
-
-00:23:13,840 --> 00:23:15,039
-um
-
-00:23:15,039 --> 00:23:17,440
-so that
+00:23:11,919 --> 00:23:17,440
+目标的存在是为了确保每10分钟会有一个新的区块被挖出。
 
 00:23:17,520 --> 00:23:19,760
-um every 10 minutes
+但是，
 
-00:23:19,760 --> 00:23:23,360
-um a new block will be mined
-
-00:23:23,360 --> 00:23:24,320
-but
-
-00:23:24,320 --> 00:23:25,280
-if
-
-00:23:25,280 --> 00:23:26,559
-uh
-
-00:23:26,559 --> 00:23:29,600
-more computers are hashing a lot faster
+00:23:19,760 --> 00:23:29,600
+如果有更多的计算机以更快的速度进行哈希运算，
 
 00:23:29,600 --> 00:23:32,880
-um then a block is likely to be mined in
+那么一个区块可能会在10分钟内被挖出。
 
 00:23:32,880 --> 00:23:34,240
-under 10 minutes
+因此，
 
-00:23:34,240 --> 00:23:36,159
-so this target value obviously moves up
+00:23:34,240 --> 00:23:38,559
+这个目标值会上下浮动，
 
-00:23:36,159 --> 00:23:37,760
-and down
+00:23:38,559 --> 00:23:44,480
+以确保每10分钟挖出一个新的区块。
 
-00:23:37,760 --> 00:23:38,559
-um
+00:23:44,480 --> 00:23:48,080
+当你首次运行比特币并挖出第一个区块时，
 
-00:23:38,559 --> 00:23:40,720
-so that a new block is mined every 10
-
-00:23:40,720 --> 00:23:42,400
-minutes
-
-00:23:42,400 --> 00:23:44,480
-um yeah
-
-00:23:44,480 --> 00:23:46,400
-yeah so um so
-
-00:23:46,400 --> 00:23:48,080
-the target for the very first block when
-
-00:23:48,080 --> 00:23:49,679
-you first start running bitcoin and the
-
-00:23:49,679 --> 00:23:51,600
-very first block it was hard coded in at
-
-00:23:51,600 --> 00:23:53,919
-this value
+00:23:48,080 --> 00:23:53,919
+目标值是硬编码在这个值中的。
 
 00:23:53,919 --> 00:23:57,039
-and then after every uh 2016 blocks or
-
-00:23:57,039 --> 00:23:59,200
-roughly every two weeks
+然后，每过2016个区块，
 
 00:23:59,200 --> 00:24:02,000
-what will happen is your every
+或者大约每两周，
 
-00:24:02,000 --> 00:24:02,880
-node
+00:24:02,000 --> 00:24:09,120
+每个节点都会查看挖出最后2016个区块所需的时间。
 
-00:24:02,880 --> 00:24:06,159
-they will look at the time it took um
+00:24:09,120 --> 00:24:14,559
+预期的时间显然是20160分钟，
 
-00:24:06,159 --> 00:24:09,120
-for all the last 2016 blocks to be mined
-
-00:24:09,120 --> 00:24:11,200
-so the expected time for that is
-
-00:24:11,200 --> 00:24:12,559
-obviously
-
-00:24:12,559 --> 00:24:14,559
-20 160
-
-00:24:14,559 --> 00:24:16,559
-but if the actual time for those blocks
-
-00:24:16,559 --> 00:24:18,880
-demand was less than that
+00:24:14,559 --> 00:24:18,880
+但如果实际挖出这些区块的时间少于这个时间，
 
 00:24:18,880 --> 00:24:21,120
-then the target would adjust
+那么，目标会进行调整。
 
 00:24:21,120 --> 00:24:25,200
-so the target will adjust by this ratio
+目标会按照这个比例进行调整。
 
 00:24:25,200 --> 00:24:26,000
-so
+所以，
 
-00:24:26,000 --> 00:24:27,840
-there we are so
-
-00:24:27,840 --> 00:24:29,679
-this ratio because it was mined all the
+00:24:26,000 --> 00:24:29,679
+这个比例是因为所有的区块都被挖掘得更快，
 
 00:24:29,679 --> 00:24:32,960
-blocks of mine faster is 0.9
+所以它是0.9。
 
 00:24:32,960 --> 00:24:34,880
-and so this target as you can see will
+所以你可以看到，
 
 00:24:34,880 --> 00:24:36,720
-adjust downwards
+这个目标会向下调整。
 
 00:24:36,720 --> 00:24:38,880
-so every single node when they receive a
+所以每个节点在接收到一个新的区块后，
 
 00:24:38,880 --> 00:24:41,279
-new block after every 2016 blocks they
+每2016个区块，
 
-00:24:41,279 --> 00:24:44,640
-will all do this exact same calculation
-
-00:24:44,640 --> 00:24:45,360
-so
+00:24:41,279 --> 00:24:45,360
+他们都会做这个精确的计算。
 
 00:24:45,360 --> 00:24:47,520
-every node started with this value but
+然后每个节点都从这个值开始，
 
 00:24:47,520 --> 00:24:49,520
-if everyone's on the same block
+但是如果每个人都在同一个区块，
 
-00:24:49,520 --> 00:24:52,480
-then everyone will have calculated the
+00:24:49,520 --> 00:24:53,840
+那么每个人都会计算出同样的目标。
 
-00:24:52,480 --> 00:24:53,840
-same target
-
-00:24:53,840 --> 00:24:55,279
-so it's basically everyone shares the
-
-00:24:55,279 --> 00:24:56,720
-same target they all calculate it
+00:24:53,840 --> 00:24:56,720
+所以基本上每个人都有同样的目标，
 
 00:24:56,720 --> 00:24:59,840
-themselves but
+他们都自己计算，
 
-00:24:59,840 --> 00:25:01,039
-because they're receiving all the same
-
-00:25:01,039 --> 00:25:02,000
-blocks
+00:24:59,840 --> 00:25:02,000
+但是因为他们都接收到同样的区块，
 
 00:25:02,000 --> 00:25:04,159
-um they'll calculate everyone will have
+他们都会计算出同样的目标值。
 
-00:25:04,159 --> 00:25:05,919
-the same target value so not everyone
-
-00:25:05,919 --> 00:25:07,520
-has different target values everyone has
+00:25:04,159 --> 00:25:07,520
+所以不是每个人都有不同的目标值，
 
 00:25:07,520 --> 00:25:10,799
-the same calculated target
+个人都有同样的计算目标。
 
 00:25:10,799 --> 00:25:13,360
-so again this happens every 2016 blocks
+所以再次强调，
 
 00:25:13,360 --> 00:25:14,880
-the same thing happens how long did they
+这每2016个区块就会发生一次，
 
 00:25:14,880 --> 00:25:18,240
-take what's the ratio okay that was
+同样的事情会发生，
 
 00:25:18,240 --> 00:25:19,440
-mine faster
+他们花了多长时间，
 
 00:25:19,440 --> 00:25:22,720
-move it down again like so
+比例是多少，挖掘得更快，
 
 00:25:23,360 --> 00:25:24,240
-okay
+就再次向下调整，
 
 00:25:24,240 --> 00:25:26,559
-um
+就像这样。
 
 00:25:26,960 --> 00:25:29,120
-so that's how the target works
+那么，
 
-00:25:29,120 --> 00:25:29,900
-um
-
-00:25:29,900 --> 00:25:31,279
-[Music]
+00:25:29,120 --> 00:25:31,279
+这就是Target 是如何工作的。
 
 00:25:31,279 --> 00:25:36,159
-also up until now and just to clarify um
+到目前为止，
 
-00:25:36,159 --> 00:25:37,440
-i've referred to this blockchain as a
-
-00:25:37,440 --> 00:25:39,520
-shared file um the shared file is a
+00:25:36,159 --> 00:25:39,520
+我已经把这个区块链称为一个共享文件，
 
 00:25:39,520 --> 00:25:41,919
-blockchain um basically the shared file
+这个共享文件是一个区块链。
 
 00:25:41,919 --> 00:25:45,440
-is full of transactions but um because
+基本上，这个共享文件充满了交易，
 
 00:25:45,440 --> 00:25:48,559
-um the transactions are added in blocks
+因为交易是以区块的形式添加的，
 
 00:25:48,559 --> 00:25:50,240
-like so um the file is called the
+这个文件被称为区块链，
 
 00:25:50,240 --> 00:25:52,480
-blockchain because each block builds on
+因为每个区块都在彼此之上建立。
 
 00:25:52,480 --> 00:25:54,559
-top of each other so with bitcoin it is
+所以对于比特币来说，
 
 00:25:54,559 --> 00:25:56,240
-a shared file and this shared file is
+它是一个共享文件，
 
 00:25:56,240 --> 00:25:57,919
-called the blockchain
+这个共享文件被称为区块链。
 
 00:25:57,919 --> 00:26:00,320
-so if i just update the diagram you can
+所以如果我更新这个图，
 
-00:26:00,320 --> 00:26:01,760
-think of the shared file as you know
-
-00:26:01,760 --> 00:26:04,720
-just blocks built on top of each other
-
-00:26:04,720 --> 00:26:06,000
-finally
+00:26:00,320 --> 00:26:06,000
+你可以把这个共享文件想象成就是一堆堆叠在一起的区块。
 
 00:26:06,000 --> 00:26:07,520
 why would anyone mine what's the
