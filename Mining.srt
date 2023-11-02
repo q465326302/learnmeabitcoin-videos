@@ -2130,169 +2130,115 @@ every single pair of transactions and
 然后再运行一遍
 
 00:39:36,560 --> 00:39:38,320
-hash them all together hash each pair
+将所有的哈希值配对并一起哈希，
 
 00:39:38,320 --> 00:39:40,400
-together and you keep going on and
+然后再继续这样做，
 
-00:39:40,400 --> 00:39:43,680
-you'll end up with a single um
+00:39:40,400 --> 00:39:44,880
+最终会得到一个单一的哈希结果，
 
-00:39:43,680 --> 00:39:44,880
-hash result
+00:39:44,880 --> 00:39:47,760
+这称为默克尔根。
 
-00:39:44,880 --> 00:39:46,960
-called the merkle root
-
-00:39:46,960 --> 00:39:47,760
-now
-
-00:39:47,760 --> 00:39:49,839
-the question is um
-
-00:39:49,839 --> 00:39:51,119
-why
+00:39:47,760 --> 00:39:51,119
+现在的问题是，
 
 00:39:51,119 --> 00:39:53,599
-if you want to create a summary of all
+如果你想创建一个区块中所有交易的摘要
 
 00:39:53,599 --> 00:39:56,480
-the transactions in the block you're
+你要怎么做？
 
 00:39:56,480 --> 00:39:57,839
-hashing the transaction ids here
+（顺便说一下，你将这里的交易ID进行哈希）
 
 00:39:57,839 --> 00:40:00,160
-together by the way but um
+但是，
 
-00:40:00,160 --> 00:40:01,359
-if you want to create a summary or a
+00:40:00,160 --> 00:40:04,560
+如果你想创建一个摘要或者指纹来表示区块中的所有交易，
 
-00:40:01,359 --> 00:40:02,720
-fingerprint for all the transactions in
+00:40:04,560 --> 00:40:07,760
+为什么不只是简单地将它们全部一起哈希，
 
-00:40:02,720 --> 00:40:04,560
-the block why wouldn't you just hash
-
-00:40:04,560 --> 00:40:06,320
-them all together like this in a more
-
-00:40:06,320 --> 00:40:07,760
-simple way why would you do it in this
-
-00:40:07,760 --> 00:40:09,280
-more elaborate
-
-00:40:09,280 --> 00:40:11,599
-um tree structure
+00:40:07,760 --> 00:40:11,599
+而是采用这种更复杂的树形结构呢？
 
 00:40:11,599 --> 00:40:13,520
-and the reason for that is
+这样做的原因是，
 
-00:40:13,520 --> 00:40:16,720
-um say you you were given a merkle root
+00:40:13,520 --> 00:40:17,839
+假设你得到了一个默克尔根，
 
-00:40:16,720 --> 00:40:17,839
-um
+00:40:17,839 --> 00:40:26,480
+你想检查这个交易ID是否存在于这个区块中。
 
-00:40:17,839 --> 00:40:21,359
-a merkel root and you want to check if
-
-00:40:21,359 --> 00:40:23,599
-this transaction id
-
-00:40:23,599 --> 00:40:26,480
-is present in this block
-
-00:40:26,480 --> 00:40:29,359
-um the only way you could check it
-
-00:40:29,359 --> 00:40:30,800
-would be to take
-
-00:40:30,800 --> 00:40:32,400
-all of the other
+00:40:26,480 --> 00:40:32,400
+唯一的检查方法就是取所有其他的交易ID，
 
 00:40:32,400 --> 00:40:34,160
-transaction ids you need all the other
+包括你想检查的那一个，
 
-00:40:34,160 --> 00:40:36,079
-ones including the one you want to check
+00:40:34,160 --> 00:40:38,720
+然后将它们一起哈希，
 
-00:40:36,079 --> 00:40:38,720
-and then hash them together to get the
-
-00:40:38,720 --> 00:40:40,400
-miracle root
-
-00:40:40,400 --> 00:40:41,680
-um
+00:40:38,720 --> 00:40:41,680
+得到默克尔根。
 
 00:40:41,680 --> 00:40:44,000
-to get the to get the hash sorry
+获取哈希，
 
-00:40:44,000 --> 00:40:44,800
-um
-
-00:40:44,800 --> 00:40:45,920
-but
+00:40:44,000 --> 00:40:45,920
+抱歉
 
 00:40:45,920 --> 00:40:47,760
-with a miracle root um so you want to
+但是，
 
 00:40:47,760 --> 00:40:50,000
-check the presence of this hash here all
+如果你想检查这个哈希的存在，
 
 00:40:50,000 --> 00:40:52,320
-you actually need is you need this one
+你实际上只需要这个，
 
 00:40:52,320 --> 00:40:54,000
-to create this one
+来创建这个，
 
 00:40:54,000 --> 00:40:55,760
-and then if you've got that one and then
+如果你有了这个，
 
 00:40:55,760 --> 00:40:57,599
-all you need is that one
+然后你需要这个，
 
 00:40:57,599 --> 00:40:59,280
-and then you can create that one
+然后你就可以创建这个，
 
 00:40:59,280 --> 00:41:01,440
-and then only then is this one up here
+只有这个在这里，
 
 00:41:01,440 --> 00:41:03,920
-and that will give you this miracle root
+你就可以得到默克尔根了
 
 00:41:03,920 --> 00:41:06,480
-so the other one needed was it one two
+我们做的另一个是1…2…3.4……5……7、6…
 
 00:41:06,480 --> 00:41:10,240
-three four five seven six um
+它需要七个交易ID，
 
 00:41:10,240 --> 00:41:12,720
-transaction ids but this one only needed
+但这个只需要三个。
 
 00:41:12,720 --> 00:41:13,920
-uh three
+显然，
 
 00:41:13,920 --> 00:41:14,960
-so obviously it doesn't look like a
+这看起来并不是一个巨大的改进，
 
 00:41:14,960 --> 00:41:16,319
-massive improvement but this is just a
+但这只是一个简单的区块，
 
-00:41:16,319 --> 00:41:18,880
-simple block that if this is a lot
-
-00:41:18,880 --> 00:41:20,560
-longer block with
-
-00:41:20,560 --> 00:41:22,240
-thousands of transactions
-
-00:41:22,240 --> 00:41:23,520
-then
+00:41:16,319 --> 00:41:23,520
+如果这是一个包含数千笔交易的更长的区块，
 
 00:41:23,520 --> 00:41:25,040
 you're needing a lot less transaction
