@@ -1679,275 +1679,176 @@ okay
 00:31:24,880 --> 00:31:29,440
 我会在最后添加这些链接，
 
-00:31:29,440 --> 00:31:30,799
-你去网站learnmebitcoin.com的代码部分，
+00:31:29,440 --> 00:31:32,720
+你去网站learnmebitcoin.com看代码部分，
 
-00:31:30,799 --> 00:31:32,720
-learnmebitcoin.com
+00:31:32,720 --> 00:31:37,519
+我已经把挖矿模拟器的代码放在这里了。
 
-00:31:32,720 --> 00:31:35,520
-forward slash code and i've put the
+00:31:37,519 --> 00:31:40,320
+这是用Ruby写的，
 
-00:31:35,520 --> 00:31:37,519
-mining simulator
-
-00:31:37,519 --> 00:31:39,440
-code up here
-
-00:31:39,440 --> 00:31:40,320
-it's
-
-00:31:40,320 --> 00:31:43,039
-i've made it it's written in ruby
-
-00:31:43,039 --> 00:31:44,799
-just because i think it's a simple and
+00:31:40,320 --> 00:31:44,799
+我觉得这是一种简单易读的语言，
 
 00:31:44,799 --> 00:31:47,440
-easy to read language similar to python
+类似于Python。
 
 00:31:47,440 --> 00:31:49,200
-um i tried to make this as simple as
+我试图让这个尽可能简单，
 
 00:31:49,200 --> 00:31:51,120
-possible so if you want to start you
+所以如果你想开始哈希你自己的区块头，
 
 00:31:51,120 --> 00:31:53,120
-know hashing your own block headers
+你可以这样做。
 
 00:31:53,120 --> 00:31:55,039
-um you can
+你也可以在浏览器上，
 
-00:31:55,039 --> 00:31:57,360
-so on the website as well on limia
+00:31:55,039 --> 00:32:00,080
+打开learnmeabitcoin.com
 
-00:31:57,360 --> 00:32:00,080
-bitcoin if you go into the browser
-
-00:32:00,080 --> 00:32:02,000
-and you'll be able to see
-
-00:32:02,000 --> 00:32:04,480
-these these latest blocks
+00:32:00,080 --> 00:32:04,480
+你将能够看到这些最新的区块，
 
 00:32:04,480 --> 00:32:07,200
-and these are the block headers
+这些是区块头，
 
 00:32:07,200 --> 00:32:10,640
-and if you click on serialized
+如果你点击序列化，
 
-00:32:10,880 --> 00:32:13,120
-it'll show you the
-
-00:32:13,120 --> 00:32:14,399
-civilized code
+00:32:10,880 --> 00:32:14,399
+它会显示序列化的代码，
 
 00:32:14,399 --> 00:32:16,399
-and if you were to hash this
+如果你对这个进行哈希，
 
-00:32:16,399 --> 00:32:19,919
-um it would produce this block header
-
-00:32:19,919 --> 00:32:21,919
-and so this is a
+00:32:16,399 --> 00:32:21,919
+它会产生这个区块头，
 
 00:32:21,919 --> 00:32:23,679
-this is a candidate block basically i'm
+这是一个候选区块,
 
-00:32:23,679 --> 00:32:25,279
-just you know trying to do the same
-
-00:32:25,279 --> 00:32:26,559
-thing
+00:32:23,679 --> 00:32:26,559
+在尝试做同样的事情。
 
 00:32:26,559 --> 00:32:30,159
-right so just curious i mean this uh is
+我很好奇，
 
-00:32:30,159 --> 00:32:32,720
-this running off like a
-
-00:32:32,720 --> 00:32:33,840
-machine
-
-00:32:33,840 --> 00:32:35,679
-that you have i mean learn me a bit is
+00:32:30,159 --> 00:32:35,679
+这个是在你的机器上运行的吗？
 
 00:32:35,679 --> 00:32:38,159
-this live yeah this is live
+这是实时的吗？
 
 00:32:38,159 --> 00:32:39,919
-yeah so this is um
+是的，这是实时的。
 
 00:32:39,919 --> 00:32:41,840
-a live candidate block these are all
+这是一个实时的候选区块，
 
-00:32:41,840 --> 00:32:43,519
-live transactions
+00:32:41,840 --> 00:32:45,760
+这些都是实时的交易，
 
-00:32:43,519 --> 00:32:45,760
-uh
+00:32:46,000 --> 00:32:54,080
+一切都在浏览器上。
 
-00:32:46,000 --> 00:32:49,200
-so it's all on the browser
-
-00:32:49,760 --> 00:32:51,120
-let me go back
-
-00:32:51,120 --> 00:32:54,080
-all right okay um
-
-00:32:54,559 --> 00:32:57,679
-uh okay so that's the basics
-
-00:32:57,679 --> 00:32:58,480
-oh
+00:32:54,559 --> 00:32:58,480
+好的，
 
 00:32:58,480 --> 00:33:01,200
-intro right so that was the basics
+这就是基础知识的介绍。
 
 00:33:01,200 --> 00:33:04,559
-of um now i'll go on to the technical
+现在我将从技术角度来讲解，
 
 00:33:04,559 --> 00:33:06,159
-um basically i'm gonna run through the
+基本上我要讲一遍同样的事情，
 
-00:33:06,159 --> 00:33:08,799
-exact same thing but uh do it in a
+00:33:06,159 --> 00:33:10,559
+但是从程序员的角度来讲解。
 
-00:33:08,799 --> 00:33:10,559
-technical way
-
-00:33:10,559 --> 00:33:13,679
-so if you're interested in programming
-
-00:33:13,679 --> 00:33:16,720
-um and actually mining the block uh this
+00:33:10,559 --> 00:33:16,720
+如果你对编程和挖矿感兴趣，
 
 00:33:16,720 --> 00:33:19,039
-is basically the same stuff just from a
+这基本上就是和之前同样的内容，
 
 00:33:19,039 --> 00:33:21,120
-programmer's perspective
+只是从程序员的角度来看。
 
 00:33:21,120 --> 00:33:23,120
-right so so again
+再次重复，
 
-00:33:23,120 --> 00:33:25,039
-just repetition gonna repeat the same
+00:33:23,120 --> 00:33:27,200
+从内存池中获取交易，
 
-00:33:25,039 --> 00:33:27,200
-stuff uh
+00:33:27,200 --> 00:33:30,240
+填充你的区块，
 
-00:33:27,200 --> 00:33:29,039
-same thing memory pool
+00:33:30,240 --> 00:33:34,000
+然后你会得到一个候选区块，
 
-00:33:29,039 --> 00:33:30,240
-grab the transact uh grab the
+00:33:34,000 --> 00:33:38,159
+然后你在顶部放置你的coinbase交易。
 
-00:33:30,240 --> 00:33:31,840
-transactions to main pool fill up your
+00:33:38,159 --> 00:33:41,840
+一个区块的第一笔交易总是coinbase交易，
 
-00:33:31,840 --> 00:33:34,000
-block uh then you'll
-
-00:33:34,000 --> 00:33:36,159
-there we are this is the candidate block
-
-00:33:36,159 --> 00:33:38,159
-then you put your coinbase transaction
-
-00:33:38,159 --> 00:33:40,320
-at the top the first transaction in a
-
-00:33:40,320 --> 00:33:41,840
-block is always a coinbase transaction
-
-00:33:41,840 --> 00:33:43,840
-that a miner was put there
-
-00:33:43,840 --> 00:33:45,120
-um
+00:33:41,840 --> 00:33:45,120
+这是矿工放在那里的。
 
 00:33:45,120 --> 00:33:46,960
-and so that allows you to claim the
+这样你就可以领取区块奖励，
 
-00:33:46,960 --> 00:33:48,960
-block reward which is currently 12.5
-
-00:33:48,960 --> 00:33:50,159
-bitcoins
+00:33:46,960 --> 00:33:50,159
+当前是比特币12.5个。
 
 00:33:50,159 --> 00:33:51,600
-and the reason you would put the
+在选择了所有这些交易之后，
 
-00:33:51,600 --> 00:33:53,919
-coinbase transaction um at the top of
-
-00:33:53,919 --> 00:33:56,080
-the block after selecting all these
+00:33:51,600 --> 00:33:56,080
+你会将coinbase交易放在区块的顶部的原因是什么？
 
 00:33:56,080 --> 00:33:57,360
-transactions
+每一笔交易都会有一个费用，
 
-00:33:57,360 --> 00:33:58,960
-is because each of these transactions
+00:33:57,360 --> 00:34:02,559
+通过你的coinbase交易，
 
-00:33:58,960 --> 00:34:00,720
-will have a fee
+00:34:02,559 --> 00:34:07,760
+你可以收集所有这些费用。
 
-00:34:00,720 --> 00:34:02,559
-and uh
-
-00:34:02,559 --> 00:34:04,799
-through your coinbase transaction
-
-00:34:04,799 --> 00:34:07,760
-you can collect all of these fees
-
-00:34:07,760 --> 00:34:10,079
-um so instead of the coinbase
-
-00:34:10,079 --> 00:34:12,560
-transaction just receiving the 12.5
+00:34:07,760 --> 00:34:12,560
+所以，coinbase交易不仅仅是接收12.5个区块奖励，
 
 00:34:12,560 --> 00:34:14,239
-block reward you'll be able to send
+你还可以根据这些费用的价值，
 
 00:34:14,239 --> 00:34:17,040
-yourself something like 13 or more maybe
+给自己发送13个或更多的比特币。
 
 00:34:17,040 --> 00:34:19,040
-depending on how much the fees are worth
+所以，
 
-00:34:19,040 --> 00:34:20,239
-uh depends how much you can send
-
-00:34:20,239 --> 00:34:22,000
-yourself in this coinbase transaction
-
-00:34:22,000 --> 00:34:23,520
-okay so the coinbase transaction
+00:34:19,040 --> 00:34:23,520
+coinbase交易包括了费用是吗？
 
 00:34:23,520 --> 00:34:25,280
-includes the fees yes
+是的，
 
 00:34:25,280 --> 00:34:27,599
-yes it's not only the the
+它不仅包括挖矿奖励。
 
-00:34:27,599 --> 00:34:29,599
-mining reward okay so basically you have
-
-00:34:29,599 --> 00:34:31,520
-the base level which is the block reward
+00:34:27,599 --> 00:34:31,520
+你还有基础级别的区块奖励，
 
 00:34:31,520 --> 00:34:33,760
-but then you can send yourself however
+但是你可以根据每笔交易的费用，
 
-00:34:33,760 --> 00:34:35,359
-much all these fees
-
-00:34:35,359 --> 00:34:38,239
-from each transaction
+00:34:33,760 --> 00:34:38,239
+给自己发送多少比特币。
 
 00:34:38,239 --> 00:34:40,560
 so this means that miners will tend to
