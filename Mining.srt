@@ -1503,256 +1503,184 @@ okay
 这个挖矿模拟器正在挖掘一个已经被挖掘过的区块，
 
 00:28:40,000 --> 00:28:41,679
-so this is a long time ago there's only
+这是很久以前的事情，
 
 00:28:41,679 --> 00:28:43,279
-13 transactions in the memory pool
+内存池中只有13个交易。
 
-00:28:43,279 --> 00:28:44,559
-there's obviously a lot more in there
-
-00:28:44,559 --> 00:28:45,440
-now
+00:28:43,279 --> 00:28:45,440
+现在显然更多了。
 
 00:28:45,440 --> 00:28:46,720
-uh what they'll do then they'll
+然后它们会做什么呢，
 
 00:28:46,720 --> 00:28:48,240
-construct the block header
+它们会构建区块头，
 
-00:28:48,240 --> 00:28:50,559
-um i haven't covered these last
-
-00:28:50,559 --> 00:28:52,399
-two bits of the block header yet but
+00:28:48,240 --> 00:28:52,399
+我还没有介绍区块头的最后两部分，
 
 00:28:52,399 --> 00:28:53,679
-don't worry i'll cover them in a moment
+不过别担心，
 
 00:28:53,679 --> 00:28:54,640
-moment
+我马上就会介绍。
 
 00:28:54,640 --> 00:28:56,399
-but obviously this all this data refers
+但这些数据是指前一个区块...
 
-00:28:56,399 --> 00:28:57,919
-to the previous block has the miracle
-
-00:28:57,919 --> 00:28:59,840
-root the version number
-
-00:28:59,840 --> 00:29:00,640
-um
+00:28:56,399 --> 00:29:00,640
+有默克尔根，版本号。
 
 00:29:00,640 --> 00:29:03,440
-and what they'll do they will squish all
+然后他们会做的是，
 
-00:29:03,440 --> 00:29:04,399
-of that
-
-00:29:04,399 --> 00:29:06,720
-data together into one line of data and
+00:29:03,440 --> 00:29:06,720
+把所有这些数据压缩成一行数据。
 
 00:29:06,720 --> 00:29:08,480
-i've left some space here for the nonce
+我在这里留了一些空间用于nonce，
 
 00:29:08,480 --> 00:29:11,520
-so this is a block header data
+这是区块头数据，
 
 00:29:11,520 --> 00:29:13,840
-this is the target and then what miner
+这是目标值。
 
 00:29:13,840 --> 00:29:16,320
-will do now is they will take this block
+然后矿工会做的是，
 
 00:29:16,320 --> 00:29:18,080
-header
+他们会取这个区块头，
 
 00:29:18,080 --> 00:29:19,760
-and put a nonce in there keep
+并在其中放入一个nonce，
 
 00:29:19,760 --> 00:29:22,640
-incrementing it and these are
+不断增加它，
 
 00:29:22,640 --> 00:29:24,399
-the results as you can see now this is a
+正如你现在看到的。
 
 00:29:24,399 --> 00:29:26,240
-very slow minor so as you can see these
+这是一个非常慢的矿工，
 
-00:29:26,240 --> 00:29:28,399
-are the nonce values on the left and
+00:29:26,240 --> 00:29:30,720
+你可以看到这些是左边的随机数值，
 
-00:29:28,399 --> 00:29:30,720
-this these are the different hash values
-
-00:29:30,720 --> 00:29:32,320
-that that
-
-00:29:32,320 --> 00:29:33,919
-block header is producing okay so this
+00:29:30,720 --> 00:29:33,919
+这些是区块头正在产生的不同的哈希值。
 
 00:29:33,919 --> 00:29:35,760
-is uh so
+好的，
 
-00:29:35,760 --> 00:29:37,679
-when you created that
-
-00:29:37,679 --> 00:29:39,120
-string
+00:29:35,760 --> 00:29:39,120
+所以当你在顶部创建那个字符串...？
 
 00:29:39,120 --> 00:29:42,080
-uh on top that did not include the
+那并没有包括交易，
 
 00:29:42,080 --> 00:29:45,440
-transactions it included only the header
+只包括了区块头？
 
 00:29:45,440 --> 00:29:46,159
-yes
+是的
 
-00:29:46,159 --> 00:29:49,760
-oh okay okay okay yes also so um
+00:29:46,159 --> 00:29:51,279
+哦，好的。
 
-00:29:49,760 --> 00:29:50,480
-what
+00:29:51,279 --> 00:29:55,600
+交易我想是包含在这个默克尔根里，
 
-00:29:50,480 --> 00:29:51,279
-um
+00:29:55,600 --> 00:29:58,720
+这个默克尔根是所有交易的摘要，
 
-00:29:51,279 --> 00:29:53,200
-the transactions i suppose are included
-
-00:29:53,200 --> 00:29:55,600
-in this merkel route this merker yeah
-
-00:29:55,600 --> 00:29:57,200
-this mercury route is the summary of all
-
-00:29:57,200 --> 00:29:58,720
-the transact this sort of refers to all
-
-00:29:58,720 --> 00:30:01,279
-the transactions in the block
-
-00:30:01,279 --> 00:30:03,039
-um
+00:29:58,720 --> 00:30:03,039
+它指向区块中的所有交易。
 
 00:30:03,039 --> 00:30:05,760
-here also i've here's the code for this
+这里是这个矿工的代码，
 
-00:30:05,760 --> 00:30:08,480
-miner it just basically just mines a
+00:30:05,760 --> 00:30:11,600
+它只是挖掘了一个区块头，
 
-00:30:08,480 --> 00:30:10,000
-um
-
-00:30:10,000 --> 00:30:11,600
-block header
-
-00:30:11,600 --> 00:30:13,600
-it just hashes a block header um i've
-
-00:30:13,600 --> 00:30:15,200
-made this code available on the website
+00:30:11,600 --> 00:30:15,200
+我已经在网站上提供了这个代码，
 
 00:30:15,200 --> 00:30:17,200
-i'll give you a link to in a moment
+我会在一会儿给你一个链接。
 
-00:30:17,200 --> 00:30:20,000
-um but for this particular miner i know
+00:30:17,200 --> 00:30:21,440
+对于这个特定的矿工，
 
-00:30:20,000 --> 00:30:21,440
-um
+00:30:21,440 --> 00:30:29,200
+我知道成功的哈希是什么。
 
-00:30:21,440 --> 00:30:24,799
-what the successful hashtag
-
-00:30:25,600 --> 00:30:29,200
-hey there let's grab this
-
-00:30:29,520 --> 00:30:31,360
-there we are so
-
-00:30:31,360 --> 00:30:34,000
-let's reduce this down by 100.
+00:30:29,520 --> 00:30:34,000
+让我们把这个减少100。
 
 00:30:34,000 --> 00:30:37,200
-so if i start this again
+如果我再次启动这个，
 
-00:30:37,200 --> 00:30:39,840
-um i've increased the starting nonce
-
-00:30:39,840 --> 00:30:41,520
-value
+00:30:37,200 --> 00:30:41,520
+我已经增加了开始的nonce值，
 
 00:30:41,520 --> 00:30:43,840
-so again this is the block header
+所以再次强调，这是区块头。
 
 00:30:43,840 --> 00:30:45,200
-the nonce is going to start not from
+这次，随机数不是从0开始，
 
 00:30:45,200 --> 00:30:47,360
-zero this time but a much higher number
+而是从一个更高的数字开始。
 
 00:30:47,360 --> 00:30:49,679
-and if i let it run now um hopefully
+如果我现在让它运行，
 
 00:30:49,679 --> 00:30:53,919
-after about 100 it'll stop when it finds
+希望在大约100次之后，
 
 00:30:53,919 --> 00:30:57,760
-a block hash below the target value
+当它找到一个低于目标值的区块哈希时，它会停止。
 
 00:30:57,919 --> 00:31:01,200
-there we are don't if you see this
+这里我们来看看，
 
 00:31:01,200 --> 00:31:02,880
-so there we are and the block has been
+如果你看到这个，
 
 00:31:02,880 --> 00:31:04,480
-mined so
+区块已经被挖出来了。
 
-00:31:04,480 --> 00:31:06,559
-this particular blush block hash purely
+00:31:04,480 --> 00:31:08,000
+这个特定的区块哈希完全是随机的，
 
-00:31:06,559 --> 00:31:08,000
-random
-
-00:31:08,000 --> 00:31:10,720
-and just pure luck produced a block hash
-
-00:31:10,720 --> 00:31:12,320
-starting with this many zeros and that
+00:31:08,000 --> 00:31:12,320
+纯粹是运气使得区块哈希以这么多个零开头，
 
 00:31:12,320 --> 00:31:14,240
-was below the target and so that's what
+这个值低于目标值，
 
 00:31:14,240 --> 00:31:16,080
-the miner does is they just
+所以矿工们就是这样做的，
 
 00:31:16,080 --> 00:31:18,640
-grab a block header change the nonce
+他们只是抓取一个区块头，
 
 00:31:18,640 --> 00:31:21,360
-hash as fast they can
+改变随机数，尽可能快地进行哈希。
 
 00:31:21,360 --> 00:31:23,279
-does that make sense
+这个理解起来有问题吗？
 
 00:31:23,279 --> 00:31:24,880
-okay um if
+好的，
 
-00:31:24,880 --> 00:31:26,559
-i'll kev i'll add i'll put these links
-
-00:31:26,559 --> 00:31:28,640
-at the end um
-
-00:31:28,640 --> 00:31:29,440
-but
+00:31:24,880 --> 00:31:29,440
+我会在最后添加这些链接，
 
 00:31:29,440 --> 00:31:30,799
-if you go on the website on to
+你去网站learnmebitcoin.com的代码部分，
 
 00:31:30,799 --> 00:31:32,720
 learnmebitcoin.com
