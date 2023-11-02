@@ -2430,145 +2430,94 @@ every single pair of transactions and
 这就是你所连接的所有节点的平均时间。
 
 00:44:59,680 --> 00:45:01,839
-so don't worry about that um but it's
+所以不用担心这个，
 
 00:45:01,839 --> 00:45:03,599
-basically all i'm saying is the time can
+但我要说的是，
 
-00:45:03,599 --> 00:45:04,640
-be
-
-00:45:04,640 --> 00:45:07,200
-roughly an hour behind one or two hours
-
-00:45:07,200 --> 00:45:08,079
-ahead
+00:45:03,599 --> 00:45:08,079
+时间可以大约落后一小时或提前一两个小时。
 
 00:45:08,079 --> 00:45:09,920
-so it's not really if you see if a block
+所以如果你看到一个区块通过，
 
-00:45:09,920 --> 00:45:12,079
-comes comes through and it has a time
+00:45:09,920 --> 00:45:13,359
+它的时间在另一个区块之前或之后，
 
-00:45:12,079 --> 00:45:13,359
-like
+00:45:13,359 --> 00:45:16,240
+那并不重要，
 
-00:45:13,359 --> 00:45:15,280
-before or ahead of like a different
-
-00:45:15,280 --> 00:45:16,240
-block
-
-00:45:16,240 --> 00:45:17,839
-it doesn't really matter it has this
-
-00:45:17,839 --> 00:45:20,240
-sort of flexible sort of upper and lower
-
-00:45:20,240 --> 00:45:22,240
-boundary
+00:45:16,240 --> 00:45:22,240
+它有这种灵活的上下界限。
 
 00:45:22,240 --> 00:45:25,359
-all right so that's the time um bits um
+对的，这就是时间。
 
 00:45:25,359 --> 00:45:27,440
-bits remember the target
+接下来是位数，记住Target，
 
-00:45:27,440 --> 00:45:29,599
-bits is just a compact representation of
+00:45:27,440 --> 00:45:30,800
+位数只是Target的紧凑表示。
 
-00:45:29,599 --> 00:45:30,800
-the target
-
-00:45:30,800 --> 00:45:33,359
-so instead of putting the the current
-
-00:45:33,359 --> 00:45:35,200
-target um
-
-00:45:35,200 --> 00:45:37,760
-the entire target in the block header
+00:45:30,800 --> 00:45:37,760
+你不需要在区块头中放入整个Target，
 
 00:45:37,760 --> 00:45:40,000
-what you what you do
+你要做什么？
 
 00:45:40,000 --> 00:45:42,880
-is you just grab um the first three
+你需要抓取前三个重要的字节，
 
-00:45:42,880 --> 00:45:45,520
-significant bytes or the first six you
+00:45:42,880 --> 00:45:47,599
+或者在前导零后的第一个六个重要字符，
 
-00:45:45,520 --> 00:45:47,599
-know significant characters after the
+00:45:47,599 --> 00:45:50,560
+然后把它放在那里，
 
-00:45:47,599 --> 00:45:49,680
-leading zeros and then you put that
-
-00:45:49,680 --> 00:45:50,560
-there
-
-00:45:50,560 --> 00:45:51,599
-and then
-
-00:45:51,599 --> 00:45:54,960
-um you just grab the offset so how far
-
-00:45:54,960 --> 00:45:55,760
-these
+00:45:50,560 --> 00:45:55,760
+然后你需要抓取偏移量，
 
 00:45:55,760 --> 00:45:58,560
-um three bytes are from the right
+也就是这三个字节距离右边有多远，
 
 00:45:58,560 --> 00:46:00,880
-uh and that is there are 26 bytes from
+这里从右边有26个字节，
 
 00:46:00,880 --> 00:46:02,240
-the right here
+或者在十六进制中，
 
 00:46:02,240 --> 00:46:06,160
-or in hexadecimal 26 is 1a
+26是"1a"。
 
 00:46:06,160 --> 00:46:08,640
-so you just put that start there so bits
+所以你只需要把那个开始放在那里，
 
-00:46:08,640 --> 00:46:10,800
-is just this compact representation of
-
-00:46:10,800 --> 00:46:13,280
-the target
-
-00:46:13,440 --> 00:46:15,040
-um
+00:46:08,640 --> 00:46:15,040
+位数就是Target的紧凑表示。
 
 00:46:15,040 --> 00:46:16,400
-then that's it then then you just have
+然后就是nonce，
 
 00:46:16,400 --> 00:46:18,800
-the nonce and you can set that to zero
+你可以把它设置为零。
 
 00:46:18,800 --> 00:46:22,400
-and so this is all the basic data now um
+这就是所有的基本数据，
 
-00:46:22,400 --> 00:46:23,839
-for the block header
-
-00:46:23,839 --> 00:46:25,839
-does that does it all these fields make
+00:46:22,400 --> 00:46:25,839
+现在我们已经准备好了区块头的所有字段。
 
 00:46:25,839 --> 00:46:28,720
-sense each part okay good um so now
+这些字段是否都有意义？
 
 00:46:28,720 --> 00:46:30,160
-we've got all the fields ready to be
+很好，现在我们已经准备好了所有的字段，
 
 00:46:30,160 --> 00:46:31,599
-mined
+可以开始挖矿了。
 
-00:46:31,599 --> 00:46:34,319
-um we just have to get all the data into
-
-00:46:34,319 --> 00:46:35,760
-the correct format
+00:46:31,599 --> 00:46:35,760
+我们只需要把所有的数据都放入正确的格式中。
 
 00:46:35,760 --> 00:46:37,839
 uh so this is just a bit of programming
