@@ -2006,176 +2006,128 @@ coinbase交易包括了费用是吗？
 00:37:47,359 --> 00:37:50,560
 然后你可以在上面设置一个费用，
 
-00:37:50,560 --> 00:37:51,839
-you're basically paying for each
-
-00:37:51,839 --> 00:37:53,839
-individual bytes so that the the bigger
-
-00:37:53,839 --> 00:37:54,960
-the um
+00:37:50,560 --> 00:37:54,960
+你基本上是按每个字节付费，
 
 00:37:54,960 --> 00:37:57,520
-the transaction is in data wise uh the
+所以数据越大的交易，
 
-00:37:57,520 --> 00:37:59,200
-more of a higher fee you want to put on
+00:37:57,520 --> 00:38:01,119
+你就需要设置更高的费用，
 
-00:37:59,200 --> 00:38:01,119
-it to give you because
-
-00:38:01,119 --> 00:38:02,880
-a miner but they will
-
-00:38:02,880 --> 00:38:05,839
-select transactions um based on fee per
+00:38:01,119 --> 00:38:05,839
+因为矿工会根据每字节的费用选择交易，
 
 00:38:05,839 --> 00:38:07,520
-byte so basically which transactions are
+因此，
 
 00:38:07,520 --> 00:38:09,440
-giving them the most fee for the space
+交易占用他们在候选区块中的空间，
 
-00:38:09,440 --> 00:38:10,720
-they're going to take up in the
-
-00:38:10,720 --> 00:38:12,480
-candidate block
-
-00:38:12,480 --> 00:38:13,599
-okay
-
-00:38:13,599 --> 00:38:15,119
-um
+00:38:09,440 --> 00:38:15,119
+他们会优先选最高费用的交易。
 
 00:38:15,119 --> 00:38:16,720
-so again just going to went through
+再次回顾一下挖矿，
 
-00:38:16,720 --> 00:38:17,920
-mining again put your coinbase
-
-00:38:17,920 --> 00:38:19,839
-transaction at the top
+00:38:16,720 --> 00:38:19,839
+把你的coinbase交易放在最上面，
 
 00:38:19,839 --> 00:38:21,359
-and then you can check the block header
+然后你可以构造区块头，
 
 00:38:21,359 --> 00:38:23,680
-same again you have a version number
+同样的，
 
 00:38:23,680 --> 00:38:24,560
-um
+你有一个版本号。
 
 00:38:24,560 --> 00:38:26,480
-this was like this null block and the
+这是一个旧块，
 
 00:38:26,480 --> 00:38:29,440
-version of was one uh the way versions
+版本号是1
 
-00:38:29,440 --> 00:38:32,160
-numbers has cha the way version numbers
-
-00:38:32,160 --> 00:38:34,160
-uh work now is different to how it used
+00:38:29,440 --> 00:38:34,160
+版本号的工作方式现在和以前不同，
 
 00:38:34,160 --> 00:38:36,960
-to be they can be used for um voting um
+它们可以用于投票，
 
 00:38:36,960 --> 00:38:38,079
-i'm not going to cover that just now
+我现在不打算讲这个，
 
 00:38:38,079 --> 00:38:40,640
-it's going to run through um
+我只是要简单地介绍一下区块头，
 
 00:38:40,640 --> 00:38:42,400
-simple block header then you have the
+然后你有前一个区块的，
 
-00:38:42,400 --> 00:38:44,160
-previous block name again just refer to
-
-00:38:44,160 --> 00:38:45,200
-the block you're going to build on top
+00:38:42,400 --> 00:38:45,200
+再次引用前一个区号在其上面建立的区块，
 
 00:38:45,200 --> 00:38:47,119
-of build on top of which is basically
+基本上就是区块链的顶端，
 
-00:38:47,119 --> 00:38:49,599
-the tip of the blockchain
-
-00:38:49,599 --> 00:38:51,599
-uh then you have the merkle root
+00:38:47,119 --> 00:38:51,599
+然后是merkle根。
 
 00:38:51,599 --> 00:38:54,079
-so the way that works is um you have all
+merkle根的工作方式是，
 
 00:38:54,079 --> 00:38:55,920
-the transactions uh
+你有所有的交易，
 
 00:38:55,920 --> 00:38:57,119
-in the block
+在区块中，
 
 00:38:57,119 --> 00:38:58,560
-i'm just moving these to the side just
+我只是把这些移动到一边，
 
 00:38:58,560 --> 00:39:00,480
-for illustration purposes
+为了说明目的，
 
 00:39:00,480 --> 00:39:02,320
-and what you do you just run through
+然后你做的就是运行每一对交易，
 
 00:39:02,320 --> 00:39:04,240
 every single pair of transactions and
 
 00:39:04,240 --> 00:39:05,839
-you hash them together
+然后把它们设一起哈希，
 
 00:39:05,839 --> 00:39:08,720
-so remember the hash function and you
+记住这些哈希函数，
 
-00:39:08,720 --> 00:39:10,560
-basically line these up
+00:39:08,720 --> 00:39:12,240
+然后就是把这些排列起来，
 
-00:39:10,560 --> 00:39:12,240
-so one and two just line them up
-
-00:39:12,240 --> 00:39:14,079
-together and hash them together and
-
-00:39:14,079 --> 00:39:15,760
-they'll produce a
+00:39:12,240 --> 00:39:15,760
+这一和二就把它们排列在一起，
 
 00:39:15,760 --> 00:39:17,920
-digest or hash result
+然后一起哈希，
 
-00:39:17,920 --> 00:39:19,359
-and they do that for every single pair
-
-00:39:19,359 --> 00:39:21,200
-of transactions
+00:39:17,920 --> 00:39:21,200
+它们会产生一个摘要或哈希结果，
 
 00:39:21,200 --> 00:39:22,240
-in the block
+然后他们对区块中的每一对交易都这样做，
 
-00:39:22,240 --> 00:39:24,960
-um if you end up with a transaction on
-
-00:39:24,960 --> 00:39:26,720
-his own that doesn't have a pair all you
+00:39:22,240 --> 00:39:26,720
+你最后有一个交易是单独的，没有配对，
 
 00:39:26,720 --> 00:39:29,440
-do is you just hash it with itself
+你所做的就是把它和自己哈希在一起，
 
 00:39:29,440 --> 00:39:31,680
-and then that's the first round done you
+然后就完成了第一轮，
 
-00:39:31,680 --> 00:39:33,599
-have these four hashes from all these
-
-00:39:33,599 --> 00:39:34,800
-pairs
+00:39:31,680 --> 00:39:34,800
+你从所有这些对中得到这4个哈希值，
 
 00:39:34,800 --> 00:39:36,560
-then you just run through again
+然后再运行一遍
 
 00:39:36,560 --> 00:39:38,320
 hash them all together hash each pair
