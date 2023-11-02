@@ -1850,158 +1850,92 @@ coinbase交易包括了费用是吗？
 00:34:33,760 --> 00:34:38,239
 给自己发送多少比特币。
 
-00:34:38,239 --> 00:34:40,560
-so this means that miners will tend to
+00:34:38,239 --> 00:34:42,800
+所以这意味着矿工们会倾向于选择交易费更高的交易。
 
-00:34:40,560 --> 00:34:41,760
-pick uh
+00:34:42,800 --> 0:34:50,800
+我们已经完成了交易操作。
 
-00:34:41,760 --> 00:34:42,800
-uh
+00:34:50,800 --> 00:34:54,879
+我还有一个问题，
 
-00:34:42,800 --> 00:34:47,040
-transactions with a higher exactly yes
+00:34:54,879 --> 00:34:59,839
+左边是费用，
 
-00:34:47,040 --> 00:34:48,639
-uh so there we are we've got the
-
-00:34:48,639 --> 00:34:50,800
-transfer one more question on that uh
-
-00:34:50,800 --> 00:34:53,040
-yeah so i i remember seeing a graph
-
-00:34:53,040 --> 00:34:54,879
-where uh
-
-00:34:54,879 --> 00:34:57,760
-you know it showed me like uh
-
-00:34:57,760 --> 00:34:59,839
-on the left the fees and on the right
-
-00:34:59,839 --> 00:35:02,079
-like kind of how much time it will take
-
-00:35:02,079 --> 00:35:05,760
-to mine that block yeah so uh
+00:34:59,839 --> 00:35:05,760
+右边是挖矿所需的时间。
 
 00:35:05,760 --> 00:35:08,160
-uh does this mean that
+这是否意味着，
 
-00:35:08,160 --> 00:35:09,119
-you know
+00:35:08,160 --> 00:35:12,000
+如果我们设置的交易费非常低，
 
-00:35:09,119 --> 00:35:12,000
-if we put a very very low fee is it ever
-
-00:35:12,000 --> 00:35:14,400
-possible that our transaction will never
-
-00:35:14,400 --> 00:35:16,880
-get uh
+00:35:12,000 --> 00:35:16,880
+我们的交易可能永远不会被记录在区块中？
 
 00:35:16,880 --> 00:35:19,040
-never be part of a block is that ever
+这种情况在你的经验中是否可能发生？
 
 00:35:19,040 --> 00:35:21,280
-possible in your experience or what can
+是的，可能发生的。
 
 00:35:21,280 --> 00:35:23,359
-happen is so say you make a transaction
+如果你进行一笔交易，
 
 00:35:23,359 --> 00:35:26,079
-it'll go into the memory pool first um
+它首先会进入内存池。
 
-00:35:26,079 --> 00:35:27,359
-if there's a lot of transactions in the
+00:35:26,079 --> 00:35:28,640
+如果内存池中有很多交易，
 
-00:35:27,359 --> 00:35:28,640
-memory pool
-
-00:35:28,640 --> 00:35:30,640
-um then you basically basically your
-
-00:35:30,640 --> 00:35:32,560
-transaction is competing with all these
-
-00:35:32,560 --> 00:35:35,200
-other transactions for space in a block
-
-00:35:35,200 --> 00:35:36,640
-because a block
+00:35:28,640 --> 00:35:36,640
+那么你的交易就要和所有其他交易竞争区块中的空间，
 
 00:35:36,640 --> 00:35:38,720
-it's the way a block is
+因为一个区块的大小是有限的，
 
-00:35:38,720 --> 00:35:40,720
-it used to be one megabytes worth of
-
-00:35:40,720 --> 00:35:43,839
-transactions um it's roughly about 1.7
+00:35:38,720 --> 00:35:43,839
+以前是1MB，
 
 00:35:43,839 --> 00:35:44,880
-now
+现在大约是1.7MB，
 
 00:35:44,880 --> 00:35:46,640
-it uses a different metric called weight
+它使用了一个叫做权重的不同度量标准，
 
 00:35:46,640 --> 00:35:48,320
-but don't i'm not going to cover that
+但我现在不打算讲这个。
 
 00:35:48,320 --> 00:35:50,160
-just now but um
+那么，会发生的情况是，
 
-00:35:50,160 --> 00:35:51,760
-what will happen is say you put such a
-
-00:35:51,760 --> 00:35:53,040
-low fee on there
+00:35:50,160 --> 00:35:53,040
+如果你设置的交易费太低，
 
 00:35:53,040 --> 00:35:54,960
-that um it doesn't make it into the
+以至于它没有被记录在区块中，
 
-00:35:54,960 --> 00:35:56,560
-blocks are still hanging around in the
+00:35:54,960 --> 00:35:58,800
+而是仍然停留在内存池中，
 
-00:35:56,560 --> 00:35:58,800
-memory pool um
+00:35:58,800 --> 00:36:05,520
+如果你的交易在内存池中停留的时间超过72小时，
 
-00:35:58,800 --> 00:36:00,640
-if your transaction stays in the memory
-
-00:36:00,640 --> 00:36:03,440
-pool memory pool for longer than 72
-
-00:36:03,440 --> 00:36:05,520
-hours
-
-00:36:05,520 --> 00:36:07,200
-on average um
-
-00:36:07,200 --> 00:36:08,160
-your
-
-00:36:08,160 --> 00:36:09,359
-transaction will just get kicked out the
-
-00:36:09,359 --> 00:36:10,640
-memory pool
+00:36:05,520 --> 00:36:10,640
+那么你的交易就会被从内存池中踢出。
 
 00:36:10,640 --> 00:36:11,440
-so
+所以，
 
-00:36:11,440 --> 00:36:13,440
-you if you put a very low transaction a
-
-00:36:13,440 --> 00:36:15,440
-fee on a transaction there's a chance
+00:36:11,440 --> 00:36:15,440
+如果你在交易上设置了非常低的交易费，
 
 00:36:15,440 --> 00:36:18,000
-that it will never make it um one into a
+那么有可能你的交易永远不会进入候选区块，
 
 00:36:18,000 --> 00:36:20,640
-into a candidate block or even it or
+甚至不会被记录在区块链上。
 
 00:36:20,640 --> 00:36:22,320
 onto the blockchain right
