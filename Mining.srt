@@ -2396,65 +2396,38 @@ every single pair of transactions and
 00:44:18,000 --> 00:44:20,560
 但是这个时间并不需要精确，
 
-00:44:20,560 --> 00:44:23,200
-it's not yeah so basically it just has
-
-00:44:23,200 --> 00:44:25,760
-to be between two certain values um as
+00:44:20,560 --> 00:44:25,760
+只需要在两个特定的值之间即可。
 
 00:44:25,760 --> 00:44:28,720
-long as it's a greater than um the time
+只要它大于倒数第六个区块的时间，
 
-00:44:28,720 --> 00:44:29,599
-of
+00:44:28,720 --> 00:44:32,480
+或者是最后11个区块的中位数时间，
 
-00:44:29,599 --> 00:44:32,480
-the sixth block down
-
-00:44:32,480 --> 00:44:35,280
-yeah or the meat of the median time of
-
-00:44:35,280 --> 00:44:36,880
-the last 11 blocks
+00:44:32,480 --> 00:44:36,880
+不能低于这个值，
 
 00:44:36,880 --> 00:44:38,400
-um it can't be any lower than that
+因为如果你放一个低于这个值的时间，
 
-00:44:38,400 --> 00:44:40,240
-because if you were to put a time lower
-
-00:44:40,240 --> 00:44:42,160
-than that then it would get rejected by
+00:44:38,400 --> 00:44:42,160
+那么你发送的节点会被拒绝。
 
 00:44:42,160 --> 00:44:43,920
-the nodes you send it to and also the
+同时，
 
-00:44:43,920 --> 00:44:45,760
-maximum time is basically the current
-
-00:44:45,760 --> 00:44:47,119
-time
+00:44:43,920 --> 00:44:47,119
+最大的时间基本上是当前时间，
 
 00:44:47,119 --> 00:44:49,280
-plus two hours
+再加上两个小时，
 
-00:44:49,280 --> 00:44:51,440
-but it's we used
+00:44:49,280 --> 00:44:53,920
+但是使用的是网络平均时间，
 
-00:44:51,440 --> 00:44:53,920
-um network average time is used which is
-
-00:44:53,920 --> 00:44:56,000
-just the average time
-
-00:44:56,000 --> 00:44:57,359
-of all the nodes that are connected to
-
-00:44:57,359 --> 00:44:58,800
-you
-
-00:44:58,800 --> 00:44:59,680
-um
+00:44:53,920 --> 00:44:59,680
+这就是你所连接的所有节点的平均时间。
 
 00:44:59,680 --> 00:45:01,839
 so don't worry about that um but it's
