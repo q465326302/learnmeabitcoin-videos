@@ -1938,130 +1938,73 @@ coinbase交易包括了费用是吗？
 甚至不会被记录在区块链上。
 
 00:36:20,640 --> 00:36:22,320
-onto the blockchain right
+那么，根据你的经验，
 
-00:36:22,320 --> 00:36:24,320
-so again in your experience what's like
-
-00:36:24,320 --> 00:36:26,480
-the like the bare minimum let's say if i
+00:36:22,320 --> 00:36:26,480
+根据你的经验，
 
 00:36:26,480 --> 00:36:28,320
-want to send like five bucks to someone
+如果我想给某人寄五美元，
 
-00:36:28,320 --> 00:36:29,839
-you know or buy a coffee like three
+00:36:28,320 --> 00:36:30,720
+或者买一杯三美元的咖啡，
 
-00:36:29,839 --> 00:36:30,720
-bucks
+00:36:30,720 --> 00:36:35,839
+我需要支付的最低费用是多少？
 
-00:36:30,720 --> 00:36:33,920
-uh what's what's the minimum
+00:36:35,839 --> 00:36:42,960
+我知道钱包通常会帮助你处理这个问题，
 
-00:36:33,920 --> 00:36:35,839
-fee that i have to pay i mean
-
-00:36:35,839 --> 00:36:40,560
-um i think wallets generally um
-
-00:36:40,560 --> 00:36:41,680
-tend to
-
-00:36:41,680 --> 00:36:42,960
-um
-
-00:36:42,960 --> 00:36:44,240
-help you out with that but i don't think
-
-00:36:44,240 --> 00:36:46,320
-they created it but
-
-00:36:46,320 --> 00:36:48,480
-um
-
-00:36:48,480 --> 00:36:49,839
-one way
+00:36:42,960 --> 00:36:49,839
+但我不确定他们是否设定了这个费用。
 
 00:36:49,839 --> 00:36:52,079
-what i would do is i would look at a cat
+我会做的一种方式是，
 
 00:36:52,079 --> 00:36:54,960
-this candidate block and
+我会看一下这个候选区块。
 
 00:36:54,960 --> 00:36:56,960
-transactions in general are ordered in a
+一般来说，
 
 00:36:56,960 --> 00:36:58,640
-candidate block from highest to lowest
+候选区块中的交易是按照费用从高到低排序的，
 
 00:36:58,640 --> 00:37:01,359
-fees not strictly but i would head
+虽然不是完全正确，
 
-00:37:01,359 --> 00:37:02,560
-towards the bottom of this candidate
+00:37:01,359 --> 00:37:04,960
+但我会向这个候选区块的底部看，
 
-00:37:02,560 --> 00:37:04,960
-block and have a look at each of the fee
+00:37:04,960 --> 00:37:09,920
+看看每个费用，
 
-00:37:04,960 --> 00:37:07,040
-the fees on them and
+00:37:09,920 --> 00:37:16,960
+你可以添加一个比最低费用更高的费用。
 
-00:37:07,040 --> 00:37:08,560
-um
-
-00:37:08,560 --> 00:37:09,920
-uh
-
-00:37:09,920 --> 00:37:12,400
-you can just basically add a fee that's
-
-00:37:12,400 --> 00:37:15,119
-greater than the lowest fees yeah
-
-00:37:15,119 --> 00:37:16,960
-exactly that's a
-
-00:37:16,960 --> 00:37:18,880
-rough i mean that's like the simplest
-
-00:37:18,880 --> 00:37:22,000
-way to do it in my opinion um
-
-00:37:22,000 --> 00:37:23,040
-so
+00:37:16,960 --> 00:37:23,040
+这是在我看来最简单的方法。
 
 00:37:23,040 --> 00:37:25,599
-yeah yeah so again this is per byte i
+所以，这是按每字节收费？
 
 00:37:25,599 --> 00:37:28,480
-think when you hovered over uh yeah so
+是的，这是按字节计费的，
 
 00:37:28,480 --> 00:37:32,400
-fee per byte so this is uh
+当你悬停在上面时，
 
-00:37:32,400 --> 00:37:34,320
-so the average
-
-00:37:34,320 --> 00:37:37,119
-byte size of a transaction is that what
-
-00:37:37,119 --> 00:37:39,200
-this is yeah so
-
-00:37:39,200 --> 00:37:40,000
-um
+00:37:32,400 --> 00:37:40,000
+可以看到每字节的费用。
 
 00:37:40,000 --> 00:37:42,720
-so this this is a transaction
+这是一个交易的平均字节大小吗？
 
-00:37:42,720 --> 00:37:44,000
-and um this
-
-00:37:44,000 --> 00:37:47,359
-yeah this takes up um space in a block
+00:37:42,720 --> 00:37:47,359
+这是一个交易，
 
 00:37:47,359 --> 00:37:50,560
-so um then you set a fee on it but
+然后你可以在上面设置一个费用，
 
 00:37:50,560 --> 00:37:51,839
 you're basically paying for each
