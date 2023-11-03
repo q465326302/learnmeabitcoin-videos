@@ -2520,148 +2520,106 @@ every single pair of transactions and
 我们只需要把所有的数据都放入正确的格式中。
 
 00:46:35,760 --> 00:46:37,839
-uh so this is just a bit of programming
+这只是一些编程，
 
-00:46:37,839 --> 00:46:39,040
-just to make sure everything's in the
-
-00:46:39,040 --> 00:46:41,520
-right order and format
+00:46:37,839 --> 00:46:41,520
+确保所有的东西都在正确的顺序和格式中。
 
 00:46:41,520 --> 00:46:44,400
-each field um should be in hexa put it
+每个字段都应该是十六进制的，
 
 00:46:44,400 --> 00:46:46,640
-all into hexadecimal
-
-00:46:46,640 --> 00:46:47,680
-so
+把所有的东西都转换成十六进制。
 
 00:46:47,680 --> 00:46:49,440
-one is one in hexadecimal so this is
+所以1是十六进制的，这不会改变
 
-00:46:49,440 --> 00:46:51,040
-going to change but you just go through
-
-00:46:51,040 --> 00:46:52,560
-every single field making sure that it's
+00:46:49,440 --> 00:46:52,560
+但是你需要检查每一个字段，
 
 00:46:52,560 --> 00:46:54,160
-all hexadecimal so
+确保它都是十六进制的。
 
 00:46:54,160 --> 00:46:56,640
-these two hexadecimal the time this is
+时间现在是十进制的，
 
 00:46:56,640 --> 00:46:58,079
-in decimal at the moment so we just
+所以我们把它转换成十六进制，
 
 00:46:58,079 --> 00:47:00,079
-convert that hex decimal and you do the
+对每个其他字段都这样做。
 
 00:47:00,079 --> 00:47:02,800
-same for every other field
+这个过程对每个字段都是一样的。
 
 00:47:02,800 --> 00:47:03,839
-secondly
+其次，
 
-00:47:03,839 --> 00:47:05,359
-each field
-
-00:47:05,359 --> 00:47:07,040
-must be a
-
-00:47:07,040 --> 00:47:09,599
-fixed number of bytes
+00:47:03,839 --> 00:47:09,599
+每个字段必须是固定的字节数。
 
 00:47:09,599 --> 00:47:11,040
-so there's only got one character in
+比如，这里只有一个字符，
 
 00:47:11,040 --> 00:47:13,760
-here but the version field is four bytes
+但版本字段是四个字节，
 
 00:47:13,760 --> 00:47:16,160
-so if we convert that to four bytes it
+如果我们将其转换为四个字节，
 
 00:47:16,160 --> 00:47:17,839
-looks like this
+它看起来就像这样。
 
 00:47:17,839 --> 00:47:20,720
-so one byte is two characters so zero
+一个字节是两个字符，
 
 00:47:20,720 --> 00:47:23,119
-zero that's one byte and there are four
+所以"00"就是一个字节，
 
-00:47:23,119 --> 00:47:25,680
-bytes in the version
+00:47:23,119 --> 00:47:26,640
+版本中有四个字节。
 
-00:47:25,680 --> 00:47:26,640
-um
-
-00:47:26,640 --> 00:47:27,680
-then you just go through every single
-
-00:47:27,680 --> 00:47:29,599
-field giving it
+00:47:26,640 --> 00:47:29,599
+然后你只需要遍历每个字段，
 
 00:47:29,599 --> 00:47:32,000
-putting it into the correct um
+确保它们都填充到正确的大小。
 
-00:47:32,000 --> 00:47:34,480
-size so this is already 32 bytes that's
-
-00:47:34,480 --> 00:47:36,319
-already 32 bytes
+00:47:32,000 --> 00:47:36,319
+所以这已经是32字节了
 
 00:47:36,319 --> 00:47:37,760
-the time's gonna be four bytes it's
+这个时间字段已经是四个字节，
 
 00:47:37,760 --> 00:47:40,400
-already four bits same again four the
+它已经是四位了，
 
 00:47:40,400 --> 00:47:42,640
-nonce then that's four bytes as well
+同样对于nonce字段也是四个字节。
 
 00:47:42,640 --> 00:47:45,119
-so just for each field make sure that
+所以对于每个字段，
 
-00:47:45,119 --> 00:47:47,440
-you've padded it out padded it out
-
-00:47:47,440 --> 00:47:49,760
-with the right number of bytes so this
+00:47:45,119 --> 00:47:49,760
+确保你已经用正确的字节数填充了它。
 
 00:47:49,760 --> 00:47:52,720
-basically means that when a computer can
+这意味着，
 
-00:47:52,720 --> 00:47:54,079
-read through each individual fields
+00:47:52,720 --> 00:47:56,480
+计算机可以轻松地读取每个单独的字段。
 
-00:47:54,079 --> 00:47:56,480
-easily
-
-00:47:56,960 --> 00:47:58,880
-so that's all the
-
-00:47:58,880 --> 00:48:00,640
-data in the right
-
-00:48:00,640 --> 00:48:03,359
-format and the right field size
+00:47:56,960 --> 00:48:03,359
+这就是所有的数据都在正确的格式和正确的字段大小。
 
 00:48:03,359 --> 00:48:05,280
-lastly the only
+最后，
 
-00:48:05,280 --> 00:48:07,440
-slightly frustrating thing with bitcoin
+00:48:05,280 --> 00:48:10,160
+比特币唯一稍微令人沮丧的事情是，
 
-00:48:07,440 --> 00:48:10,160
-is that when you send
-
-00:48:10,160 --> 00:48:12,400
-data to
-
-00:48:12,400 --> 00:48:15,440
-um the nodes um
+00:48:10,160 --> 00:48:15,440
+当你发送数据到节点时，
 
 00:48:15,440 --> 00:48:17,599
 across the wire
