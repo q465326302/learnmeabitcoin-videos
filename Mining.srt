@@ -2856,184 +2856,124 @@ order
 将其转换为十六进制，
 
 00:52:36,720 --> 00:52:40,160
-再次反向转换。
+再把它转换成反向字节顺序。
 
 00:52:40,160 --> 00:52:43,599
-i reversed it i reversed it back
+我把它反转了，
 
 00:52:44,000 --> 00:52:44,839
-okay
+ok，好了
 
-00:52:44,839 --> 00:52:48,319
-um yeah and this is how this is
+00:52:44,839 --> 00:52:50,559
+是的，就是这个的方式。
 
-00:52:48,319 --> 00:52:50,559
-like if you mind the block this is the
+00:52:50,559 --> 00:52:56,720
+假设你成功挖掘了一个区块，
 
-00:52:50,559 --> 00:52:52,319
-hash that you would send on to the
-
-00:52:52,319 --> 00:52:54,880
-network is that uh
-
-00:52:54,880 --> 00:52:56,720
-um let's say that you end up mining a
-
-00:52:56,720 --> 00:52:58,880
-block and let's say you get a nuance
-
-00:52:58,880 --> 00:53:01,599
-that is like below a target value yeah
-
-00:53:01,599 --> 00:53:02,880
-uh
+00:52:56,720 --> 00:53:02,880
+并且你得到的难度值低于目标值。
 
 00:53:02,880 --> 00:53:04,720
-what do you do next yeah i mean okay i
+那么你接下来会做什么？
 
 00:53:04,720 --> 00:53:06,800
-think i should cover that now i think um
+好的，
 
 00:53:06,800 --> 00:53:08,480
-so okay um
+我想我应该现在就讲解。
 
 00:53:08,480 --> 00:53:09,920
-you don't actually send the block hash
+你其实并不需要发送区块哈希，
 
-00:53:09,920 --> 00:53:11,280
-um you just send basically the block
-
-00:53:11,280 --> 00:53:12,880
-header and the transactions
-
-00:53:12,880 --> 00:53:13,599
-so
+00:53:09,920 --> 00:53:13,599
+你只需要发送区块头和交易信息。
 
 00:53:13,599 --> 00:53:15,440
-okay but i'm just i don't think you have
+但是，如果你在编程时，
 
 00:53:15,440 --> 00:53:16,720
-to if you're programming you wouldn't
+你可以不反转它，
 
-00:53:16,720 --> 00:53:18,319
-you might not have to reverse it this is
-
-00:53:18,319 --> 00:53:19,599
-just so i can
-
-00:53:19,599 --> 00:53:23,040
-display the results correctly uh in a
-
-00:53:23,040 --> 00:53:24,720
-sort of a human way
+00:53:16,720 --> 00:53:24,720
+这只是为了能以一种人类可以理解的方式正确地显示结果。
 
 00:53:24,720 --> 00:53:27,359
-so again so now like a minor you just
+而矿工只需要改变随机数。
 
 00:53:27,359 --> 00:53:29,520
-change the nonce now i'm incrementing it
+现在，
 
 00:53:29,520 --> 00:53:30,240
-from
+我是从零开始递增，
 
 00:53:30,240 --> 00:53:32,720
-um zero one two three four five and so
+一、二、三、四、五等等。
 
 00:53:32,720 --> 00:53:35,359
-on so there you are obviously this is in
+显然，
 
 00:53:35,359 --> 00:53:36,880
-network byte order
+这是网络字节顺序。
 
 00:53:36,880 --> 00:53:40,319
-and so on eventually you'll get a
+最终，
 
-00:53:40,319 --> 00:53:41,359
-uh
+00:53:40,319 --> 00:53:44,160
+如果你幸运的话，
 
-00:53:41,359 --> 00:53:43,280
-hash uh this below the target if you're
-
-00:53:43,280 --> 00:53:44,160
-lucky
-
-00:53:44,160 --> 00:53:46,319
-then that's mind so when you mind the
-
-00:53:46,319 --> 00:53:47,839
-actual block
+00:53:44,160 --> 00:53:47,839
+你会得到一个低于目标的哈希值。
 
 00:53:47,839 --> 00:53:49,280
-so this is done now so this is a
+这就完成了，
 
 00:53:49,280 --> 00:53:51,280
-successful block header
+这是一次成功的挖矿。
 
 00:53:51,280 --> 00:53:52,000
-so
+如果你把这个区块头发送给其他人，
 
 00:53:52,000 --> 00:53:54,319
-if you send this block header to anyone
+他们可以自己进行哈希运算，
 
 00:53:54,319 --> 00:53:55,760
-else they can hash it for themselves and
+会得到相同的结果。
 
 00:53:55,760 --> 00:53:57,200
-they get the same result
+我认为这就是他们所说的工作证明，
 
-00:53:57,200 --> 00:53:58,559
-that's what i think that's what they
+00:53:57,200 --> 00:54:00,400
+因为你可以把这个区块头发送给任何人，
 
-00:53:58,559 --> 00:54:00,400
-call proof of work because you can just
+00:54:00,400 --> 00:54:03,440
+他们可以自己证明哈希值低于目标。
 
-00:54:00,400 --> 00:54:01,599
-send this block header to anyone and
+00:54:03,440 --> 00:54:10,480
+你要做的就是把这个区块发送给你连接的所有节点，
 
-00:54:01,599 --> 00:54:03,440
-they can prove for themselves that the
-
-00:54:03,440 --> 00:54:05,359
-hash is below the target so what you
-
-00:54:05,359 --> 00:54:08,240
-what you do then is you send this block
-
-00:54:08,240 --> 00:54:10,480
-uh to all the nodes you're connected to
-
-00:54:10,480 --> 00:54:12,400
-and what you're actually sending them is
-
-00:54:12,400 --> 00:54:14,480
-all of the transaction data concatenated
-
-00:54:14,480 --> 00:54:16,480
-together for each transaction
-
-00:54:16,480 --> 00:54:17,440
-um
+00:54:10,480 --> 00:54:17,440
+实际上发送给他们的是所有交易数据的连接，
 
 00:54:17,440 --> 00:54:18,880
-before that you put like a little
+对于每个交易来说，
 
 00:54:18,880 --> 00:54:20,559
-transaction counter
+前面放一个小的交易计数器，
 
 00:54:20,559 --> 00:54:22,559
-which is just a byte
+这只是一个字节，
 
 00:54:22,559 --> 00:54:25,200
-it's a it's a very very variable sized
+它是一个非常可变的字节，
 
 00:54:25,200 --> 00:54:26,960
-byte i haven't covered it but it's on
+我还没有讲到，
 
 00:54:26,960 --> 00:54:28,720
-the website um
+但是在网站上有。
 
 00:54:28,720 --> 00:54:30,079
-just tells you how many transactions are
+它会告诉你区块中有多少交易，
 
 00:54:30,079 --> 00:54:31,839
 in the block and then before that you
