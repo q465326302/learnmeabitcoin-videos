@@ -2621,356 +2621,230 @@ every single pair of transactions and
 00:48:10,160 --> 00:48:15,440
 当你发送数据到节点时，
 
-00:48:15,440 --> 00:48:17,599
-across the wire
-
-00:48:17,599 --> 00:48:19,680
-you have to send the data in reverse
+00:48:15,440 --> 00:48:19,680
+你必须以反向字节顺序发送数据，
 
 00:48:19,680 --> 00:48:22,160
-byte order which is called network byte
+这被称为网络字节顺序。
 
 00:48:22,160 --> 00:48:23,200
 order
 
-00:48:23,200 --> 00:48:26,079
-so um obviously we've got all this in
-
-00:48:26,079 --> 00:48:29,200
-human readable human human readable byte
+00:48:23,200 --> 00:48:29,200
+我们已经将所有这些数据转换为人类可读的字节顺序，
 
 00:48:29,200 --> 00:48:31,520
-order but when you
+但是当你处理比特币数据时，
 
 00:48:31,520 --> 00:48:33,520
-hash and work with bitcoin data it has
+它必须是反向字节顺序。
 
 00:48:33,520 --> 00:48:35,680
-to be in reverse byte order so you just
+所以你需要遍历每个字段，
 
 00:48:35,680 --> 00:48:37,200
-go through every single field and put it
+将其转换为网络字节顺序，
 
 00:48:37,200 --> 00:48:39,440
-into network byte order
+反转每个字节。
 
-00:48:39,440 --> 00:48:43,040
-which is just reversing each byte
-
-00:48:43,040 --> 00:48:45,599
-so that's something that
+00:48:39,440 --> 00:48:45,599
+这是我刚开始挖矿时遇到的问题，
 
 00:48:45,599 --> 00:48:47,280
-well they tripped me up when i first
+我试图哈希这些块头，
 
-00:48:47,280 --> 00:48:48,800
-started mining i was like i was trying
+00:48:47,280 --> 00:48:50,000
+我不明白为什么我得不到相同的结果，
 
-00:48:48,800 --> 00:48:50,000
-to hash these block headers and i was
+00:48:51,040 --> 00:48:56,240
+原因就是你需要将所有数据转换为网络字节顺序。
 
-00:48:50,000 --> 00:48:51,040
-like why am i not getting the same
-
-00:48:51,040 --> 00:48:52,800
-results it's because
-
-00:48:52,800 --> 00:48:54,559
-you want to get everything in network
-
-00:48:54,559 --> 00:48:56,240
-byte order
-
-00:48:56,240 --> 00:48:58,000
-and just to show you i've made like a
-
-00:48:58,000 --> 00:49:00,559
-little quick um
-
-00:49:00,559 --> 00:49:01,839
-uh
+00:48:56,240 --> 00:49:01,839
+我做了一个小的演示来说明这一点。
 
 00:49:01,839 --> 00:49:02,880
-script
+我已经写了一个简单的脚本来反转字节。
 
-00:49:02,880 --> 00:49:06,480
-so reverse bytes so if i put the
+00:49:02,880 --> 00:49:13,200
+如果我输入a b c d e f 1 2 3 4，
 
-00:49:06,480 --> 00:49:08,160
-a b c d e
-
-00:49:08,160 --> 00:49:10,800
-f one two three four
-
-00:49:10,800 --> 00:49:13,200
-let me see
-
-00:49:13,839 --> 00:49:15,359
-um the way that works is reverse byte
-
-00:49:15,359 --> 00:49:17,520
-order you just split it all into each
-
-00:49:17,520 --> 00:49:19,839
-individual byte so one byte is two
+00:49:13,839 --> 00:49:19,839
+那么反转字节的方式就是将其分割成每个单独的字节，
 
 00:49:19,839 --> 00:49:23,200
-characters and then you just um reverse
+那么，一个字节是两个字符，
 
 00:49:23,200 --> 00:49:24,720
-the order of the bytes and that gives
+然后你只需要反转字节的顺序，
 
 00:49:24,720 --> 00:49:26,480
-you that so that's how it works so
+就可以得到结果。
 
 00:49:26,480 --> 00:49:28,480
-you're not just reversing the string
+这就是它的工作原理，
 
 00:49:28,480 --> 00:49:31,680
-you are um reversing each byte
+你不仅仅是反转字符串，
 
 00:49:31,680 --> 00:49:34,800
-so this might be a basic question but uh
+而是在反转每个字节。
 
 00:49:34,800 --> 00:49:35,920
-one
+这可能是一个基本的问题，
 
 00:49:35,920 --> 00:49:38,720
-so two characters is one byte yes yes
+但一个字节是两个字符，对吗？
 
 00:49:38,720 --> 00:49:40,400
-yeah
+是的，
 
 00:49:40,400 --> 00:49:41,680
-yep
+是的，
 
 00:49:41,680 --> 00:49:42,800
-um
+2个字符就是1个字节
 
 00:49:42,800 --> 00:49:45,200
-that's just something i've learned
+是的，这就是我学到的东西。
 
-00:49:45,200 --> 00:49:47,359
-uh
+00:49:45,200 --> 00:49:51,520
+我是在看C++...
 
-00:49:47,359 --> 00:49:51,520
-i'm just looking at the c plus plus
-
-00:49:51,520 --> 00:49:53,520
-uh i've not done c plus plus in a long
-
-00:49:53,520 --> 00:49:54,480
-time
+00:49:51,520 --> 00:49:54,480
+我已经很久没有做过C++了，
 
 00:49:54,480 --> 00:49:59,520
-so character type size is one byte um
+字符类型的大小是一个字节。
 
-00:50:01,599 --> 00:50:04,079
-yeah no i i don't i don't know that much
+00:50:01,599 --> 00:50:06,640
+我对计算机科学了解地不是很深入，
 
-00:50:04,079 --> 00:50:06,640
-deep about computer science um but all i
+00:50:06,640 --> 00:50:10,880
+我是从上到下的层次来学习的，
 
-00:50:06,640 --> 00:50:08,800
-know is yeah
+00:50:10,880 --> 00:50:17,440
+我只是知道两个字符可以转换为一个字节。
 
-00:50:08,800 --> 00:50:10,880
-i'm doing this more like a top down sort
+00:50:17,440 --> 00:50:22,160
+现在我们终于得到了所有正确顺序的数据，
 
-00:50:10,880 --> 00:50:12,720
-of level i i've just learned that um two
-
-00:50:12,720 --> 00:50:15,359
-characters translates as one byte so
-
-00:50:15,359 --> 00:50:17,440
-yeah
-
-00:50:17,440 --> 00:50:19,599
-um so there we are now we've got all the
-
-00:50:19,599 --> 00:50:22,160
-data finally in the right order um all
-
-00:50:22,160 --> 00:50:23,839
-you do then you just concatenate each
-
-00:50:23,839 --> 00:50:26,559
-individual field together like that so
+00:50:22,160 --> 00:50:26,559
+然后你只需要将每个单独的字段连接在一起，
 
 00:50:26,559 --> 00:50:28,319
-this is the block header
+这就是区块头，
 
-00:50:28,319 --> 00:50:30,559
-now it's ready to put inside to put into
-
-00:50:30,559 --> 00:50:32,240
-the hash function
+00:50:28,319 --> 00:50:32,240
+现在它已经准备好放入哈希函数中了。
 
 00:50:32,240 --> 00:50:35,440
-um as i mentioned um sha-256 simple
+正如我提到的，
 
 00:50:35,440 --> 00:50:38,480
-hashing algorithm 256
+比特币使用的是SHA-256简单哈希算法，
 
 00:50:38,480 --> 00:50:39,520
-is used
+但在比特币中，
 
-00:50:39,520 --> 00:50:41,839
-um but in bitcoin everything gets hashed
-
-00:50:41,839 --> 00:50:42,800
-twice
-
-00:50:42,800 --> 00:50:44,319
-um
+00:50:39,520 --> 00:50:44,319
+所有的东西都被哈希两次。
 
 00:50:44,319 --> 00:50:46,400
-it's just the way it was designed i
+这就是它的设计方式，
 
-00:50:46,400 --> 00:50:48,240
-don't think it provides any massive
+00:50:46,400 --> 00:50:50,800
+我不认为它提供了任何巨大的好处，
 
-00:50:48,240 --> 00:50:50,800
-benefits it's just the way that
-
-00:50:50,800 --> 00:50:52,640
-bitcoin hashes things
-
-00:50:52,640 --> 00:50:53,520
-um
+00:50:50,800 --> 00:50:53,520
+这只是比特币哈希的方式。
 
 00:50:53,520 --> 00:50:55,760
-so you just put this into hash function
+所以你只需要将这个放入哈希函数，
 
 00:50:55,760 --> 00:50:58,480
-spits our result and then spits out then
+它会输出结果，
 
 00:50:58,480 --> 00:50:59,920
-you hash the result to get you another
+然后你再哈希这个结果得到另一个结果，
 
-00:50:59,920 --> 00:51:01,359
-result and that's the
-
-00:51:01,359 --> 00:51:02,800
-final hash
-
-00:51:02,800 --> 00:51:05,520
-um quick note um
+00:50:59,920 --> 00:51:05,520
+这就是最终的哈希。
 
 00:51:05,520 --> 00:51:07,680
-when when you hash things in bitcoin um
+当你在比特币中哈希东西时，
 
 00:51:07,680 --> 00:51:10,000
-this is in hexadecimal but you convert
+是以十六进制表示的，
 
 00:51:10,000 --> 00:51:12,000
-it into binary first so you put binary
+你首先将其转换为二进制，
 
 00:51:12,000 --> 00:51:14,800
-data into the hashing function
+然后你将二进制数据放入哈希函数，
 
 00:51:14,800 --> 00:51:15,920
-and then
+它会输出一个二进制结果，
 
-00:51:15,920 --> 00:51:17,520
-that'll spit out a binding result then
+00:51:15,920 --> 00:51:20,079
+你再将这个二进制结果放入第二个哈希函数，
 
-00:51:17,520 --> 00:51:19,280
-you put the binary result into the
+00:51:20,079 --> 00:51:24,880
+它会输出第二个二进制摘要，
 
-00:51:19,280 --> 00:51:20,079
-second
+00:51:24,880 --> 00:51:29,359
+当你将这个第二个摘要转换回十六进制时，
 
-00:51:20,079 --> 00:51:21,440
-hashing function
+00:51:29,359 --> 00:51:33,040
+将会给你区块哈希，
 
-00:51:21,440 --> 00:51:24,880
-that'll spit out a second binary digest
-
-00:51:24,880 --> 00:51:27,839
-and then when you convert that
-
-00:51:27,839 --> 00:51:29,359
-second digest
-
-00:51:29,359 --> 00:51:31,200
-back into hexadecimal
-
-00:51:31,200 --> 00:51:33,040
-that'll give you the
-
-00:51:33,040 --> 00:51:35,119
-um
-
-00:51:35,119 --> 00:51:38,319
-block hash but obviously this is in
-
-00:51:38,319 --> 00:51:39,359
-reverse
-
-00:51:39,359 --> 00:51:41,680
-uh network byte order again so if you
+00:51:33,040 --> 00:51:41,680
+但显然这是以网络字节顺序反向的，
 
 00:51:41,680 --> 00:51:42,880
-reverse it
+如果我们将其反转，
 
 00:51:42,880 --> 00:51:45,760
-then that's in the more human
+那么它就是更符合人类阅览格式。
 
-00:51:45,760 --> 00:51:49,040
-uh format so if you compare this
-
-00:51:49,040 --> 00:51:50,559
-to the target you want to make sure it's
+00:51:45,760 --> 00:51:50,559
+如果你将这个与目标进行比较，
 
 00:51:50,559 --> 00:51:53,520
-in you want to reverse it back into
+你需要确保它是反向的，
 
-00:51:53,520 --> 00:51:55,359
-uh
-
-00:51:55,359 --> 00:51:58,079
-non-network byte order
-
-00:51:58,079 --> 00:51:58,880
-so
+00:51:55,359 --> 00:51:58,880
+返回到非网络字节顺序。
 
 00:51:58,880 --> 00:52:01,359
-so there we go um so this i've only
+那么我们就到这里，
 
 00:52:01,359 --> 00:52:03,119
-covered these things because they just
+我只讲解了这些东西，
 
 00:52:03,119 --> 00:52:05,599
-trip you up i mean get in the fields
+我再多讲可能会让你困扰。
 
 00:52:05,599 --> 00:52:07,200
-it's quite simple but then get anything
+获取字段很简单，
 
 00:52:07,200 --> 00:52:08,960
-into the right order then converting it
+将它们放入正确的顺序，
 
-00:52:08,960 --> 00:52:11,040
-to binary and then switching it back
-
-00:52:11,040 --> 00:52:11,839
-again
+00:52:08,960 --> 00:52:11,839
+将它们转换为二进制，然后再将它们切换回来。
 
 00:52:11,839 --> 00:52:14,240
-um that's what'll trip you up if you're
+在你试图自己挖掘区块头或哈希区块头时，
 
 00:52:14,240 --> 00:52:15,920
-trying to minor block header or hash a
+这就是会让你困扰的地方。
 
-00:52:15,920 --> 00:52:18,240
-block header for yourself
+00:52:15,920 --> 00:52:20,640
+对，这就是区块头，
 
-00:52:18,240 --> 00:52:20,640
-all right so this was the block header
-
-00:52:20,640 --> 00:52:23,760
-on the left which already had the fields
+00:52:20,640 --> 00:52:26,319
+已经将字段反向为网络字节顺序。
 
 00:52:23,760 --> 00:52:26,319
 in reverse network order right
