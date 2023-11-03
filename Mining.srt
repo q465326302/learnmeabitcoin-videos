@@ -2976,202 +2976,121 @@ ok，好了
 它会告诉你区块中有多少交易，
 
 00:54:30,079 --> 00:54:31,839
-in the block and then before that you
+在这之前你有区块头，
 
-00:54:31,839 --> 00:54:33,520
-have the block header so this is what
+00:54:31,839 --> 00:54:35,359
+这是发送给所有节点的内容。
 
-00:54:33,520 --> 00:54:35,359
-gets sent to
+00:54:35,359 --> 00:54:38,480
+不需要发送区块哈希给所有节点
 
-00:54:35,359 --> 00:54:37,599
-um all the nodes so you don't have to
-
-00:54:37,599 --> 00:54:38,480
-send the
-
-00:54:38,480 --> 00:54:39,839
-block hash because they can calculate it
-
-00:54:39,839 --> 00:54:42,400
-for themselves
-
-00:54:43,119 --> 00:54:44,800
-so um
+00:54:38,480 --> 00:54:44,800
+因为它们可以自己计算出来。
 
 00:54:44,800 --> 00:54:47,599
-that's how mining works um what i
+这就是挖矿的工作原理，
 
-00:54:47,599 --> 00:54:50,079
-thought i would do now is um try and
-
-00:54:50,079 --> 00:54:53,200
-show you how you could uh
-
-00:54:53,200 --> 00:54:56,800
-mine a actual live block
+00:54:47,599 --> 00:54:56,800
+我现在想尝试展示如何挖掘一个实际的活动区块。
 
 00:54:56,800 --> 00:54:58,160
-so yeah
+所以,是的…
 
 00:54:58,160 --> 00:55:01,359
-right so um if you run a bitcoin node
+如果你运行一个比特币节点，
 
-00:55:01,359 --> 00:55:05,040
-um you have the um bitcoin cli um
+00:55:01,359 --> 00:55:08,640
+你可以使用比特币cli命令来询问比特币节点问题，
 
-00:55:05,040 --> 00:55:06,880
-command which allows you to ask the
+00:55:08,640 --> 00:55:14,559
+其中一个问题就是获取区块模板。
 
-00:55:06,880 --> 00:55:08,640
-bitcoin no questions and one of them you
-
-00:55:08,640 --> 00:55:12,480
-can ask them is to get block template
-
-00:55:12,480 --> 00:55:14,559
-so what that will do that will take your
-
-00:55:14,559 --> 00:55:16,800
-current memory pool and
-
-00:55:16,800 --> 00:55:20,240
-gather the highest value transactions
-
-00:55:20,240 --> 00:55:21,839
-that would fill up a
-
-00:55:21,839 --> 00:55:22,720
-block
+00:55:14,559 --> 00:55:22,720
+这将会从你当前的内存池中获取最高价值的交易来填充一个区块，
 
 00:55:22,720 --> 00:55:24,960
-and
+并把它们提供给你。
 
-00:55:25,119 --> 00:55:27,680
-give them to you so this is showing me
-
-00:55:27,680 --> 00:55:29,119
-all of the transactions that would make
-
-00:55:29,119 --> 00:55:30,400
-a
+00:55:25,119 --> 00:55:30,400
+这就是显示我所有的交易，
 
 00:55:30,400 --> 00:55:32,319
-candidate block
+这些交易将构成一个候选区块。
 
-00:55:32,319 --> 00:55:37,520
-so um let me just move this down sorry
-
-00:55:38,000 --> 00:55:38,880
-um
+00:55:32,319 --> 00:55:38,880
+让我把它往下移一些...
 
 00:55:38,880 --> 00:55:40,720
-so
+那么，
 
-00:55:40,720 --> 00:55:44,079
-uh if we to if i just quickly examine um
+00:55:40,720 --> 00:55:45,359
+我们快速检查这里的信息，
 
-00:55:44,079 --> 00:55:45,359
-the information
+00:55:45,359 --> 00:55:52,640
+如果你使用比特币cli帮助获取区块模板，
 
-00:55:45,359 --> 00:55:48,079
-inside here if you if you um use bitcoin
-
-00:55:48,079 --> 00:55:50,640
-cli help get block template that will
-
-00:55:50,640 --> 00:55:52,640
-show you um all the fields that will
-
-00:55:52,640 --> 00:55:55,119
-give you all the fields they'll produce
-
-00:55:55,119 --> 00:55:57,920
-um but if i just quickly
-
-00:55:57,920 --> 00:55:59,520
-um
+00:55:52,640 --> 00:55:57,920
+那将会显示所有的字段，
 
 00:55:59,520 --> 00:56:02,319
-what we want to see basically to minor
+但如果我只是快速地看一下这些交易，
 
-00:56:02,319 --> 00:56:04,319
-block is to create a block header from
-
-00:56:04,319 --> 00:56:06,240
-all these transactions
+00:56:02,319 --> 00:56:06,240
+并从中创建一个区块头。
 
 00:56:06,240 --> 00:56:09,680
-so bitcoin cli get block template
+所以bitcoin-cli getblocktemplate
 
-00:56:09,680 --> 00:56:11,520
-and i'm going to use um
-
-00:56:11,520 --> 00:56:14,319
-grep just to search for the fields that
-
-00:56:14,319 --> 00:56:15,680
-we want
+00:56:09,680 --> 00:56:15,680
+我将使用grep来搜索我们需要的字段，
 
 00:56:15,680 --> 00:56:19,200
-i'm using rg which is a variant of grep
+我使用的是rg，
 
 00:56:19,200 --> 00:56:21,760
-and so we want to find we want to have a
+是grep的一个变体。
 
-00:56:21,760 --> 00:56:22,720
-version
-
-00:56:22,720 --> 00:56:24,160
-number
+00:56:21,760 --> 00:56:24,160
+我们还需要找到一个版本号，
 
 00:56:24,160 --> 00:56:27,599
-we want the previous block
+需要前一个区块，
 
 00:56:27,920 --> 00:56:30,480
-then we want the merkle root
+然后我们需要默克尔根，
 
-00:56:30,480 --> 00:56:31,359
-um
-
-00:56:31,359 --> 00:56:32,559
-then we want
-
-00:56:32,559 --> 00:56:33,440
-time
+00:56:30,480 --> 00:56:33,440
+需要时间，
 
 00:56:33,440 --> 00:56:34,799
-then bits
+然后是bits，
 
 00:56:34,799 --> 00:56:36,400
-then there's a nonce but
+再然后是nonce，
 
 00:56:36,400 --> 00:56:37,920
-we're going to provide our own nuns so
+但我们将提供我们自己的nonce，
 
 00:56:37,920 --> 00:56:39,440
-we don't need that
+所以我们不需要那个。
 
 00:56:39,440 --> 00:56:41,359
-so looking at the
+让我看看，
 
 00:56:41,359 --> 00:56:45,000
-i spelt that wrong
+我这里出了点错。
 
-00:56:45,200 --> 00:56:47,520
-there we are so
-
-00:56:47,520 --> 00:56:49,280
-looking at the results of block get
+00:56:45,200 --> 00:56:49,280
+让我们看' getblocktemplate '的结果
 
 00:56:49,280 --> 00:56:51,200
-block template it's given us the version
+它给了我们版本，
 
 00:56:51,200 --> 00:56:52,960
-the previous block hash it's also giving
+前一个区块的哈希，
 
 00:56:52,960 --> 00:56:56,160
-us the time current time and bits
+也给了我们当前时间和bits。
 
 00:56:56,160 --> 00:56:58,480
 so it's changing the current time
