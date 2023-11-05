@@ -3767,59 +3767,50 @@ um
 01:10:01,040 --> 01:10:06,000
 所以这会是我开始使用比特币编程的第一个地方。
 
-01:10:06,000 --> 01:10:07,600
-i mean you you're obviously probably not
-
-01:10:07,600 --> 01:10:08,560
-going to
-
-01:10:08,560 --> 01:10:10,560
-set up your minor but as a sort of
+01:10:06,000 --> 01:10:10,560
+你可能不会去设置你自己的矿机，
 
 01:10:10,560 --> 01:10:11,679
-learning experience this is a great
+但作为一种学习经验，
 
 01:10:11,679 --> 01:10:14,320
-place to start
+这是一个很好的开始。
 
 01:10:15,280 --> 01:10:17,199
-so yeah if you want to browse block
+所以，如果你想浏览区块头，
 
 01:10:17,199 --> 01:10:18,880
-headers just go into livia bitcoin this
+只需访问learnmeabitcoin.com
 
 01:10:18,880 --> 01:10:20,560
-is the blockchain
+这就是区块链。
 
 01:10:20,560 --> 01:10:21,920
-and you can browse to each individual
+你可以浏览每个单独的区块，
 
 01:10:21,920 --> 01:10:23,600
-block and see all the different block
+查看所有不同的区块头，
 
 01:10:23,600 --> 01:10:25,520
-headers and test for yourself
+并自己进行测试。
 
-01:10:25,520 --> 01:10:27,520
-then you can get the same
-
-01:10:27,520 --> 01:10:28,960
-block cache results
+01:10:25,520 --> 01:10:28,960
+然后你可以得到相同的区块缓存结果。
 
 01:10:28,960 --> 01:10:31,280
-nice
+非常好。
 
 01:10:31,280 --> 01:10:32,400
-yep
+谢谢
 
 01:10:32,400 --> 01:10:35,280
-so uh thank you very much for that uh
+非常感谢你的演示，
 
 01:10:35,280 --> 01:10:37,120
-that was good to do
+这很有帮助。
 
 01:10:37,120 --> 01:10:38,320
-thanks
+谢谢
 
 01:10:38,320 --> 01:10:42,520
-no worries so yeah
+不用谢。
