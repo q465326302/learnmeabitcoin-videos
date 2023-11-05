@@ -3093,169 +3093,106 @@ ok，好了
 也给了我们当前时间和bits。
 
 00:56:56,160 --> 00:56:58,480
-so it's changing the current time
+所以它正在改变当前的时间，
 
-00:56:58,480 --> 00:57:00,000
-so what it's not giving us is a miracle
+00:56:58,480 --> 00:57:01,440
+但它没有给我们一个merkle根，
 
-00:57:00,000 --> 00:57:01,440
-root
+00:57:01,440 --> 00:57:05,520
+我不知道为什么没有，
 
-00:57:01,440 --> 00:57:02,880
-um
+00:57:05,520 --> 00:57:12,160
+但你可以做的是，
 
-00:57:02,880 --> 00:57:05,520
-for some i don't know why it's not um
+00:57:12,160 --> 00:57:15,440
+它给你的是一个json解析器，
 
-00:57:05,520 --> 00:57:07,440
-but what you can do
-
-00:57:07,440 --> 00:57:12,160
-um what it is giving you is um
-
-00:57:12,160 --> 00:57:13,520
-this is just a
-
-00:57:13,520 --> 00:57:15,440
-json parser
-
-00:57:15,440 --> 00:57:17,520
-it has given you um
-
-00:57:17,520 --> 00:57:19,440
-a list of
-
-00:57:19,440 --> 00:57:20,799
-transactions
+00:57:15,440 --> 00:57:20,799
+给了你一个交易列表，
 
 00:57:20,799 --> 00:57:22,400
-and it has given you all the transaction
+和给你所有的交易id，
 
 00:57:22,400 --> 00:57:25,040
-ids so if we just go through each one
+所以如果我们只是遍历每一个，
 
-00:57:25,040 --> 00:57:27,040
-and say give us
-
-00:57:27,040 --> 00:57:29,599
-the transaction ids
+00:57:25,040 --> 00:57:29,599
+然后说给我们交易id，
 
 00:57:29,599 --> 00:57:33,920
-now let's need to put that in quotes
+现在我们需要把它放在引号里，
 
-00:57:36,240 --> 00:57:37,599
-there we are so these are all the
+00:57:36,240 --> 00:57:39,680
+这就是所有的交易id，
 
-00:57:37,599 --> 00:57:39,680
-transaction ids
+00:57:39,680 --> 00:57:43,200
+现在我们得到了这个候选块中所有的交易id
 
-00:57:39,680 --> 00:57:41,760
-in this candidate block
-
-00:57:41,760 --> 00:57:43,200
-so now we've got all those transaction
-
-00:57:43,200 --> 00:57:44,400
-ids we just need to create our own
-
-00:57:44,400 --> 00:57:46,480
-merkle route for them
+00:57:43,200 --> 00:57:46,480
+我们需要它们来创建我们自己的merkle根，
 
 00:57:46,480 --> 00:57:47,200
-so
+幸运的是，
 
 00:57:47,200 --> 00:57:49,839
-um luckily i've written my own script
+我已经写了我自己的脚本，
 
-00:57:49,839 --> 00:57:51,760
-and that will take in a list of
-
-00:57:51,760 --> 00:57:53,599
-transactions and create a miracle route
-
-00:57:53,599 --> 00:57:55,359
-from them
+00:57:49,839 --> 00:57:55,359
+它会接收一个交易列表并从中创建一个merkle根，
 
 00:57:55,359 --> 00:57:56,960
-um i've made this available on the
+我已经把这个放到了网站上
 
 00:57:56,960 --> 00:57:58,960
-website i'll show it in the moment
+我会在一会儿展示它，
 
 00:57:58,960 --> 00:58:00,720
-so if i just do that
+所以我这么做，
 
 00:58:00,720 --> 00:58:02,880
-then we have a miracle root
+我们就有一个merkle根，
 
-00:58:02,880 --> 00:58:05,839
-so now um we've got all the data we need
+00:58:02,880 --> 00:58:07,280
+现在我们得到了我们需要的所有数据来挖掘一个块，
 
-00:58:05,839 --> 00:58:07,280
-to mine a
-
-00:58:07,280 --> 00:58:08,799
-both or basically to construct a block
-
-00:58:08,799 --> 00:58:10,640
-header
+00:58:07,280 --> 00:58:10,640
+或者我们来构造一个块头，
 
 00:58:10,640 --> 00:58:12,480
-so if you just bare with me for five
+如果你能听我讲五分钟，
 
-00:58:12,480 --> 00:58:14,400
-minutes i'm gonna go through each field
+00:58:12,480 --> 00:58:16,079
+我会逐个解释每个内容，
 
-00:58:14,400 --> 00:58:16,079
-and um
-
-00:58:16,079 --> 00:58:18,720
-yeah so first of all uh we need to get
-
-00:58:18,720 --> 00:58:20,640
-the version
-
-00:58:20,640 --> 00:58:23,119
-oh that's done wrong
-
-00:58:23,119 --> 00:58:25,200
-okay
+00:58:16,079 --> 00:58:25,200
+首先我们需要得到版本，
 
 00:58:25,200 --> 00:58:27,440
-so there we are using get a get block
+这是用getblocktemplate得到的当前版本，
 
 00:58:27,440 --> 00:58:29,119
-template this is the current version uh
+就像我之前说的，
 
 00:58:29,119 --> 00:58:32,079
-like i said they've changed a bit so um
+它们已经改变了一些，
 
 00:58:32,079 --> 00:58:33,040
-this is
+它们被改成用来投票，
 
-00:58:33,040 --> 00:58:34,640
-they've been used to vote for voting so
-
-00:58:34,640 --> 00:58:36,960
-this is why it's a very high number but
+00:58:33,040 --> 00:58:36,960
+所以为什么它是一个非常高的数字，
 
 00:58:36,960 --> 00:58:38,160
-i'm not going to spend it now just take
+但我现在不打算解释它，
 
-00:58:38,160 --> 00:58:39,680
-it as it is
-
-00:58:39,680 --> 00:58:40,480
-um
+00:58:38,160 --> 00:58:40,480
+只是把它当作是个版本号，
 
 00:58:40,480 --> 00:58:41,920
-so this is the version number but
+但显然它是十进制的，
 
-00:58:41,920 --> 00:58:44,559
-obviously it's in uh decimal so to
-
-00:58:44,559 --> 00:58:46,240
-convert that into
+00:58:41,920 --> 00:58:46,240
+所以首先要把它转换成十六进制，
 
 00:58:46,240 --> 00:58:49,440
 hexadecimal first first so there we are
