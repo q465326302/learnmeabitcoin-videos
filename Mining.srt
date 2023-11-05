@@ -3548,356 +3548,224 @@ um
 01:06:13,760 --> 01:06:19,599
 并使用提交区块的Bitcoin CLI命令来完成这个操作。
 
-01:06:19,599 --> 01:06:21,839
-is there a way to uh get the target
+01:06:19,599 --> 01:06:24,559
+你可以通过Bitcoin CLI获取目标值？
 
-01:06:21,839 --> 01:06:24,559
-value from the bitcoin cli
+01:06:24,559 --> 01:06:36,480
+是的，我认为它包含在Bitcoin CLI的getblocktemplate中。
 
-01:06:24,559 --> 01:06:27,039
-uh yeah so um i think it's included in
-
-01:06:27,039 --> 01:06:31,680
-um bitcoin cli get block template
-
-01:06:31,680 --> 01:06:35,119
-yeah so um i think it's it's
-
-01:06:35,119 --> 01:06:36,480
-extending the block
-
-01:06:36,480 --> 01:06:37,520
-yeah so there it is so this is the
-
-01:06:37,520 --> 01:06:39,599
-current target so you could grab that
+01:06:36,480 --> 01:06:39,599
+这就是当前的目标，
 
 01:06:39,599 --> 01:06:42,160
-target and then stick that summer into
+你可以抓取这个目标，
 
 01:06:42,160 --> 01:06:44,079
-yeah into the for loop
+然后将其放入for循环中。
 
 01:06:44,079 --> 01:06:46,480
-yeah but obviously um
+但显然，
 
 01:06:46,480 --> 01:06:48,400
-that that hashing there was very very
+这里的哈希运算非常非常慢。
 
 01:06:48,400 --> 01:06:49,200
-slow
+哦，是的，
 
 01:06:49,200 --> 01:06:51,599
-oh yeah yeah i i totally get it yeah you
+我完全明白，
 
-01:06:51,599 --> 01:06:53,200
-probably want to do that yeah
-
-01:06:53,200 --> 01:06:55,039
-in a single programming language this is
-
-01:06:55,039 --> 01:06:57,280
-just on bash just for quick sort of
-
-01:06:57,280 --> 01:06:58,960
-illustration purposes but that just goes
+01:06:51,599 --> 01:06:58,960
+你可能会想在一种编程语言中完成这个任务。
 
 01:06:58,960 --> 01:07:01,520
-to show like how basically how simple uh
+这只是在bash中快速演示说明的目的，
 
 01:07:01,520 --> 01:07:03,599
-mining is really the hardest part is
+这就足以显示挖矿实际上有多简单。
 
 01:07:03,599 --> 01:07:05,520
-just getting the data in the right order
+最难的部分就是将数据按正确的顺序排列，
 
 01:07:05,520 --> 01:07:07,440
-um but after that it's just you just
+但在那之后，
 
 01:07:07,440 --> 01:07:09,680
-increment a nonsense hash it and
+你只需要增加一个无意义的哈希，
 
-01:07:09,680 --> 01:07:11,119
-hopefully you get a result a lucky
-
-01:07:11,119 --> 01:07:14,119
-result
-
-01:07:14,319 --> 01:07:15,760
-um
+01:07:09,680 --> 01:07:15,760
+然后希望你能得到一个幸运的结果。
 
 01:07:15,760 --> 01:07:18,480
-i think yeah so that's everything i
+我想是的，
 
-01:07:18,480 --> 01:07:21,039
-wanted to explain about how mining works
+01:07:18,480 --> 01:07:23,839
+这就是我想解释的关于挖矿工作原理的所有技术性内容。
 
-01:07:21,039 --> 01:07:22,480
-um
-
-01:07:22,480 --> 01:07:23,839
-that's all the technical stuff but
-
-01:07:23,839 --> 01:07:25,119
-obviously is
-
-01:07:25,119 --> 01:07:27,440
-probably a lot simpler than it's made
-
-01:07:27,440 --> 01:07:29,760
-out to be
-
-01:07:29,760 --> 01:07:30,559
-um
+01:07:23,839 --> 01:07:30,559
+这可能比想象的要简单得多。
 
 01:07:30,559 --> 01:07:32,400
-on the website i've made all this code
+在我制作的网站上，
 
 01:07:32,400 --> 01:07:35,119
-available so each those little um hex
+我已经提供了所有这些代码，
 
-01:07:35,119 --> 01:07:36,640
-decimal converters and decimal
-
-01:07:36,640 --> 01:07:37,760
-converters
+01:07:35,119 --> 01:07:37,760
+每一个十六进制转换器和十进制转换器
 
 01:07:37,760 --> 01:07:40,960
-and the swap endianness they're all here
+以及交换字节顺序，都在这里。
 
-01:07:40,960 --> 01:07:42,559
-there's a miracle root function on here
-
-01:07:42,559 --> 01:07:44,240
-written in php
+01:07:40,960 --> 01:07:44,240
+这里有一个用php写的merkle root函数
 
 01:07:44,240 --> 01:07:46,960
-um it's not the prettiest um but it will
+它不是最完美的，
 
-01:07:46,960 --> 01:07:48,160
-take a
-
-01:07:48,160 --> 01:07:49,200
-list of
-
-01:07:49,200 --> 01:07:50,880
-transaction ids and create american
-
-01:07:50,880 --> 01:07:52,400
-route for you
+01:07:46,960 --> 01:07:52,400
+但它会接受一份交易ID列表并为你创建一个merkle root。
 
 01:07:52,400 --> 01:07:54,400
-i might not want to use it in production
+你可能不想在生产中使用它，
 
 01:07:54,400 --> 01:07:55,599
-you might want to use a different
+你可能想使用一个不同的库，
 
-01:07:55,599 --> 01:07:57,760
-library i'm sure there's loads of
+01:07:55,599 --> 01:08:05,760
+我相信有很多比特币库有自己的merkle root函数供你使用。
 
-01:07:57,760 --> 01:07:59,039
-bitcoin libraries out there with their
-
-01:07:59,039 --> 01:08:01,520
-own merkle root um functions for you to
-
-01:08:01,520 --> 01:08:03,760
-use
-
-01:08:04,559 --> 01:08:05,760
-um
-
-01:08:05,760 --> 01:08:07,760
-is there any questions about
-
-01:08:07,760 --> 01:08:09,920
-that sort of mining process no i mean
+01:08:05,760 --> 01:08:09,920
+关于挖矿过程还有什么问题吗？
 
 01:08:09,920 --> 01:08:11,520
-this this was really awesome great
+没有，
 
 01:08:11,520 --> 01:08:13,200
-thanks a lot
+这真的很棒，
 
 01:08:13,200 --> 01:08:15,359
-uh
+非常感谢。
 
-01:08:16,000 --> 01:08:18,479
-just curious any any experience with
-
-01:08:18,479 --> 01:08:21,198
-those heavy duty miners
+01:08:16,000 --> 01:08:21,198
+你有没有使用过那些大型矿机的经验？
 
 01:08:21,198 --> 01:08:23,198
-no i've not actually mined myself
+没有，我实际上并没有自己挖矿，
 
 01:08:23,198 --> 01:08:25,359
-because like we said like it's so
+因为像我们说的，
 
 01:08:25,359 --> 01:08:27,120
-inefficient to mine on your laptop if
+用你的笔记本电脑挖矿效率太低了。
 
 01:08:27,120 --> 01:08:28,960
-you wanted to mine now it's not a hobby
+如果你现在想挖矿，
 
 01:08:28,960 --> 01:08:30,399
-thing you have to sort of
+这可不是一种业余的事情，
 
 01:08:30,399 --> 01:08:33,120
-you know buy a professional mining rig
+你必须购买专业的挖矿设备，
 
 01:08:33,120 --> 01:08:34,640
-and run it like a proper business which
+并像经营正规业务一样运行它。
 
 01:08:34,640 --> 01:08:37,040
-is a shame because that takes mining out
+这是一种遗憾，
 
-01:08:37,040 --> 01:08:38,880
-of the hands of the average person then
+01:08:37,040 --> 01:08:41,920
+因为这使得普通人无法参与挖矿。
 
-01:08:38,880 --> 01:08:40,560
-so
-
-01:08:40,560 --> 01:08:41,920
-um
-
-01:08:41,920 --> 01:08:43,359
-yeah so i think if you want to get into
-
-01:08:43,359 --> 01:08:44,880
-mind you you would have to really commit
+01:08:41,920 --> 01:08:44,880
+所以我认为如果你想参与挖矿，
 
 01:08:44,880 --> 01:08:46,319
-to it
+你必须真正的投入进去，
 
 01:08:46,319 --> 01:08:48,238
-it's not just right gone yeah right
+这不仅仅是一种权益。
 
 01:08:48,238 --> 01:08:50,080
-right even those guys would be doing
+即使那些专业的矿工，也只是在做同样的事情，
 
 01:08:50,080 --> 01:08:51,759
-like at a fundamental level they would
+他们也只是在做同样的事情？
 
-01:08:51,759 --> 01:08:53,759
-be doing the same thing right just
-
-01:08:53,759 --> 01:08:54,799
-faster
+01:08:51,759 --> 01:08:54,799
+是的，他们会快一点。
 
 01:08:54,799 --> 01:08:56,158
-yes so they're just doing the exact same
+他们只是做着完全相同的事情，
 
 01:08:56,158 --> 01:08:57,600
-thing constructing block header and just
+构建区块头，
 
 01:08:57,600 --> 01:08:58,960
-hashing it as fast as you can like this
+然后尽可能快的哈希。
 
-01:08:58,960 --> 01:09:00,560
-whole construction of the block header
-
-01:09:00,560 --> 01:09:02,880
-is simple and takes a
+01:08:58,960 --> 01:09:02,880
+这整个构建区块头的过程非常简单，
 
 01:09:02,880 --> 01:09:05,359
-absolute fraction of a second to do and
+只需要一小部分的时间，
 
-01:09:05,359 --> 01:09:08,080
-then the whole mining then the whole
+01:09:05,359 --> 01:09:15,359
+挖矿的主要的核心部分就是尽可能快的哈希。
 
-01:09:08,080 --> 01:09:10,080
-meat of mining is hashing as fast as
-
-01:09:10,080 --> 01:09:12,400
-possible
-
-01:09:13,600 --> 01:09:14,000
-um
-
-01:09:14,000 --> 01:09:15,359
-[Music]
-
-01:09:15,359 --> 01:09:16,640
-i think i've
-
-01:09:16,640 --> 01:09:18,238
-don't think i've missed anything i think
+01:09:15,359 --> 01:09:18,238
+我认为我没有遗漏任何东西，
 
 01:09:18,238 --> 01:09:19,839
-i've covered everything i wanted to
+我想我已经涵盖了我所想要讲的所有内容。
 
 01:09:19,839 --> 01:09:21,759
-sorry i know that's a bit repetitive in
+对不起，我知道这部分可能有点重复。
 
 01:09:21,759 --> 01:09:24,960
-parts uh no no no this was a great
+不，不，不，
 
 01:09:24,960 --> 01:09:26,960
-explanation again yeah thanks a lot for
+这是一个很好的解释，
 
 01:09:26,960 --> 01:09:28,000
-this yeah
+非常感谢，
 
 01:09:28,000 --> 01:09:29,600
-but i think if you're starting out with
+但我认为，
 
 01:09:29,600 --> 01:09:31,679
-bitcoin um
+如果你刚开始接触比特币，
 
-01:09:31,679 --> 01:09:33,279
-one of the best ways to learn i think is
-
-01:09:33,279 --> 01:09:34,880
-to try and
-
-01:09:34,880 --> 01:09:36,479
-mine your own block header i think it's
+01:09:31,679 --> 01:09:36,479
+学习的最好方式之一是尝试挖掘你自己的区块头。
 
 01:09:36,479 --> 01:09:38,158
-quite simple to do and i think mining is
+我认为这很简单，
 
 01:09:38,158 --> 01:09:40,000
-one of the sort of first fundamental
+而且挖矿是比特币工作原理的基本部分之一，
 
-01:09:40,000 --> 01:09:41,839
-parts of how bitcoin works so if you can
-
-01:09:41,839 --> 01:09:44,479
-figure out how to mine a block header
-
-01:09:44,479 --> 01:09:46,158
-or hash a block header that's a great
+01:09:40,000 --> 01:09:46,158
+如果你能弄清楚如何挖掘或哈希一个区块头，
 
 01:09:46,158 --> 01:09:47,839
-stepping stone i'll give you the tools
+那将是一个很好的起点。
 
 01:09:47,839 --> 01:09:50,158
-then to figure out about the all the um
+我会给你提供工具，让你了解所有的比特币相关知识。
 
 01:09:50,158 --> 01:09:52,960
-hexadecimal and network byte order and
+十六进制，网络字节顺序，以及如何哈希
 
-01:09:52,960 --> 01:09:54,960
-how to hash and then you can take those
-
-01:09:54,960 --> 01:09:56,560
-tools then and use them in other parts
-
-01:09:56,560 --> 01:09:58,000
-of bitcoin like in you know with
+01:09:52,960 --> 01:09:58,000
+然后你可以使用这些工具去理解比特币的其他部分，
 
 01:09:58,000 --> 01:10:01,040
-transactions and all that
+比如交易等等。
 
-01:10:01,040 --> 01:10:02,719
-so this would be my first place to start
-
-01:10:02,719 --> 01:10:04,960
-if you were to try coding with
-
-01:10:04,960 --> 01:10:06,000
-bitcoin
+01:10:01,040 --> 01:10:06,000
+所以这会是我开始使用比特币编程的第一个地方。
 
 01:10:06,000 --> 01:10:07,600
 i mean you you're obviously probably not
