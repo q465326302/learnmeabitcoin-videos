@@ -3374,332 +3374,179 @@ um
 01:02:32,160 --> 01:02:36,160
 接下来，以正确的格式，
 
-01:02:36,160 --> 01:02:38,240
-just construct the block header from
-
-01:02:38,240 --> 01:02:39,839
-each individ each of those individual
-
-01:02:39,839 --> 01:02:40,960
-fields
+01:02:36,160 --> 01:02:40,960
+我们需要从每个单独的字段构建区块头，
 
 01:02:40,960 --> 01:02:43,359
-that is the version
+这些字段包括版本、
 
 01:02:43,359 --> 01:02:46,799
-the previous block
+前一个区块、
 
 01:02:46,839 --> 01:02:50,400
-the miracle root
+默克尔根、
 
-01:02:50,400 --> 01:02:52,000
-then
-
-01:02:52,000 --> 01:02:53,119
-time
-
-01:02:53,119 --> 01:02:55,280
-and then bits
+01:02:50,400 --> 01:02:55,280
+时间和bits。
 
 01:02:55,280 --> 01:02:58,640
-so check what that looks like
+然后我们将这些字段组合起来，
 
 01:02:58,960 --> 01:03:00,640
-there it is there's our block header and
+得到我们的区块头。
 
-01:03:00,640 --> 01:03:02,480
-so all we have all we haven't put there
+01:03:00,640 --> 01:03:04,160
+现在我们唯一缺少的就是随机数（nonce）。
 
-01:03:02,480 --> 01:03:04,160
-now is the nonce
-
-01:03:04,160 --> 01:03:05,040
-so
-
-01:03:05,040 --> 01:03:06,960
-if we wanted to
+01:03:04,160 --> 01:03:06,960
+如果我们想要挖矿，
 
 01:03:06,960 --> 01:03:08,960
-mine this we just need to create a loop
+我们需要创建一个循环，
 
-01:03:08,960 --> 01:03:10,079
-that will
+01:03:08,960 --> 01:03:13,280
+不断地对这个区块头进行哈希，
 
-01:03:10,079 --> 01:03:12,400
-keep hashing this
+01:03:13,280 --> 01:03:17,599
+并在每次尝试时增加Nonce。
 
-01:03:12,400 --> 01:03:13,280
-uh
+01:03:17,599 --> 01:03:22,640
+我们可以从零开始，
 
-01:03:13,280 --> 01:03:15,520
-block header and we'll adjust the nonce
-
-01:03:15,520 --> 01:03:17,599
-increment it with every attempt
-
-01:03:17,599 --> 01:03:20,480
-so the nonce um will look like we'll
-
-01:03:20,480 --> 01:03:22,640
-start off with zero
-
-01:03:22,640 --> 01:03:24,000
-um but obviously we need to get this in
-
-01:03:24,000 --> 01:03:25,920
-the right format um so we need to
-
-01:03:25,920 --> 01:03:28,839
-convert that to um
+01:03:22,640 --> 01:03:28,839
+但显然我们需要将它转换成正确的格式。
 
 01:03:28,839 --> 01:03:30,960
-uh extradition
+十六进制。
 
 01:03:30,960 --> 01:03:32,240
-sorry thank you
+对的，谢谢。
 
 01:03:32,240 --> 01:03:36,319
-uh then at least so like so
+但是很明显，
 
 01:03:37,119 --> 01:03:38,880
-uh but obviously this needs to be um
+它的长度需要是4字节
 
-01:03:38,880 --> 01:03:40,640
-four bytes in length so i made a little
-
-01:03:40,640 --> 01:03:42,000
-function that will just make sure it's
-
-01:03:42,000 --> 01:03:43,359
-the right size
+01:03:38,880 --> 01:03:43,359
+所以我创建了一个函数来确保它的大小，
 
 01:03:43,359 --> 01:03:45,280
-and then convert the swap end in
+并进行端转换。
 
 01:03:45,280 --> 01:03:46,720
-obviously it's not very interesting
+显然这不是很有趣，
 
 01:03:46,720 --> 01:03:48,559
-because i've used the number zero but if
+因为我用的是数字0，
 
-01:03:48,559 --> 01:03:50,000
-i wish to use like a much higher nonce
-
-01:03:50,000 --> 01:03:50,960
-value
+01:03:48,559 --> 01:03:50,960
+但如果我要用一个大得多的Nonce值
 
 01:03:50,960 --> 01:03:52,559
-uh like that
+就像这样，它
 
 01:03:52,559 --> 01:03:55,039
-then like so it's prepared it for me
+它已经为我准备好了，
 
 01:03:55,039 --> 01:03:56,319
-so i'm not going to append this to it
+但我现在还不打算将其附加到上面。
 
-01:03:56,319 --> 01:03:57,440
-yet what i'm going to do i'm going to
+01:03:56,319 --> 01:04:00,640
+我要做的是创建一个循环，
 
-01:03:57,440 --> 01:04:00,640
-create a loop so while true
+01:04:00,640 --> 01:04:08,400
+所以当为真时，
 
-01:04:00,640 --> 01:04:02,000
-do
-
-01:04:02,000 --> 01:04:03,760
-you want to
-
-01:04:03,760 --> 01:04:05,440
-oh wait there before that i want to set
-
-01:04:05,440 --> 01:04:08,400
-a variable to
-
-01:04:08,400 --> 01:04:11,680
-an increment incremented variable ready
-
-01:04:11,680 --> 01:04:14,559
-so while true
-
-01:04:14,559 --> 01:04:15,599
-uh
+01:04:08,400 --> 01:04:15,599
+我要设置一个增量变量。
 
 01:04:15,599 --> 01:04:16,960
-do
+然后，
 
-01:04:16,960 --> 01:04:18,079
-want to
+01:04:16,960 --> 01:04:19,760
+我要创建一个nonce，
 
-01:04:18,079 --> 01:04:19,760
-create the nonce
+01:04:19,760 --> 01:04:25,039
+就像我刚才给你们展示的那样，
 
-01:04:19,760 --> 01:04:21,839
-which is going to be like i just showed
-
-01:04:21,839 --> 01:04:23,280
-you um
-
-01:04:23,280 --> 01:04:25,039
-echo
-
-01:04:25,039 --> 01:04:26,400
-i
-
-01:04:26,400 --> 01:04:28,960
-uh they want to get it in deck
-
-01:04:28,960 --> 01:04:31,039
-hex decimal
+01:04:25,039 --> 01:04:31,039
+我要将其转化为十六进制，
 
 01:04:31,039 --> 01:04:34,559
-four byte field size swap endian
+然后交换字节顺序，
 
-01:04:34,559 --> 01:04:35,359
-uh
-
-01:04:35,359 --> 01:04:37,760
-trim off the end
+01:04:34,559 --> 01:04:37,760
+最后剪掉末尾。
 
 01:04:37,760 --> 01:04:39,440
-uh so that's the non stun
+这就是nonce的创建过程。
 
 01:04:39,440 --> 01:04:42,319
-then our attempt at
+然后，
 
 01:04:42,319 --> 01:04:44,319
-trying to mine the block will be just
+我们尝试挖掘区块，
 
-01:04:44,319 --> 01:04:45,280
-the
+01:04:44,319 --> 01:04:51,039
+就是我们创建的区块头加上nonce的尾部，
 
-01:04:45,280 --> 01:04:48,000
-uh block header we created
+01:04:51,039 --> 01:04:53,440
+然后我们要对整个尝试进行哈希。
 
-01:04:48,000 --> 01:04:51,039
-plus the nonce at the end
+01:04:53,440 --> 01:05:00,319
+我创建了一个叫做hash 256的函数来帮助，
 
-01:04:51,039 --> 01:04:52,160
-and then what we want to do is we want
-
-01:04:52,160 --> 01:04:53,440
-to hash that
-
-01:04:53,440 --> 01:04:55,039
-um all together so i've made a little
-
-01:04:55,039 --> 01:04:57,760
-function that will hash for me um
-
-01:04:57,760 --> 01:05:00,319
-called hash 256 because this
-
-01:05:00,319 --> 01:05:02,480
-is just the the double hash converts the
-
-01:05:02,480 --> 01:05:04,480
-binary then double hashes it i'm going
+01:05:00,319 --> 01:05:04,480
+这个函数会将二进制数据进行双重哈希，
 
 01:05:04,480 --> 01:05:08,960
-to hash 256 um the attempt
+我要对其尝试进行hash 256处理。
 
-01:05:08,960 --> 01:05:09,839
-and
-
-01:05:09,839 --> 01:05:12,400
-every after every attempt we want to
+01:05:08,960 --> 01:05:12,400
+在每次尝试之后
 
 01:05:12,400 --> 01:05:15,920
-uh increment the nonce so let
+我们都要增加nonce，
 
-01:05:15,920 --> 01:05:18,559
-uh i must plus so just increment the
-
-01:05:18,559 --> 01:05:20,559
-notes from
-
-01:05:20,559 --> 01:05:21,680
-this
-
-01:05:21,680 --> 01:05:23,760
-number here actually
+01:05:15,920 --> 01:05:23,760
+所以我要增加这个数字。
 
 01:05:23,760 --> 01:05:25,599
-uh and then done so hopefully this will
+现在，
 
-01:05:25,599 --> 01:05:27,920
-work there we are so now
-
-01:05:27,920 --> 01:05:30,240
-this is hashing
-
-01:05:30,240 --> 01:05:31,200
-um
-
-01:05:31,200 --> 01:05:33,839
-very slowly uh a block header the
-
-01:05:33,839 --> 01:05:36,000
-current block header obviously it's very
+01:05:25,599 --> 01:05:36,000
+这个程序正在非常缓慢地对当前的区块头进行哈希处理，
 
 01:05:36,000 --> 01:05:37,680
-slow it took me a long time but this is
+这花了我很长时间，
 
-01:05:37,680 --> 01:05:40,559
-actually mine trying to mine a block
-
-01:05:40,559 --> 01:05:42,319
-um
+01:05:37,680 --> 01:05:42,319
+这实际上就是我试图挖掘一个区块的正常流程。
 
 01:05:42,319 --> 01:05:44,000
-so if that was
+如果你有运气，
 
-01:05:44,000 --> 01:05:44,960
-lucky
+01:05:44,960 --> 01:05:52,799
+你可以在代码中加入一些能在达到目标时停止的代码。
 
-01:05:44,960 --> 01:05:46,400
-what you'd probably do you'd have some
-
-01:05:46,400 --> 01:05:48,480
-code in there that would stop
-
-01:05:48,480 --> 01:05:51,119
-um when you if yeah if it reaches the
-
-01:05:51,119 --> 01:05:52,799
-target target yeah and then what you do
-
-01:05:52,799 --> 01:05:55,839
-then there's a function and bitcoin cli
-
-01:05:55,839 --> 01:05:59,280
-called um submit block
+01:05:52,799 --> 01:05:59,280
+然后你会使用Bitcoin CLI中的一个函数叫做提交区块。
 
 01:05:59,520 --> 01:06:01,760
-and you would just submit
+你需要提交区块头、
 
-01:06:01,760 --> 01:06:05,839
-the header the transaction count
-
-01:06:06,400 --> 01:06:08,960
-and all the transaction data so if you
+01:06:01,760 --> 01:06:08,960
+交易数量和所有的交易数据。
 
 01:06:08,960 --> 01:06:10,799
-constructed a successful block header
+如果你构建了一个成功的区块头，
 
-01:06:10,799 --> 01:06:12,000
-you would send that to all the nodes
+01:06:10,799 --> 01:06:13,760
+你会将其发送给你连接的所有节点，
 
-01:06:12,000 --> 01:06:13,760
-you're connected to and you'd use that
-
-01:06:13,760 --> 01:06:15,280
-do that using the
-
-01:06:15,280 --> 01:06:17,280
-submit block um
-
-01:06:17,280 --> 01:06:19,599
-bitcoin cli command
+01:06:13,760 --> 01:06:19,599
+并使用提交区块的Bitcoin CLI命令来完成这个操作。
 
 01:06:19,599 --> 01:06:21,839
 is there a way to uh get the target
