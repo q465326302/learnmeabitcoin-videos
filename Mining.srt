@@ -3194,155 +3194,80 @@ ok，好了
 00:58:41,920 --> 00:58:46,240
 所以首先要把它转换成十六进制，
 
-00:58:46,240 --> 00:58:49,440
-hexadecimal first first so there we are
+00:58:46,240 --> 00:58:54,559
+我们首先需要将版本转换为十六进制，
 
-00:58:49,440 --> 00:58:50,400
-and then
+00:58:54,559 --> 00:58:59,920
+然后调整字节顺序或调整字节顺序，
 
-00:58:50,400 --> 00:58:52,480
-now it's in hexadecimal this is already
+00:58:59,920 --> 00:59:06,720
+有时也被称为"endianness""
 
-00:58:52,480 --> 00:58:54,559
-um four bytes
+00:59:06,720 --> 00:59:12,480
+然后，我们可以将版本设置好并准备好使用。
 
-00:58:54,559 --> 00:58:57,119
-so i just swap the byte order or swap
-
-00:58:57,119 --> 00:58:59,920
-the endianness because sometimes
-
-00:58:59,920 --> 00:59:01,280
-um
-
-00:59:01,280 --> 00:59:03,119
-the byte order is referred to referred
-
-00:59:03,119 --> 00:59:05,359
-to as endianness
-
-00:59:05,359 --> 00:59:06,720
-um
-
-00:59:06,720 --> 00:59:09,359
-so there we are so this is the
-
-00:59:09,359 --> 00:59:10,160
-uh
-
-00:59:10,160 --> 00:59:12,480
-version all set up and ready to go so
-
-00:59:12,480 --> 00:59:13,599
-i'll just
-
-00:59:13,599 --> 00:59:15,119
-trim the end off that
+00:59:12,480 --> 00:59:15,119
+我只需要删掉那个末尾，
 
 00:59:15,119 --> 00:59:16,640
-because i'm going to concatenate it all
+因为我要把它全部连接起来。
 
 00:59:16,640 --> 00:59:20,160
-together so if i save this as a
+所以我把这个保存为一个变量，
 
 00:59:20,160 --> 00:59:22,640
-variable
+ok
 
 00:59:25,680 --> 00:59:26,880
-there we have so just
+我们回显一下进行检查，
 
 00:59:26,880 --> 00:59:29,359
-echo that out to check
+这是Version done。
 
-00:59:29,359 --> 00:59:31,520
-so that's the version done so next up
+00:59:29,359 --> 00:59:40,799
+接下来，我们处理前一个块的版本。
 
-00:59:31,520 --> 00:59:33,839
-after the version is the
+00:59:40,799 --> 00:59:44,559
+这是前一个区块的哈希值，
 
-00:59:33,839 --> 00:59:37,520
-version previous block
-
-00:59:37,599 --> 00:59:39,599
-so previous block
-
-00:59:39,599 --> 00:59:40,799
-hash
-
-00:59:40,799 --> 00:59:42,559
-so this is the block hash for the
-
-00:59:42,559 --> 00:59:44,559
-previous block
-
-00:59:44,559 --> 00:59:47,119
-let me just trim off the
-
-00:59:47,119 --> 00:59:49,520
-uh quotes
-
-00:59:49,520 --> 00:59:51,040
-and then
+00:59:44,559 --> 00:59:51,040
+让我去掉引号，
 
 00:59:51,040 --> 00:59:52,640
-uh it's already in hex decimal it's
+已经是十六进制的，
 
 00:59:52,640 --> 00:59:55,440
-already 32 bytes so what i need to do is
+已经是32字节，
 
 00:59:55,440 --> 00:59:57,680
-sort the byte order or put it into
+那么我需要做的是将字节顺序排序，
 
 00:59:57,680 --> 00:59:59,040
-little endian
+或者将其转换为小端字节序。
 
-00:59:59,040 --> 01:00:01,760
-so there we are and then i can save this
+00:59:59,040 --> 01:00:07,200
+之后我就可以将其保存为前一个区块的变量。
 
-01:00:01,760 --> 01:00:03,599
-then
+01:00:11,119 --> 01:00:16,000
+接下来是默克尔根，
 
-01:00:03,599 --> 01:00:07,200
-as the previous block variable
-
-01:00:11,119 --> 01:00:15,040
-next up then is the miracle root
-
-01:00:15,040 --> 01:00:16,000
-uh
-
-01:00:16,000 --> 01:00:18,400
-obviously we don't get a miracle root
-
-01:00:18,400 --> 01:00:21,359
-um from the get block template um
-
-01:00:21,359 --> 01:00:23,839
-command but what does give us is the
+01:00:16,000 --> 01:00:23,839
+显然我们从get block template命令中并没有得到默克尔根
 
 01:00:23,839 --> 01:00:25,440
-list of transactions
+但是它给了我们交易列表，
 
 01:00:25,440 --> 01:00:28,559
-and for each of those it will give us um
+对于每一笔交易，
 
-01:00:28,559 --> 01:00:30,480
-a transaction id
+01:00:28,559 --> 01:00:31,440
+它都会给我们一个交易ID，
 
-01:00:30,480 --> 01:00:31,440
-oops
+01:00:31,440 --> 01:00:35,280
+从这些交易ID中，
 
-01:00:31,440 --> 01:00:33,599
-oh well i just lost that
-
-01:00:33,599 --> 01:00:35,280
-oh there it is
-
-01:00:35,280 --> 01:00:37,440
-so there we go
-
-01:00:37,440 --> 01:00:41,760
-and from these i can get the merkle root
+01:00:35,280 --> 01:00:41,760
+我可以得到默克尔根。
 
 01:00:41,760 --> 01:00:44,000
 there we are and then it's already in
