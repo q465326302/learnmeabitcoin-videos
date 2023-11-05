@@ -3269,41 +3269,29 @@ ok
 01:00:35,280 --> 01:00:41,760
 我可以得到默克尔根。
 
-01:00:41,760 --> 01:00:44,000
-there we are and then it's already in
+01:00:41,760 --> 01:00:46,079
+好的，它已经是十六进制的，
 
-01:00:44,000 --> 01:00:46,079
-hexadecimal it's already in
+01:00:46,079 --> 01:00:49,599
+是32字节，
 
-01:00:46,079 --> 01:00:48,079
-32 bytes i just need to sort the byte
-
-01:00:48,079 --> 01:00:49,599
-order
-
-01:00:49,599 --> 01:00:50,960
-again
-
-01:00:50,960 --> 01:00:52,960
-uh there we are i'll save that as a
-
-01:00:52,960 --> 01:00:54,240
-variable
+01:00:49,599 --> 01:00:54,240
+我只需要将字节顺序排序。
 
 01:00:54,240 --> 01:00:56,799
-i'm going to call
+快好了，我知道这有点费力，
 
 01:00:58,640 --> 01:01:00,559
-nearly there i know it's a bit laborious
+我知道这有点费力，
 
 01:01:00,559 --> 01:01:03,680
-but uh so that's yeah so version
+但是这就是版本、
 
 01:01:03,680 --> 01:01:05,920
-previous block miracle root uh then we
+前一个块的默克尔根、
 
 01:01:05,920 --> 01:01:07,040
-have the time
+还有时间。
 
 01:01:07,040 --> 01:01:08,839
 um for some reason
@@ -3312,127 +3300,79 @@ um for some reason
 um
 
 01:01:10,480 --> 01:01:12,640
-even though the get plot template
+出于某种原因，
 
-01:01:12,640 --> 01:01:14,000
-doesn't give you the merkel route it
+01:01:12,640 --> 01:01:15,119
+即使是' getblocktemplate '没有给你默克尔根，
 
-01:01:14,000 --> 01:01:15,119
-does give you
-
-01:01:15,119 --> 01:01:17,520
-the current time on your computer
-
-01:01:17,520 --> 01:01:19,280
-um
+01:01:15,119 --> 01:01:19,280
+它会显示你电脑上的当前时间
 
 01:01:19,280 --> 01:01:21,200
-actually it gives you a
+哦，实际上不是，
 
 01:01:21,200 --> 01:01:24,880
-valid time i'm not sure if this is um
+它给你的是一个有效的时间，
 
 01:01:24,880 --> 01:01:25,839
-i don't know but this is definitely a
+我不确定这是不是，
 
 01:01:25,839 --> 01:01:27,760
-valid time but what you could do if you
+我不知道，
 
 01:01:27,760 --> 01:01:29,440
-want to use that if you want to use the
+但这绝对是一个有效的时间，
 
 01:01:29,440 --> 01:01:30,480
-get blocked
+如果你不想使用那个，
 
 01:01:30,480 --> 01:01:32,079
-template time you can use the date
+如果你不想用getblocktemplate时间，
 
-01:01:32,079 --> 01:01:34,400
-function from a programming language
+01:01:32,079 --> 01:01:36,240
+你可以用编程语言中的' date '函数，
 
-01:01:34,400 --> 01:01:36,240
-so if you just this gives you the number
-
-01:01:36,240 --> 01:01:37,599
-of seconds
-
-01:01:37,599 --> 01:01:39,680
-in unix times if i just use that
+01:01:36,240 --> 01:01:39,680
+那么会给你Unix时间的秒数，
 
 01:01:39,680 --> 01:01:42,799
-um just need to get it into hexadecimal
+只需要把它转换成十六进制，
 
 01:01:42,799 --> 01:01:44,000
-like so
+像这样，
 
 01:01:44,000 --> 01:01:46,720
-one two three four five six seven so 24
+一二三四五六七，
 
-01:01:46,720 --> 01:01:47,920
-bytes
+01:01:46,720 --> 01:01:48,799
+24个字节，
 
-01:01:47,920 --> 01:01:48,799
-uh
-
-01:01:48,799 --> 01:01:51,960
-then we
-
-01:01:52,079 --> 01:01:53,599
-it to and
-
-01:01:53,599 --> 01:01:56,319
-uh reverse bite order
+01:01:48,799 --> 01:01:56,319
+然后我们把它转换成反字节顺序，
 
 01:01:56,319 --> 01:01:58,160
-there we are so there is that's the time
+这就是时间，
 
 01:01:58,160 --> 01:01:59,040
-ready
+那么准备好了，
 
-01:01:59,040 --> 01:02:00,799
-enough
+01:01:59,040 --> 01:02:07,440
+这是最后完成的时间“比特”
 
-01:02:00,799 --> 01:02:02,240
-and
+01:02:07,440 --> 01:02:11,359
+这是目标的紧凑版本，
 
-01:02:02,240 --> 01:02:04,480
-that's the time done
-
-01:02:04,480 --> 01:02:07,440
-lastly uh bits
-
-01:02:07,440 --> 01:02:09,119
-which is the compact version of the
-
-01:02:09,119 --> 01:02:11,359
-target
-
-01:02:11,359 --> 01:02:14,079
-there it is you just trim off the
-
-01:02:14,079 --> 01:02:16,240
-uh
-
-01:02:16,960 --> 01:02:18,079
-quotes
+01:02:11,359 --> 01:02:18,079
+就是这样，把引号去掉
 
 01:02:18,079 --> 01:02:21,839
-and then put into reverse byte order
+然后把它转换成反字节顺序，
 
-01:02:22,400 --> 01:02:24,720
-and there it is so now we've got all the
-
-01:02:24,720 --> 01:02:28,160
-basic block header data
-
-01:02:28,160 --> 01:02:29,200
-uh
-
-01:02:29,200 --> 01:02:31,599
-ready
+01:02:22,400 --> 01:02:31,599
+现在我们已经准备好了所有基本的block header数据
 
 01:02:32,160 --> 01:02:36,160
-in the right format so if i
+接下来，以正确的格式，
 
 01:02:36,160 --> 01:02:38,240
 just construct the block header from
